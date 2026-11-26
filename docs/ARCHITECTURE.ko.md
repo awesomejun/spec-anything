@@ -70,14 +70,18 @@ flowchart LR
 
 ---
 
-## 포함된 결정론적 자동화 스크립트 (`scripts/`)
+## 포함된 결정론적 자동화 스크립트 9종 (`scripts/`)
 
 | 스크립트 | 책임 범위 |
 | :--- | :--- |
-| [`scripts/state_manager.py`](../scripts/state_manager.py) | 7단계 재개형 상태 머신 (`.spec-anything/state.json`), `goal.json`, `questions.json` 질문 뱅크 관리 |
+| [`scripts/doctor.py`](../scripts/doctor.py) | 핵심 CLI, Playwright·PIL, OS 네이티브 바이너리 도구, Ghidra, IDA(`idalib`/`ida-hcli`), Frida 준비 상태 사전 진단 |
+| [`scripts/state_manager.py`](../scripts/state_manager.py) | 7단계 재개형 상태 머신 (`.spec-anything/state.json`), `--mode clean-room` / `--mode deep`, `goal.json`, `questions.json` 질문 뱅크 관리 |
 | [`scripts/source_map.py`](../scripts/source_map.py) | 다언어 정적 구조 추출기 (Go, TS/JS, Svelte, Vue, Python, Rust, SQL, HTML, CSS) 및 미분석 경고 출력 |
 | [`scripts/file_inventory.py`](../scripts/file_inventory.py) | Git 커밋 추적 파일 전수 조사 및 `03` 기능 ID·제외 사유 대조 검증 |
-| [`scripts/inspect_release.py`](../scripts/inspect_release.py) | 공식 배포본 아카이브·바이너리 REA 감사 (SHA-256, `checksums.txt`, `go version -m`, `otool`, `codesign`) |
+| [`scripts/inspect_release.py`](../scripts/inspect_release.py) | 공식 배포본 아카이브·바이너리 REA 감사 (SHA-256, `checksums.txt`, `lipo`, `otool`, `nm`, `readelf`, `codesign`, `go version -m`, `--probe`, Ghidra·IDA 백엔드 감지) |
+| [`scripts/frida_trace_bridge.py`](../scripts/frida_trace_bridge.py) | 권한 있는 읽기 전용 Frida Gum 훅 생성기(`sqlite`, `objc-storage`, `posix-io`, `ipc`), JSONL·`frida-itrace`(`ITR2`) 파싱 후 `06_evidence/ledger.jsonl` 적재, 오프라인 `self-test` |
 | [`scripts/secret_guard.py`](../scripts/secret_guard.py) | API 키, PEM 개인키, 원문 JWT 자동 탐지 및 마스킹 |
 | [`scripts/validate_bundle.py`](../scripts/validate_bundle.py) | 13개 게이트 이중 기계 검증기 (12종 고정 산출물, `[REF:]`, `## Sources Read`, 매크로 비율, 구조 전용 Mermaid, JSON Schema, 외래 키 정합성, `06->07` 연결, JSON Schema/OpenAPI/SQLite 실행, 비밀, `SHA256SUMS.txt`) |
 | [`scripts/render_review.py`](../scripts/render_review.py) | PM/Design 및 Dev/QA 이중 독자 단일 HTML, SVG, DOCX, `file://` SSRF 차단 PDF 리뷰 렌더러 |
+
+백엔드별 상세 규약(`craft-anything` 모드, Ghidra, IDA, Frida)은 [`references/adapters/re-backends.md`](../references/adapters/re-backends.md)를 참고하십시오.

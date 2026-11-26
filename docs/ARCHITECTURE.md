@@ -74,10 +74,14 @@ flowchart LR
 
 | Script | Responsibility |
 | :--- | :--- |
-| [`scripts/state_manager.py`](../scripts/state_manager.py) | 7-phase resumable state machine (`.spec-anything/state.json`), `goal.json`, and `questions.json` Question Bank |
+| [`scripts/doctor.py`](../scripts/doctor.py) | Preflight readiness checker across core CLI tools, Playwright/PIL, OS native binary tools, Ghidra, IDA (`idalib`/`ida-hcli`), and Frida |
+| [`scripts/state_manager.py`](../scripts/state_manager.py) | 7-phase resumable state machine (`.spec-anything/state.json`), `--mode clean-room` / `--mode deep`, `goal.json`, and `questions.json` Question Bank |
 | [`scripts/source_map.py`](../scripts/source_map.py) | Deterministic multi-language extractor (Go, TS/JS, Svelte, Vue, Python, Rust, SQL, HTML, CSS) + Loud Warnings |
 | [`scripts/file_inventory.py`](../scripts/file_inventory.py) | Git-commit tracked file census and `03` Feature ID / exclusion disposition verifier |
-| [`scripts/inspect_release.py`](../scripts/inspect_release.py) | Official release archive/binary REA auditor (SHA-256, `checksums.txt`, `go version -m`, `otool`, `codesign`, embedded probes) |
+| [`scripts/inspect_release.py`](../scripts/inspect_release.py) | Official release archive/binary REA auditor (SHA-256, `checksums.txt`, `lipo`, `otool`, `nm`, `readelf`, `codesign`, `go version -m`, custom `--probe`, Ghidra/IDA backend detection) |
+| [`scripts/frida_trace_bridge.py`](../scripts/frida_trace_bridge.py) | Authorized read-only Frida Gum hook generator (`sqlite`, `objc-storage`, `posix-io`, `ipc`), JSONL & `frida-itrace` (`ITR2`) parser into `06_evidence/ledger.jsonl`, offline `self-test` |
 | [`scripts/secret_guard.py`](../scripts/secret_guard.py) | Automated secret, API key, PEM private key, and raw JWT scanner/redactor |
 | [`scripts/validate_bundle.py`](../scripts/validate_bundle.py) | 13-gate mechanical validator (12 deliverables, `[REF:]`, `## Sources Read`, `--max-macro-ratio`, structure-only Mermaid, JSON Schema, FK integrity, `06->07` linkage, JSON Schema/OpenAPI/SQLite execution, secrets, `SHA256SUMS.txt`) |
 | [`scripts/render_review.py`](../scripts/render_review.py) | Dual-audience PM/Design & Dev/QA single-file HTML, SVG, DOCX, and `file://` SSRF-safe PDF review renderer |
+
+For detailed backend protocols (`craft-anything` modes, Ghidra, IDA, Frida), see [`references/adapters/re-backends.md`](../references/adapters/re-backends.md).

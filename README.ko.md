@@ -10,11 +10,32 @@
 
 [English](README.md) · **한국어**
 
+[예제 미리보기](#예제-미리보기) · [동작 방식](#동작-방식) · [빠른 시작](#빠른-시작) · [상세 기전](#상세-기전-내부-동작-원리)
+
 </div>
 
 ---
 
-`spec-anything`은 오픈소스 앱의 **소스 코드**, **공식 배포 바이너리**, **실제 실행 화면**을 함께 조사해 **12개 고정 명세 파일(`01`–`12`)**과 **실행 가능한 대조 테스트**를 만드는 AI 코딩 스킬입니다.
+<table>
+  <tr>
+    <td width="25%" valign="top">
+      <strong>실제 소프트웨어를 직접 조사</strong><br/>
+      소스 코드, 공식 배포본(<code>.dmg</code>, <code>.app</code>, npm), 실제 실행 화면을 함께 점검합니다.
+    </td>
+    <td width="25%" valign="top">
+      <strong>Clean-Room / Deep 모드</strong><br/>
+      공개 화면·입출력만 관찰하는 <code>clean-room</code>과 소스·역컴파일·동적 추적까지 여는 <code>deep</code>을 분리합니다.
+    </td>
+    <td width="25%" valign="top">
+      <strong>추측이 아닌 실행 검증</strong><br/>
+      12종 교차 연결 명세서와 함께 실행형 대조 테스트 및 픽셀 차분 히트맵을 생성합니다.
+    </td>
+    <td width="25%" valign="top">
+      <strong>에이전트 즉시 연동</strong><br/>
+      Claude Code, Codex CLI, OpenBot과 Ghidra, IDA, Frida를 잇는 9개 결정론적 스크립트를 제공합니다.
+    </td>
+  </tr>
+</table>
 
 ## 예제 미리보기
 
@@ -32,20 +53,14 @@
 
 ## 동작 방식
 
-1. **코드·공식 배포본 동시 점검** — 소스 코드와 실제 공식 배포 패키지(`.dmg`, `.app`, npm 배포본)를 함께 대조합니다.
-2. **격리 실행 실측** — 앱을 격리 환경에서 직접 구동해 화면 캡처, UI 토큰, 스키마, 실제 상태 전이를 기록합니다.
-3. **12종 명세·대조 테스트 생성** — 서로 연결된 12개 산출물(`01`–`12`)과 원본·재구현본을 같은 기준으로 검사하는 실행 테스트를 만듭니다.
+1. **코드·공식 배포본 동시 점검** — 고정된 커밋 소스와 실제 공식 배포 패키지(`.dmg`, `.app`, ELF/PE, npm 배포본)를 함께 대조합니다.
+2. **격리 실행 실측** — 앱을 격리 환경에서 직접 구동해 다상태 화면 캡처, 실측 CSS 토큰, 스키마, 실제 상태 전이를 기록합니다.
+3. **12종 명세·대조 테스트 생성** — 고정된 12개 산출물(`01`–`12`)과 원본·클린룸 재구현본을 같은 기준으로 검사하는 실행 테스트를 만듭니다.
 
-<details>
-<summary><strong>생성되는 12개 산출물(01–12) 한눈에 보기</strong></summary>
+### Clean-Room vs. Deep 모드
 
-| 구분 | 산출물 |
-| :--- | :--- |
-| **기획·아키텍처** | `01` PRD · `02` SDD · `03` 재현 범위표 · `08` 클린룸 구현 청사진 · `12` 구현 순서표 |
-| **실측 근거** | `04` 환경·배포본 감사 · `05` UI 기준 스크린샷 · `06` 실행 근거 기록 (`JSONL`) |
-| **계약·검증** | `07` 실행형 대조 테스트 · `09` 기계 판독 계약 (JSON Schema / OpenAPI / SQL) · `10` 실행·상태 도표 · `11` UI 디자인 토큰 |
-
-</details>
+- **`clean-room` (블랙박스)**: 비공개 소스 내부를 읽지 않고 공개 UI, 실측 레이아웃·CSS 토큰, 외부 입출력만 기록합니다.
+- **`deep` (권한이 있는 오픈소스·자체 대상)**: 소스 정적 추출, 공식 배포본 REA 감사, 헤드리스 **Ghidra** / **IDA** 역컴파일, 읽기 전용 **Frida** 동적 추적을 통합합니다.
 
 ## 빠른 시작
 
@@ -62,31 +77,113 @@ Python `3.10+` 환경이 필요합니다. UI 캡처, 픽셀 차분, PDF/DOCX 리
 pip install jsonschema markdown pillow playwright python-docx && playwright install chromium
 ```
 
-### 2. 에이전트에서 실행
+### 2. 실행 환경 진단 및 에이전트 호출
+
+```bash
+python3 scripts/doctor.py
+```
 
 ```text
-spec-anything 스킬로 https://github.com/Splode/pomotroid (v1.7.1, 티어 T3)를 분석해
+spec-anything 스킬로 https://github.com/Splode/pomotroid (v1.7.1, 모드 deep, 티어 T3)를 분석해
 01–12 산출물과 클린룸 재구현본을 만들고 모든 대조 테스트를 통과시켜줘.
 ```
 
-### 3. 포함된 예제 60초 검증
+### 3. 포함된 예제 3종 로컬 검증 (39/39 게이트 · 시크릿 0건)
 
 ```bash
 for ex in examples/*; do python3 scripts/validate_bundle.py "$ex" --tier T3 --verify-checksums; done
+python3 scripts/frida_trace_bridge.py self-test
 python3 scripts/secret_guard.py . --fail-on-hit
 ```
 
-## 기존 방식과의 차이
+---
 
-| 기능 | 정방향 SDD | 정적 역공학 명세 | `spec-anything` |
-| :--- | :---: | :---: | :---: |
-| 소스 구조 추출 및 재개형 워크플로 | — | ✓ | ✓ |
-| 공식 배포 바이너리·패키지 감사 (`SHA-256`) | — | — | ✓ |
-| 실구동 UI 캡처·CSS 토큰·동작 기록 | — | — | ✓ |
-| 실행형 대조 테스트 및 픽셀 차분 증명 | — | — | ✓ |
+## 상세 기전: 내부 동작 원리
 
-## 상세 문서 및 라이선스
+아래 구역은 `spec-anything`의 전체 4계층 분석·계측 아키텍처, 12종 산출물 폐루프 검증 구조, 실제 공식 배포본 감사 사례, 생태계 비교, 9개 자동화 스크립트 명세를 정리합니다.
 
-- **[아키텍처·배포본 감사 근거·스크립트 안내](docs/ARCHITECTURE.ko.md)** — 7단계 파이프라인, 12종 산출물 도식, 공식 배포본 실측 사례, 7개 자동화 스크립트, 상세 도구 비교.
-- **[스킬 정의서](SKILL.md)** — 전체 에이전트 작업 절차 및 품질 게이트 규칙.
-- **라이선스** — [MIT](LICENSE). 권한이 있는 클린룸 기능 재구현 및 상호운용성 검증 목적으로만 사용합니다 (접근 제어·DRM 우회 및 상표 무단 재사용 제외).
+### 1. 4계층 삼각 검증 및 역공학 백엔드 엔진
+
+소스 코드만 읽어서는 공식 배포본이 실제로 어떤 바이너리·번들·IPC를 포함해 실행하는지 확신할 수 없습니다. `spec-anything`은 [`storytold/craft-anything`](https://github.com/storytold/craft-anything)의 클린룸 워크플로 설계와 [`NationalSecurityAgency/ghidra`](https://github.com/NationalSecurityAgency/ghidra), [`HexRaysSA/ida-mcp`](https://github.com/HexRaysSA/ida-mcp) / [`mrexodia/ida-pro-mcp`](https://github.com/mrexodia/ida-pro-mcp), [`frida/frida`](https://github.com/frida/frida)의 정적·동적 분석 패턴을 4개 상호보완 레인으로 통합합니다.
+
+```mermaid
+flowchart LR
+    T[대상 저장소 및 공식 배포본] --> L1[레인 1 정적 소스 맵 및 Git 파일 전수 조사]
+    T --> L2[레인 2 배포본 REA 감사 OS 도구 Ghidra IDA]
+    T --> L3[레인 3 실구동 관측 Playwright 및 Frida]
+    L1 --> EV[06 기계 판독 근거 원장 JSONL]
+    L2 --> EV
+    L3 --> EV
+    EV --> SP[01-03 08-12 명세 계약 및 UI 토큰]
+    EV --> PT[07 실행형 대조 테스트 및 픽셀 차분]
+    SP --> CR[클린룸 재구현본]
+    CR --> PT
+```
+
+| 참고 GitHub 생태계 | `spec-anything`에 반영한 핵심 기전 | 실제 구현 구성 |
+| :--- | :--- | :--- |
+| **[`storytold/craft-anything`](https://github.com/storytold/craft-anything)** | `clean-room` / `deep` 동작 경계 분리, `doctor` 사전 진단, 가설 → 검증 사실 → 근거 원장 추적, 다상태 시각 대조 | `scripts/doctor.py`, `scripts/state_manager.py`의 `--mode clean-room` / `--mode deep`, `questions.json` 질문 뱅크, Playwright 픽셀 차분 MAE 검증 |
+| **[`NationalSecurityAgency/ghidra`](https://github.com/NationalSecurityAgency/ghidra)** 및 **[`pyghidra-mcp`](https://github.com/clearbluejar/pyghidra-mcp)** | 헤드리스 우선 바이너리 역컴파일(`analyzeHeadless` / `pyghidra`), 다중 바이너리 세션, 스트립된 심볼 복원, 상호참조(xrefs)·호출 대상 해석 | `scripts/inspect_release.py --backend ghidra`, `references/adapters/re-backends.md`, `rea-ghidra` MCP 결과를 `04` / `06` / `10`에 연결 |
+| **[`HexRaysSA/ida-mcp`](https://github.com/HexRaysSA/ida-mcp)** 및 **[`mrexodia/ida-pro-mcp`](https://github.com/mrexodia/ida-pro-mcp)** | 헤드리스 `idat` / `idalib` 다중 워커 모델(`idb_open` / `decompile` / `xrefs_to`), 읽기 전용 `ida://` 메타데이터·로컬 타입 리소스, 바이트 오프셋·부호 정확도 검증 | `scripts/inspect_release.py --backend ida`, `scripts/doctor.py`의 IDA 9.4+ / `ida-hcli` 감지, `ida://types` → `09_contracts/` 매핑 |
+| **[`frida/frida`](https://github.com/frida/frida)** 및 **[`frida/frida-tools`](https://github.com/frida/frida-tools)** | 권한이 있는 대상의 읽기 전용 `Interceptor` 동적 관측(SQLite C-API, ObjC `NSUserDefaults`, POSIX I/O, IPC 스트림) 및 `frida-itrace` `"ITR2"` 바이너리 포맷 파싱 | `scripts/frida_trace_bridge.py`(`emit-hook`, `ingest-jsonl`, `ingest-itrace`, 오프라인 `self-test` 및 `schemas/evidence.schema.json` 스키마 검증) |
+
+백엔드별 설치 명령, MCP 인터페이스, 우회 금지 경계 규정은 [`references/adapters/re-backends.md`](references/adapters/re-backends.md)에 정리했습니다.
+
+### 2. 12종 고정 산출물 체계 (`01`–`12`) 및 7단계 폐루프 파이프라인
+
+모든 대상은 동일한 **12개 고정 산출물 체계**로 생성되며 `Feature ID(F-001)`, `Evidence ID(EV-001)`, `Screen ID(SCR-001)` 외래 키로 전 구간이 연결됩니다. 모든 사실은 5단계 정직성 상태(`observed`, `code-verified`, `inferred`, `assumed`, `unverified`)로 구분하고 `SHA256SUMS.txt`와 **13개 기계 검증 게이트**로 봉인합니다.
+
+<img src="assets/12-artifacts-map.png" alt="12종 고정 산출물 체계(01-12)와 기계 검증 게이트 구조도" width="100%" />
+
+```mermaid
+flowchart LR
+    P0[Phase 0 Doctor 모드 및 티어 고정] --> P1[Phase 1 정적 맵 파일 전수 및 REA 감사]
+    P1 --> P2[Phase 2 03 재현 범위표 및 04 환경 명세]
+    P2 --> P3[Phase 3 격리 실구동 05 UI 06 JSONL 09-11]
+    P3 --> P4[Phase 4 06 기반 07 대조 테스트 및 13 게이트]
+    P4 -->|게이트 실패 재수행| P3
+    P4 --> P5[Phase 5 충돌 해소 및 미결 질문 종결]
+    P5 --> P6[Phase 6 01 02 08 12 SHA256SUMS 및 리뷰 뷰]
+```
+
+- **폐루프 오라클 규칙 (`06 → 07`)**: `07` 대조 테스트는 입력·선행 상태·기대 출력을 반드시 `06_evidence/ledger.jsonl`에서 직접 읽습니다. 먼저 **실제 원본 앱 기준 통과(`upstream_baseline`)**를 검증한 뒤, 같은 테스트를 수정 없이 클린룸 재구현본(`reimplementation_diff`)에 실행해 동작 일치와 시각 허용 오차(MAE)를 검증합니다.
+- **영문 기계 계층 + 다국어 본문 계층**: JSON Schema 키, 식별자(`F-001`, `EV-001`, `SCR-001`), `[REF: path:start-end]` 인용, `## Sources Read` 제목은 검증기 안정성을 위해 영문으로 고정하고, 서술 본문은 한국어·영어·일본어 중 선택 출력합니다.
+
+### 3. 정적 코드 읽기만으로 놓치는 지점: 실제 REA 검증 근거
+
+| 정적 코드 읽기만으로 놓치는 문제 | 포함된 MIT 대표 예제 3종에서 실제 검증한 근거 |
+| :--- | :--- |
+| **배포 번들과 모놀리포 간 괴리** | [`Excalidraw v0.18.1`](examples/01-excalidraw-v0.18.1/) 공식 npm 배포본(`dist/prod/index.js`, 65개 ESM export, SHA-512 일치)을 감사하고 `.excalidraw` v2 JSON 왕복 및 라이트·다크 캔버스(`0.18%`–`0.46%` MAE)를 실측했습니다. |
+| **데스크톱 IPC 변경 및 공증 바이너리 검증** | [`Handy v0.10.2`](examples/02-handy-v0.10.2/) *(2026-11)* 공증된 macOS `arm64` `.dmg`(`14.3 MB`) 및 Mach-O 바이너리에서 **133 / 133** Tauri v2 IPC 커맨드를 전수 대조하고 구버전 제거 커맨드(`change_push_to_talk` → `change_shortcut_activation_setting`)를 확인했습니다. |
+| **바이너리 내장 리소스 및 상태 경계 규칙** | [`Pomotroid v1.7.1`](examples/03-pomotroid-v1.7.1/) 유니버설 macOS Mach-O(`x86_64 + arm64`, `16.0 MB`) 내부에 커밋 SHA `4a02ac7`과 38개 테마가 내장됨을 확인하고, `long_breaks_enabled=false` 시 사이클 리셋 센티널(`work_round_number: 0 → 1`) 및 `MIGRATION_1..6` SQLite WAL 규약을 검증했습니다. |
+
+### 4. 생태계 비교
+
+| 기능 항목 | 정방향 SDD (`spec-kit`) | 정적 역공학 명세 (`cc-rsg`) | 클린룸 엔진 (`craft-anything`) | 핵심 역공학 도구 (`Ghidra` / `IDA` / `Frida`) | `spec-anything` |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| 12종 고정 클린룸 PRD·SDD·청사진 체계 (`01`–`12`) | — | — | — | — | ✓ |
+| 결정론적 다언어 정적 맵 및 Git 전체 파일 전수 조사 | — | ✓ | ✓ | — | ✓ |
+| Clean-Room / Deep 동작 경계 및 `doctor` 사전 진단 | — | — | ✓ | — | ✓ |
+| 네이티브 바이너리 역컴파일 및 동적 런타임 추적 연동 | — | — | ✓ | ✓ | ✓ |
+| `06` JSONL 근거를 `07` 대조 테스트가 직접 소비하는 폐루프 검증 | — | — | — | — | ✓ |
+| 13개 기계 검증 게이트 및 `SHA256SUMS.txt` 무결성 봉인 | — | ✓ | — | — | ✓ |
+
+### 5. 포함된 결정론적 자동화 스크립트 9종 (`scripts/`)
+
+| 스크립트 | 책임 범위 |
+| :--- | :--- |
+| [`scripts/doctor.py`](scripts/doctor.py) | 핵심 CLI, Playwright·PIL, OS 네이티브 바이너리 도구, Ghidra, IDA(`idalib`/`ida-hcli`), Frida 준비 상태 사전 진단 |
+| [`scripts/state_manager.py`](scripts/state_manager.py) | 7단계 재개형 상태 머신(`.spec-anything/state.json`), `--mode clean-room` / `--mode deep`, `goal.json`, `questions.json` 질문 뱅크 관리 |
+| [`scripts/source_map.py`](scripts/source_map.py) | 다언어 정적 구조 추출기(Go, TS/JS, Svelte, Vue, Python, Rust, SQL, HTML, CSS) 및 미분석 경고 출력 |
+| [`scripts/file_inventory.py`](scripts/file_inventory.py) | Git 커밋 추적 파일 전수 조사 및 `03` 기능 ID·제외 사유 대조 검증 |
+| [`scripts/inspect_release.py`](scripts/inspect_release.py) | 공식 배포본 아카이브·바이너리 REA 감사(SHA-256, `checksums.txt`, `lipo`, `otool`, `nm`, `readelf`, `codesign`, `go version -m`, 사용자 정의 `--probe`, Ghidra·IDA 백엔드 감지) |
+| [`scripts/frida_trace_bridge.py`](scripts/frida_trace_bridge.py) | 권한 있는 읽기 전용 Frida Gum 훅 생성기(`sqlite`, `objc-storage`, `posix-io`, `ipc`), JSONL·`frida-itrace`(`ITR2`) 파싱 후 `06_evidence/ledger.jsonl` 적재, 오프라인 `self-test` |
+| [`scripts/secret_guard.py`](scripts/secret_guard.py) | API 키, PEM 개인키, 자격 증명, 원문 JWT 자동 탐지 및 마스킹(`--fail-on-hit`) |
+| [`scripts/validate_bundle.py`](scripts/validate_bundle.py) | 13개 게이트 기계 검증기(12종 산출물, `[REF:]`, `## Sources Read`, 매크로 비율, 구조 전용 Mermaid, JSON Schema, 외래 키 정합성, `06→07` 연결, JSON Schema·OpenAPI·SQLite 실행, 시크릿, `SHA256SUMS.txt`) |
+| [`scripts/render_review.py`](scripts/render_review.py) | PM/Design 및 Dev/QA 이중 독자 단일 HTML, SVG, DOCX, `file://` SSRF 차단 PDF 리뷰 렌더러 |
+
+### 6. 클린룸 정책·참고 문서 및 라이선스
+
+- **허용 범위**: 권한이 있는 오픈소스 기능 재구현, 언어 포팅, 상호운용성 검증 목적으로만 사용합니다. 취약점 악용, 접근 제어·DRM·안티치트 우회, 메모리 패치, 저작권이 있는 UI 에셋·폰트·상표의 무단 재배포는 명시적으로 제외합니다.
+- **추가 문서**: [`SKILL.md`](SKILL.md) · [`references/adapters/re-backends.md`](references/adapters/re-backends.md) · [`docs/ARCHITECTURE.ko.md`](docs/ARCHITECTURE.ko.md)
+- **라이선스**: **[MIT 라이선스](LICENSE)**로 배포됩니다.

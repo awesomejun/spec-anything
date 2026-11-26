@@ -58,6 +58,7 @@ def cmd_init(args):
         "release_tag": args.tag,
         "release_sha256": args.release_sha256,
         "tier": args.tier,
+        "mode": args.mode,
         "depth": args.depth,
         "output_language": args.lang,
         "current_phase": 1,
@@ -70,6 +71,7 @@ def cmd_init(args):
         "commit_sha": args.commit,
         "release_tag": args.tag,
         "tier": args.tier,
+        "mode": args.mode,
         "depth": args.depth,
         "output_language": args.lang,
         "primary_readers": ["reimplementation_engineer", "qa_verifier", "pm_designer"],
@@ -180,6 +182,7 @@ def main():
     p_init.add_argument("--commit", default=None)
     p_init.add_argument("--release-sha256", default=None)
     p_init.add_argument("--tier", choices=["T1", "T2", "T3"], default="T3")
+    p_init.add_argument("--mode", choices=["clean-room", "deep"], default="deep")
     p_init.add_argument("--depth", choices=["outline", "comprehensive", "interactive"], default="comprehensive")
     p_init.add_argument("--lang", choices=["en", "ko", "ja"], default="en")
     p_init.add_argument("--force", action="store_true")

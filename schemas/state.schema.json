@@ -20,6 +20,7 @@
     "release_tag": { "type": ["string", "null"] },
     "release_sha256": { "type": ["string", "null"] },
     "tier": { "type": "string", "enum": ["T1", "T2", "T3"] },
+    "mode": { "type": "string", "enum": ["clean-room", "deep"] },
     "depth": { "type": "string", "enum": ["outline", "comprehensive", "interactive"] },
     "output_language": { "type": "string", "enum": ["en", "ko", "ja"] },
     "current_phase": { "type": "integer", "minimum": 0, "maximum": 6 },

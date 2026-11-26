@@ -10,11 +10,32 @@
 
 **English** · [한국어](README.ko.md)
 
+[Examples](#examples) · [How It Works](#how-it-works) · [Quick Start](#quick-start) · [Under the Hood](#under-the-hood-detailed-mechanism)
+
 </div>
 
 ---
 
-`spec-anything` is an AI coding skill that inspects an open-source app's **source code**, **official release binary**, and **live running UI** to produce **12 fixed spec files (`01`–`12`)** plus **automated parity tests**.
+<table>
+  <tr>
+    <td width="25%" valign="top">
+      <strong>Study real software</strong><br/>
+      Inspects source code, official releases (<code>.dmg</code>, <code>.app</code>, npm), and live running screens together.
+    </td>
+    <td width="25%" valign="top">
+      <strong>Clean-Room or Deep</strong><br/>
+      Run black-box surface capture (<code>clean-room</code>) or full source, decompiler, and trace analysis (<code>deep</code>).
+    </td>
+    <td width="25%" valign="top">
+      <strong>Checked, not guessed</strong><br/>
+      Generates 12 cross-linked specs plus runnable parity tests and UI pixel-diff heatmaps.
+    </td>
+    <td width="25%" valign="top">
+      <strong>Agent-ready skill</strong><br/>
+      9 deterministic scripts and adapters for Claude Code, Codex CLI, OpenBot, Ghidra, IDA, and Frida.
+    </td>
+  </tr>
+</table>
 
 ## Examples
 
@@ -32,20 +53,14 @@ Every example below was rebuilt from scratch using only the generated spec — z
 
 ## How It Works
 
-1. **Inspect code & official release** — Reads source code and audits the shipped release package (`.dmg`, `.app`, or npm tarball).
-2. **Capture live ground truth** — Runs the app in an isolated workspace to record screenshots, UI tokens, schemas, and observed state transitions.
-3. **Generate specs & parity tests** — Writes 12 cross-linked deliverables (`01`–`12`) and executable tests that check both the original app and any clean-room rebuild.
+1. **Inspect code & official release** — Reads pinned source code and audits the shipped binary or package (`.dmg`, `.app`, ELF/PE, or npm tarball).
+2. **Run the app live** — Launches the app in an isolated workspace to capture multi-state screenshots, measured CSS tokens, schemas, and observed state transitions.
+3. **Generate 12 specs & parity tests** — Outputs fixed deliverables (`01`–`12`) and executable tests that check both the original app and any clean-room rebuild.
 
-<details>
-<summary><strong>See all 12 generated deliverables (01–12)</strong></summary>
+### Clean-Room vs. Deep Mode
 
-| Group | Deliverables |
-| :--- | :--- |
-| **Product & Architecture** | `01` PRD · `02` SDD · `03` Feature Matrix · `08` Clean-Room Blueprint · `12` Implementation Plan |
-| **Live Evidence** | `04` Environment & Release Audit · `05` UI Screenshots · `06` Runtime Evidence (`JSONL`) |
-| **Contracts & Verification** | `07` Executable Parity Tests · `09` Machine Contracts (JSON Schema / OpenAPI / SQL) · `10` State Flows · `11` UI Tokens |
-
-</details>
+- **`clean-room` (black-box)**: Observes only public UI, measured layout/CSS tokens, and external I/O without reading proprietary source internals.
+- **`deep` (authorized open-source / owned targets)**: Unlocks full source extraction, official release REA auditing, headless **Ghidra** / **IDA** decompilation, and read-only **Frida** dynamic tracing.
 
 ## Quick Start
 
@@ -62,31 +77,113 @@ Requires Python `3.10+`. For UI screenshots, pixel diffs, and PDF/DOCX review ex
 pip install jsonschema markdown pillow playwright python-docx && playwright install chromium
 ```
 
-### 2. Run it from your agent
+### 2. Check installed engines & run from your agent
+
+```bash
+python3 scripts/doctor.py
+```
 
 ```text
-Use the spec-anything skill on https://github.com/Splode/pomotroid (v1.7.1, tier T3)
+Use the spec-anything skill on https://github.com/Splode/pomotroid (v1.7.1, mode deep, tier T3)
 to generate deliverables 01–12, build a clean-room reimplementation, and pass all parity tests.
 ```
 
-### 3. Verify the included examples locally
+### 3. Verify all 3 included examples locally (39/39 gates + 0 secret leaks)
 
 ```bash
 for ex in examples/*; do python3 scripts/validate_bundle.py "$ex" --tier T3 --verify-checksums; done
+python3 scripts/frida_trace_bridge.py self-test
 python3 scripts/secret_guard.py . --fail-on-hit
 ```
 
-## Why `spec-anything`?
+---
 
-| Capability | Greenfield SDD | Static Reverse Spec | `spec-anything` |
-| :--- | :---: | :---: | :---: |
-| Source extraction & resumable workflow | — | ✓ | ✓ |
-| Official release binary / package audit (`SHA-256`) | — | — | ✓ |
-| Live UI screenshots, CSS tokens & runtime ledger | — | — | ✓ |
-| Executable parity tests & pixel-diff proof | — | — | ✓ |
+## Under the Hood: Detailed Mechanism
 
-## Documentation & License
+Everything below documents the complete internal pipeline, multi-backend reverse-engineering architecture, concrete audit discoveries, and mechanical validation gates.
 
-- **[Architecture, Release Audit & Scripts Reference](docs/ARCHITECTURE.md)** — Full 7-phase pipeline, 12-artifact diagram, concrete REA discoveries, 7 automation scripts, and detailed ecosystem comparison.
-- **[Skill Definition](SKILL.md)** — Complete agent workflow instructions and quality gates.
-- **License** — [MIT](LICENSE). Strictly for authorized clean-room reimplementation and interoperability verification (excludes DRM/access bypass and trademark reuse).
+### 1. Four-Layer Triangulation & RE Backend Engine
+
+Reading source code alone misses what official releases actually package, compile, and render. `spec-anything` triangulates across four complementary engineering lanes — adopting clean-room workflow design from [`storytold/craft-anything`](https://github.com/storytold/craft-anything) and connecting optional static/dynamic reverse-engineering backends from [`NationalSecurityAgency/ghidra`](https://github.com/NationalSecurityAgency/ghidra), [`HexRaysSA/ida-mcp`](https://github.com/HexRaysSA/ida-mcp) / [`mrexodia/ida-pro-mcp`](https://github.com/mrexodia/ida-pro-mcp), and [`frida/frida`](https://github.com/frida/frida):
+
+```mermaid
+flowchart LR
+    T[Target Repo and Official Release] --> L1[Lane 1 Static Source Map and Git Census]
+    T --> L2[Lane 2 Release REA OS Tools Ghidra IDA]
+    T --> L3[Lane 3 Live Runtime Playwright and Frida]
+    L1 --> EV[06 Machine-Readable Evidence Ledger JSONL]
+    L2 --> EV
+    L3 --> EV
+    EV --> SP[01-03 08-12 Specs Contracts and UI Tokens]
+    EV --> PT[07 Executable Parity Tests and Pixel Diff]
+    SP --> CR[Clean-Room Reimplementation]
+    CR --> PT
+```
+
+| Reference Ecosystem | Architectural Pattern Adopted in `spec-anything` | Concrete Implementation |
+| :--- | :--- | :--- |
+| **[`storytold/craft-anything`](https://github.com/storytold/craft-anything)** | Explicit `clean-room` vs. `deep` operating boundary, `doctor` preflight diagnostics, Hypothesis → Finding → Evidence tracking, multi-state visual comparison | `scripts/doctor.py`, `--mode clean-room` / `--mode deep` in `scripts/state_manager.py`, `questions.json` Question Bank, Playwright pixel-diff MAE verification |
+| **[`NationalSecurityAgency/ghidra`](https://github.com/NationalSecurityAgency/ghidra)** & **[`pyghidra-mcp`](https://github.com/clearbluejar/pyghidra-mcp)** | Headless-first binary decompilation (`analyzeHeadless` / `pyghidra`), multi-binary project sessions, stripped symbol recovery, xrefs & call-target resolution | `scripts/inspect_release.py --backend ghidra`, `references/adapters/re-backends.md`, `rea-ghidra` MCP mapping into `04` / `06` / `10` |
+| **[`HexRaysSA/ida-mcp`](https://github.com/HexRaysSA/ida-mcp)** & **[`mrexodia/ida-pro-mcp`](https://github.com/mrexodia/ida-pro-mcp)** | Headless `idat` / `idalib` multi-worker sessions (`idb_open` / `decompile` / `xrefs_to`), read-only `ida://` IDB metadata & local type resources, strict byte-offset & signedness verification | `scripts/inspect_release.py --backend ida`, `scripts/doctor.py` IDA 9.4+ / `ida-hcli` detection, `ida://types` → `09_contracts/` mapping |
+| **[`frida/frida`](https://github.com/frida/frida)** & **[`frida/frida-tools`](https://github.com/frida/frida-tools)** | Dynamic read-only `Interceptor` runtime observation (SQLite C-API, ObjC `NSUserDefaults`, POSIX I/O, IPC streams) & `frida-itrace` `"ITR2"` binary framing | `scripts/frida_trace_bridge.py` (`emit-hook`, `ingest-jsonl`, `ingest-itrace`, offline `self-test` validating directly against `schemas/evidence.schema.json`) |
+
+See [`references/adapters/re-backends.md`](references/adapters/re-backends.md) for full backend setup commands, MCP contracts, and non-bypass safety boundaries.
+
+### 2. Fixed 12-Artifact System (`01`–`12`) & 7-Phase Closed-Loop Pipeline
+
+Every target produces the same **12 fixed deliverables**, cross-linked by `Feature ID` (`F-001`), `Evidence ID` (`EV-001`), and `Screen ID` (`SCR-001`), tagged with an explicit 5-state honesty enum (`observed`, `code-verified`, `inferred`, `assumed`, `unverified`), sealed with `SHA256SUMS.txt`, and checked by **13 mechanical quality gates**:
+
+<img src="assets/12-artifacts-map.png" alt="The Fixed 12-Artifact System (01–12) and Mechanical Quality Gates" width="100%" />
+
+```mermaid
+flowchart LR
+    P0[Phase 0 Doctor Mode and Tier Lock] --> P1[Phase 1 Static Map Census and REA Audit]
+    P1 --> P2[Phase 2 03 Feature Matrix and 04 Environment]
+    P2 --> P3[Phase 3 Live Runtime 05 UI 06 JSONL 09-11]
+    P3 --> P4[Phase 4 07 Parity Tests Reading 06 and 13 Gates]
+    P4 -->|Gate Fail Loopback| P3
+    P4 --> P5[Phase 5 Conflict Resolution and Question Closure]
+    P5 --> P6[Phase 6 01 02 08 12 SHA256SUMS and Review Views]
+```
+
+- **Closed-Loop Oracle Rule (`06 → 07`)**: `07` parity tests MUST read inputs, preconditions, and expected outputs directly from `06_evidence/ledger.jsonl`. Tests pass against the **live upstream original first** (`upstream_baseline`), then verify any clean-room rebuild (`reimplementation_diff`) with identical assertions and Playwright pixel-diff tolerances.
+- **English Machine Layer + Multi-Language Narrative**: All schema keys, IDs (`F-001`, `EV-001`, `SCR-001`), `[REF: path:start-end]` citations, and literal `## Sources Read` headings stay English forever so automated validators remain deterministic, while prose renders in English, Korean, or Japanese.
+
+### 3. What Static Code Reading Misses: Verified Live REA Findings
+
+| Gap Missed by Static Reading Alone | Verified Live Across the 3 Included MIT Examples |
+| :--- | :--- |
+| **Published package vs. monorepo drift** | In [`Excalidraw v0.18.1`](examples/01-excalidraw-v0.18.1/), audited the official npm tarball (`dist/prod/index.js`, `65` ESM exports, SHA-512 verified) and captured `.excalidraw` v2 JSON roundtrip + light/dark canvas renders (`0.18%`–`0.46%` MAE). |
+| **Renamed desktop IPC & notarized binary surface** | In [`Handy v0.10.2`](examples/02-handy-v0.10.2/) *(Nov 2026)*, audited the notarized macOS `arm64` `.dmg` (`14.3 MB`) and Mach-O binary, verifying all **`133 / 133`** Tauri v2 IPC commands and confirming legacy command removal (`change_push_to_talk` → `change_shortcut_activation_setting`). |
+| **Embedded binary assets & hidden state sentinels** | In [`Pomotroid v1.7.1`](examples/03-pomotroid-v1.7.1/), proved the universal macOS Mach-O (`x86_64 + arm64`, `16.0 MB`) embeds exact commit SHA `4a02ac7` + all 38 themes inside the binary, and verified the `long_breaks_enabled=false` cycle sentinel (`work_round_number: 0 → 1`) plus `MIGRATION_1..6` SQLite WAL rules. |
+
+### 4. Ecosystem Comparison
+
+| Capability | Greenfield SDD (`spec-kit`) | Static Reverse Spec (`cc-rsg`) | Clean-Room Engine (`craft-anything`) | Core RE Tools (`Ghidra` / `IDA` / `Frida`) | `spec-anything` |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| Fixed 12-artifact clean-room PRD/SDD/Blueprint taxonomy (`01`–`12`) | — | — | — | — | ✓ |
+| Deterministic multi-language static map & git file census | — | ✓ | ✓ | — | ✓ |
+| Clean-Room vs. Deep operating boundary & `doctor` preflight | — | — | ✓ | — | ✓ |
+| Native binary decompilation & dynamic runtime tracing integration | — | — | ✓ | ✓ | ✓ |
+| Machine-readable `06` JSONL ledger directly consumed by `07` parity tests | — | — | — | — | ✓ |
+| Automated 13-gate mechanical bundle validator & `SHA256SUMS.txt` sealing | — | ✓ | — | — | ✓ |
+
+### 5. Deterministic Automation Scripts (`scripts/`)
+
+| Script | Responsibility |
+| :--- | :--- |
+| [`scripts/doctor.py`](scripts/doctor.py) | Preflight readiness checker across core CLI tools, Playwright/PIL, OS native binary tools, Ghidra, IDA (`idalib`/`ida-hcli`), and Frida |
+| [`scripts/state_manager.py`](scripts/state_manager.py) | Resumable 7-phase state machine (`.spec-anything/state.json`), `--mode clean-room` / `--mode deep`, `goal.json`, and `questions.json` Question Bank |
+| [`scripts/source_map.py`](scripts/source_map.py) | Multi-language static extractor (Go, TS/JS, Svelte, Vue, Python, Rust, SQL, HTML, CSS) with Loud Warnings on low coverage |
+| [`scripts/file_inventory.py`](scripts/file_inventory.py) | Git-commit tracked file census and `03` Feature ID / exclusion disposition verifier |
+| [`scripts/inspect_release.py`](scripts/inspect_release.py) | Official release archive/binary REA auditor (SHA-256, `checksums.txt`, `lipo`, `otool`, `nm`, `readelf`, `codesign`, `go version -m`, custom `--probe`, Ghidra/IDA backend detection) |
+| [`scripts/frida_trace_bridge.py`](scripts/frida_trace_bridge.py) | Authorized read-only Frida Gum hook generator (`sqlite`, `objc-storage`, `posix-io`, `ipc`), JSONL & `frida-itrace` (`ITR2`) parser into `06_evidence/ledger.jsonl`, offline `self-test` |
+| [`scripts/secret_guard.py`](scripts/secret_guard.py) | Automated API key, PEM private key, credential, and raw JWT scanner/redactor (`--fail-on-hit`) |
+| [`scripts/validate_bundle.py`](scripts/validate_bundle.py) | 13-gate mechanical validator (12 deliverables, `[REF:]`, `## Sources Read`, macro ratio, structure-only Mermaid, JSON Schema, FK integrity, `06→07` linkage, JSON Schema/OpenAPI/SQLite execution, secrets, `SHA256SUMS.txt`) |
+| [`scripts/render_review.py`](scripts/render_review.py) | Dual-audience PM/Design & Dev/QA single-file HTML, SVG, DOCX, and `file://` SSRF-safe PDF review renderer |
+
+### 6. Clean-Room Policy, References & License
+
+- **Authorized Scope Only**: Strictly intended for authorized open-source functional reimplementation, language porting, and interoperability verification. Explicitly prohibits vulnerability exploitation, access-control/DRM/anti-cheat bypass, memory patching, and unauthorized redistribution of copyrighted UI assets, fonts, or brand trademarks.
+- **Additional Docs**: [`SKILL.md`](SKILL.md) · [`references/adapters/re-backends.md`](references/adapters/re-backends.md) · [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
+- **License**: Released under the **[MIT License](LICENSE)**.
