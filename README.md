@@ -103,9 +103,9 @@ python3 scripts/secret_guard.py --self-test && python3 scripts/secret_guard.py .
 
 Everything below documents the complete internal pipeline, multi-backend reverse-engineering architecture, concrete audit discoveries, and mechanical validation gates.
 
-### 1. Four-Layer Triangulation & RE Backend Engine
+### 1. Four-Layer Triangulation & Inspired Open-Source Foundations
 
-Reading source code alone misses what official releases actually package, compile, and render. `spec-anything` triangulates across four complementary engineering lanes — adopting clean-room workflow design from [`storytold/craft-anything`](https://github.com/storytold/craft-anything) and connecting optional static/dynamic reverse-engineering backends from [`NationalSecurityAgency/ghidra`](https://github.com/NationalSecurityAgency/ghidra), [`HexRaysSA/ida-mcp`](https://github.com/HexRaysSA/ida-mcp) / [`mrexodia/ida-pro-mcp`](https://github.com/mrexodia/ida-pro-mcp), and [`frida/frida`](https://github.com/frida/frida):
+Reading source code alone misses what official releases actually package, compile, and render. `spec-anything` builds on spec-driven & reverse-planning foundations from [`daishir0/cc-rsg`](https://github.com/daishir0/cc-rsg), [`WindowHyun/Reverse_Spec_and_PRD`](https://github.com/WindowHyun/Reverse_Spec_and_PRD), [`github/spec-kit`](https://github.com/github/spec-kit), and [`Fission-AI/OpenSpec`](https://github.com/Fission-AI/OpenSpec), combines clean-room workflow design from [`storytold/craft-anything`](https://github.com/storytold/craft-anything), and connects optional static/dynamic reverse-engineering backends from [`NationalSecurityAgency/ghidra`](https://github.com/NationalSecurityAgency/ghidra), [`HexRaysSA/ida-mcp`](https://github.com/HexRaysSA/ida-mcp) / [`mrexodia/ida-pro-mcp`](https://github.com/mrexodia/ida-pro-mcp), and [`frida/frida`](https://github.com/frida/frida):
 
 ```mermaid
 flowchart LR
@@ -121,9 +121,12 @@ flowchart LR
     CR --> PT
 ```
 
-| Reference Ecosystem | Architectural Pattern Adopted in `spec-anything` | Concrete Implementation |
+| Inspired Project / Ecosystem | Architectural Pattern Adopted in `spec-anything` | Concrete Implementation |
 | :--- | :--- | :--- |
-| **[`storytold/craft-anything`](https://github.com/storytold/craft-anything)** | Explicit `clean-room` vs. `deep` operating boundary, `doctor` preflight diagnostics, Hypothesis → Finding → Evidence tracking, multi-state visual comparison | `scripts/doctor.py`, `--mode clean-room` / `--mode deep` in `scripts/state_manager.py`, `questions.json` Question Bank, Playwright pixel-diff MAE verification |
+| **[`daishir0/cc-rsg`](https://github.com/daishir0/cc-rsg)** | Resumable 7-phase state machine (`state.json`), Question Bank, multi-language static extractor with Loud Warnings, anti-macro coverage gate, English machine layer + multi-language prose, structure-only Mermaid | `scripts/state_manager.py`, `scripts/source_map.py`, `scripts/validate_bundle.py` (`--max-macro-ratio`, `S4`, `S5`) |
+| **[`WindowHyun/Reverse_Spec_and_PRD`](https://github.com/WindowHyun/Reverse_Spec_and_PRD)** | Parser-fact boundary (`facts.md`), automated secret redaction, dual-audience PM/Design & Dev/QA review documents with `file://` SSRF-safe HTML/SVG/DOCX/PDF export | `scripts/source_map.py --facts`, `scripts/secret_guard.py`, `scripts/render_review.py` |
+| **[`github/spec-kit`](https://github.com/github/spec-kit)** & **[`Fission-AI/OpenSpec`](https://github.com/Fission-AI/OpenSpec)** | Spec-driven development baseline (`PRD → SDD → Contracts → Implementation Plan`) adapted from greenfield creation to verified reverse-engineering parity | Fixed `01`–`12` taxonomy (`references/deliverables-01-12.md`) anchored on `03` Feature IDs |
+| **[`storytold/craft-anything`](https://github.com/storytold/craft-anything)** | Explicit `clean-room` vs. `deep` operating boundary, `doctor` preflight diagnostics, Hypothesis → Finding → Evidence tracking, multi-state visual comparison | `scripts/doctor.py`, `--mode clean-room` / `--mode deep` in `scripts/state_manager.py`, Playwright pixel-diff MAE verification |
 | **[`NationalSecurityAgency/ghidra`](https://github.com/NationalSecurityAgency/ghidra)** & **[`pyghidra-mcp`](https://github.com/clearbluejar/pyghidra-mcp)** | Headless-first binary decompilation (`analyzeHeadless` / `pyghidra`), multi-binary project sessions, stripped symbol recovery, xrefs & call-target resolution | `scripts/inspect_release.py --backend ghidra`, `references/adapters/re-backends.md`, `rea-ghidra` MCP mapping into `04` / `06` / `10` |
 | **[`HexRaysSA/ida-mcp`](https://github.com/HexRaysSA/ida-mcp)** & **[`mrexodia/ida-pro-mcp`](https://github.com/mrexodia/ida-pro-mcp)** | Headless `idat` / `idalib` multi-worker sessions (`idb_open` / `decompile` / `xrefs_to`), read-only `ida://` IDB metadata & local type resources, strict byte-offset & signedness verification | `scripts/inspect_release.py --backend ida`, `scripts/doctor.py` IDA 9.4+ / `ida-hcli` detection, `ida://types` → `09_contracts/` mapping |
 | **[`frida/frida`](https://github.com/frida/frida)** & **[`frida/frida-tools`](https://github.com/frida/frida-tools)** | Dynamic read-only `Interceptor` runtime observation (SQLite C-API, ObjC `NSUserDefaults`, POSIX I/O, IPC streams) & `frida-itrace` `"ITR2"` binary framing | `scripts/frida_trace_bridge.py` (`emit-hook`, `ingest-jsonl`, `ingest-itrace`, offline `self-test` validating directly against `schemas/evidence.schema.json`) |
@@ -173,14 +176,15 @@ flowchart LR
 
 ### 5. Ecosystem Comparison
 
-| Capability | Greenfield SDD (`spec-kit`) | Static Reverse Spec (`cc-rsg`) | Clean-Room Engine (`craft-anything`) | Core RE Tools (`Ghidra` / `IDA` / `Frida`) | `spec-anything` |
-| :--- | :---: | :---: | :---: | :---: | :---: |
-| Fixed 12-artifact clean-room PRD/SDD/Blueprint taxonomy (`01`–`12`) | — | — | — | — | ✓ |
-| Deterministic multi-language static map & git file census | — | ✓ | ✓ | — | ✓ |
-| Clean-Room vs. Deep operating boundary & 3-axis `doctor` coverage | — | — | ✓ | — | ✓ |
-| Native binary decompilation & dynamic runtime tracing integration | — | — | ✓ | ✓ | ✓ |
-| Machine-readable `06` JSONL ledger directly consumed by `07` parity tests | — | — | — | — | ✓ |
-| 15-gate validator (Machine Ceiling, Anti-Slop, Prompt-Injection, `SHA256SUMS`) | — | ✓ | — | — | ✓ |
+| Capability | Greenfield SDD (`spec-kit` / `OpenSpec`) | Frontend Reverse (`Reverse_Spec_and_PRD`) | Static Reverse (`cc-rsg`) | Clean-Room Engine (`craft-anything`) | Core RE (`Ghidra` / `IDA` / `Frida`) | `spec-anything` |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| Fixed 12-artifact clean-room PRD/SDD/Blueprint taxonomy (`01`–`12`) | — | — | — | — | — | ✓ |
+| Deterministic multi-language static map & git file census | — | — | ✓ | ✓ | — | ✓ |
+| Secret redaction & `file://` SSRF-safe dual-audience review renderer | — | ✓ | — | — | — | ✓ |
+| Clean-Room vs. Deep boundary & 3-axis `doctor` coverage | — | — | — | ✓ | — | ✓ |
+| Native binary decompilation & dynamic runtime tracing integration | — | — | — | ✓ | ✓ | ✓ |
+| Machine-readable `06` JSONL ledger directly consumed by `07` parity tests | — | — | — | — | — | ✓ |
+| 15-gate validator (Machine Ceiling, Anti-Slop, Prompt-Injection, `SHA256SUMS`) | — | — | ✓ | — | — | ✓ |
 
 ### 6. Deterministic Automation Scripts (`scripts/`)
 

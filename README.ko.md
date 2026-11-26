@@ -103,9 +103,9 @@ python3 scripts/secret_guard.py --self-test && python3 scripts/secret_guard.py .
 
 아래 구역은 `spec-anything`의 전체 4계층 분석·계측 아키텍처, 12종 산출물 폐루프 검증 구조, 실제 공식 배포본 감사 사례, 생태계 비교, 9개 자동화 스크립트 명세를 정리합니다.
 
-### 1. 4계층 삼각 검증 및 역공학 백엔드 엔진
+### 1. 4계층 삼각 검증 및 영감 받은 오픈소스 생태계
 
-소스 코드만 읽어서는 공식 배포본이 실제로 어떤 바이너리·번들·IPC를 포함해 실행하는지 확신할 수 없습니다. `spec-anything`은 [`storytold/craft-anything`](https://github.com/storytold/craft-anything)의 클린룸 워크플로 설계와 [`NationalSecurityAgency/ghidra`](https://github.com/NationalSecurityAgency/ghidra), [`HexRaysSA/ida-mcp`](https://github.com/HexRaysSA/ida-mcp) / [`mrexodia/ida-pro-mcp`](https://github.com/mrexodia/ida-pro-mcp), [`frida/frida`](https://github.com/frida/frida)의 정적·동적 분석 패턴을 4개 상호보완 레인으로 통합합니다.
+소스 코드만 읽어서는 공식 배포본이 실제로 어떤 바이너리·번들·IPC를 포함해 실행하는지 확신할 수 없습니다. `spec-anything`은 [`daishir0/cc-rsg`](https://github.com/daishir0/cc-rsg), [`WindowHyun/Reverse_Spec_and_PRD`](https://github.com/WindowHyun/Reverse_Spec_and_PRD), [`github/spec-kit`](https://github.com/github/spec-kit), [`Fission-AI/OpenSpec`](https://github.com/Fission-AI/OpenSpec)의 명세 주도·역공학 설계 토대 위에 [`storytold/craft-anything`](https://github.com/storytold/craft-anything)의 클린룸 워크플로와 [`NationalSecurityAgency/ghidra`](https://github.com/NationalSecurityAgency/ghidra), [`HexRaysSA/ida-mcp`](https://github.com/HexRaysSA/ida-mcp) / [`mrexodia/ida-pro-mcp`](https://github.com/mrexodia/ida-pro-mcp), [`frida/frida`](https://github.com/frida/frida)의 정적·동적 분석 백엔드를 통합합니다.
 
 ```mermaid
 flowchart LR
@@ -121,9 +121,12 @@ flowchart LR
     CR --> PT
 ```
 
-| 참고 GitHub 생태계 | `spec-anything`에 반영한 핵심 기전 | 실제 구현 구성 |
+| 참고·영감 오픈소스 생태계 | `spec-anything`에 반영한 핵심 기전 | 실제 구현 구성 |
 | :--- | :--- | :--- |
-| **[`storytold/craft-anything`](https://github.com/storytold/craft-anything)** | `clean-room` / `deep` 동작 경계 분리, `doctor` 사전 진단, 가설 → 검증 사실 → 근거 원장 추적, 다상태 시각 대조 | `scripts/doctor.py`, `scripts/state_manager.py`의 `--mode clean-room` / `--mode deep`, `questions.json` 질문 뱅크, Playwright 픽셀 차분 MAE 검증 |
+| **[`daishir0/cc-rsg`](https://github.com/daishir0/cc-rsg)** | 재개 가능한 7단계 상태 머신(`state.json`), 질문 뱅크, 다언어 정적 추출기 및 미분석 경고, 안티-매크로 커버리지 게이트, 영문 기계 계층 + 다국어 본문, 구조 전용 Mermaid | `scripts/state_manager.py`, `scripts/source_map.py`, `scripts/validate_bundle.py`(`--max-macro-ratio`, `S4`, `S5`) |
+| **[`WindowHyun/Reverse_Spec_and_PRD`](https://github.com/WindowHyun/Reverse_Spec_and_PRD)** | 파서 팩트 경계(`facts.md`), 자동 시크릿 마스킹, PM/Design·Dev/QA 이중 독자용 `file://` SSRF 차단 HTML/SVG/DOCX/PDF 리뷰 렌더러 | `scripts/source_map.py --facts`, `scripts/secret_guard.py`, `scripts/render_review.py` |
+| **[`github/spec-kit`](https://github.com/github/spec-kit)** 및 **[`Fission-AI/OpenSpec`](https://github.com/Fission-AI/OpenSpec)** | 정방향 명세 주도 개발(`PRD → SDD → 계약 → 구현 순서`) 체계를 기존 소프트웨어 역공학·검증 패리티 체계로 확장 | `03` 기능 ID 중심 12종 고정 산출물 규약(`references/deliverables-01-12.md`) |
+| **[`storytold/craft-anything`](https://github.com/storytold/craft-anything)** | `clean-room` / `deep` 동작 경계 분리, `doctor` 사전 진단, 가설 → 검증 사실 → 근거 원장 추적, 다상태 시각 대조 | `scripts/doctor.py`, `scripts/state_manager.py`의 `--mode clean-room` / `--mode deep`, Playwright 픽셀 차분 MAE 검증 |
 | **[`NationalSecurityAgency/ghidra`](https://github.com/NationalSecurityAgency/ghidra)** 및 **[`pyghidra-mcp`](https://github.com/clearbluejar/pyghidra-mcp)** | 헤드리스 우선 바이너리 역컴파일(`analyzeHeadless` / `pyghidra`), 다중 바이너리 세션, 스트립된 심볼 복원, 상호참조(xrefs)·호출 대상 해석 | `scripts/inspect_release.py --backend ghidra`, `references/adapters/re-backends.md`, `rea-ghidra` MCP 결과를 `04` / `06` / `10`에 연결 |
 | **[`HexRaysSA/ida-mcp`](https://github.com/HexRaysSA/ida-mcp)** 및 **[`mrexodia/ida-pro-mcp`](https://github.com/mrexodia/ida-pro-mcp)** | 헤드리스 `idat` / `idalib` 다중 워커 모델(`idb_open` / `decompile` / `xrefs_to`), 읽기 전용 `ida://` 메타데이터·로컬 타입 리소스, 바이트 오프셋·부호 정확도 검증 | `scripts/inspect_release.py --backend ida`, `scripts/doctor.py`의 IDA 9.4+ / `ida-hcli` 감지, `ida://types` → `09_contracts/` 매핑 |
 | **[`frida/frida`](https://github.com/frida/frida)** 및 **[`frida/frida-tools`](https://github.com/frida/frida-tools)** | 권한이 있는 대상의 읽기 전용 `Interceptor` 동적 관측(SQLite C-API, ObjC `NSUserDefaults`, POSIX I/O, IPC 스트림) 및 `frida-itrace` `"ITR2"` 바이너리 포맷 파싱 | `scripts/frida_trace_bridge.py`(`emit-hook`, `ingest-jsonl`, `ingest-itrace`, 오프라인 `self-test` 및 `schemas/evidence.schema.json` 스키마 검증) |
@@ -173,14 +176,15 @@ flowchart LR
 
 ### 5. 생태계 비교
 
-| 기능 항목 | 정방향 SDD (`spec-kit`) | 정적 역공학 명세 (`cc-rsg`) | 클린룸 엔진 (`craft-anything`) | 핵심 역공학 도구 (`Ghidra` / `IDA` / `Frida`) | `spec-anything` |
-| :--- | :---: | :---: | :---: | :---: | :---: |
-| 12종 고정 클린룸 PRD·SDD·청사진 체계 (`01`–`12`) | — | — | — | — | ✓ |
-| 결정론적 다언어 정적 맵 및 Git 전체 파일 전수 조사 | — | ✓ | ✓ | — | ✓ |
-| Clean-Room / Deep 동작 경계 및 3축 `doctor` 커버리지 | — | — | ✓ | — | ✓ |
-| 네이티브 바이너리 역컴파일 및 동적 런타임 추적 연동 | — | — | ✓ | ✓ | ✓ |
-| `06` JSONL 근거를 `07` 대조 테스트가 직접 소비하는 폐루프 검증 | — | — | — | — | ✓ |
-| 15개 검증 게이트 (기계 상한·안티-슬롭·주입 탐지·`SHA256SUMS`) | — | ✓ | — | — | ✓ |
+| 기능 항목 | 정방향 SDD (`spec-kit` / `OpenSpec`) | 프론트엔드 역기획 (`Reverse_Spec_and_PRD`) | 정적 역공학 (`cc-rsg`) | 클린룸 엔진 (`craft-anything`) | 핵심 역공학 (`Ghidra` / `IDA` / `Frida`) | `spec-anything` |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| 12종 고정 클린룸 PRD·SDD·청사진 체계 (`01`–`12`) | — | — | — | — | — | ✓ |
+| 결정론적 다언어 정적 맵 및 Git 전체 파일 전수 조사 | — | — | ✓ | ✓ | — | ✓ |
+| 시크릿 마스킹 및 `file://` SSRF 차단 이중 독자 리뷰 렌더러 | — | ✓ | — | — | — | ✓ |
+| Clean-Room / Deep 동작 경계 및 3축 `doctor` 커버리지 | — | — | — | ✓ | — | ✓ |
+| 네이티브 바이너리 역컴파일 및 동적 런타임 추적 연동 | — | — | — | ✓ | ✓ | ✓ |
+| `06` JSONL 근거를 `07` 대조 테스트가 직접 소비하는 폐루프 검증 | — | — | — | — | — | ✓ |
+| 15개 검증 게이트 (기계 상한·안티-슬롭·주입 탐지·`SHA256SUMS`) | — | — | ✓ | — | — | ✓ |
 
 ### 6. 포함된 결정론적 자동화 스크립트 9종 (`scripts/`)
 
