@@ -70,7 +70,7 @@ flowchart LR
 
 ---
 
-## 포함된 결정론적 자동화 스크립트 9종 (`scripts/`)
+## 포함된 결정론적 자동화 스크립트 10종 (`scripts/`)
 
 | 스크립트 | 책임 범위 |
 | :--- | :--- |
@@ -78,6 +78,7 @@ flowchart LR
 | [`scripts/state_manager.py`](../scripts/state_manager.py) | `temp+os.replace` 원자적 커밋 + POSIX `flock` 7단계 상태 머신, `--mode clean-room` / `--mode deep`, 타깃 해시 Epoch 초기화, 재시도 예산, 추가 전용 `RUN_MANIFEST.jsonl` |
 | [`scripts/source_map.py`](../scripts/source_map.py) | 다언어 정적 구조 추출기 (Go, TS/JS, Svelte, Vue, Python, Rust, SQL, HTML, CSS) 및 미분석 경고 출력 |
 | [`scripts/file_inventory.py`](../scripts/file_inventory.py) | Git 커밋 추적 파일 전수 조사 및 `03` 기능 ID·제외 사유 대조 검증 |
+| [`scripts/spec_diff.py`](../scripts/spec_diff.py) | 업스트림 변경 파일·`git diff` 범위를 `03_scope/features.json`의 `source_refs`와 대조해 영향 받는 `F-XXX`·`EV-XXX`·`SCR-XXX`·`TC-XXX` 산출 |
 | [`scripts/inspect_release.py`](../scripts/inspect_release.py) | 공식 배포본 아카이브·바이너리 REA 감사 (SHA-256, `checksums.txt`, `lipo`, `otool`, `nm`, `readelf`, `codesign`, `go version -m`, `--probe`, Ghidra·IDA 백엔드 감지) |
 | [`scripts/frida_trace_bridge.py`](../scripts/frida_trace_bridge.py) | 권한 있는 읽기 전용 Frida Gum 훅 생성기(`sqlite`, `objc-storage`, `posix-io`, `ipc`), JSONL·`frida-itrace`(`ITR2`) 파싱 후 `06_evidence/ledger.jsonl` 적재, 오프라인 `self-test` |
 | [`scripts/secret_guard.py`](../scripts/secret_guard.py) | 3단계(`high`/`low`/`info`) 시크릿 신뢰도 분류기 + 4범주 `[AI-Safety]` 프롬프트 주입 탐지기 |
