@@ -213,7 +213,7 @@ def build_tool_coverage_manifest(rep: dict, target_stack: str, mode: str) -> dic
             quality = "none"
             terminal_total += 1
             missing_tools.append(name)
-            note = "Not installed on host; accounted in missing_tools (OS REA / runtime fallback applies)"
+            note = "Not installed on host; accounted in missing_tools (OS artifact inspection / runtime fallback applies)"
 
         tools.append({
             "tool": name,
@@ -262,14 +262,14 @@ def print_human(rep: dict) -> None:
     print("\n[UI & Review Python Packages]")
     for k, v in rep["ui_review_python"].items():
         print(f"  - {k:12s}: {'OK' if v['installed'] else 'MISSING'}")
-    print("\n[OS Native Binary REA Tools]")
+    print("\n[OS Native Binary Inspection Tools]")
     present = [k for k, v in rep["os_native_tools"].items() if v["installed"]]
     missing = [k for k, v in rep["os_native_tools"].items() if not v["installed"]]
     print(f"  - installed : {', '.join(present) if present else '(none)'}")
     print(f"  - absent    : {', '.join(missing) if missing else '(none)'}")
-    print("\n[Optional Deep RE Backends (Ghidra / IDA / Frida)]")
+    print("\n[Optional Deep Inspection Backends (Ghidra / IDA / Frida)]")
     for name, info in rep["optional_re_backends"].items():
-        state = "AVAILABLE" if info["available"] else "NOT INSTALLED (fallback: OS REA + live runtime)"
+        state = "AVAILABLE" if info["available"] else "NOT INSTALLED (fallback: OS artifact inspection + live runtime)"
         print(f"  - {name:8s}: {state}")
 
 

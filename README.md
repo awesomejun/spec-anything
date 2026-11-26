@@ -60,7 +60,7 @@ Every example below was rebuilt from scratch using only the generated spec — z
 ### Clean-Room vs. Deep Mode
 
 - **`clean-room` (black-box)**: Observes only public UI, measured layout/CSS tokens, and external I/O without reading proprietary source internals.
-- **`deep` (authorized open-source / owned targets)**: Unlocks full source extraction, official release REA auditing, headless **Ghidra** / **IDA** decompilation, and read-only **Frida** dynamic tracing.
+- **`deep` (authorized open-source / owned targets)**: Unlocks full source extraction, official release artifact analysis (RAA), headless **Ghidra** / **IDA** decompilation, and read-only **Frida** dynamic tracing.
 
 ## Quick Start
 
@@ -102,7 +102,7 @@ python3 scripts/secret_guard.py --self-test && python3 scripts/secret_guard.py .
 
 ## Under the Hood: Detailed Mechanism
 
-Everything below documents the complete internal pipeline, reverse-engineering backends, governance & safety controls, specialist subagents, and validation gates.
+Everything below documents the complete internal pipeline, release-artifact & binary inspection backends, governance & safety controls, specialist subagents, and validation gates.
 
 ### 1. Four-Layer Triangulation Engine
 
@@ -111,7 +111,7 @@ Reading source code alone misses what official releases actually package, compil
 ```mermaid
 flowchart LR
     T[Target Repo and Official Release] --> L1[Lane 1 Static Source Map and Git Census]
-    T --> L2[Lane 2 Release REA OS Tools Ghidra IDA]
+    T --> L2[Lane 2 Release Artifact Analysis OS Tools Ghidra IDA]
     T --> L3[Lane 3 Live Runtime Playwright and Frida]
     L1 --> EV[06 Machine-Readable Evidence Ledger JSONL]
     L2 --> EV
@@ -125,7 +125,7 @@ flowchart LR
 | Analysis Layer | What It Inspects | Tools & Optional Backends |
 | :--- | :--- | :--- |
 | **1. Static Source & Drift** | Multi-language AST/symbol maps, parser-fact boundary (`facts.md`), 100% git tracked file census, and upstream commit-to-feature change impact | `scripts/source_map.py`, `scripts/file_inventory.py`, `scripts/spec_diff.py` |
-| **2. Official Release REA & Decompilation** | Archive/binary SHA-256 & upstream checksums, Mach-O/ELF slices, code signatures, exported symbols, embedded runtime probes; optional headless decompilation, xrefs, call targets, and local types | `scripts/inspect_release.py`, OS native tools (`otool`, `lipo`, `nm`, `codesign`, `readelf`), headless **Ghidra** (`analyzeHeadless` / `pyghidra-mcp` / `rea-ghidra`), **IDA Pro 9.4+** (`idat` / `idalib` / `HexRaysSA/ida-mcp` / `mrexodia/ida-pro-mcp`) |
+| **2. Official Release Artifact Analysis (RAA)** | Archive/binary SHA-256 & upstream checksums, Mach-O/ELF slices, code signatures, exported symbols, embedded runtime probes; optional headless decompilation, xrefs, call targets, and local types | `scripts/inspect_release.py`, OS native tools (`otool`, `lipo`, `nm`, `codesign`, `readelf`), headless **Ghidra** (`analyzeHeadless` / `pyghidra-mcp` / `rea-ghidra`), **IDA Pro 9.4+** (`idat` / `idalib` / `HexRaysSA/ida-mcp` / `mrexodia/ida-pro-mcp`) |
 | **3. Isolated Runtime & Dynamic Tracing** | Multi-state UI screenshots, `getComputedStyle` design tokens, HTTP/IPC/SQLite WAL state mutations, restart persistence; optional read-only runtime function/IPC tracing (`ITR2` binary & JSONL) | Headless Playwright, SQLite3, read-only **Frida** observers via `scripts/frida_trace_bridge.py` (`sqlite`, `objc-storage`, `posix-io`, `ipc`, `frida-itrace`) |
 | **4. Closed-Loop Parity & Visual Proof** | Unmodified `07` test harnesses consuming `06_evidence/ledger.jsonl` directly — passing on the live upstream app first, then diffing any clean-room rebuild + Playwright pixel MAE | `07_tests/verify_parity.py`, `scripts/validate_bundle.py`, `scripts/render_review.py` |
 
@@ -152,7 +152,7 @@ Every target produces the same **12 fixed deliverables**, cross-linked by `Featu
 
 ```mermaid
 flowchart LR
-    P0[Phase 0 Doctor Mode and Tier Lock] --> P1[Phase 1 Static Map Census and REA Audit]
+    P0[Phase 0 Doctor Mode and Tier Lock] --> P1[Phase 1 Static Map Census and Release Audit]
     P1 --> P2[Phase 2 03 Feature Matrix and 04 Environment]
     P2 --> P3[Phase 3 Live Runtime 05 UI 06 JSONL 09-11]
     P3 --> P4[Phase 4 07 Parity Tests Reading 06 and 15 Gates]
@@ -165,7 +165,7 @@ flowchart LR
 - **Closed-Loop Oracle Rule (`06 → 07`)**: `07` parity tests read inputs, preconditions, and expected outputs directly from `06_evidence/ledger.jsonl` — verified against the live upstream app first, then against any clean-room rebuild.
 - **English Machine Layer + Multi-Language Narrative**: Schema keys, IDs (`F-001`, `EV-001`, `SCR-001`), `[REF: path:start-end]` citations, and literal `## Sources Read` headings stay English forever so automated validators remain deterministic, while prose renders in English, Korean, or Japanese.
 
-### 4. What Static Code Reading Misses: Verified Live REA Findings
+### 4. What Static Code Reading Misses: Verified Official Release Findings
 
 | Gap Missed by Static Reading Alone | Verified Live Across the 3 Included MIT Examples |
 | :--- | :--- |
@@ -182,7 +182,7 @@ flowchart LR
 | [`scripts/source_map.py`](scripts/source_map.py) | Multi-language static extractor (Go, TS/JS, Svelte, Vue, Python, Rust, SQL, HTML, CSS) with Loud Warnings and `facts.md` output |
 | [`scripts/file_inventory.py`](scripts/file_inventory.py) | Git-commit tracked file census and `03` Feature ID / exclusion disposition verifier |
 | [`scripts/spec_diff.py`](scripts/spec_diff.py) | Deterministic upstream change-impact and spec-vs-code sync analyzer mapping changed files or `git diff` ranges to impacted `F-XXX` / `EV-XXX` / `SCR-XXX` / `TC-XXX` IDs |
-| [`scripts/inspect_release.py`](scripts/inspect_release.py) | Official release archive/binary REA auditor (SHA-256, `checksums.txt`, `lipo`, `otool`, `nm`, `readelf`, `codesign`, `go version -m`, custom `--probe`, Ghidra/IDA backend detection) |
+| [`scripts/inspect_release.py`](scripts/inspect_release.py) | Official release artifact (RAA) auditor (SHA-256, `checksums.txt`, `lipo`, `otool`, `nm`, `readelf`, `codesign`, `go version -m`, custom `--probe`, Ghidra/IDA backend detection) |
 | [`scripts/frida_trace_bridge.py`](scripts/frida_trace_bridge.py) | Authorized read-only Frida Gum hook generator (`sqlite`, `objc-storage`, `posix-io`, `ipc`), JSONL & `frida-itrace` (`ITR2`) parser into `06_evidence/ledger.jsonl`, offline `self-test` |
 | [`scripts/secret_guard.py`](scripts/secret_guard.py) | 3-tier (`high`/`low`/`info`) secret confidence classifier + 4-category `[AI-Safety]` untrusted prompt-injection detector (`--fail-on-hit`, `--scan-injections`, `--self-test`) |
 | [`scripts/validate_bundle.py`](scripts/validate_bundle.py) | 15-gate mechanical & governance validator (12 deliverables, `[REF:]`, `## Sources Read`, macro ratio, structure-only Mermaid, JSON Schema, FK integrity, `06→07` linkage, OpenAPI/Schema/SQLite execution, 3-tier secrets, Machine Ceiling & Anti-Slop, 3-axis bijective coverage, `SHA256SUMS.txt`, `--strict-ceiling` exit `42`) |
@@ -190,7 +190,7 @@ flowchart LR
 
 ### 6. Ecosystem Comparison & Related Projects
 
-| Capability | Greenfield SDD (`spec-kit` / `OpenSpec` / `sdd-tool`) | Frontend Reverse (`Reverse_Spec_and_PRD`) | Static Reverse (`cc-rsg`) | Clean-Room Engine (`craft-anything`) | Core RE (`Ghidra` / `IDA` / `Frida`) | `spec-anything` |
+| Capability | Greenfield SDD (`spec-kit` / `OpenSpec` / `sdd-tool`) | Frontend Spec (`Reverse_Spec_and_PRD`) | Static Spec (`cc-rsg`) | Clean-Room Engine (`craft-anything`) | Binary Inspection (`Ghidra` / `IDA` / `Frida`) | `spec-anything` |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
 | Fixed 12-artifact clean-room PRD/SDD/Blueprint taxonomy (`01`–`12`) | — | — | — | — | — | ✓ |
 | RFC 2119 + GIVEN-WHEN-THEN contracts, impact sync & read-only review subagents | ✓ | — | — | — | — | ✓ |
@@ -202,8 +202,8 @@ flowchart LR
 | 15-gate validator (Machine Ceiling, Anti-Slop, Prompt-Injection, `SHA256SUMS`) | — | — | ✓ | — | — | ✓ |
 
 **Related & Inspired Open-Source Projects**:
-- **Spec-Driven & Reverse-Planning**: [`github/spec-kit`](https://github.com/github/spec-kit) · [`Fission-AI/OpenSpec`](https://github.com/Fission-AI/OpenSpec) · [`JakeB-5/sdd-tool`](https://github.com/JakeB-5/sdd-tool) · [`daishir0/cc-rsg`](https://github.com/daishir0/cc-rsg) · [`WindowHyun/Reverse_Spec_and_PRD`](https://github.com/WindowHyun/Reverse_Spec_and_PRD)
-- **Clean-Room & Reverse-Engineering Engines**: [`storytold/craft-anything`](https://github.com/storytold/craft-anything) · [`NationalSecurityAgency/ghidra`](https://github.com/NationalSecurityAgency/ghidra) ([`pyghidra-mcp`](https://github.com/clearbluejar/pyghidra-mcp)) · [`HexRaysSA/ida-mcp`](https://github.com/HexRaysSA/ida-mcp) ([`mrexodia/ida-pro-mcp`](https://github.com/mrexodia/ida-pro-mcp)) · [`frida/frida`](https://github.com/frida/frida) ([`frida-tools`](https://github.com/frida/frida-tools))
+- **Spec-Driven & Existing-Code Planning**: [`github/spec-kit`](https://github.com/github/spec-kit) · [`Fission-AI/OpenSpec`](https://github.com/Fission-AI/OpenSpec) · [`JakeB-5/sdd-tool`](https://github.com/JakeB-5/sdd-tool) · [`daishir0/cc-rsg`](https://github.com/daishir0/cc-rsg) · [`WindowHyun/Reverse_Spec_and_PRD`](https://github.com/WindowHyun/Reverse_Spec_and_PRD)
+- **Clean-Room & Binary Inspection Engines**: [`storytold/craft-anything`](https://github.com/storytold/craft-anything) · [`NationalSecurityAgency/ghidra`](https://github.com/NationalSecurityAgency/ghidra) ([`pyghidra-mcp`](https://github.com/clearbluejar/pyghidra-mcp)) · [`HexRaysSA/ida-mcp`](https://github.com/HexRaysSA/ida-mcp) ([`mrexodia/ida-pro-mcp`](https://github.com/mrexodia/ida-pro-mcp)) · [`frida/frida`](https://github.com/frida/frida) ([`frida-tools`](https://github.com/frida/frida-tools))
 
 ### 7. Clean-Room Policy, References & License
 

@@ -4,9 +4,9 @@ description: >
   Turn any open-source GitHub repository and optional authorized official release
   into an evidence-backed, 12-artifact clean-room specification (01 PRD through
   12 Implementation Sequence) with machine-readable contracts (09), live UI/runtime
-  evidence (05, 06), release binary/bundle auditing (OS REA, Ghidra, IDA, Frida),
+  evidence (05, 06), official release artifact analysis (RAA, plus optional Ghidra, IDA, Frida),
   Clean-Room vs. Deep operating modes, and executable differential parity tests (07).
-  Use when reverse-specifying an existing app, porting to another language or stack,
+  Use when deriving a clean-room specification from an existing app, porting to another language or stack,
   auditing release-vs-source parity, or generating verifiable clean-room PRD and SDD deliverables.
 argument-hint: <repo_url_or_path> [--release <artifact_path_or_url>] [--mode clean-room|deep] [--tier T1|T2|T3] [--depth outline|comprehensive|interactive] [--lang en|ko|ja] [--render html,docx,pdf]
 allowed-tools: >
@@ -39,8 +39,8 @@ allowed-tools: >
 2. **Clean-Room vs. Deep Operating Modes**
    Confirm operating mode explicitly in Phase 0:
    - **`clean-room` (black-box surface)**: Observes only public behavior — live multi-viewport UI screenshots, visible DOM/accessibility text, measured `getComputedStyle` CSS tokens, public API/IPC responses, and observable file/storage outputs. Never reads proprietary/unlicensed source code or copies copyrighted assets.
-   - **`deep` (authorized open-source / owned targets)**: Adds pinned source extraction, official release binary/bundle REA auditing, static decompilation (**Ghidra** / **IDA**), and read-only dynamic runtime tracing (**Frida**).
-3. **4-Layer Analysis & Instrumentation Engine (OS REA · Ghidra · IDA · Frida)**
+   - **`deep` (authorized open-source / owned targets)**: Adds pinned source extraction, official release artifact analysis (RAA), static decompilation (**Ghidra** / **IDA**), and read-only dynamic runtime tracing (**Frida**).
+3. **4-Layer Analysis & Verification Engine (Source · Release Artifacts · Runtime · Parity)**
    Never record official release behavior by reading public source alone. Cross-check independent lanes via `references/adapters/re-backends.md`:
    - **Preflight `doctor`**: Run `python3 scripts/doctor.py` to detect available OS binary tools, Ghidra (`analyzeHeadless` / `pyghidra` / `pyghidra-mcp`), IDA (`HexRaysSA/ida-mcp` / `idalib` / `idat`), and Frida (`frida-trace` / `frida-itrace`).
    - **Pinned source tree** (`code-verified`): Deterministic multi-language extraction (`scripts/source_map.py`) + git tracked file census (`scripts/file_inventory.py`).
@@ -67,7 +67,7 @@ allowed-tools: >
 1. `python3 scripts/doctor.py`
 2. `python3 scripts/state_manager.py init --workdir <out_dir> --repo <url_or_path> --mode <clean-room|deep> --tier T3 --depth comprehensive --lang en`
 
-### Phase 1 — Deterministic Static Recon, File Census & Release REA Audit
+### Phase 1 — Deterministic Static Recon, File Census & Release Artifact Analysis (RAA)
 1. (`deep` mode) `python3 scripts/source_map.py <source_dir> --out <out_dir>/.spec-anything/source_map.json --facts <out_dir>/.spec-anything/facts.md`
 2. (`deep` mode) `python3 scripts/file_inventory.py <git_repo_dir> <commit_sha> > <out_dir>/03_scope/files_census.json`
 3. For `T3`: `python3 scripts/inspect_release.py --archive <release_archive> --binary <extracted_bin> --checksums <checksums_txt> --source <source_dir> --tag <tag> --commit <sha> --backend auto --out <out_dir>/04_environment/release_audit.json`
@@ -75,7 +75,7 @@ allowed-tools: >
 
 ### Phase 2 — Feature Matrix (`03`) & Reproduction Environment (`04`)
 - Enumerate atomic features into `03_scope/features.json` (`--max-macro-ratio <= 0.15`) and `03_scope_matrix.md`.
-- Record pinned commit, official release SHA-256, REA/decompiler backend provenance, synthetic seeds, test doubles, and code vs. asset licensing in `04_reproduction_env.md` and `04_environment/LICENSING.md`.
+- Record pinned commit, official release SHA-256, release-artifact/decompiler backend provenance, synthetic seeds, test doubles, and code vs. asset licensing in `04_reproduction_env.md` and `04_environment/LICENSING.md`.
 
 ### Phase 3 — Parallel Slice Investigation & Isolated Runtime Observation (`05`, `06`, `09`, `10`, `11`)
 - Dispatch domain slices via `agents/slice-investigator.md`, `references/adapters/target-adapters.md`, and `references/adapters/re-backends.md`.

@@ -26,7 +26,7 @@ except ImportError:
 
 PHASES = {
     "0": "Goal, Scope & Profile Lock",
-    "1": "Deterministic Static Recon & Release Artifact Analysis (REA)",
+    "1": "Deterministic Static Recon & Release Artifact Analysis (RAA)",
     "2": "Feature Matrix (03) & Reproduction Environment (04)",
     "3": "Parallel Slice Investigation & Isolated Runtime Observation (05, 06, 09, 10, 11)",
     "4": "Executable Parity Tests (07) & Dual Quality Gate",

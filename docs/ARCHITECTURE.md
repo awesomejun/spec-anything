@@ -1,14 +1,14 @@
-# Architecture, REA Findings & Reference
+# Architecture, Release Artifact Findings & Reference
 
 [← Back to README](../README.md) · [한국어 (Korean)](ARCHITECTURE.ko.md)
 
-This document holds the full technical architecture, official release audit (REA) discoveries, 12-artifact diagram, ecosystem comparison, and automation script reference behind `spec-anything`.
+This document holds the full technical architecture, official release artifact analysis (RAA) discoveries, 12-artifact diagram, ecosystem comparison, and automation script reference behind `spec-anything`.
 
 ---
 
-## What Static Code Reading Misses (Concrete REA Discoveries)
+## What Static Code Reading Misses (Concrete Official Release Discoveries)
 
-Reading source code alone cannot confirm what official releases actually ship, embed, or render. Across the 3 included MIT flagship apps, live runtime observation + REA auditing verified:
+Reading source code alone cannot confirm what official releases actually ship, embed, or render. Across the 3 included MIT flagship apps, live runtime observation + release artifact analysis (RAA) verified:
 
 | Gap in Static Code Reading | Verified Live in `spec-anything` Examples |
 | :--- | :--- |
@@ -30,7 +30,7 @@ Every target produces the same 12 deliverables, cross-linked by `Feature ID` (`F
 
 ```mermaid
 flowchart LR
-    P0[Phase 0 Goal and Tier Lock] --> P1[Phase 1 Static Map File Census and REA Audit]
+    P0[Phase 0 Goal and Tier Lock] --> P1[Phase 1 Static Map File Census and Release Audit]
     P1 --> P2[Phase 2 03 Feature Matrix and 04 Environment]
     P2 --> P3[Phase 3 Isolated Runtime 05 UI 06 JSONL 09 Contracts 10 State 11 Tokens]
     P3 --> P4[Phase 4 07 Parity Tests Reading 06 and Dual Quality Gate]
@@ -45,7 +45,7 @@ flowchart LR
 
 <img src="../assets/3way-examples-showcase.png" alt="Three Intuitive MIT Flagship Examples: Excalidraw, Handy, and Pomotroid" width="100%" />
 
-| # | Example Directory | Target Repo (MIT) | Stars | Official Release REA Provenance | Automated Verification |
+| # | Example Directory | Target Repo (MIT) | Stars | Official Release Provenance (RAA) | Automated Verification |
 | :---: | :--- | :--- | :---: | :--- | :--- |
 | **01** | [`examples/01-excalidraw-v0.18.1/`](../examples/01-excalidraw-v0.18.1/) | [`excalidraw/excalidraw`](https://github.com/excalidraw/excalidraw) `v0.18.1` | 136.3k | Official npm tarball `@excalidraw/excalidraw@0.18.1` (SHA-512 verified, 65 ESM exports) | `12 / 12` upstream · `12 / 12` clean-room (`0.46%` MAE) · `13 / 13` gates (48 checksums) |
 | **02** | [`examples/02-handy-v0.10.2/`](../examples/02-handy-v0.10.2/) | [`cjpais/Handy`](https://github.com/cjpais/Handy) `v0.10.2` *(Nov 2026)* | 40.3k | Notarized macOS `arm64` `.dmg` (`14.3 MB`), `133 / 133` Tauri v2 IPC audited, deterministic STT stub | `15 / 15` upstream · `15 / 15` clean-room (`1.67%` MAE) · `13 / 13` gates (45 checksums) |
@@ -55,14 +55,14 @@ flowchart LR
 
 ## Full Ecosystem Comparison
 
-`spec-anything` combines the operational rigor of [`daishir0/cc-rsg`](https://github.com/daishir0/cc-rsg) (resumable state machine, multi-language static extractor, anti-macro coverage gates) and [`WindowHyun/Reverse_Spec_and_PRD`](https://github.com/WindowHyun/Reverse_Spec_and_PRD) (parser-fact boundary, secret redaction, dual-audience HTML/PDF/DOCX/SVG rendering), and adds **official release REA auditing + live multi-state UI capture + executable clean-room parity & pixel-diff verification**:
+`spec-anything` combines the operational rigor of [`daishir0/cc-rsg`](https://github.com/daishir0/cc-rsg) (resumable state machine, multi-language static extractor, anti-macro coverage gates) and [`WindowHyun/Reverse_Spec_and_PRD`](https://github.com/WindowHyun/Reverse_Spec_and_PRD) (parser-fact boundary, secret redaction, dual-audience HTML/PDF/DOCX/SVG rendering), and adds **official release artifact analysis (RAA) + live multi-state UI capture + executable clean-room parity & pixel-diff verification**:
 
-| Capability | Greenfield SDD (`spec-kit`) | Frontend Reverse Planning (`Reverse_Spec_and_PRD`) | Static Reverse Spec (`cc-rsg`) | `spec-anything` |
+| Capability | Greenfield SDD (`spec-kit`) | Frontend Spec Extraction (`Reverse_Spec_and_PRD`) | Static Spec Extraction (`cc-rsg`) | `spec-anything` |
 | :--- | :---: | :---: | :---: | :---: |
 | Deterministic multi-language static extractor + git file census | — | — | ✓ | ✓ |
 | Resumable 7-phase state machine (`state.json`) & Question Bank | — | — | ✓ | ✓ |
 | Secret redaction & `file://` SSRF-safe HTML/PDF/DOCX review renderer | — | ✓ | — | ✓ |
-| Official release binary / `.dmg` / `.app` / npm tarball REA audit (`SHA-256`) | — | — | — | ✓ |
+| Official release binary / `.dmg` / `.app` / npm tarball audit (`RAA`, `SHA-256`) | — | — | — | ✓ |
 | Isolated live runtime observation (`06` JSONL: UI, IPC, HTTP/RPC, SQLite) | — | — | — | ✓ |
 | Multi-state UI screenshots (`05`) + live computed CSS tokens (`11`) | — | — | — | ✓ |
 | Machine-readable contracts (`09`: JSON Schema, OpenAPI, SQLite DDL) | — | — | — | ✓ |
@@ -79,7 +79,7 @@ flowchart LR
 | [`scripts/source_map.py`](../scripts/source_map.py) | Deterministic multi-language extractor (Go, TS/JS, Svelte, Vue, Python, Rust, SQL, HTML, CSS) + Loud Warnings |
 | [`scripts/file_inventory.py`](../scripts/file_inventory.py) | Git-commit tracked file census and `03` Feature ID / exclusion disposition verifier |
 | [`scripts/spec_diff.py`](../scripts/spec_diff.py) | Deterministic upstream change-impact and spec-vs-code sync analyzer mapping changed files or `git diff` ranges to impacted `F-XXX` / `EV-XXX` / `SCR-XXX` / `TC-XXX` IDs |
-| [`scripts/inspect_release.py`](../scripts/inspect_release.py) | Official release archive/binary REA auditor (SHA-256, `checksums.txt`, `lipo`, `otool`, `nm`, `readelf`, `codesign`, `go version -m`, custom `--probe`, Ghidra/IDA backend detection) |
+| [`scripts/inspect_release.py`](../scripts/inspect_release.py) | Official release artifact (RAA) auditor (SHA-256, `checksums.txt`, `lipo`, `otool`, `nm`, `readelf`, `codesign`, `go version -m`, custom `--probe`, Ghidra/IDA backend detection) |
 | [`scripts/frida_trace_bridge.py`](../scripts/frida_trace_bridge.py) | Authorized read-only Frida Gum hook generator (`sqlite`, `objc-storage`, `posix-io`, `ipc`), JSONL & `frida-itrace` (`ITR2`) parser into `06_evidence/ledger.jsonl`, offline `self-test` |
 | [`scripts/secret_guard.py`](../scripts/secret_guard.py) | 3-tier (`high`/`low`/`info`) secret confidence classifier + 4-category `[AI-Safety]` untrusted prompt-injection detector |
 | [`scripts/validate_bundle.py`](../scripts/validate_bundle.py) | 15-gate mechanical & governance validator (12 deliverables, `[REF:]`, `## Sources Read`, `--max-macro-ratio`, structure-only Mermaid, JSON Schema, FK integrity, `06->07` linkage, OpenAPI/Schema/SQLite execution, 3-tier secrets, Machine Ceiling & Anti-Slop, 3-axis bijective coverage, `SHA256SUMS.txt`, `--strict-ceiling` exit `42`) |

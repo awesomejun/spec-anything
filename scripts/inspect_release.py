@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-REA Release Artifact Inspector for spec-anything (v4.0.0).
+Release Artifact Analysis (RAA) Inspector for spec-anything.
 Inspects authorized official release binaries, archives (.zip, .tar.gz, .tgz),
 Mach-O/ELF/PE executables, Go/Rust/Tauri/Electron/npm build metadata, code signatures,
 exported symbols, and custom embedded string probes — and detects optional Ghidra/IDA
@@ -212,7 +212,7 @@ def inspect_binary(bin_path: pathlib.Path, source_dir: pathlib.Path | None, cust
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(description="REA official release artifact inspector")
+    ap = argparse.ArgumentParser(description="Official release artifact analysis (RAA) inspector")
     ap.add_argument("--archive", help="Path to official release archive (.zip/.tar.gz/.tgz)")
     ap.add_argument("--binary", required=True, help="Path to extracted official executable or main bundle")
     ap.add_argument("--checksums", help="Path to official upstream checksums.txt")
@@ -220,7 +220,7 @@ def main() -> None:
     ap.add_argument("--tag", default=None)
     ap.add_argument("--commit", default=None)
     ap.add_argument("--probe", action="append", default=[], help="Custom ASCII/UTF-8 marker string to probe inside binary (repeatable)")
-    ap.add_argument("--backend", choices=["auto", "os", "ghidra", "ida"], default="auto", help="Preferred static REA inspection backend")
+    ap.add_argument("--backend", choices=["auto", "os", "ghidra", "ida"], default="auto", help="Preferred static release artifact inspection backend")
     ap.add_argument("--out", required=True, help="Output release_audit.json path")
     args = ap.parse_args()
 

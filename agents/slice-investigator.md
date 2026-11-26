@@ -14,7 +14,7 @@ For every assigned `feature_id`:
 2. **Handler & Validation**: Trace request parsing, schema/business validation rules, error status codes, and edge guards.
 3. **State & Concurrency**: Record locks, transactions, WAL/isolation behavior, idempotency keys, and cancellation paths.
 4. **External & OS Boundary**: Document filesystem, SQLite/DB, subprocess, network, or OS IPC calls. If a path breaks due to plugins, dynamic loading, external APIs, or OS-specific branches, stop at the last verified point and state the exact reason.
-5. **Release Alignment (REA)**: Cross-check whether the official release artifact (`04_environment/release_audit.json`) ships the exact same handler/asset or diverges (build flags, stripped debug, embedded SPA assets, enterprise overlays).
+5. **Release Alignment (RAA)**: Cross-check whether the official release artifact (`04_environment/release_audit.json`) ships the exact same handler/asset or diverges (build flags, stripped debug, embedded SPA assets, enterprise overlays).
 6. **Live Verification (`T2`/`T3`)**: Emit reproducible observation entries conforming to `schemas/evidence.schema.json` and append them to the slice evidence draft.
 
 ## Severity Escalation (Question Bank Rule)

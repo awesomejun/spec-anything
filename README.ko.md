@@ -60,7 +60,7 @@
 ### Clean-Room vs. Deep 모드
 
 - **`clean-room` (블랙박스)**: 비공개 소스 내부를 읽지 않고 공개 UI, 실측 레이아웃·CSS 토큰, 외부 입출력만 기록합니다.
-- **`deep` (권한이 있는 오픈소스·자체 대상)**: 소스 정적 추출, 공식 배포본 REA 감사, 헤드리스 **Ghidra** / **IDA** 역컴파일, 읽기 전용 **Frida** 동적 추적을 통합합니다.
+- **`deep` (권한이 있는 오픈소스·자체 대상)**: 소스 정적 추출, 공식 배포본 아티팩트 분석(RAA), 헤드리스 **Ghidra** / **IDA** 역컴파일, 읽기 전용 **Frida** 동적 추적을 통합합니다.
 
 ## 빠른 시작
 
@@ -111,7 +111,7 @@ python3 scripts/secret_guard.py --self-test && python3 scripts/secret_guard.py .
 ```mermaid
 flowchart LR
     T[대상 저장소 및 공식 배포본] --> L1[레인 1 정적 소스 맵 및 Git 파일 전수 조사]
-    T --> L2[레인 2 배포본 REA 감사 OS 도구 Ghidra IDA]
+    T --> L2[레인 2 공식 배포본 분석 OS 도구 Ghidra IDA]
     T --> L3[레인 3 실구동 관측 Playwright 및 Frida]
     L1 --> EV[06 기계 판독 근거 원장 JSONL]
     L2 --> EV
@@ -125,7 +125,7 @@ flowchart LR
 | 분석 계층 | 점검 대상 | 도구 및 선택 백엔드 |
 | :--- | :--- | :--- |
 | **1. 정적 소스 및 변경 영향** | 다언어 구조 추출, 파서 팩트 경계(`facts.md`), Git 추적 파일 100% 전수 회계, 업스트림 커밋 변경 시 영향 기능·테스트 역추적 | `scripts/source_map.py`, `scripts/file_inventory.py`, `scripts/spec_diff.py` |
-| **2. 공식 배포본 REA 및 역컴파일** | 아카이브·바이너리 SHA-256 및 체크섬, Mach-O/ELF 슬라이스, 코드 서명, Export 심볼, 내장 런타임 프로브; 선택적 헤드리스 역컴파일·xrefs·호출 대상·로컬 타입 복원 | `scripts/inspect_release.py`, OS 네이티브 도구(`otool`, `lipo`, `nm`, `codesign`, `readelf`), 헤드리스 **Ghidra**(`analyzeHeadless` / `pyghidra-mcp` / `rea-ghidra`), **IDA Pro 9.4+**(`idat` / `idalib` / `HexRaysSA/ida-mcp` / `mrexodia/ida-pro-mcp`) |
+| **2. 공식 배포본 분석(RAA) 및 바이너리 점검** | 아카이브·바이너리 SHA-256 및 체크섬, Mach-O/ELF 슬라이스, 코드 서명, Export 심볼, 내장 런타임 프로브; 선택적 헤드리스 역컴파일·xrefs·호출 대상·로컬 타입 복원 | `scripts/inspect_release.py`, OS 네이티브 도구(`otool`, `lipo`, `nm`, `codesign`, `readelf`), 헤드리스 **Ghidra**(`analyzeHeadless` / `pyghidra-mcp` / `rea-ghidra`), **IDA Pro 9.4+**(`idat` / `idalib` / `HexRaysSA/ida-mcp` / `mrexodia/ida-pro-mcp`) |
 | **3. 격리 실구동 및 동적 추적** | 다상태 UI 스크린샷, `getComputedStyle` 디자인 토큰, HTTP·IPC·SQLite WAL 상태 변이, 재시작 영속성; 선택적 읽기 전용 런타임 함수·IPC 추적(`ITR2` 바이너리 및 JSONL) | 헤드리스 Playwright, SQLite3, `scripts/frida_trace_bridge.py`의 읽기 전용 **Frida** 관측 훅(`sqlite`, `objc-storage`, `posix-io`, `ipc`, `frida-itrace`) |
 | **4. 폐루프 대조 및 시각 증명** | `06_evidence/ledger.jsonl`을 직접 소비하는 수정 없는 `07` 테스트 하네스 — 원본 앱 기준 통과 후 클린룸 재구현본 대조 및 Playwright 픽셀 MAE 측정 | `07_tests/verify_parity.py`, `scripts/validate_bundle.py`, `scripts/render_review.py` |
 
@@ -152,7 +152,7 @@ AI의 과대 판정, 구버전 증거의 침묵 재사용, 병렬 경합 손상,
 
 ```mermaid
 flowchart LR
-    P0[Phase 0 Doctor 모드 및 티어 고정] --> P1[Phase 1 정적 맵 파일 전수 및 REA 감사]
+    P0[Phase 0 Doctor 모드 및 티어 고정] --> P1[Phase 1 정적 맵 파일 전수 및 배포본 분석]
     P1 --> P2[Phase 2 03 재현 범위표 및 04 환경 명세]
     P2 --> P3[Phase 3 격리 실구동 05 UI 06 JSONL 09-11]
     P3 --> P4[Phase 4 06 기반 07 대조 테스트 및 15 게이트]
@@ -165,7 +165,7 @@ flowchart LR
 - **폐루프 오라클 규칙 (`06 → 07`)**: `07` 대조 테스트는 입력·선행 상태·기대 출력을 반드시 `06_evidence/ledger.jsonl`에서 직접 읽어 원본 앱 기준 통과 후 클린룸 재구현본을 동일하게 검증합니다.
 - **영문 기계 계층 + 다국어 본문 계층**: JSON Schema 키, 식별자(`F-001`, `EV-001`, `SCR-001`), `[REF: path:start-end]` 인용, `## Sources Read` 제목은 검증기 안정성을 위해 영문으로 고정하고, 서술 본문은 한국어·영어·일본어 중 선택 출력합니다.
 
-### 4. 정적 코드 읽기만으로 놓치는 지점: 실제 REA 검증 근거
+### 4. 정적 코드 읽기만으로 놓치는 지점: 실제 배포본 검증 근거
 
 | 정적 코드 읽기만으로 놓치는 문제 | 포함된 MIT 대표 예제 3종에서 실제 검증한 근거 |
 | :--- | :--- |
@@ -182,7 +182,7 @@ flowchart LR
 | [`scripts/source_map.py`](scripts/source_map.py) | 다언어 정적 구조 추출기(Go, TS/JS, Svelte, Vue, Python, Rust, SQL, HTML, CSS), 미분석 경고 및 `facts.md` 출력 |
 | [`scripts/file_inventory.py`](scripts/file_inventory.py) | Git 커밋 추적 파일 전수 조사 및 `03` 기능 ID·제외 사유 대조 검증 |
 | [`scripts/spec_diff.py`](scripts/spec_diff.py) | 업스트림 변경 파일 또는 `git diff` 범위를 `03_scope/features.json`의 `source_refs`와 대조해 재검증이 필요한 `F-XXX`·`EV-XXX`·`SCR-XXX`·`TC-XXX` 산출 |
-| [`scripts/inspect_release.py`](scripts/inspect_release.py) | 공식 배포본 아카이브·바이너리 REA 감사(SHA-256, `checksums.txt`, `lipo`, `otool`, `nm`, `readelf`, `codesign`, `go version -m`, 사용자 정의 `--probe`, Ghidra·IDA 백엔드 감지) |
+| [`scripts/inspect_release.py`](scripts/inspect_release.py) | 공식 배포본 아카이브·바이너리 분석(RAA: SHA-256, `checksums.txt`, `lipo`, `otool`, `nm`, `readelf`, `codesign`, `go version -m`, 사용자 정의 `--probe`, Ghidra·IDA 백엔드 감지) |
 | [`scripts/frida_trace_bridge.py`](scripts/frida_trace_bridge.py) | 권한 있는 읽기 전용 Frida Gum 훅 생성기(`sqlite`, `objc-storage`, `posix-io`, `ipc`), JSONL·`frida-itrace`(`ITR2`) 파싱 후 `06_evidence/ledger.jsonl` 적재, 오프라인 `self-test` |
 | [`scripts/secret_guard.py`](scripts/secret_guard.py) | 3단계(`high`/`low`/`info`) 시크릿 신뢰도 분류기 + 4범주 `[AI-Safety]` 프롬프트 주입 탐지기(`--fail-on-hit`, `--scan-injections`, `--self-test`) |
 | [`scripts/validate_bundle.py`](scripts/validate_bundle.py) | 15개 기계·거버넌스 검증기(12종 산출물, `[REF:]`, `## Sources Read`, 매크로 비율, 구조 전용 Mermaid, JSON Schema, 외래 키, `06→07` 연결, 계약 실행, 3단계 시크릿, 기계 상한·안티-슬롭, 3축 전단사 커버리지, `SHA256SUMS.txt`, `--strict-ceiling` 종료 `42`) |
@@ -190,7 +190,7 @@ flowchart LR
 
 ### 6. 생태계 비교 및 관련 프로젝트
 
-| 기능 항목 | 정방향 SDD (`spec-kit` / `OpenSpec` / `sdd-tool`) | 프론트엔드 역기획 (`Reverse_Spec_and_PRD`) | 정적 역공학 (`cc-rsg`) | 클린룸 엔진 (`craft-anything`) | 핵심 역공학 (`Ghidra` / `IDA` / `Frida`) | `spec-anything` |
+| 기능 항목 | 정방향 SDD (`spec-kit` / `OpenSpec` / `sdd-tool`) | 프론트엔드 명세화 (`Reverse_Spec_and_PRD`) | 정적 명세 분석 (`cc-rsg`) | 클린룸 엔진 (`craft-anything`) | 바이너리 분석 (`Ghidra` / `IDA` / `Frida`) | `spec-anything` |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
 | 12종 고정 클린룸 PRD·SDD·청사진 체계 (`01`–`12`) | — | — | — | — | — | ✓ |
 | RFC 2119 + GIVEN-WHEN-THEN 계약·변경 영향 분석·읽기 전용 리뷰 에이전트 | ✓ | — | — | — | — | ✓ |
@@ -202,8 +202,8 @@ flowchart LR
 | 15개 검증 게이트 (기계 상한·안티-슬롭·주입 탐지·`SHA256SUMS`) | — | — | ✓ | — | — | ✓ |
 
 **참고·영감 오픈소스 프로젝트**:
-- **명세 주도 개발 및 역기획**: [`github/spec-kit`](https://github.com/github/spec-kit) · [`Fission-AI/OpenSpec`](https://github.com/Fission-AI/OpenSpec) · [`JakeB-5/sdd-tool`](https://github.com/JakeB-5/sdd-tool) · [`daishir0/cc-rsg`](https://github.com/daishir0/cc-rsg) · [`WindowHyun/Reverse_Spec_and_PRD`](https://github.com/WindowHyun/Reverse_Spec_and_PRD)
-- **클린룸 및 역공학·계측 엔진**: [`storytold/craft-anything`](https://github.com/storytold/craft-anything) · [`NationalSecurityAgency/ghidra`](https://github.com/NationalSecurityAgency/ghidra) ([`pyghidra-mcp`](https://github.com/clearbluejar/pyghidra-mcp)) · [`HexRaysSA/ida-mcp`](https://github.com/HexRaysSA/ida-mcp) ([`mrexodia/ida-pro-mcp`](https://github.com/mrexodia/ida-pro-mcp)) · [`frida/frida`](https://github.com/frida/frida) ([`frida-tools`](https://github.com/frida/frida-tools))
+- **명세 주도 개발 및 기존 코드 분석**: [`github/spec-kit`](https://github.com/github/spec-kit) · [`Fission-AI/OpenSpec`](https://github.com/Fission-AI/OpenSpec) · [`JakeB-5/sdd-tool`](https://github.com/JakeB-5/sdd-tool) · [`daishir0/cc-rsg`](https://github.com/daishir0/cc-rsg) · [`WindowHyun/Reverse_Spec_and_PRD`](https://github.com/WindowHyun/Reverse_Spec_and_PRD)
+- **클린룸 및 바이너리 분석·계측 엔진**: [`storytold/craft-anything`](https://github.com/storytold/craft-anything) · [`NationalSecurityAgency/ghidra`](https://github.com/NationalSecurityAgency/ghidra) ([`pyghidra-mcp`](https://github.com/clearbluejar/pyghidra-mcp)) · [`HexRaysSA/ida-mcp`](https://github.com/HexRaysSA/ida-mcp) ([`mrexodia/ida-pro-mcp`](https://github.com/mrexodia/ida-pro-mcp)) · [`frida/frida`](https://github.com/frida/frida) ([`frida-tools`](https://github.com/frida/frida-tools))
 
 ### 7. 클린룸 정책·참고 문서 및 라이선스
 

@@ -5,7 +5,7 @@ Absorbs the hybrid HTML/DOCX/SVG rendering and file:// SSRF-blocking pattern
 from Reverse_Spec_and_PRD while keeping 01-12 Markdown/JSON/JSONL as the canonical source.
 Outputs:
   - pm-design-review.html : PM & Design executive bundle (01 PRD + 03 scope + 05 screenshots + 11 tokens + SVG flow)
-  - dev-qa-parity.html    : Dev & QA engineering bundle (02 SDD + 04 REA + 06 ledger + 07 parity + 09 contracts + 10/08/12)
+  - dev-qa-parity.html    : Dev & QA engineering bundle (02 SDD + 04 RAA + 06 ledger + 07 parity + 09 contracts + 10/08/12)
   - architecture-flow.svg : Clean standalone SVG data/execution flow diagram
   - spec-review.docx      : Optional Word document (when --formats includes docx)
   - pm-design-review.pdf  : Optional PDF via Playwright with file:// network interception blocked (when --formats includes pdf)
@@ -51,7 +51,7 @@ def generate_flow_svg(bundle_dir: pathlib.Path, out_svg: pathlib.Path) -> str:
   <text x="24" y="34" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="700" fill="#0f172a">spec-anything Closed-Loop Parity Pipeline — {target_name}</text>
 
   <rect x="24" y="62" width="165" height="96" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
-  <text x="106" y="88" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" fill="#0f172a">01 Source + REA</text>
+  <text x="106" y="88" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" fill="#0f172a">01 Source + RAA</text>
   <text x="106" y="110" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#475569">Static Source Map</text>
   <text x="106" y="128" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#475569">Release SHA-256 (04)</text>
   <text x="106" y="146" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#0f766e">Verified Match</text>
@@ -279,10 +279,10 @@ def main():
         blocked_file_urls += render_view(
             bdir, dev_html,
             "Dev & QA Parity Review — spec-anything",
-            "02 SDD · 04 REA Audit · 06 Ledger · 07 Parity · 09 Contracts · 10/08/12",
+            "02 SDD · 04 Release Audit · 06 Ledger · 07 Parity · 09 Contracts · 10/08/12",
             [
                 ("doc-02", "02 SDD", "02_SDD.md"),
-                ("doc-04", "04 Reproduction & REA", "04_reproduction_env.md"),
+                ("doc-04", "04 Reproduction & RAA", "04_reproduction_env.md"),
                 ("doc-06", "06 Behavior Evidence", "06_behavior_evidence.md"),
                 ("doc-07", "07 Parity Tests", "07_parity_tests.md"),
                 ("doc-09", "09 Machine Contracts", "09_contracts.md"),
