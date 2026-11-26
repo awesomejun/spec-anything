@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec-anything.dev/schemas/state.schema.json",
+  "title": "spec-anything Resumable Phase State",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "target_repo",
+    "tier",
+    "depth",
+    "output_language",
+    "current_phase",
+    "phases",
+    "updated_at"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "const": "1.0.0" },
+    "target_repo": { "type": "string", "minLength": 1 },
+    "commit_sha": { "type": ["string", "null"] },
+    "release_tag": { "type": ["string", "null"] },
+    "release_sha256": { "type": ["string", "null"] },
+    "tier": { "type": "string", "enum": ["T1", "T2", "T3"] },
+    "depth": { "type": "string", "enum": ["outline", "comprehensive", "interactive"] },
+    "output_language": { "type": "string", "enum": ["en", "ko", "ja"] },
+    "current_phase": { "type": "integer", "minimum": 0, "maximum": 6 },
+    "phases": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["name", "status"],
+        "properties": {
+          "name": { "type": "string" },
+          "status": { "type": "string", "enum": ["pending", "in_progress", "completed", "rewound", "failed"] },
+          "artifacts": { "type": "array", "items": { "type": "string" } },
+          "updated_at": { "type": ["string", "null"] },
+          "notes": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "updated_at": { "type": "string" }
+  }
+}

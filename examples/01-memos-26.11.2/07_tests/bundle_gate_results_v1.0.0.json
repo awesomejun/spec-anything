@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0.0",
+  "bundle_dir": "examples/01-memos-26.11.2",
+  "total_gates": 10,
+  "passed": 10,
+  "failed": 0,
+  "overall_status": "PASS",
+  "gates": [
+    {
+      "check_id": "G-01",
+      "name": "fixed_12_artifacts_present",
+      "status": "PASS",
+      "detail": {
+        "found": 12,
+        "missing": []
+      }
+    },
+    {
+      "check_id": "G-02",
+      "name": "state_machine_and_source_map",
+      "status": "PASS",
+      "detail": {
+        "files_ok": true,
+        "source_map_units": 1612
+      }
+    },
+    {
+      "check_id": "G-03",
+      "name": "feature_id_foreign_key_integrity",
+      "status": "PASS",
+      "detail": {
+        "master_feature_ids": [
+          "F-001",
+          "F-002",
+          "F-003",
+          "F-004",
+          "F-005",
+          "F-006",
+          "F-007",
+          "F-008",
+          "F-009",
+          "F-010",
+          "F-011",
+          "F-012"
+        ],
+        "orphans": {}
+      }
+    },
+    {
+      "check_id": "G-04",
+      "name": "source_ref_citation_density",
+      "status": "PASS",
+      "detail": {
+        "total_refs": 70,
+        "by_doc": {
+          "01_PRD_v1.0.0.md": 16,
+          "02_SDD_v1.0.0.md": 14,
+          "03_재현_범위표_v1.0.0.md": 22,
+          "08_구현_청사진_v1.0.0.md": 12,
+          "10_실행_상태_도표_v1.0.0.md": 6
+        }
+      }
+    },
+    {
+      "check_id": "G-05",
+      "name": "ui_screenshots_integrity",
+      "status": "PASS",
+      "detail": {
+        "screenshots_verified": 8,
+        "mismatches": []
+      }
+    },
+    {
+      "check_id": "G-06",
+      "name": "evidence_jsonl_and_rea_summary",
+      "status": "PASS",
+      "detail": {
+        "records": 13,
+        "rea_checksums_match": true,
+        "errors": []
+      }
+    },
+    {
+      "check_id": "G-07",
+      "name": "parity_harness_consumes_06_and_passes",
+      "status": "PASS",
+      "detail": {
+        "reads_06_directly": true,
+        "verification_report": {
+          "overall_status": "PASS",
+          "passed": 11,
+          "failed": 0
+        }
+      }
+    },
+    {
+      "check_id": "G-08",
+      "name": "contracts_openapi_json_and_sqlite_ddl",
+      "status": "PASS",
+      "detail": {
+        "sqlite_tables_created_in_memory": 13,
+        "error": ""
+      }
+    },
+    {
+      "check_id": "G-09",
+      "name": "secret_guard_zero_leaks",
+      "status": "PASS",
+      "detail": {
+        "scanned_files": 35,
+        "findings_count": 0
+      }
+    },
+    {
+      "check_id": "G-10",
+      "name": "sha256sums_manifest_integrity",
+      "status": "PASS",
+      "detail": {
+        "checked_files": 44,
+        "mismatches": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "gameState \u00b7 4x4",
+  "type": "object",
+  "required": [
+    "grid",
+    "score",
+    "won",
+    "over",
+    "keepPlaying"
+  ],
+  "properties": {
+    "grid": {
+      "type": "object",
+      "required": [
+        "size",
+        "cells"
+      ],
+      "properties": {
+        "size": {
+          "const": 4
+        },
+        "cells": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "required": [
+                    "position",
+                    "value"
+                  ],
+                  "properties": {
+                    "position": {
+                      "type": "object",
+                      "required": [
+                        "x",
+                        "y"
+                      ],
+                      "properties": {
+                        "x": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 3
+                        },
+                        "y": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 3
+                        }
+                      }
+                    },
+                    "value": {
+                      "type": "integer",
+                      "minimum": 2
+                    }
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "score": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "over": {
+      "type": "boolean"
+    },
+    "won": {
+      "type": "boolean"
+    },
+    "keepPlaying": {
+      "type": "boolean"
+    }
+  }
+}

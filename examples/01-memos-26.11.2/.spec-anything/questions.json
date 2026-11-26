@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0.0",
+  "framework_origin": "cc-rsg 7-category Question Bank adapted for spec-anything",
+  "categories": [
+    "business_rule",
+    "architecture_decision",
+    "data_model_intent",
+    "external_integration",
+    "naming_history",
+    "operational_requirement",
+    "security_compliance"
+  ],
+  "questions": [
+    {
+      "id": "Q-001",
+      "category": "business_rule",
+      "severity": "critical",
+      "feature_id": "F-006",
+      "status": "resolved",
+      "question": "Does CreateMemo honor `pinned: true` on initial creation or ignore it until UpdateMemo?",
+      "resolution": "Proto documentation (proto/api/memo_service.proto) and live runtime observation EV-006 both confirm `pinned` is ignored on creation and must be updated via PATCH /api/memos/{uid}?updateMask=pinned."
+    },
+    {
+      "id": "Q-002",
+      "category": "security_compliance",
+      "severity": "critical",
+      "feature_id": "F-003",
+      "status": "resolved",
+      "question": "Which endpoints remain anonymously accessible when an instance is initialized vs PRIVATE access mode?",
+      "resolution": "Single source of truth verified in server/api/acl_config.go (`PublicMethods` vs `AuthBootstrapMethods`); runtime confirmed via EV-003 and EV-009."
+    },
+    {
+      "id": "Q-003",
+      "category": "architecture_decision",
+      "severity": "important",
+      "feature_id": "F-001",
+      "status": "resolved",
+      "question": "Why does the official darwin_arm64 release binary report vcs.modified=true (+dirty) in Go buildinfo despite matching tag 26.11.2?",
+      "resolution": "Confirmed via .github/workflows/release.yml:84,121,139 and server/frontend/dist/index.html (244B placeholder in source): CI compiles web/ into server/frontend/dist before `go build`, dirtying the git worktree prior to //go:embed."
+    },
+    {
+      "id": "Q-004",
+      "category": "data_model_intent",
+      "severity": "important",
+      "feature_id": "F-008",
+      "status": "resolved",
+      "question": "How are SQL LIKE wildcard characters (`%`, `_`) handled inside CEL `content.contains(...)` filters on SQLite?",
+      "resolution": "Verified in filter/engine_test.go:176-181 and runtime observation EV-008: `%` and `_` are escaped with `ESCAPE '\\'` so `50%_off` matches literally and never matches `50X_off`."
+    },
+    {
+      "id": "Q-005",
+      "category": "external_integration",
+      "severity": "important",
+      "feature_id": "F-012",
+      "status": "abandoned",
+      "question": "What are exact runtime wire payloads for third-party OAuth2 SSO providers, S3 presigned uploads, SMTP notifications, and external AI providers?",
+      "resolution": "Marked abandoned for offline isolated verification; proto/Go contracts are code-verified only. Re-verify using local OAuth2 mock IdP, MinIO, and Mailpit test doubles."
+    },
+    {
+      "id": "Q-006",
+      "category": "operational_requirement",
+      "severity": "nice-to-have",
+      "feature_id": "F-010",
+      "status": "abandoned",
+      "question": "Are MySQL and PostgreSQL schema migration edge cases identical to SQLite under concurrent load?",
+      "resolution": "Marked abandoned for single-host SQLite baseline; MySQL/PostgreSQL parity requires dedicated container matrix verification."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "target_repo": "usememos/memos",
+  "release_tag": "26.11.2",
+  "pinned_commit": "00fcd170281a75fc0e95ec4f2f54f43d32fe81bd",
+  "current_phase": "phase_6_completed",
+  "resumable": true,
+  "phases": {
+    "phase_0_goal_and_scope": "completed",
+    "phase_1_source_and_distribution_acquisition": "completed",
+    "phase_2_deterministic_source_map_and_rea": "completed",
+    "phase_3_isolated_runtime_and_ui_capture": "completed",
+    "phase_4_spec_01_to_12_and_contracts": "completed",
+    "phase_5_parity_harness_and_dual_gate": "completed",
+    "phase_6_review_render_and_checksums": "completed"
+  },
+  "checkpoints": {
+    "source_map": ".spec-anything/source-map.json",
+    "rea_summary": "06_evidence/rea_distribution_summary_v1.0.0.json",
+    "evidence_jsonl": "06_evidence/evidence_v1.0.0.jsonl",
+    "ui_measurements": "06_evidence/ui_measurements_v1.0.0.json",
+    "verification_results": "07_tests/verification_results_v1.0.0.json",
+    "bundle_gate_results": "07_tests/bundle_gate_results_v1.0.0.json",
+    "review_html": "review_v1.0.0.html",
+    "checksums": "SHA256SUMS_v1.0.0.txt"
+  }
+}

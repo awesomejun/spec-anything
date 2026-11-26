@@ -1,0 +1,2 @@
+# 대조 실행
+04의 명령으로 11건을 재생한다. 06-engine.jsonl의 행별 합성 판(rows는 y행 우선), actions, trace를 읽는다. 실제 원본의 Grid, Tile, GameManager, LocalStorageManager를 호출한다. 입력 이벤트와 렌더러 및 Web Storage의 바깥쪽은 메모리 대역이다. actions 각 단계의 이벤트 순서·저장 객체 전체·최고 점수 문자열·마지막 렌더 인수를 오차 없이 비교한다. keepPlaying 직후에는 마지막 렌더 인수와 별도의 clearOverlay 이벤트를 함께 해석한다. 07-result.txt는 동봉 소스로 재실행한 결과다. 같은 JS 인터페이스를 구현한 후보를 upstream 대신 넘길 수 있다. 재구현본 비교는 미실행이다. UI 근거와 엔진 대조의 실행 환경은 04·05에 기록했다.

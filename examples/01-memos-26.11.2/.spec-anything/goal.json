@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "output_language": "ko",
+  "machine_layer_language": "en",
+  "target": {
+    "repository": "usememos/memos",
+    "url": "https://github.com/usememos/memos",
+    "license": "MIT",
+    "release_tag": "26.11.2",
+    "pinned_commit": "00fcd170281a75fc0e95ec4f2f54f43d32fe81bd",
+    "official_distribution": "memos_26.11.2_darwin_arm64.tar.gz"
+  },
+  "observation_tier": "tier_3_full_parity",
+  "depth_mode": "comprehensive",
+  "primary_reader": "reimplementation_engineer_and_qa",
+  "reader_action": "clean_room_reimplementation_and_parity_verification",
+  "perspectives": [
+    "functional_correctness",
+    "api_and_data_contracts",
+    "security_and_acl_boundaries",
+    "ui_state_parity",
+    "persistence_and_restart_recovery"
+  ],
+  "non_goals": [
+    "product_reimplementation_source_code",
+    "vulnerability_exploitation",
+    "access_control_or_license_bypass",
+    "external_third_party_sso_or_s3_live_integration"
+  ]
+}

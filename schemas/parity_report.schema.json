@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec-anything.dev/schemas/parity_report.schema.json",
+  "title": "07 Parity Test Execution Report Schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "mode",
+    "target",
+    "evidence_file",
+    "executed_at",
+    "summary",
+    "cases"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "const": "1.0.0" },
+    "mode": { "type": "string", "enum": ["upstream_baseline", "reimplementation_diff"] },
+    "target": {
+      "type": "object",
+      "required": ["name", "url_or_binary"],
+      "properties": {
+        "name": { "type": "string" },
+        "url_or_binary": { "type": "string" },
+        "artifact_sha256": { "type": ["string", "null"] }
+      }
+    },
+    "evidence_file": { "type": "string" },
+    "executed_at": { "type": "string" },
+    "summary": {
+      "type": "object",
+      "required": ["total", "passed", "failed", "skipped", "unverified"],
+      "properties": {
+        "total": { "type": "integer", "minimum": 0 },
+        "passed": { "type": "integer", "minimum": 0 },
+        "failed": { "type": "integer", "minimum": 0 },
+        "skipped": { "type": "integer", "minimum": 0 },
+        "unverified": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["test_id", "feature_id", "evidence_id", "category", "verdict", "duration_ms"],
+        "properties": {
+          "test_id": { "type": "string", "pattern": "^TC-[0-9]{3}$" },
+          "feature_id": { "type": "string", "pattern": "^F-[0-9]{3}$" },
+          "evidence_id": { "type": "string", "pattern": "^EV-[0-9]{3}$" },
+          "category": { "type": "string" },
+          "verdict": { "type": "string", "enum": ["PASS", "FAIL", "SKIP", "UNVERIFIED"] },
+          "duration_ms": { "type": "number", "minimum": 0 },
+          "checked_fields": { "type": "array", "items": { "type": "string" } },
+          "diff_summary": { "type": ["string", "null"] }
+        }
+      }
+    }
+  }
+}

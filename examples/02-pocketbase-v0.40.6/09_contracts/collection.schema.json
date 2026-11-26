@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PocketBase Collection Creation Payload",
+  "type": "object",
+  "required": ["name", "type", "fields"],
+  "properties": {
+    "name": { "type": "string", "pattern": "^[A-Za-z0-9_]+$" },
+    "type": { "type": "string", "enum": ["base", "auth", "view"] },
+    "listRule": { "type": ["string", "null"] },
+    "viewRule": { "type": ["string", "null"] },
+    "createRule": { "type": ["string", "null"] },
+    "updateRule": { "type": ["string", "null"] },
+    "deleteRule": { "type": ["string", "null"] },
+    "fields": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "type"],
+        "properties": {
+          "name": { "type": "string" },
+          "type": { "type": "string" },
+          "required": { "type": "boolean" },
+          "min": { "type": ["number", "null"] },
+          "max": { "type": ["number", "null"] }
+        }
+      }
+    },
+    "indexes": { "type": "array", "items": { "type": "string" } }
+  }
+}

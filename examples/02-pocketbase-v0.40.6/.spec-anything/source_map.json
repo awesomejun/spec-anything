@@ -1,0 +1,3840 @@
+{
+  "schema_version": "1.0.0",
+  "root": "<isolated-work-dir>/pocketbase-v0.40.6-src",
+  "coverage_stats": {
+    "total_files": 833,
+    "supported_code_files": 711,
+    "test_files": 197,
+    "languages": {
+      "css": 42,
+      "go": 461,
+      "html": 1,
+      "javascript": 206,
+      "typescript": 1
+    },
+    "modules_count": 12,
+    "entities_count": 329,
+    "actions_count": 65,
+    "data_schemas_count": 3,
+    "frontend_routes_count": 1,
+    "css_tokens_count": 265,
+    "dependencies_count": 45,
+    "recommended_min_inventory": 35
+  },
+  "loud_warnings": [
+    {
+      "code": "SECRET_FILES_EXCLUDED",
+      "severity": "info",
+      "message": "Excluded potential secret files from static extraction: ['ui/.env']"
+    }
+  ],
+  "modules": [
+    {
+      "module": ".",
+      "files": 3,
+      "lines": 613,
+      "languages": [
+        "go"
+      ]
+    },
+    {
+      "module": "apis",
+      "files": 78,
+      "lines": 29885,
+      "languages": [
+        "go"
+      ]
+    },
+    {
+      "module": "cmd",
+      "files": 3,
+      "lines": 791,
+      "languages": [
+        "go"
+      ]
+    },
+    {
+      "module": "core",
+      "files": 139,
+      "lines": 48422,
+      "languages": [
+        "go"
+      ]
+    },
+    {
+      "module": "examples",
+      "files": 1,
+      "lines": 136,
+      "languages": [
+        "go"
+      ]
+    },
+    {
+      "module": "forms",
+      "files": 8,
+      "lines": 1950,
+      "languages": [
+        "go"
+      ]
+    },
+    {
+      "module": "mails",
+      "files": 5,
+      "lines": 599,
+      "languages": [
+        "go"
+      ]
+    },
+    {
+      "module": "migrations",
+      "files": 8,
+      "lines": 1695,
+      "languages": [
+        "go"
+      ]
+    },
+    {
+      "module": "plugins",
+      "files": 24,
+      "lines": 34453,
+      "languages": [
+        "go",
+        "typescript"
+      ]
+    },
+    {
+      "module": "tests",
+      "files": 6,
+      "lines": 1559,
+      "languages": [
+        "go"
+      ]
+    },
+    {
+      "module": "tools",
+      "files": 185,
+      "lines": 34292,
+      "languages": [
+        "go"
+      ]
+    },
+    {
+      "module": "ui",
+      "files": 251,
+      "lines": 51755,
+      "languages": [
+        "css",
+        "go",
+        "html",
+        "javascript"
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "role": "go_struct",
+      "name": "ApiError",
+      "ref": "tools/router/error.go:36"
+    },
+    {
+      "role": "go_struct",
+      "name": "Apple",
+      "ref": "tools/auth/apple.go:28"
+    },
+    {
+      "role": "go_struct",
+      "name": "AppleClientSecretCreate",
+      "ref": "forms/apple_client_secret_create.go:18"
+    },
+    {
+      "role": "go_struct",
+      "name": "Attributes",
+      "ref": "tools/filesystem/blob/bucket.go:296"
+    },
+    {
+      "role": "go_struct",
+      "name": "AuthAlertConfig",
+      "ref": "core/collection_model_auth_options.go:276"
+    },
+    {
+      "role": "go_struct",
+      "name": "AuthOrigin",
+      "ref": "core/auth_origin_model.go:23"
+    },
+    {
+      "role": "go_struct",
+      "name": "AuthUser",
+      "ref": "tools/auth/auth.go:142"
+    },
+    {
+      "role": "go_struct",
+      "name": "AutodateField",
+      "ref": "core/field_autodate.go:34"
+    },
+    {
+      "role": "go_struct",
+      "name": "BackupEvent",
+      "ref": "core/events.go:98"
+    },
+    {
+      "role": "go_struct",
+      "name": "BackupsConfig",
+      "ref": "core/settings_model.go:476"
+    },
+    {
+      "role": "go_struct",
+      "name": "BaseApp",
+      "ref": "core/base.go:79"
+    },
+    {
+      "role": "go_struct",
+      "name": "BaseAppConfig",
+      "ref": "core/base.go:63"
+    },
+    {
+      "role": "go_struct",
+      "name": "BaseModel",
+      "ref": "core/db_model.go:16"
+    },
+    {
+      "role": "go_struct",
+      "name": "BaseProvider",
+      "ref": "tools/auth/base_provider.go:14"
+    },
+    {
+      "role": "go_struct",
+      "name": "BaseRecordProxy",
+      "ref": "core/record_proxy.go:20"
+    },
+    {
+      "role": "go_struct",
+      "name": "BatchConfig",
+      "ref": "core/settings_model.go:450"
+    },
+    {
+      "role": "go_struct",
+      "name": "BatchHandler",
+      "ref": "tools/logger/batch_handler.go:88"
+    },
+    {
+      "role": "go_struct",
+      "name": "BatchOptions",
+      "ref": "tools/logger/batch_handler.go:24"
+    },
+    {
+      "role": "go_struct",
+      "name": "BatchRequestEvent",
+      "ref": "core/event_request_batch.go:10"
+    },
+    {
+      "role": "go_struct",
+      "name": "BatchRequestResult",
+      "ref": "apis/batch.go:74"
+    },
+    {
+      "role": "go_struct",
+      "name": "BatchResponseError",
+      "ref": "apis/batch.go:525"
+    },
+    {
+      "role": "go_struct",
+      "name": "Bitbucket",
+      "ref": "tools/auth/bitbucket.go:23"
+    },
+    {
+      "role": "go_struct",
+      "name": "BoolField",
+      "ref": "core/field_bool.go:24"
+    },
+    {
+      "role": "go_struct",
+      "name": "BootstrapEvent",
+      "ref": "core/events.go:87"
+    },
+    {
+      "role": "go_struct",
+      "name": "Box",
+      "ref": "tools/auth/box.go:22"
+    },
+    {
+      "role": "go_struct",
+      "name": "Broker",
+      "ref": "tools/subscriptions/broker.go:11"
+    },
+    {
+      "role": "go_struct",
+      "name": "Bucket",
+      "ref": "tools/filesystem/blob/bucket.go:40"
+    },
+    {
+      "role": "go_struct",
+      "name": "BytesReader",
+      "ref": "tools/filesystem/file.go:159"
+    },
+    {
+      "role": "go_struct",
+      "name": "CORSConfig",
+      "ref": "apis/middlewares_cors.go:32"
+    },
+    {
+      "role": "go_struct",
+      "name": "Collection",
+      "ref": "core/collection_model.go:382"
+    },
+    {
+      "role": "go_struct",
+      "name": "CollectionErrorEvent",
+      "ref": "core/events.go:345"
+    },
+    {
+      "role": "go_struct",
+      "name": "CollectionEvent",
+      "ref": "core/events.go:331"
+    },
+    {
+      "role": "go_struct",
+      "name": "CollectionRequestEvent",
+      "ref": "core/events.go:454"
+    },
+    {
+      "role": "go_struct",
+      "name": "CollectionsImportRequestEvent",
+      "ref": "core/events.go:446"
+    },
+    {
+      "role": "go_struct",
+      "name": "CollectionsListRequestEvent",
+      "ref": "core/events.go:438"
+    },
+    {
+      "role": "go_struct",
+      "name": "Config",
+      "ref": "plugins/ghupdate/ghupdate.go:41"
+    },
+    {
+      "role": "go_struct",
+      "name": "Config",
+      "ref": "plugins/jsvm/jsvm.go:61"
+    },
+    {
+      "role": "go_struct",
+      "name": "Config",
+      "ref": "plugins/migratecmd/migratecmd.go:33"
+    },
+    {
+      "role": "go_struct",
+      "name": "Config",
+      "ref": "plugins/update/update.go:53"
+    },
+    {
+      "role": "go_struct",
+      "name": "Config",
+      "ref": "pocketbase.go:47"
+    },
+    {
+      "role": "go_struct",
+      "name": "CopyObjectResponse",
+      "ref": "tools/filesystem/internal/s3blob/s3/copy_object.go:13"
+    },
+    {
+      "role": "go_struct",
+      "name": "Cron",
+      "ref": "tools/cron/cron.go:22"
+    },
+    {
+      "role": "go_struct",
+      "name": "DateField",
+      "ref": "core/field_date.go:24"
+    },
+    {
+      "role": "go_struct",
+      "name": "DateTime",
+      "ref": "tools/types/datetime.go:29"
+    },
+    {
+      "role": "go_struct",
+      "name": "DefaultClient",
+      "ref": "tools/subscriptions/client.go:82"
+    },
+    {
+      "role": "go_struct",
+      "name": "DeleteEvent",
+      "ref": "tools/filesystem/filesystem.go:40"
+    },
+    {
+      "role": "go_struct",
+      "name": "Discord",
+      "ref": "tools/auth/discord.go:22"
+    },
+    {
+      "role": "go_struct",
+      "name": "DryRunViewResult",
+      "ref": "core/view.go:126"
+    },
+    {
+      "role": "go_struct",
+      "name": "EditorField",
+      "ref": "core/field_editor.go:29"
+    },
+    {
+      "role": "go_struct",
+      "name": "EmailChangeConfirmForm",
+      "ref": "apis/record_auth_email_change_confirm.go:63"
+    },
+    {
+      "role": "go_struct",
+      "name": "EmailField",
+      "ref": "core/field_email.go:27"
+    },
+    {
+      "role": "go_struct",
+      "name": "EmailTemplate",
+      "ref": "core/collection_model_auth_options.go:242"
+    },
+    {
+      "role": "go_struct",
+      "name": "Event",
+      "ref": "tools/hook/event.go:25"
+    },
+    {
+      "role": "go_struct",
+      "name": "Event",
+      "ref": "tools/router/event.go:32"
+    },
+    {
+      "role": "go_struct",
+      "name": "ExternalAuth",
+      "ref": "core/external_auth_model.go:22"
+    },
+    {
+      "role": "go_struct",
+      "name": "Facebook",
+      "ref": "tools/auth/facebook.go:22"
+    },
+    {
+      "role": "go_struct",
+      "name": "FieldMapper",
+      "ref": "plugins/jsvm/mapper.go:19"
+    },
+    {
+      "role": "go_struct",
+      "name": "File",
+      "ref": "tools/filesystem/file.go:29"
+    },
+    {
+      "role": "go_struct",
+      "name": "FileDownloadRequestEvent",
+      "ref": "core/events.go:416"
+    },
+    {
+      "role": "go_struct",
+      "name": "FileField",
+      "ref": "core/field_file.go:76"
+    },
+    {
+      "role": "go_struct",
+      "name": "FileTokenRequestEvent",
+      "ref": "core/events.go:408"
+    },
+    {
+      "role": "go_struct",
+      "name": "FilesystemDeleteEvent",
+      "ref": "core/events.go:203"
+    },
+    {
+      "role": "go_struct",
+      "name": "FilesystemNewWriterEvent",
+      "ref": "core/events.go:196"
+    },
+    {
+      "role": "go_struct",
+      "name": "GeoPoint",
+      "ref": "tools/types/geo_point.go:14"
+    },
+    {
+      "role": "go_struct",
+      "name": "GeoPointField",
+      "ref": "core/field_geo_point.go:34"
+    },
+    {
+      "role": "go_struct",
+      "name": "GetObjectResponse",
+      "ref": "tools/filesystem/internal/s3blob/s3/get_object.go:10"
+    },
+    {
+      "role": "go_struct",
+      "name": "Gitea",
+      "ref": "tools/auth/gitea.go:25"
+    },
+    {
+      "role": "go_struct",
+      "name": "Gitee",
+      "ref": "tools/auth/gitee.go:24"
+    },
+    {
+      "role": "go_struct",
+      "name": "Github",
+      "ref": "tools/auth/github.go:24"
+    },
+    {
+      "role": "go_struct",
+      "name": "Gitlab",
+      "ref": "tools/auth/gitlab.go:23"
+    },
+    {
+      "role": "go_struct",
+      "name": "Google",
+      "ref": "tools/auth/google.go:21"
+    },
+    {
+      "role": "go_struct",
+      "name": "GzipConfig",
+      "ref": "apis/middlewares_gzip.go:34"
+    },
+    {
+      "role": "go_struct",
+      "name": "HeadObjectResponse",
+      "ref": "tools/filesystem/internal/s3blob/s3/head_object.go:11"
+    },
+    {
+      "role": "go_struct",
+      "name": "Index",
+      "ref": "tools/dbutils/index.go:23"
+    },
+    {
+      "role": "go_struct",
+      "name": "IndexColumn",
+      "ref": "tools/dbutils/index.go:16"
+    },
+    {
+      "role": "go_struct",
+      "name": "Instagram",
+      "ref": "tools/auth/instagram.go:21"
+    },
+    {
+      "role": "go_struct",
+      "name": "InternalRequest",
+      "ref": "core/event_request_batch.go:17"
+    },
+    {
+      "role": "go_struct",
+      "name": "JSONField",
+      "ref": "core/field_json.go:35"
+    },
+    {
+      "role": "go_struct",
+      "name": "JWK",
+      "ref": "tools/auth/internal/jwk/jwk.go:21"
+    },
+    {
+      "role": "go_struct",
+      "name": "Job",
+      "ref": "tools/cron/job.go:6"
+    },
+    {
+      "role": "go_struct",
+      "name": "Join",
+      "ref": "tools/search/multi_match_subquery.go:13"
+    },
+    {
+      "role": "go_struct",
+      "name": "Kakao",
+      "ref": "tools/auth/kakao.go:23"
+    },
+    {
+      "role": "go_struct",
+      "name": "Lark",
+      "ref": "tools/auth/lark.go:21"
+    },
+    {
+      "role": "go_struct",
+      "name": "Linear",
+      "ref": "tools/auth/linear.go:24"
+    },
+    {
+      "role": "go_struct",
+      "name": "ListIterator",
+      "ref": "tools/filesystem/blob/bucket.go:105"
+    },
+    {
+      "role": "go_struct",
+      "name": "ListObject",
+      "ref": "tools/filesystem/blob/bucket.go:159"
+    },
+    {
+      "role": "go_struct",
+      "name": "ListObjectCommonPrefix",
+      "ref": "tools/filesystem/internal/s3blob/s3/list_objects.go:143"
+    },
+    {
+      "role": "go_struct",
+      "name": "ListObjectContent",
+      "ref": "tools/filesystem/internal/s3blob/s3/list_objects.go:147"
+    },
+    {
+      "role": "go_struct",
+      "name": "ListObjectsResponse",
+      "ref": "tools/filesystem/internal/s3blob/s3/list_objects.go:124"
+    },
+    {
+      "role": "go_struct",
+      "name": "ListOptions",
+      "ref": "tools/filesystem/blob/bucket.go:56"
+    },
+    {
+      "role": "go_struct",
+      "name": "ListPage",
+      "ref": "tools/filesystem/blob/bucket.go:87"
+    },
+    {
+      "role": "go_struct",
+      "name": "ListParams",
+      "ref": "tools/filesystem/internal/s3blob/s3/list_objects.go:13"
+    },
+    {
+      "role": "go_struct",
+      "name": "Livechat",
+      "ref": "tools/auth/livechat.go:21"
+    },
+    {
+      "role": "go_struct",
+      "name": "Log",
+      "ref": "core/log_model.go:21"
+    },
+    {
+      "role": "go_struct",
+      "name": "Log",
+      "ref": "tools/logger/log.go:12"
+    },
+    {
+      "role": "go_struct",
+      "name": "LogsConfig",
+      "ref": "core/settings_model.go:548"
+    },
+    {
+      "role": "go_struct",
+      "name": "LogsStatsItem",
+      "ref": "core/log_query.go:32"
+    },
+    {
+      "role": "go_struct",
+      "name": "MFA",
+      "ref": "core/mfa_model.go:28"
+    },
+    {
+      "role": "go_struct",
+      "name": "MFAConfig",
+      "ref": "core/collection_model_auth_options.go:348"
+    },
+    {
+      "role": "go_struct",
+      "name": "Mailcow",
+      "ref": "tools/auth/mailcow.go:23"
+    },
+    {
+      "role": "go_struct",
+      "name": "MailerEvent",
+      "ref": "core/events.go:178"
+    },
+    {
+      "role": "go_struct",
+      "name": "MailerRecordEvent",
+      "ref": "core/events.go:186"
+    },
+    {
+      "role": "go_struct",
+      "name": "Message",
+      "ref": "tools/mailer/mailer.go:13"
+    },
+    {
+      "role": "go_struct",
+      "name": "Message",
+      "ref": "tools/subscriptions/message.go:8"
+    },
+    {
+      "role": "go_struct",
+      "name": "MetaConfig",
+      "ref": "core/settings_model.go:521"
+    },
+    {
+      "role": "go_struct",
+      "name": "Microsoft",
+      "ref": "tools/auth/microsoft.go:30"
+    },
+    {
+      "role": "go_struct",
+      "name": "Migration",
+      "ref": "core/migrations_list.go:9"
+    },
+    {
+      "role": "go_struct",
+      "name": "MigrationsList",
+      "ref": "core/migrations_list.go:17"
+    },
+    {
+      "role": "go_struct",
+      "name": "MigrationsRunner",
+      "ref": "core/migrations_runner.go:20"
+    },
+    {
+      "role": "go_struct",
+      "name": "ModelErrorEvent",
+      "ref": "core/events.go:235"
+    },
+    {
+      "role": "go_struct",
+      "name": "ModelEvent",
+      "ref": "core/events.go:221"
+    },
+    {
+      "role": "go_struct",
+      "name": "Moment",
+      "ref": "tools/cron/schedule.go:12"
+    },
+    {
+      "role": "go_struct",
+      "name": "Monday",
+      "ref": "tools/auth/monday.go:24"
+    },
+    {
+      "role": "go_struct",
+      "name": "MultiMatchSubquery",
+      "ref": "tools/search/multi_match_subquery.go:20"
+    },
+    {
+      "role": "go_struct",
+      "name": "MultipartReader",
+      "ref": "tools/filesystem/file.go:131"
+    },
+    {
+      "role": "go_struct",
+      "name": "NewWriterEvent",
+      "ref": "tools/filesystem/filesystem.go:46"
+    },
+    {
+      "role": "go_struct",
+      "name": "Notion",
+      "ref": "tools/auth/notion.go:22"
+    },
+    {
+      "role": "go_struct",
+      "name": "NumberField",
+      "ref": "core/field_number.go:41"
+    },
+    {
+      "role": "go_struct",
+      "name": "OAuth2Config",
+      "ref": "core/collection_model_auth_options.go:407"
+    },
+    {
+      "role": "go_struct",
+      "name": "OAuth2KnownFields",
+      "ref": "core/collection_model_auth_options.go:400"
+    },
+    {
+      "role": "go_struct",
+      "name": "OAuth2ProviderConfig",
+      "ref": "core/collection_model_auth_options.go:527"
+    },
+    {
+      "role": "go_struct",
+      "name": "OIDC",
+      "ref": "tools/auth/oidc.go:52"
+    },
+    {
+      "role": "go_struct",
+      "name": "OTP",
+      "ref": "core/otp_model.go:22"
+    },
+    {
+      "role": "go_struct",
+      "name": "OTPConfig",
+      "ref": "core/collection_model_auth_options.go:314"
+    },
+    {
+      "role": "go_struct",
+      "name": "OldCollectionModel",
+      "ref": "migrations/1717233556_v0.23_migrate.go:687"
+    },
+    {
+      "role": "go_struct",
+      "name": "Options",
+      "ref": "tools/filesystem/internal/fileblob/fileblob.go:86"
+    },
+    {
+      "role": "go_struct",
+      "name": "Param",
+      "ref": "core/settings_query.go:14"
+    },
+    {
+      "role": "go_struct",
+      "name": "PasswordAuthConfig",
+      "ref": "core/collection_model_auth_options.go:374"
+    },
+    {
+      "role": "go_struct",
+      "name": "PasswordField",
+      "ref": "core/field_password.go:49"
+    },
+    {
+      "role": "go_struct",
+      "name": "PasswordFieldValue",
+      "ref": "core/field_password.go:311"
+    },
+    {
+      "role": "go_struct",
+      "name": "PathReader",
+      "ref": "tools/filesystem/file.go:145"
+    },
+    {
+      "role": "go_struct",
+      "name": "Patreon",
+      "ref": "tools/auth/patreon.go:22"
+    },
+    {
+      "role": "go_struct",
+      "name": "Planningcenter",
+      "ref": "tools/auth/planningcenter.go:22"
+    },
+    {
+      "role": "go_struct",
+      "name": "PocketBase",
+      "ref": "pocketbase.go:33"
+    },
+    {
+      "role": "go_struct",
+      "name": "Provider",
+      "ref": "tools/search/provider.go:65"
+    },
+    {
+      "role": "go_struct",
+      "name": "RateLimitRule",
+      "ref": "core/settings_model.go:689"
+    },
+    {
+      "role": "go_struct",
+      "name": "RateLimitsConfig",
+      "ref": "core/settings_model.go:591"
+    },
+    {
+      "role": "go_struct",
+      "name": "Reader",
+      "ref": "tools/filesystem/blob/reader.go:33"
+    },
+    {
+      "role": "go_struct",
+      "name": "ReaderAttributes",
+      "ref": "tools/filesystem/blob/driver.go:11"
+    },
+    {
+      "role": "go_struct",
+      "name": "RealtimeConnectRequestEvent",
+      "ref": "core/events.go:464"
+    },
+    {
+      "role": "go_struct",
+      "name": "RealtimeMessageEvent",
+      "ref": "core/events.go:490"
+    },
+    {
+      "role": "go_struct",
+      "name": "RealtimeSubscribeRequestEvent",
+      "ref": "core/events.go:498"
+    },
+    {
+      "role": "go_struct",
+      "name": "Record",
+      "ref": "core/record_model.go:41"
+    },
+    {
+      "role": "go_struct",
+      "name": "RecordAuthRefreshRequestEvent",
+      "ref": "core/events.go:593"
+    },
+    {
+      "role": "go_struct",
+      "name": "RecordAuthRequestEvent",
+      "ref": "core/events.go:558"
+    },
+    {
+      "role": "go_struct",
+      "name": "RecordAuthWithOAuth2RequestEvent",
+      "ref": "core/events.go:580"
+    },
+    {
+      "role": "go_struct",
+      "name": "RecordAuthWithOTPRequestEvent",
+      "ref": "core/events.go:549"
+    },
+    {
+      "role": "go_struct",
+      "name": "RecordAuthWithPasswordRequestEvent",
+      "ref": "core/events.go:569"
+    },
+    {
+      "role": "go_struct",
+      "name": "RecordConfirmEmailChangeRequestEvent",
+      "ref": "core/events.go:642"
+    },
+    {
+      "role": "go_struct",
+      "name": "RecordConfirmPasswordResetRequestEvent",
+      "ref": "core/events.go:609"
+    },
+    {
+      "role": "go_struct",
+      "name": "RecordConfirmVerificationRequestEvent",
+      "ref": "core/events.go:625"
+    },
+    {
+      "role": "go_struct",
+      "name": "RecordCreateOTPRequestEvent",
+      "ref": "core/events.go:540"
+    },
+    {
+      "role": "go_struct",
+      "name": "RecordEnrichEvent",
+      "ref": "core/events.go:528"
+    },
+    {
+      "role": "go_struct",
+      "name": "RecordErrorEvent",
+      "ref": "core/events.go:258"
+    },
+    {
+      "role": "go_struct",
+      "name": "RecordEvent",
+      "ref": "core/events.go:244"
+    },
+    {
+      "role": "go_struct",
+      "name": "RecordFieldResolver",
+      "ref": "core/record_field_resolver.go:50"
+    },
+    {
+      "role": "go_struct",
+      "name": "RecordRequestEmailChangeRequestEvent",
+      "ref": "core/events.go:633"
+    },
+    {
+      "role": "go_struct",
+      "name": "RecordRequestEvent",
+      "ref": "core/events.go:520"
+    },
+    {
+      "role": "go_struct",
+      "name": "RecordRequestPasswordResetRequestEvent",
+      "ref": "core/events.go:601"
+    },
+    {
+      "role": "go_struct",
+      "name": "RecordRequestVerificationRequestEvent",
+      "ref": "core/events.go:617"
+    },
+    {
+      "role": "go_struct",
+      "name": "RecordUpsert",
+      "ref": "forms/record_upsert.go:23"
+    },
+    {
+      "role": "go_struct",
+      "name": "RecordsListRequestEvent",
+      "ref": "core/events.go:510"
+    },
+    {
+      "role": "go_struct",
+      "name": "Registry",
+      "ref": "tools/template/registry.go:52"
+    },
+    {
+      "role": "go_struct",
+      "name": "RelationField",
+      "ref": "core/field_relation.go:54"
+    },
+    {
+      "role": "go_struct",
+      "name": "Renderer",
+      "ref": "tools/template/renderer.go:10"
+    },
+    {
+      "role": "go_struct",
+      "name": "RequestEvent",
+      "ref": "core/event_request.go:19"
+    },
+    {
+      "role": "go_struct",
+      "name": "RequestInfo",
+      "ref": "core/event_request.go:167"
+    },
+    {
+      "role": "go_struct",
+      "name": "RereadableReadCloser",
+      "ref": "tools/router/rereadable_read_closer.go:22"
+    },
+    {
+      "role": "go_struct",
+      "name": "ResolverResult",
+      "ref": "tools/search/simple_field_resolver.go:22"
+    },
+    {
+      "role": "go_struct",
+      "name": "ResponseError",
+      "ref": "tools/filesystem/internal/s3blob/s3/error.go:14"
+    },
+    {
+      "role": "go_struct",
+      "name": "ResponseWriter",
+      "ref": "tools/router/router.go:220"
+    },
+    {
+      "role": "go_struct",
+      "name": "Result",
+      "ref": "tools/search/provider.go:56"
+    },
+    {
+      "role": "go_struct",
+      "name": "S3",
+      "ref": "tools/filesystem/internal/s3blob/s3/s3.go:50"
+    },
+    {
+      "role": "go_struct",
+      "name": "S3Config",
+      "ref": "core/settings_model.go:427"
+    },
+    {
+      "role": "go_struct",
+      "name": "SMTPClient",
+      "ref": "tools/mailer/smtp.go:25"
+    },
+    {
+      "role": "go_struct",
+      "name": "SMTPConfig",
+      "ref": "core/settings_model.go:356"
+    },
+    {
+      "role": "go_struct",
+      "name": "Schedule",
+      "ref": "tools/cron/schedule.go:32"
+    },
+    {
+      "role": "go_struct",
+      "name": "SelectField",
+      "ref": "core/field_select.go:54"
+    },
+    {
+      "role": "go_struct",
+      "name": "SendEvent",
+      "ref": "tools/mailer/mailer.go:37"
+    },
+    {
+      "role": "go_struct",
+      "name": "Sendmail",
+      "ref": "tools/mailer/sendmail.go:20"
+    },
+    {
+      "role": "go_struct",
+      "name": "ServeConfig",
+      "ref": "apis/serve.go:28"
+    },
+    {
+      "role": "go_struct",
+      "name": "ServeEvent",
+      "ref": "core/events.go:106"
+    },
+    {
+      "role": "go_struct",
+      "name": "Settings",
+      "ref": "core/settings_model.go:138"
+    },
+    {
+      "role": "go_struct",
+      "name": "SettingsListRequestEvent",
+      "ref": "core/events.go:154"
+    },
+    {
+      "role": "go_struct",
+      "name": "SettingsReloadEvent",
+      "ref": "core/events.go:169"
+    },
+    {
+      "role": "go_struct",
+      "name": "SettingsUpdateRequestEvent",
+      "ref": "core/events.go:161"
+    },
+    {
+      "role": "go_struct",
+      "name": "SimpleFieldResolver",
+      "ref": "tools/search/simple_field_resolver.go:75"
+    },
+    {
+      "role": "go_struct",
+      "name": "SortField",
+      "ref": "tools/search/sort.go:20"
+    },
+    {
+      "role": "go_struct",
+      "name": "Spotify",
+      "ref": "tools/auth/spotify.go:22"
+    },
+    {
+      "role": "go_struct",
+      "name": "Strava",
+      "ref": "tools/auth/strava.go:22"
+    },
+    {
+      "role": "go_struct",
+      "name": "SubscriptionOptions",
+      "ref": "tools/subscriptions/client.go:18"
+    },
+    {
+      "role": "go_struct",
+      "name": "System",
+      "ref": "tools/filesystem/filesystem.go:56"
+    },
+    {
+      "role": "go_struct",
+      "name": "TableInfoRow",
+      "ref": "core/db_table.go:21"
+    },
+    {
+      "role": "go_struct",
+      "name": "TerminateEvent",
+      "ref": "core/events.go:92"
+    },
+    {
+      "role": "go_struct",
+      "name": "TestEmailSend",
+      "ref": "forms/test_email_send.go:22"
+    },
+    {
+      "role": "go_struct",
+      "name": "TestS3Filesystem",
+      "ref": "forms/test_s3_filesystem.go:19"
+    },
+    {
+      "role": "go_struct",
+      "name": "TextField",
+      "ref": "core/field_text.go:60"
+    },
+    {
+      "role": "go_struct",
+      "name": "TokenConfig",
+      "ref": "core/collection_model_auth_options.go:292"
+    },
+    {
+      "role": "go_struct",
+      "name": "Tokenizer",
+      "ref": "tools/tokenizer/tokenizer.go:47"
+    },
+    {
+      "role": "go_struct",
+      "name": "Trakt",
+      "ref": "tools/auth/trakt.go:22"
+    },
+    {
+      "role": "go_struct",
+      "name": "TrustedProxyConfig",
+      "ref": "core/settings_model.go:572"
+    },
+    {
+      "role": "go_struct",
+      "name": "Twitch",
+      "ref": "tools/auth/twitch.go:24"
+    },
+    {
+      "role": "go_struct",
+      "name": "Twitter",
+      "ref": "tools/auth/twitter.go:21"
+    },
+    {
+      "role": "go_struct",
+      "name": "TxAppInfo",
+      "ref": "core/db_tx.go:72"
+    },
+    {
+      "role": "go_struct",
+      "name": "UIExtension",
+      "ref": "core/events.go:140"
+    },
+    {
+      "role": "go_struct",
+      "name": "URLField",
+      "ref": "core/field_url.go:27"
+    },
+    {
+      "role": "go_struct",
+      "name": "Uploader",
+      "ref": "tools/filesystem/internal/s3blob/s3/uploader.go:32"
+    },
+    {
+      "role": "go_struct",
+      "name": "VK",
+      "ref": "tools/auth/vk.go:28"
+    },
+    {
+      "role": "go_struct",
+      "name": "Wakatime",
+      "ref": "tools/auth/wakatime.go:21"
+    },
+    {
+      "role": "go_struct",
+      "name": "Writer",
+      "ref": "tools/filesystem/blob/writer.go:36"
+    },
+    {
+      "role": "go_struct",
+      "name": "WriterOptions",
+      "ref": "tools/filesystem/blob/bucket.go:475"
+    },
+    {
+      "role": "go_struct",
+      "name": "Yandex",
+      "ref": "tools/auth/yandex.go:22"
+    },
+    {
+      "role": "js_export",
+      "name": "appHeader",
+      "ref": "ui/src/base/appHeader.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "backupUploadButton",
+      "ref": "ui/src/settings/backups/backupUploadButton.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "backupsForm",
+      "ref": "ui/src/settings/backups/backupsForm.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "backupsList",
+      "ref": "ui/src/settings/backups/backupsList.js:4"
+    },
+    {
+      "role": "js_export",
+      "name": "batchAccordion",
+      "ref": "ui/src/settings/application/batchAccordion.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "collectionAuthOptionsTab",
+      "ref": "ui/src/collections/collectionAuthOptionsTab.js:8"
+    },
+    {
+      "role": "js_export",
+      "name": "collectionFieldsTab",
+      "ref": "ui/src/collections/collectionFieldsTab.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "collectionRulesTab",
+      "ref": "ui/src/collections/collectionRulesTab.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "collectionViewQueryTab",
+      "ref": "ui/src/collections/collectionViewQueryTab.js:3"
+    },
+    {
+      "role": "js_export",
+      "name": "collectionsDiffTable",
+      "ref": "ui/src/settings/sync/collectionsDiffTable.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "collectionsSidebar",
+      "ref": "ui/src/collections/collectionsSidebar.js:5"
+    },
+    {
+      "role": "js_export",
+      "name": "cronsList",
+      "ref": "ui/src/settings/crons/cronsList.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "defaultLogLevels",
+      "ref": "ui/src/logs/defaultLogLevels.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "docsAuthRefresh",
+      "ref": "ui/src/apiPreview/docsAuthRefresh.js:4"
+    },
+    {
+      "role": "js_export",
+      "name": "docsAuthWithOAuth2",
+      "ref": "ui/src/apiPreview/docsAuthWithOAuth2.js:4"
+    },
+    {
+      "role": "js_export",
+      "name": "docsAuthWithOTP",
+      "ref": "ui/src/apiPreview/docsAuthWithOTP.js:4"
+    },
+    {
+      "role": "js_export",
+      "name": "docsAuthWithPassword",
+      "ref": "ui/src/apiPreview/docsAuthWithPassword.js:4"
+    },
+    {
+      "role": "js_export",
+      "name": "docsBatch",
+      "ref": "ui/src/apiPreview/docsBatch.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "docsCreate",
+      "ref": "ui/src/apiPreview/docsCreate.js:5"
+    },
+    {
+      "role": "js_export",
+      "name": "docsDelete",
+      "ref": "ui/src/apiPreview/docsDelete.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "docsEmailChange",
+      "ref": "ui/src/apiPreview/docsEmailChange.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "docsList",
+      "ref": "ui/src/apiPreview/docsList.js:5"
+    },
+    {
+      "role": "js_export",
+      "name": "docsListAuthMethods",
+      "ref": "ui/src/apiPreview/docsListAuthMethods.js:3"
+    },
+    {
+      "role": "js_export",
+      "name": "docsPasswordReset",
+      "ref": "ui/src/apiPreview/docsPasswordReset.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "docsRealtime",
+      "ref": "ui/src/apiPreview/docsRealtime.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "docsUpdate",
+      "ref": "ui/src/apiPreview/docsUpdate.js:5"
+    },
+    {
+      "role": "js_export",
+      "name": "docsVerification",
+      "ref": "ui/src/apiPreview/docsVerification.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "docsView",
+      "ref": "ui/src/apiPreview/docsView.js:4"
+    },
+    {
+      "role": "js_export",
+      "name": "emailTemplateAccordion",
+      "ref": "ui/src/collections/emailTemplateAccordion.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "expandInfo",
+      "ref": "ui/src/apiPreview/expandInfo.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "fieldsInfo",
+      "ref": "ui/src/apiPreview/fieldsInfo.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "fieldsWithExcerpt",
+      "ref": "ui/src/fields/relation/view.js:192"
+    },
+    {
+      "role": "js_export",
+      "name": "filesToDeleteProp",
+      "ref": "ui/src/fields/file/onrecordsave.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "filterSyntax",
+      "ref": "ui/src/apiPreview/filterSyntax.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "fullDummyPayload",
+      "ref": "ui/src/apiPreview/docsCreate.js:379"
+    },
+    {
+      "role": "js_export",
+      "name": "hashExp",
+      "ref": "plugins/jsvm/internal/types/generated/types.d.ts:814"
+    },
+    {
+      "role": "js_export",
+      "name": "initRouter",
+      "ref": "ui/src/router.js:119"
+    },
+    {
+      "role": "js_export",
+      "name": "input",
+      "ref": "ui/src/fields/bool/input.js:7"
+    },
+    {
+      "role": "js_export",
+      "name": "input",
+      "ref": "ui/src/fields/date/input.js:9"
+    },
+    {
+      "role": "js_export",
+      "name": "input",
+      "ref": "ui/src/fields/editor/input.js:7"
+    },
+    {
+      "role": "js_export",
+      "name": "input",
+      "ref": "ui/src/fields/email/input.js:7"
+    },
+    {
+      "role": "js_export",
+      "name": "input",
+      "ref": "ui/src/fields/file/input.js:9"
+    },
+    {
+      "role": "js_export",
+      "name": "input",
+      "ref": "ui/src/fields/geoPoint/input.js:7"
+    },
+    {
+      "role": "js_export",
+      "name": "input",
+      "ref": "ui/src/fields/json/input.js:7"
+    },
+    {
+      "role": "js_export",
+      "name": "input",
+      "ref": "ui/src/fields/number/input.js:7"
+    },
+    {
+      "role": "js_export",
+      "name": "input",
+      "ref": "ui/src/fields/relation/input.js:7"
+    },
+    {
+      "role": "js_export",
+      "name": "input",
+      "ref": "ui/src/fields/select/input.js:7"
+    },
+    {
+      "role": "js_export",
+      "name": "input",
+      "ref": "ui/src/fields/text/input.js:7"
+    },
+    {
+      "role": "js_export",
+      "name": "input",
+      "ref": "ui/src/fields/url/input.js:7"
+    },
+    {
+      "role": "js_export",
+      "name": "logLevel",
+      "ref": "ui/src/logs/logLevel.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "logsChart",
+      "ref": "ui/src/logs/logsChart.js:5"
+    },
+    {
+      "role": "js_export",
+      "name": "logsList",
+      "ref": "ui/src/logs/logsList.js:5"
+    },
+    {
+      "role": "js_export",
+      "name": "mfaAccordion",
+      "ref": "ui/src/collections/mfaAccordion.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "oauth2Accordion",
+      "ref": "ui/src/collections/oauth2Accordion.js:4"
+    },
+    {
+      "role": "js_export",
+      "name": "onrecordduplicate",
+      "ref": "ui/src/fields/autodate/onrecordduplicate.js:6"
+    },
+    {
+      "role": "js_export",
+      "name": "onrecordduplicate",
+      "ref": "ui/src/fields/file/onrecordduplicate.js:7"
+    },
+    {
+      "role": "js_export",
+      "name": "onrecordsave",
+      "ref": "ui/src/fields/file/onrecordsave.js:10"
+    },
+    {
+      "role": "js_export",
+      "name": "onrecordsave",
+      "ref": "ui/src/fields/json/onrecordsave.js:9"
+    },
+    {
+      "role": "js_export",
+      "name": "openBackupCreateModal",
+      "ref": "ui/src/settings/backups/backupCreateModal.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "openBackupRestoreModal",
+      "ref": "ui/src/settings/backups/backupRestoreModal.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "openRateLimitInfoModal",
+      "ref": "ui/src/settings/application/rateLimitInfoModal.js:23"
+    },
+    {
+      "role": "js_export",
+      "name": "otpAccordion",
+      "ref": "ui/src/collections/otpAccordion.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "pageApplicationSettings",
+      "ref": "ui/src/settings/application/pageApplicationSettings.js:7"
+    },
+    {
+      "role": "js_export",
+      "name": "pageBackupsSettings",
+      "ref": "ui/src/settings/backups/pageBackupsSettings.js:6"
+    },
+    {
+      "role": "js_export",
+      "name": "pageCollections",
+      "ref": "ui/src/collections/pageCollections.js:9"
+    },
+    {
+      "role": "js_export",
+      "name": "pageConfirmEmailChange",
+      "ref": "ui/src/auth/pageConfirmEmailChange.js:3"
+    },
+    {
+      "role": "js_export",
+      "name": "pageConfirmPasswordReset",
+      "ref": "ui/src/auth/pageConfirmPasswordReset.js:3"
+    },
+    {
+      "role": "js_export",
+      "name": "pageConfirmVerification",
+      "ref": "ui/src/auth/pageConfirmVerification.js:3"
+    },
+    {
+      "role": "js_export",
+      "name": "pageCronsSettings",
+      "ref": "ui/src/settings/crons/pageCronsSettings.js:4"
+    },
+    {
+      "role": "js_export",
+      "name": "pageExportCollections",
+      "ref": "ui/src/settings/sync/pageExportCollections.js:3"
+    },
+    {
+      "role": "js_export",
+      "name": "pageImportCollections",
+      "ref": "ui/src/settings/sync/pageImportCollections.js:3"
+    },
+    {
+      "role": "js_export",
+      "name": "pageInstaller",
+      "ref": "ui/src/auth/pageInstaller.js:3"
+    },
+    {
+      "role": "js_export",
+      "name": "pageLogs",
+      "ref": "ui/src/logs/pageLogs.js:4"
+    },
+    {
+      "role": "js_export",
+      "name": "pageMailSettings",
+      "ref": "ui/src/settings/mail/pageMailSettings.js:3"
+    },
+    {
+      "role": "js_export",
+      "name": "pageOAuth2RedirectFailure",
+      "ref": "ui/src/auth/pageOAuth2RedirectFailure.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "pageOAuth2RedirectSuccess",
+      "ref": "ui/src/auth/pageOAuth2RedirectSuccess.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "pageRequestSuperuserPasswordReset",
+      "ref": "ui/src/auth/pageRequestSuperuserPasswordReset.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "pageSQLConsole",
+      "ref": "ui/src/settings/sql/pageSQLConsole.js:5"
+    },
+    {
+      "role": "js_export",
+      "name": "pageStorageSettings",
+      "ref": "ui/src/settings/storage/pageStorageSettings.js:3"
+    },
+    {
+      "role": "js_export",
+      "name": "pageSuperuserLogin",
+      "ref": "ui/src/auth/pageSuperuserLogin.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "passwordAuthAccordion",
+      "ref": "ui/src/collections/passwordAuthAccordion.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "primitivesDummyPayload",
+      "ref": "ui/src/apiPreview/docsCreate.js:398"
+    },
+    {
+      "role": "js_export",
+      "name": "rateLimitAccordion",
+      "ref": "ui/src/settings/application/rateLimitAccordion.js:74"
+    },
+    {
+      "role": "js_export",
+      "name": "replaceDummyPayloadPlaceholder",
+      "ref": "ui/src/apiPreview/docsCreate.js:375"
+    },
+    {
+      "role": "js_export",
+      "name": "settings",
+      "ref": "ui/src/fields/autodate/settings.js:8"
+    },
+    {
+      "role": "js_export",
+      "name": "settings",
+      "ref": "ui/src/fields/bool/settings.js:8"
+    },
+    {
+      "role": "js_export",
+      "name": "settings",
+      "ref": "ui/src/fields/date/settings.js:8"
+    },
+    {
+      "role": "js_export",
+      "name": "settings",
+      "ref": "ui/src/fields/editor/settings.js:8"
+    },
+    {
+      "role": "js_export",
+      "name": "settings",
+      "ref": "ui/src/fields/email/settings.js:8"
+    },
+    {
+      "role": "js_export",
+      "name": "settings",
+      "ref": "ui/src/fields/file/settings.js:8"
+    },
+    {
+      "role": "js_export",
+      "name": "settings",
+      "ref": "ui/src/fields/geoPoint/settings.js:8"
+    },
+    {
+      "role": "js_export",
+      "name": "settings",
+      "ref": "ui/src/fields/json/settings.js:8"
+    },
+    {
+      "role": "js_export",
+      "name": "settings",
+      "ref": "ui/src/fields/number/settings.js:8"
+    },
+    {
+      "role": "js_export",
+      "name": "settings",
+      "ref": "ui/src/fields/password/settings.js:8"
+    },
+    {
+      "role": "js_export",
+      "name": "settings",
+      "ref": "ui/src/fields/relation/settings.js:8"
+    },
+    {
+      "role": "js_export",
+      "name": "settings",
+      "ref": "ui/src/fields/select/settings.js:8"
+    },
+    {
+      "role": "js_export",
+      "name": "settings",
+      "ref": "ui/src/fields/text/settings.js:8"
+    },
+    {
+      "role": "js_export",
+      "name": "settings",
+      "ref": "ui/src/fields/url/settings.js:8"
+    },
+    {
+      "role": "js_export",
+      "name": "settingsSidebar",
+      "ref": "ui/src/settings/settingsSidebar.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "sortRules",
+      "ref": "ui/src/settings/application/rateLimitAccordion.js:4"
+    },
+    {
+      "role": "js_export",
+      "name": "superuserAccordion",
+      "ref": "ui/src/settings/application/superuserAccordion.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "toDeleteProp",
+      "ref": "ui/src/base/fieldSettings.js:4"
+    },
+    {
+      "role": "js_export",
+      "name": "tokenOptionsAccordion",
+      "ref": "ui/src/collections/tokenOptionsAccordion.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "trustedProxyAccordion",
+      "ref": "ui/src/settings/application/trustedProxyAccordion.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "view",
+      "ref": "ui/src/fields/autodate/view.js:6"
+    },
+    {
+      "role": "js_export",
+      "name": "view",
+      "ref": "ui/src/fields/bool/view.js:6"
+    },
+    {
+      "role": "js_export",
+      "name": "view",
+      "ref": "ui/src/fields/date/view.js:6"
+    },
+    {
+      "role": "js_export",
+      "name": "view",
+      "ref": "ui/src/fields/editor/view.js:6"
+    },
+    {
+      "role": "js_export",
+      "name": "view",
+      "ref": "ui/src/fields/email/view.js:6"
+    },
+    {
+      "role": "js_export",
+      "name": "view",
+      "ref": "ui/src/fields/file/view.js:6"
+    },
+    {
+      "role": "js_export",
+      "name": "view",
+      "ref": "ui/src/fields/geoPoint/view.js:6"
+    },
+    {
+      "role": "js_export",
+      "name": "view",
+      "ref": "ui/src/fields/json/view.js:6"
+    },
+    {
+      "role": "js_export",
+      "name": "view",
+      "ref": "ui/src/fields/number/view.js:6"
+    },
+    {
+      "role": "js_export",
+      "name": "view",
+      "ref": "ui/src/fields/relation/view.js:14"
+    },
+    {
+      "role": "js_export",
+      "name": "view",
+      "ref": "ui/src/fields/select/view.js:6"
+    },
+    {
+      "role": "js_export",
+      "name": "view",
+      "ref": "ui/src/fields/text/view.js:6"
+    },
+    {
+      "role": "js_export",
+      "name": "view",
+      "ref": "ui/src/fields/url/view.js:6"
+    }
+  ],
+  "actions": [
+    {
+      "role": "cli_command",
+      "method": "CLI",
+      "target": "create",
+      "ref": "cmd/superuser.go:74"
+    },
+    {
+      "role": "cli_command",
+      "method": "CLI",
+      "target": "delete",
+      "ref": "cmd/superuser.go:144"
+    },
+    {
+      "role": "cli_command",
+      "method": "CLI",
+      "target": "ips",
+      "ref": "cmd/superuser.go:216"
+    },
+    {
+      "role": "cli_command",
+      "method": "CLI",
+      "target": "otp",
+      "ref": "cmd/superuser.go:173"
+    },
+    {
+      "role": "cli_command",
+      "method": "CLI",
+      "target": "serve [domain(s)]",
+      "ref": "cmd/serve.go:20"
+    },
+    {
+      "role": "cli_command",
+      "method": "CLI",
+      "target": "superuser",
+      "ref": "cmd/superuser.go:18"
+    },
+    {
+      "role": "cli_command",
+      "method": "CLI",
+      "target": "update",
+      "ref": "cmd/superuser.go:110"
+    },
+    {
+      "role": "cli_command",
+      "method": "CLI",
+      "target": "upsert",
+      "ref": "cmd/superuser.go:34"
+    },
+    {
+      "role": "frontend_api_call",
+      "method": "CLIENT",
+      "target": "https://nominatim.openstreetmap.org/search.php?format=jsonv2&q=",
+      "ref": "ui/src/base/leaflet.js:202"
+    },
+    {
+      "role": "http_route",
+      "method": "Any",
+      "target": "details",
+      "ref": "apis/middlewares.go:415"
+    },
+    {
+      "role": "http_route",
+      "method": "Any",
+      "target": "error",
+      "ref": "apis/file.go:184"
+    },
+    {
+      "role": "http_route",
+      "method": "Any",
+      "target": "error",
+      "ref": "apis/realtime.go:707"
+    },
+    {
+      "role": "http_route",
+      "method": "Any",
+      "target": "error",
+      "ref": "core/backup_create.go:191"
+    },
+    {
+      "role": "http_route",
+      "method": "Any",
+      "target": "errors",
+      "ref": "apis/realtime.go:685"
+    },
+    {
+      "role": "http_route",
+      "method": "Any",
+      "target": "extension",
+      "ref": "apis/extensions.go:45"
+    },
+    {
+      "role": "http_route",
+      "method": "Any",
+      "target": "id",
+      "ref": "apis/realtime.go:386"
+    },
+    {
+      "role": "http_route",
+      "method": "Any",
+      "target": "id",
+      "ref": "apis/realtime.go:407"
+    },
+    {
+      "role": "http_route",
+      "method": "Any",
+      "target": "id",
+      "ref": "apis/realtime.go:495"
+    },
+    {
+      "role": "http_route",
+      "method": "Any",
+      "target": "meta",
+      "ref": "apis/middlewares.go:387"
+    },
+    {
+      "role": "http_route",
+      "method": "Any",
+      "target": "subscriptions",
+      "ref": "apis/realtime.go:242"
+    },
+    {
+      "role": "http_route",
+      "method": "DELETE",
+      "target": "/{collection}",
+      "ref": "apis/collection.go:24"
+    },
+    {
+      "role": "http_route",
+      "method": "DELETE",
+      "target": "/{collection}/truncate",
+      "ref": "apis/collection.go:25"
+    },
+    {
+      "role": "http_route",
+      "method": "DELETE",
+      "target": "/{id}",
+      "ref": "apis/record_crud.go:33"
+    },
+    {
+      "role": "http_route",
+      "method": "DELETE",
+      "target": "/{key}",
+      "ref": "apis/backup.go:23"
+    },
+    {
+      "role": "http_route",
+      "method": "GET",
+      "target": "/_/{path...}",
+      "ref": "apis/serve.go:84"
+    },
+    {
+      "role": "http_route",
+      "method": "GET",
+      "target": "/admins",
+      "ref": "tools/router/router.go:39"
+    },
+    {
+      "role": "http_route",
+      "method": "GET",
+      "target": "/auth-methods",
+      "ref": "apis/record_auth.go:22"
+    },
+    {
+      "role": "http_route",
+      "method": "GET",
+      "target": "/extensions.js",
+      "ref": "apis/extensions.go:55"
+    },
+    {
+      "role": "http_route",
+      "method": "GET",
+      "target": "/extensions/",
+      "ref": "apis/extensions.go:49"
+    },
+    {
+      "role": "http_route",
+      "method": "GET",
+      "target": "/files/{path...}",
+      "ref": "apis/base.go:108"
+    },
+    {
+      "role": "http_route",
+      "method": "GET",
+      "target": "/meta/oauth2-providers",
+      "ref": "apis/collection.go:30"
+    },
+    {
+      "role": "http_route",
+      "method": "GET",
+      "target": "/meta/scaffolds",
+      "ref": "apis/collection.go:27"
+    },
+    {
+      "role": "http_route",
+      "method": "GET",
+      "target": "/oauth2-redirect",
+      "ref": "apis/record_auth.go:12"
+    },
+    {
+      "role": "http_route",
+      "method": "GET",
+      "target": "/stats",
+      "ref": "apis/logs.go:21"
+    },
+    {
+      "role": "http_route",
+      "method": "GET",
+      "target": "/test",
+      "ref": "tools/router/router.go:35"
+    },
+    {
+      "role": "http_route",
+      "method": "GET",
+      "target": "/{collection}",
+      "ref": "apis/collection.go:22"
+    },
+    {
+      "role": "http_route",
+      "method": "GET",
+      "target": "/{collection}/{recordId}/{filename}",
+      "ref": "apis/file.go:45"
+    },
+    {
+      "role": "http_route",
+      "method": "GET",
+      "target": "/{id}",
+      "ref": "apis/logs.go:22"
+    },
+    {
+      "role": "http_route",
+      "method": "GET",
+      "target": "/{id}",
+      "ref": "apis/record_crud.go:30"
+    },
+    {
+      "role": "http_route",
+      "method": "GET",
+      "target": "/{key}",
+      "ref": "apis/backup.go:22"
+    },
+    {
+      "role": "http_route",
+      "method": "GET",
+      "target": "/{path...}",
+      "ref": "examples/base/main.go:115"
+    },
+    {
+      "role": "http_route",
+      "method": "PATCH",
+      "target": "/{collection}",
+      "ref": "apis/collection.go:23"
+    },
+    {
+      "role": "http_route",
+      "method": "PATCH",
+      "target": "/{id}",
+      "ref": "apis/record_crud.go:32"
+    },
+    {
+      "role": "http_route",
+      "method": "POST",
+      "target": "/apple/generate-client-secret",
+      "ref": "apis/settings.go:21"
+    },
+    {
+      "role": "http_route",
+      "method": "POST",
+      "target": "/auth-refresh",
+      "ref": "apis/record_auth.go:26"
+    },
+    {
+      "role": "http_route",
+      "method": "POST",
+      "target": "/auth-with-oauth2",
+      "ref": "apis/record_auth.go:35"
+    },
+    {
+      "role": "http_route",
+      "method": "POST",
+      "target": "/auth-with-otp",
+      "ref": "apis/record_auth.go:42"
+    },
+    {
+      "role": "http_route",
+      "method": "POST",
+      "target": "/auth-with-password",
+      "ref": "apis/record_auth.go:31"
+    },
+    {
+      "role": "http_route",
+      "method": "POST",
+      "target": "/confirm-email-change",
+      "ref": "apis/record_auth.go:64"
+    },
+    {
+      "role": "http_route",
+      "method": "POST",
+      "target": "/confirm-password-reset",
+      "ref": "apis/record_auth.go:49"
+    },
+    {
+      "role": "http_route",
+      "method": "POST",
+      "target": "/confirm-verification",
+      "ref": "apis/record_auth.go:56"
+    },
+    {
+      "role": "http_route",
+      "method": "POST",
+      "target": "/impersonate/{id}",
+      "ref": "apis/record_auth.go:68"
+    },
+    {
+      "role": "http_route",
+      "method": "POST",
+      "target": "/meta/dry-run-view",
+      "ref": "apis/collection.go:31"
+    },
+    {
+      "role": "http_route",
+      "method": "POST",
+      "target": "/oauth2-redirect",
+      "ref": "apis/record_auth.go:16"
+    },
+    {
+      "role": "http_route",
+      "method": "POST",
+      "target": "/request-email-change",
+      "ref": "apis/record_auth.go:60"
+    },
+    {
+      "role": "http_route",
+      "method": "POST",
+      "target": "/request-otp",
+      "ref": "apis/record_auth.go:39"
+    },
+    {
+      "role": "http_route",
+      "method": "POST",
+      "target": "/request-password-reset",
+      "ref": "apis/record_auth.go:46"
+    },
+    {
+      "role": "http_route",
+      "method": "POST",
+      "target": "/request-verification",
+      "ref": "apis/record_auth.go:53"
+    },
+    {
+      "role": "http_route",
+      "method": "POST",
+      "target": "/test/email",
+      "ref": "apis/settings.go:18"
+    },
+    {
+      "role": "http_route",
+      "method": "POST",
+      "target": "/test/s3",
+      "ref": "apis/settings.go:17"
+    },
+    {
+      "role": "http_route",
+      "method": "POST",
+      "target": "/token",
+      "ref": "apis/file.go:44"
+    },
+    {
+      "role": "http_route",
+      "method": "POST",
+      "target": "/upload",
+      "ref": "apis/backup.go:21"
+    },
+    {
+      "role": "http_route",
+      "method": "POST",
+      "target": "/{id}",
+      "ref": "apis/cron.go:18"
+    },
+    {
+      "role": "http_route",
+      "method": "POST",
+      "target": "/{key}/restore",
+      "ref": "apis/backup.go:24"
+    },
+    {
+      "role": "http_route",
+      "method": "PUT",
+      "target": "/import",
+      "ref": "apis/collection.go:26"
+    }
+  ],
+  "data_schemas": [
+    {
+      "role": "sql_table",
+      "table": "IF",
+      "ref": "core/migrations_runner.go:252"
+    },
+    {
+      "role": "sql_table",
+      "table": "IF",
+      "ref": "migrations/1640988000_aux_init.go:11"
+    },
+    {
+      "role": "sql_table",
+      "table": "if",
+      "ref": "core/collection_record_table_sync.go:41"
+    }
+  ],
+  "frontend_routes": [
+    {
+      "route": "/prefix",
+      "component": "DirFS",
+      "ref": "plugins/jsvm/internal/types/generated/types.d.ts:2279"
+    }
+  ],
+  "css_tokens": [
+    {
+      "token": "--accentAlt1Color",
+      "value": "color-mix(in srgb, var(--accentColor), white 10%)",
+      "ref": "ui/src/css/vars.css:51"
+    },
+    {
+      "token": "--accentAlt2Color",
+      "value": "color-mix(in srgb, var(--accentColor), white 15%)",
+      "ref": "ui/src/css/vars.css:52"
+    },
+    {
+      "token": "--accentColor",
+      "value": "#1055c9",
+      "ref": "ui/src/css/vars.css:50"
+    },
+    {
+      "token": "--accentTxtColor",
+      "value": "#fff",
+      "ref": "ui/src/css/vars.css:53"
+    },
+    {
+      "token": "--accentTxtDisabledColor",
+      "value": "color-mix(in srgb, var(--accentTxtColor), transparent 50%)",
+      "ref": "ui/src/css/vars.css:55"
+    },
+    {
+      "token": "--accentTxtHintColor",
+      "value": "color-mix(in srgb, var(--accentTxtColor), transparent 40%)",
+      "ref": "ui/src/css/vars.css:54"
+    },
+    {
+      "token": "--activeAnimationSpeed",
+      "value": "70ms",
+      "ref": "ui/src/css/vars.css:132"
+    },
+    {
+      "token": "--animationSpeed",
+      "value": "150ms",
+      "ref": "ui/src/css/vars.css:131"
+    },
+    {
+      "token": "--baseFontFamily",
+      "value": "\"IBM Plex Sans\", system-ui, sans-serif, emoji",
+      "ref": "ui/src/css/vars.css:4"
+    },
+    {
+      "token": "--borderColor",
+      "value": "var(--surfaceAlt3Color)",
+      "ref": "ui/src/css/list.css:2"
+    },
+    {
+      "token": "--borderRadius",
+      "value": "5px",
+      "ref": "ui/src/css/vars.css:119"
+    },
+    {
+      "token": "--bottomScrollShadow",
+      "value": "0px -2px 8px 1px rgba(0,0,0, 0.45)",
+      "ref": "ui/src/css/vars.css:202"
+    },
+    {
+      "token": "--bottomScrollShadow",
+      "value": "0px -2px 8px 1px rgba(34, 36, 36, 0.15)",
+      "ref": "ui/src/css/vars.css:97"
+    },
+    {
+      "token": "--bottomShadowOffset",
+      "value": "calc(var(--sidebarSpacing) + 1px)",
+      "ref": "ui/src/css/layout.css:317"
+    },
+    {
+      "token": "--bottomShadowOffset",
+      "value": "1px",
+      "ref": "ui/src/css/layout.css:358"
+    },
+    {
+      "token": "--bottomShadowOffset",
+      "value": "6px",
+      "ref": "ui/src/css/layout.css:602"
+    },
+    {
+      "token": "--bottomShadowOffset",
+      "value": "calc(var(--spacing) + 1px)",
+      "ref": "ui/src/css/modal.css:229"
+    },
+    {
+      "token": "--boxShadow",
+      "value": "0px 8px 5px -5px rgba(0,0,0, 0.3)",
+      "ref": "ui/src/css/vars.css:198"
+    },
+    {
+      "token": "--boxShadow",
+      "value": "0px 8px 5px -5px rgba(34, 36, 36, 0.1)",
+      "ref": "ui/src/css/vars.css:93"
+    },
+    {
+      "token": "--btnGap",
+      "value": "8px",
+      "ref": "ui/src/css/form.css:15"
+    },
+    {
+      "token": "--btnGap",
+      "value": "5px",
+      "ref": "ui/src/css/form.css:207"
+    },
+    {
+      "token": "--btnHeight",
+      "value": "45px",
+      "ref": "ui/src/css/vars.css:109"
+    },
+    {
+      "token": "--btnHeight",
+      "value": "40px",
+      "ref": "ui/src/css/vars.css:243"
+    },
+    {
+      "token": "--checkboxActiveColor",
+      "value": "var(--successColor)",
+      "ref": "ui/src/css/form.css:716"
+    },
+    {
+      "token": "--checkboxActiveColor",
+      "value": "var(--dangerColor)",
+      "ref": "ui/src/css/form.css:903"
+    },
+    {
+      "token": "--checkboxBorderColor",
+      "value": "var(--surfaceAlt3Color)",
+      "ref": "ui/src/css/form.css:717"
+    },
+    {
+      "token": "--checkboxBorderColor",
+      "value": "var(--checkboxBorderFocusColor)",
+      "ref": "ui/src/css/form.css:797"
+    },
+    {
+      "token": "--checkboxBorderColor",
+      "value": "var(--checkboxActiveColor)",
+      "ref": "ui/src/css/form.css:809"
+    },
+    {
+      "token": "--checkboxBorderFocusColor",
+      "value": "var(--surfaceAlt5Color)",
+      "ref": "ui/src/css/form.css:718"
+    },
+    {
+      "token": "--checkboxSize",
+      "value": "20px",
+      "ref": "ui/src/css/form.css:715"
+    },
+    {
+      "token": "--checkboxSize",
+      "value": "18px",
+      "ref": "ui/src/css/form.css:823"
+    },
+    {
+      "token": "--circleSize",
+      "value": "var(--btnHeight)",
+      "ref": "ui/src/css/form.css:245"
+    },
+    {
+      "token": "--circleSize",
+      "value": "var(--smBtnHeight)",
+      "ref": "ui/src/css/form.css:264"
+    },
+    {
+      "token": "--circleSize",
+      "value": "var(--lgBtnHeight)",
+      "ref": "ui/src/css/form.css:267"
+    },
+    {
+      "token": "--contentPadding",
+      "value": "var(--smSpacing)",
+      "ref": "ui/src/css/accordion.css:3"
+    },
+    {
+      "token": "--creditsGap",
+      "value": "20px",
+      "ref": "ui/src/css/layout.css:257"
+    },
+    {
+      "token": "--dangerAlt1Color",
+      "value": "color-mix(in srgb, var(--dangerColor), black 10%)",
+      "ref": "ui/src/css/vars.css:185"
+    },
+    {
+      "token": "--dangerAlt1Color",
+      "value": "color-mix(in srgb, var(--dangerColor), white 10%)",
+      "ref": "ui/src/css/vars.css:44"
+    },
+    {
+      "token": "--dangerAlt2Color",
+      "value": "color-mix(in srgb, var(--dangerColor), black 15%)",
+      "ref": "ui/src/css/vars.css:186"
+    },
+    {
+      "token": "--dangerAlt2Color",
+      "value": "color-mix(in srgb, var(--dangerColor), white 15%)",
+      "ref": "ui/src/css/vars.css:45"
+    },
+    {
+      "token": "--dangerColor",
+      "value": "#bb303e",
+      "ref": "ui/src/css/vars.css:183"
+    },
+    {
+      "token": "--dangerColor",
+      "value": "#c33751",
+      "ref": "ui/src/css/vars.css:43"
+    },
+    {
+      "token": "--dangerTxtColor",
+      "value": "var(--surfaceTxtColor)",
+      "ref": "ui/src/css/vars.css:184"
+    },
+    {
+      "token": "--dangerTxtColor",
+      "value": "var(--primaryTxtColor)",
+      "ref": "ui/src/css/vars.css:46"
+    },
+    {
+      "token": "--dangerTxtDisabledColor",
+      "value": "var(--primaryTxtDisabledColor)",
+      "ref": "ui/src/css/vars.css:48"
+    },
+    {
+      "token": "--dangerTxtHintColor",
+      "value": "var(--primaryTxtHintColor)",
+      "ref": "ui/src/css/vars.css:47"
+    },
+    {
+      "token": "--fieldsGap",
+      "value": "10px",
+      "ref": "ui/src/css/recordFields.css:2"
+    },
+    {
+      "token": "--fontSize",
+      "value": "14px",
+      "ref": "ui/src/css/vars.css:101"
+    },
+    {
+      "token": "--gridGap",
+      "value": "var(--smSpacing)",
+      "ref": "ui/src/css/grid.css:16"
+    },
+    {
+      "token": "--gridGap",
+      "value": "var(--spacing)",
+      "ref": "ui/src/css/grid.css:2"
+    },
+    {
+      "token": "--headerItemsGap",
+      "value": "5px",
+      "ref": "ui/src/css/layout.css:104"
+    },
+    {
+      "token": "--headerItemsGap",
+      "value": "var(--inputPadding)",
+      "ref": "ui/src/css/layout.css:15"
+    },
+    {
+      "token": "--headerToolbarColor",
+      "value": "var(--surfaceColor)",
+      "ref": "ui/public/libs/tinymce/skins/ui/oxide/skin.min.css:1"
+    },
+    {
+      "token": "--iconFontFamily",
+      "value": "\"remixicon\"",
+      "ref": "ui/src/css/vars.css:6"
+    },
+    {
+      "token": "--infoAlt1Color",
+      "value": "color-mix(in srgb, var(--infoColor), black 10%)",
+      "ref": "ui/src/css/vars.css:167"
+    },
+    {
+      "token": "--infoAlt1Color",
+      "value": "color-mix(in srgb, var(--infoColor), white 10%)",
+      "ref": "ui/src/css/vars.css:23"
+    },
+    {
+      "token": "--infoAlt2Color",
+      "value": "color-mix(in srgb, var(--infoColor), black 15%)",
+      "ref": "ui/src/css/vars.css:168"
+    },
+    {
+      "token": "--infoAlt2Color",
+      "value": "color-mix(in srgb, var(--infoColor), white 15%)",
+      "ref": "ui/src/css/vars.css:24"
+    },
+    {
+      "token": "--infoColor",
+      "value": "#4273bd",
+      "ref": "ui/src/css/vars.css:165"
+    },
+    {
+      "token": "--infoColor",
+      "value": "#3376e5",
+      "ref": "ui/src/css/vars.css:22"
+    },
+    {
+      "token": "--infoTxtColor",
+      "value": "var(--surfaceTxtColor)",
+      "ref": "ui/src/css/vars.css:166"
+    },
+    {
+      "token": "--infoTxtColor",
+      "value": "var(--primaryTxtColor)",
+      "ref": "ui/src/css/vars.css:25"
+    },
+    {
+      "token": "--infoTxtDisabledColor",
+      "value": "var(--primaryTxtDisabledColor)",
+      "ref": "ui/src/css/vars.css:27"
+    },
+    {
+      "token": "--infoTxtHintColor",
+      "value": "var(--primaryTxtHintColor)",
+      "ref": "ui/src/css/vars.css:26"
+    },
+    {
+      "token": "--inputBorderColor",
+      "value": "color-mix(in srgb, var(--dangerColor), var(--surfaceColor) 70%)",
+      "ref": "ui/src/css/form.css:646"
+    },
+    {
+      "token": "--inputBorderColor",
+      "value": "var(--surfaceAlt3Color)",
+      "ref": "ui/src/css/layout.css:369"
+    },
+    {
+      "token": "--inputBorderColor",
+      "value": "var(--surfaceAlt4Color)",
+      "ref": "ui/src/css/vars.css:192"
+    },
+    {
+      "token": "--inputBorderColor",
+      "value": "var(--surfaceAlt5Color)",
+      "ref": "ui/src/css/vars.css:232"
+    },
+    {
+      "token": "--inputBorderColor",
+      "value": "var(--surfaceAlt4Color)",
+      "ref": "ui/src/css/vars.css:74"
+    },
+    {
+      "token": "--inputBorderRadius",
+      "value": "30px",
+      "ref": "ui/src/css/form.css:1069"
+    },
+    {
+      "token": "--inputBorderRadius",
+      "value": "var(--borderRadius)",
+      "ref": "ui/src/css/vars.css:117"
+    },
+    {
+      "token": "--inputColor",
+      "value": "color-mix(in srgb, var(--dangerColor), var(--surfaceColor) 80%)",
+      "ref": "ui/src/css/form.css:644"
+    },
+    {
+      "token": "--inputColor",
+      "value": "var(--surfaceAlt1Color)",
+      "ref": "ui/src/css/layout.css:367"
+    },
+    {
+      "token": "--inputColor",
+      "value": "var(--surfaceAlt2Color)",
+      "ref": "ui/src/css/vars.css:190"
+    },
+    {
+      "token": "--inputColor",
+      "value": "var(--surfaceAlt3Color)",
+      "ref": "ui/src/css/vars.css:230"
+    },
+    {
+      "token": "--inputColor",
+      "value": "var(--surfaceAlt2Color)",
+      "ref": "ui/src/css/vars.css:72"
+    },
+    {
+      "token": "--inputFocusColor",
+      "value": "color-mix(in srgb, var(--dangerColor), var(--surfaceColor) 75%)",
+      "ref": "ui/src/css/form.css:645"
+    },
+    {
+      "token": "--inputFocusColor",
+      "value": "var(--surfaceAlt2Color)",
+      "ref": "ui/src/css/layout.css:368"
+    },
+    {
+      "token": "--inputFocusColor",
+      "value": "var(--surfaceAlt3Color)",
+      "ref": "ui/src/css/vars.css:191"
+    },
+    {
+      "token": "--inputFocusColor",
+      "value": "var(--surfaceAlt4Color)",
+      "ref": "ui/src/css/vars.css:231"
+    },
+    {
+      "token": "--inputFocusColor",
+      "value": "var(--surfaceAlt3Color)",
+      "ref": "ui/src/css/vars.css:73"
+    },
+    {
+      "token": "--inputPadding",
+      "value": "var(--sidebarSpacing)",
+      "ref": "ui/src/css/layout.css:361"
+    },
+    {
+      "token": "--inputPadding",
+      "value": "13px",
+      "ref": "ui/src/css/vars.css:116"
+    },
+    {
+      "token": "--leftBoxShadow",
+      "value": "-1px 0px 5px 0 rgba(0,0,0, 0.3)",
+      "ref": "ui/src/css/vars.css:199"
+    },
+    {
+      "token": "--leftBoxShadow",
+      "value": "-1px 0px 5px 0 rgba(34, 36, 36, 0.1)",
+      "ref": "ui/src/css/vars.css:94"
+    },
+    {
+      "token": "--leftScrollShadow",
+      "value": "3px 0px 5px 0px rgba(0,0,0, 0.4)",
+      "ref": "ui/src/css/vars.css:203"
+    },
+    {
+      "token": "--leftScrollShadow",
+      "value": "3px 0px 5px 0px rgba(34, 36, 36, 0.2)",
+      "ref": "ui/src/css/vars.css:98"
+    },
+    {
+      "token": "--lgBorderRadius",
+      "value": "15px",
+      "ref": "ui/src/css/vars.css:120"
+    },
+    {
+      "token": "--lgBtnHeight",
+      "value": "52px",
+      "ref": "ui/src/css/vars.css:111"
+    },
+    {
+      "token": "--lgBtnHeight",
+      "value": "47px",
+      "ref": "ui/src/css/vars.css:245"
+    },
+    {
+      "token": "--lgFontSize",
+      "value": "15px",
+      "ref": "ui/src/css/vars.css:103"
+    },
+    {
+      "token": "--lgLineHeight",
+      "value": "24px",
+      "ref": "ui/src/css/vars.css:107"
+    },
+    {
+      "token": "--lgWrapperWidth",
+      "value": "1150px",
+      "ref": "ui/src/css/vars.css:126"
+    },
+    {
+      "token": "--lineHeight",
+      "value": "22px",
+      "ref": "ui/src/css/vars.css:105"
+    },
+    {
+      "token": "--linkColor",
+      "value": "var(--surfaceTxtHintColor)",
+      "ref": "ui/src/css/base.css:509"
+    },
+    {
+      "token": "--linkColor",
+      "value": "var(--surfaceTxtColor)",
+      "ref": "ui/src/css/base.css:535"
+    },
+    {
+      "token": "--linkFocusColor",
+      "value": "var(--surfaceTxtColor)",
+      "ref": "ui/src/css/base.css:510"
+    },
+    {
+      "token": "--linkFocusColor",
+      "value": "var(--surfaceTxtColor)",
+      "ref": "ui/src/css/base.css:536"
+    },
+    {
+      "token": "--loaderAnimationSpeed",
+      "value": "1.1s",
+      "ref": "ui/src/css/vars.css:129"
+    },
+    {
+      "token": "--loaderIcon",
+      "value": "\"\\eeca\"",
+      "ref": "ui/src/css/vars.css:128"
+    },
+    {
+      "token": "--loaderSize",
+      "value": "24px",
+      "ref": "ui/src/css/base.css:854"
+    },
+    {
+      "token": "--loaderSize",
+      "value": "20px",
+      "ref": "ui/src/css/base.css:878"
+    },
+    {
+      "token": "--loaderSize",
+      "value": "33px",
+      "ref": "ui/src/css/base.css:882"
+    },
+    {
+      "token": "--mceIconScale",
+      "value": "0.83",
+      "ref": "ui/public/libs/tinymce/skins/ui/oxide/skin.min.css:1"
+    },
+    {
+      "token": "--modalAnimationSpeed",
+      "value": "200ms",
+      "ref": "ui/src/css/vars.css:87"
+    },
+    {
+      "token": "--modalOverlayColor",
+      "value": "rgb(18,18,18, 0.5)",
+      "ref": "ui/src/css/vars.css:195"
+    },
+    {
+      "token": "--modalOverlayColor",
+      "value": "rgba(70, 90, 115, 0.25)",
+      "ref": "ui/src/css/vars.css:88"
+    },
+    {
+      "token": "--monospaceFontFamily",
+      "value": "\"IBM Plex Mono\", ui-monospace, monospace, emoji",
+      "ref": "ui/src/css/vars.css:5"
+    },
+    {
+      "token": "--pageSidebarWidth",
+      "value": "240px",
+      "ref": "ui/src/css/vars.css:122"
+    },
+    {
+      "token": "--pathColor",
+      "value": "var(--surfaceAlt2Color)",
+      "ref": "ui/src/css/erd.css:132"
+    },
+    {
+      "token": "--pathColor",
+      "value": "var(--surfaceTxtDisabledColor)",
+      "ref": "ui/src/css/erd.css:148"
+    },
+    {
+      "token": "--primaryAlt1Color",
+      "value": "color-mix(in srgb, var(--primaryColor), black 12%)",
+      "ref": "ui/src/css/vars.css:160"
+    },
+    {
+      "token": "--primaryAlt1Color",
+      "value": "color-mix(in srgb, var(--primaryColor), white 8%)",
+      "ref": "ui/src/css/vars.css:9"
+    },
+    {
+      "token": "--primaryAlt2Color",
+      "value": "color-mix(in srgb, var(--primaryColor), white 13%)",
+      "ref": "ui/src/css/vars.css:10"
+    },
+    {
+      "token": "--primaryAlt2Color",
+      "value": "color-mix(in srgb, var(--primaryColor), black 25%)",
+      "ref": "ui/src/css/vars.css:161"
+    },
+    {
+      "token": "--primaryColor",
+      "value": "var(--surfaceAlt4Color)",
+      "ref": "ui/src/css/vars.css:158"
+    },
+    {
+      "token": "--primaryColor",
+      "value": "#25272d",
+      "ref": "ui/src/css/vars.css:8"
+    },
+    {
+      "token": "--primaryTxtColor",
+      "value": "#fff",
+      "ref": "ui/src/css/vars.css:11"
+    },
+    {
+      "token": "--primaryTxtColor",
+      "value": "var(--surfaceTxtColor)",
+      "ref": "ui/src/css/vars.css:159"
+    },
+    {
+      "token": "--primaryTxtDisabledColor",
+      "value": "color-mix(in srgb, var(--primaryTxtColor), transparent 50%)",
+      "ref": "ui/src/css/vars.css:13"
+    },
+    {
+      "token": "--primaryTxtDisabledColor",
+      "value": "color-mix(in srgb, var(--primaryTxtColor), transparent 50%)",
+      "ref": "ui/src/css/vars.css:163"
+    },
+    {
+      "token": "--primaryTxtHintColor",
+      "value": "color-mix(in srgb, var(--primaryTxtColor), transparent 35%)",
+      "ref": "ui/src/css/vars.css:12"
+    },
+    {
+      "token": "--primaryTxtHintColor",
+      "value": "color-mix(in srgb, var(--primaryTxtColor), transparent 35%)",
+      "ref": "ui/src/css/vars.css:162"
+    },
+    {
+      "token": "--prismCommentColor",
+      "value": "var(--surfaceTxtHintColor)",
+      "ref": "ui/src/css/vars.css:211"
+    },
+    {
+      "token": "--prismCommentColor",
+      "value": "var(--surfaceTxtHintColor)",
+      "ref": "ui/src/css/vars.css:82"
+    },
+    {
+      "token": "--prismFunctionColor",
+      "value": "#ab7abd",
+      "ref": "ui/src/css/vars.css:206"
+    },
+    {
+      "token": "--prismFunctionColor",
+      "value": "#7c00aa",
+      "ref": "ui/src/css/vars.css:77"
+    },
+    {
+      "token": "--prismKeywordColor",
+      "value": "#b3703d",
+      "ref": "ui/src/css/vars.css:210"
+    },
+    {
+      "token": "--prismKeywordColor",
+      "value": "#a04900",
+      "ref": "ui/src/css/vars.css:81"
+    },
+    {
+      "token": "--prismNumberColor",
+      "value": "#86b9bb",
+      "ref": "ui/src/css/vars.css:208"
+    },
+    {
+      "token": "--prismNumberColor",
+      "value": "#246f86",
+      "ref": "ui/src/css/vars.css:79"
+    },
+    {
+      "token": "--prismPropertyColor",
+      "value": "#90c2d1",
+      "ref": "ui/src/css/vars.css:209"
+    },
+    {
+      "token": "--prismPropertyColor",
+      "value": "#246f86",
+      "ref": "ui/src/css/vars.css:80"
+    },
+    {
+      "token": "--prismPunctuationColor",
+      "value": "var(--surfaceTxtColor)",
+      "ref": "ui/src/css/vars.css:212"
+    },
+    {
+      "token": "--prismPunctuationColor",
+      "value": "var(--surfaceTxtColor)",
+      "ref": "ui/src/css/vars.css:83"
+    },
+    {
+      "token": "--prismStringColor",
+      "value": "#87b47e",
+      "ref": "ui/src/css/vars.css:207"
+    },
+    {
+      "token": "--prismStringColor",
+      "value": "#116b00",
+      "ref": "ui/src/css/vars.css:78"
+    },
+    {
+      "token": "--rightBoxShadow",
+      "value": "1px 0px 5px 0 rgba(0,0,0, 0.3)",
+      "ref": "ui/src/css/vars.css:200"
+    },
+    {
+      "token": "--rightBoxShadow",
+      "value": "1px 0px 5px 0 rgba(34, 36, 36, 0.1)",
+      "ref": "ui/src/css/vars.css:95"
+    },
+    {
+      "token": "--rightScrollShadow",
+      "value": "-3px 0px 5px 0px rgba(0,0,0, 0.4)",
+      "ref": "ui/src/css/vars.css:204"
+    },
+    {
+      "token": "--rightScrollShadow",
+      "value": "-3px 0px 5px 0px rgba(34, 36, 36, 0.2)",
+      "ref": "ui/src/css/vars.css:99"
+    },
+    {
+      "token": "--searchWidth",
+      "value": "400px",
+      "ref": "ui/src/css/map.css:17"
+    },
+    {
+      "token": "--secondaryAlt1Color",
+      "value": "var(--surfaceAlt3Color)",
+      "ref": "ui/src/css/vars.css:155"
+    },
+    {
+      "token": "--secondaryAlt1Color",
+      "value": "#dce0e5",
+      "ref": "ui/src/css/vars.css:16"
+    },
+    {
+      "token": "--secondaryAlt2Color",
+      "value": "var(--surfaceAlt4Color)",
+      "ref": "ui/src/css/vars.css:156"
+    },
+    {
+      "token": "--secondaryAlt2Color",
+      "value": "#d3d9df",
+      "ref": "ui/src/css/vars.css:17"
+    },
+    {
+      "token": "--secondaryColor",
+      "value": "#e4e8ec",
+      "ref": "ui/src/css/vars.css:15"
+    },
+    {
+      "token": "--secondaryColor",
+      "value": "var(--surfaceAlt2Color)",
+      "ref": "ui/src/css/vars.css:153"
+    },
+    {
+      "token": "--secondaryTxtColor",
+      "value": "var(--surfaceTxtColor)",
+      "ref": "ui/src/css/vars.css:154"
+    },
+    {
+      "token": "--secondaryTxtColor",
+      "value": "var(--primaryColor)",
+      "ref": "ui/src/css/vars.css:18"
+    },
+    {
+      "token": "--secondaryTxtDisabledColor",
+      "value": "color-mix(in srgb, var(--secondaryTxtColor), transparent 50%)",
+      "ref": "ui/src/css/vars.css:20"
+    },
+    {
+      "token": "--secondaryTxtHintColor",
+      "value": "color-mix(in srgb, var(--secondaryTxtColor), transparent 35%)",
+      "ref": "ui/src/css/vars.css:19"
+    },
+    {
+      "token": "--selectionColor",
+      "value": "rgba(255,255,255, 0.22)",
+      "ref": "ui/src/css/vars.css:189"
+    },
+    {
+      "token": "--selectionColor",
+      "value": "var(--surfaceAccentColor)",
+      "ref": "ui/src/css/vars.css:233"
+    },
+    {
+      "token": "--selectionColor",
+      "value": "rgba(70, 90, 115, 0.25)",
+      "ref": "ui/src/css/vars.css:71"
+    },
+    {
+      "token": "--siblingSpacing",
+      "value": "var(--smSpacing)",
+      "ref": "ui/src/css/accordion.css:2"
+    },
+    {
+      "token": "--sidebarSpacing",
+      "value": "calc(var(--spacing) / 2)",
+      "ref": "ui/src/css/layout.css:295"
+    },
+    {
+      "token": "--size",
+      "value": "24px",
+      "ref": "ui/src/css/form.css:304"
+    },
+    {
+      "token": "--size",
+      "value": "26px",
+      "ref": "ui/src/css/form.css:328"
+    },
+    {
+      "token": "--size",
+      "value": "40px",
+      "ref": "ui/src/css/providers.css:2"
+    },
+    {
+      "token": "--slideAnimationSpeed",
+      "value": "200ms",
+      "ref": "ui/src/css/vars.css:133"
+    },
+    {
+      "token": "--smBtnHeight",
+      "value": "35px",
+      "ref": "ui/src/css/vars.css:110"
+    },
+    {
+      "token": "--smBtnHeight",
+      "value": "30px",
+      "ref": "ui/src/css/vars.css:244"
+    },
+    {
+      "token": "--smFontSize",
+      "value": "13px",
+      "ref": "ui/src/css/vars.css:102"
+    },
+    {
+      "token": "--smLineHeight",
+      "value": "16px",
+      "ref": "ui/src/css/vars.css:106"
+    },
+    {
+      "token": "--smSpacing",
+      "value": "20px",
+      "ref": "ui/src/css/vars.css:114"
+    },
+    {
+      "token": "--smSpacing",
+      "value": "15px",
+      "ref": "ui/src/css/vars.css:242"
+    },
+    {
+      "token": "--smWrapperWidth",
+      "value": "430px",
+      "ref": "ui/src/css/vars.css:125"
+    },
+    {
+      "token": "--spacing",
+      "value": "30px",
+      "ref": "ui/src/css/vars.css:113"
+    },
+    {
+      "token": "--spacing",
+      "value": "20px",
+      "ref": "ui/src/css/vars.css:241"
+    },
+    {
+      "token": "--successAlt1Color",
+      "value": "color-mix(in srgb, var(--successColor), black 10%)",
+      "ref": "ui/src/css/vars.css:173"
+    },
+    {
+      "token": "--successAlt1Color",
+      "value": "color-mix(in srgb, var(--successColor), white 10%)",
+      "ref": "ui/src/css/vars.css:30"
+    },
+    {
+      "token": "--successAlt2Color",
+      "value": "color-mix(in srgb, var(--successColor), black 15%)",
+      "ref": "ui/src/css/vars.css:174"
+    },
+    {
+      "token": "--successAlt2Color",
+      "value": "color-mix(in srgb, var(--successColor), white 15%)",
+      "ref": "ui/src/css/vars.css:31"
+    },
+    {
+      "token": "--successColor",
+      "value": "#27865d",
+      "ref": "ui/src/css/vars.css:171"
+    },
+    {
+      "token": "--successColor",
+      "value": "#22a96d",
+      "ref": "ui/src/css/vars.css:29"
+    },
+    {
+      "token": "--successTxtColor",
+      "value": "var(--surfaceTxtColor)",
+      "ref": "ui/src/css/vars.css:172"
+    },
+    {
+      "token": "--successTxtColor",
+      "value": "var(--primaryTxtColor)",
+      "ref": "ui/src/css/vars.css:32"
+    },
+    {
+      "token": "--successTxtDisabledColor",
+      "value": "var(--primaryTxtDisabledColor)",
+      "ref": "ui/src/css/vars.css:34"
+    },
+    {
+      "token": "--successTxtHintColor",
+      "value": "var(--primaryTxtHintColor)",
+      "ref": "ui/src/css/vars.css:33"
+    },
+    {
+      "token": "--surfaceAccentColor",
+      "value": "color-mix(in srgb, var(--surfaceColor), white 20%)",
+      "ref": "ui/src/css/vars.css:225"
+    },
+    {
+      "token": "--surfaceAccentColor",
+      "value": "color-mix(in srgb, var(--accentColor), white 80%)",
+      "ref": "ui/src/css/vars.css:66"
+    },
+    {
+      "token": "--surfaceAlt1Color",
+      "value": "color-mix(in srgb, var(--surfaceColor), white 2%)",
+      "ref": "ui/src/css/vars.css:142"
+    },
+    {
+      "token": "--surfaceAlt1Color",
+      "value": "color-mix(in srgb, var(--surfaceColor), white 5%)",
+      "ref": "ui/src/css/vars.css:217"
+    },
+    {
+      "token": "--surfaceAlt1Color",
+      "value": "#f8f9fa",
+      "ref": "ui/src/css/vars.css:58"
+    },
+    {
+      "token": "--surfaceAlt2Color",
+      "value": "color-mix(in srgb, var(--surfaceColor), white 7%)",
+      "ref": "ui/src/css/vars.css:143"
+    },
+    {
+      "token": "--surfaceAlt2Color",
+      "value": "color-mix(in srgb, var(--surfaceColor), white 10%)",
+      "ref": "ui/src/css/vars.css:218"
+    },
+    {
+      "token": "--surfaceAlt2Color",
+      "value": "#e4e8ec",
+      "ref": "ui/src/css/vars.css:59"
+    },
+    {
+      "token": "--surfaceAlt3Color",
+      "value": "color-mix(in srgb, var(--surfaceColor), white 12%)",
+      "ref": "ui/src/css/vars.css:144"
+    },
+    {
+      "token": "--surfaceAlt3Color",
+      "value": "color-mix(in srgb, var(--surfaceColor), white 20%)",
+      "ref": "ui/src/css/vars.css:219"
+    },
+    {
+      "token": "--surfaceAlt3Color",
+      "value": "#dce0e5",
+      "ref": "ui/src/css/vars.css:60"
+    },
+    {
+      "token": "--surfaceAlt4Color",
+      "value": "color-mix(in srgb, var(--surfaceColor), white 14%)",
+      "ref": "ui/src/css/vars.css:145"
+    },
+    {
+      "token": "--surfaceAlt4Color",
+      "value": "color-mix(in srgb, var(--surfaceColor), white 30%)",
+      "ref": "ui/src/css/vars.css:220"
+    },
+    {
+      "token": "--surfaceAlt4Color",
+      "value": "#d3d9df",
+      "ref": "ui/src/css/vars.css:61"
+    },
+    {
+      "token": "--surfaceAlt5Color",
+      "value": "color-mix(in srgb, var(--surfaceColor), white 16%)",
+      "ref": "ui/src/css/vars.css:146"
+    },
+    {
+      "token": "--surfaceAlt5Color",
+      "value": "color-mix(in srgb, var(--surfaceColor), white 40%)",
+      "ref": "ui/src/css/vars.css:221"
+    },
+    {
+      "token": "--surfaceAlt5Color",
+      "value": "#ccd4db",
+      "ref": "ui/src/css/vars.css:62"
+    },
+    {
+      "token": "--surfaceColor",
+      "value": "#1b1b1b",
+      "ref": "ui/src/css/vars.css:141"
+    },
+    {
+      "token": "--surfaceColor",
+      "value": "var(--accentColor)",
+      "ref": "ui/src/css/vars.css:216"
+    },
+    {
+      "token": "--surfaceColor",
+      "value": "#fff",
+      "ref": "ui/src/css/vars.css:57"
+    },
+    {
+      "token": "--surfaceDangerColor",
+      "value": "color-mix(in srgb, var(--dangerColor), var(--surfaceColor) 45%)",
+      "ref": "ui/src/css/vars.css:187"
+    },
+    {
+      "token": "--surfaceDangerColor",
+      "value": "color-mix(in srgb, var(--dangerColor), transparent 40%)",
+      "ref": "ui/src/css/vars.css:229"
+    },
+    {
+      "token": "--surfaceDangerColor",
+      "value": "color-mix(in srgb, var(--dangerColor), white 80%)",
+      "ref": "ui/src/css/vars.css:70"
+    },
+    {
+      "token": "--surfaceInfoColor",
+      "value": "color-mix(in srgb, var(--infoColor), var(--surfaceColor) 45%)",
+      "ref": "ui/src/css/vars.css:169"
+    },
+    {
+      "token": "--surfaceInfoColor",
+      "value": "color-mix(in srgb, var(--infoColor), transparent 40%)",
+      "ref": "ui/src/css/vars.css:226"
+    },
+    {
+      "token": "--surfaceInfoColor",
+      "value": "color-mix(in srgb, var(--infoColor), white 80%)",
+      "ref": "ui/src/css/vars.css:67"
+    },
+    {
+      "token": "--surfaceSuccessColor",
+      "value": "color-mix(in srgb, var(--successColor), var(--surfaceColor) 45%)",
+      "ref": "ui/src/css/vars.css:175"
+    },
+    {
+      "token": "--surfaceSuccessColor",
+      "value": "color-mix(in srgb, var(--successColor), transparent 40%)",
+      "ref": "ui/src/css/vars.css:227"
+    },
+    {
+      "token": "--surfaceSuccessColor",
+      "value": "color-mix(in srgb, var(--successColor), white 80%)",
+      "ref": "ui/src/css/vars.css:68"
+    },
+    {
+      "token": "--surfaceTxtColor",
+      "value": "#ebebeb",
+      "ref": "ui/src/css/vars.css:148"
+    },
+    {
+      "token": "--surfaceTxtColor",
+      "value": "#fff",
+      "ref": "ui/src/css/vars.css:222"
+    },
+    {
+      "token": "--surfaceTxtColor",
+      "value": "#25272d",
+      "ref": "ui/src/css/vars.css:63"
+    },
+    {
+      "token": "--surfaceTxtDisabledColor",
+      "value": "color-mix(in srgb, var(--surfaceTxtColor), transparent 65%)",
+      "ref": "ui/src/css/vars.css:151"
+    },
+    {
+      "token": "--surfaceTxtDisabledColor",
+      "value": "color-mix(in srgb, var(--surfaceTxtColor), transparent 60%)",
+      "ref": "ui/src/css/vars.css:224"
+    },
+    {
+      "token": "--surfaceTxtDisabledColor",
+      "value": "#a2a9ae",
+      "ref": "ui/src/css/vars.css:65"
+    },
+    {
+      "token": "--surfaceTxtHintColor",
+      "value": "color-mix(in srgb, var(--surfaceTxtColor), transparent 45%)",
+      "ref": "ui/src/css/vars.css:150"
+    },
+    {
+      "token": "--surfaceTxtHintColor",
+      "value": "color-mix(in srgb, var(--surfaceTxtColor), transparent 35%)",
+      "ref": "ui/src/css/vars.css:223"
+    },
+    {
+      "token": "--surfaceTxtHintColor",
+      "value": "#687278",
+      "ref": "ui/src/css/vars.css:64"
+    },
+    {
+      "token": "--surfaceWarningColor",
+      "value": "color-mix(in srgb, var(--warningColor), var(--surfaceColor) 45%)",
+      "ref": "ui/src/css/vars.css:181"
+    },
+    {
+      "token": "--surfaceWarningColor",
+      "value": "color-mix(in srgb, var(--warningColor), transparent 40%)",
+      "ref": "ui/src/css/vars.css:228"
+    },
+    {
+      "token": "--surfaceWarningColor",
+      "value": "color-mix(in srgb, var(--warningColor), white 80%)",
+      "ref": "ui/src/css/vars.css:69"
+    },
+    {
+      "token": "--switchH",
+      "value": "24px",
+      "ref": "ui/src/css/form.css:833"
+    },
+    {
+      "token": "--switchH",
+      "value": "21px",
+      "ref": "ui/src/css/form.css:887"
+    },
+    {
+      "token": "--switchTranslateX",
+      "value": "0",
+      "ref": "ui/src/css/form.css:835"
+    },
+    {
+      "token": "--switchTranslateX",
+      "value": "0",
+      "ref": "ui/src/css/form.css:837"
+    },
+    {
+      "token": "--switchTranslateX",
+      "value": "calc(var(--switchW) - var(--switchH) - 3px)",
+      "ref": "ui/src/css/form.css:874"
+    },
+    {
+      "token": "--switchW",
+      "value": "41px",
+      "ref": "ui/src/css/form.css:834"
+    },
+    {
+      "token": "--switchW",
+      "value": "35px",
+      "ref": "ui/src/css/form.css:888"
+    },
+    {
+      "token": "--tableSpacing",
+      "value": "var(--inputPadding)",
+      "ref": "ui/src/css/table.css:2"
+    },
+    {
+      "token": "--thumbSize",
+      "value": "var(--btnHeight)",
+      "ref": "ui/src/css/base.css:1139"
+    },
+    {
+      "token": "--thumbSize",
+      "value": "80px",
+      "ref": "ui/src/css/base.css:1183"
+    },
+    {
+      "token": "--thumbSize",
+      "value": "var(--smBtnHeight)",
+      "ref": "ui/src/css/base.css:1187"
+    },
+    {
+      "token": "--thumbSize",
+      "value": "100%",
+      "ref": "ui/src/css/recordFilePicker.css:23"
+    },
+    {
+      "token": "--thumbSize",
+      "value": "24px",
+      "ref": "ui/src/css/recordSummary.css:21"
+    },
+    {
+      "token": "--thumbSize",
+      "value": "20px",
+      "ref": "ui/src/css/recordSummary.css:24"
+    },
+    {
+      "token": "--thumbSize",
+      "value": "28px",
+      "ref": "ui/src/css/recordSummary.css:6"
+    },
+    {
+      "token": "--toastAccentColor",
+      "value": "var(--infoColor)",
+      "ref": "ui/src/css/toast.css:22"
+    },
+    {
+      "token": "--toastAccentColor",
+      "value": "var(--successColor)",
+      "ref": "ui/src/css/toast.css:78"
+    },
+    {
+      "token": "--toastAccentColor",
+      "value": "var(--dangerColor)",
+      "ref": "ui/src/css/toast.css:85"
+    },
+    {
+      "token": "--toastSurfaceColor",
+      "value": "var(--surfaceInfoColor)",
+      "ref": "ui/src/css/toast.css:20"
+    },
+    {
+      "token": "--toastSurfaceColor",
+      "value": "var(--surfaceSuccessColor)",
+      "ref": "ui/src/css/toast.css:77"
+    },
+    {
+      "token": "--toastSurfaceColor",
+      "value": "var(--surfaceDangerColor)",
+      "ref": "ui/src/css/toast.css:84"
+    },
+    {
+      "token": "--toastSurfaceTxtColor",
+      "value": "var(--surfaceTxtColor)",
+      "ref": "ui/src/css/toast.css:21"
+    },
+    {
+      "token": "--toastWidth",
+      "value": "420px",
+      "ref": "ui/src/css/toast.css:19"
+    },
+    {
+      "token": "--tooltipSurfaceColor",
+      "value": "rgb(22,22,22, 0.9)",
+      "ref": "ui/src/css/vars.css:196"
+    },
+    {
+      "token": "--tooltipSurfaceColor",
+      "value": "rgba(37, 39, 45, 0.9)",
+      "ref": "ui/src/css/vars.css:91"
+    },
+    {
+      "token": "--tooltipTxtColor",
+      "value": "var(--surfaceTxtColor)",
+      "ref": "ui/src/css/vars.css:149"
+    },
+    {
+      "token": "--tooltipTxtColor",
+      "value": "#fff",
+      "ref": "ui/src/css/vars.css:90"
+    },
+    {
+      "token": "--topScrollShadow",
+      "value": "0px 2px 8px 1px rgba(0,0,0, 0.45)",
+      "ref": "ui/src/css/vars.css:201"
+    },
+    {
+      "token": "--topScrollShadow",
+      "value": "0px 2px 8px 1px rgba(34, 36, 36, 0.15)",
+      "ref": "ui/src/css/vars.css:96"
+    },
+    {
+      "token": "--topShadowOffset",
+      "value": "calc(var(--sidebarSpacing) + 1px)",
+      "ref": "ui/src/css/layout.css:316"
+    },
+    {
+      "token": "--topShadowOffset",
+      "value": "6px",
+      "ref": "ui/src/css/layout.css:601"
+    },
+    {
+      "token": "--topShadowOffset",
+      "value": "calc(var(--spacing) + 1px)",
+      "ref": "ui/src/css/modal.css:228"
+    },
+    {
+      "token": "--topShadowOffset",
+      "value": "6px",
+      "ref": "ui/src/css/modal.css:268"
+    },
+    {
+      "token": "--warningAlt1Color",
+      "value": "color-mix(in srgb, var(--warningColor), black 10%)",
+      "ref": "ui/src/css/vars.css:179"
+    },
+    {
+      "token": "--warningAlt1Color",
+      "value": "color-mix(in srgb, var(--warningColor), white 10%)",
+      "ref": "ui/src/css/vars.css:37"
+    },
+    {
+      "token": "--warningAlt2Color",
+      "value": "color-mix(in srgb, var(--warningColor), black 15%)",
+      "ref": "ui/src/css/vars.css:180"
+    },
+    {
+      "token": "--warningAlt2Color",
+      "value": "color-mix(in srgb, var(--warningColor), white 15%)",
+      "ref": "ui/src/css/vars.css:38"
+    },
+    {
+      "token": "--warningColor",
+      "value": "#cf4e17",
+      "ref": "ui/src/css/vars.css:177"
+    },
+    {
+      "token": "--warningColor",
+      "value": "#e57534",
+      "ref": "ui/src/css/vars.css:36"
+    },
+    {
+      "token": "--warningTxtColor",
+      "value": "var(--surfaceTxtColor)",
+      "ref": "ui/src/css/vars.css:178"
+    },
+    {
+      "token": "--warningTxtColor",
+      "value": "var(--primaryTxtColor)",
+      "ref": "ui/src/css/vars.css:39"
+    },
+    {
+      "token": "--warningTxtDisabledColor",
+      "value": "var(--primaryTxtDisabledColor)",
+      "ref": "ui/src/css/vars.css:41"
+    },
+    {
+      "token": "--warningTxtHintColor",
+      "value": "var(--primaryTxtHintColor)",
+      "ref": "ui/src/css/vars.css:40"
+    },
+    {
+      "token": "--wrapperWidth",
+      "value": "840px",
+      "ref": "ui/src/css/vars.css:124"
+    }
+  ],
+  "dependencies": [
+    {
+      "ecosystem": "go",
+      "name": "github.com/asaskevich/govalidator",
+      "version": "v0.0.0-20230301143203-a9d515a09cc2",
+      "indirect": true,
+      "ref": "go.mod:29"
+    },
+    {
+      "ecosystem": "go",
+      "name": "github.com/disintegration/imaging",
+      "version": "v1.6.2",
+      "indirect": false,
+      "ref": "go.mod:6"
+    },
+    {
+      "ecosystem": "go",
+      "name": "github.com/dlclark/regexp2/v2",
+      "version": "v2.9.1",
+      "indirect": true,
+      "ref": "go.mod:30"
+    },
+    {
+      "ecosystem": "go",
+      "name": "github.com/domodwyer/mailyak/v3",
+      "version": "v3.6.2",
+      "indirect": false,
+      "ref": "go.mod:7"
+    },
+    {
+      "ecosystem": "go",
+      "name": "github.com/dop251/base64dec",
+      "version": "v0.0.0-20231022112746-c6c9f9a96217",
+      "indirect": true,
+      "ref": "go.mod:31"
+    },
+    {
+      "ecosystem": "go",
+      "name": "github.com/dop251/goja",
+      "version": "v0.0.0-20261021140635-64adc8bb4d51",
+      "indirect": false,
+      "ref": "go.mod:8"
+    },
+    {
+      "ecosystem": "go",
+      "name": "github.com/dop251/goja_nodejs",
+      "version": "v0.0.0-20260212111938-1f56ff5bcf14",
+      "indirect": false,
+      "ref": "go.mod:9"
+    },
+    {
+      "ecosystem": "go",
+      "name": "github.com/dustin/go-humanize",
+      "version": "v1.1.0",
+      "indirect": true,
+      "ref": "go.mod:32"
+    },
+    {
+      "ecosystem": "go",
+      "name": "github.com/fatih/color",
+      "version": "v1.19.0",
+      "indirect": false,
+      "ref": "go.mod:10"
+    },
+    {
+      "ecosystem": "go",
+      "name": "github.com/fsnotify/fsnotify",
+      "version": "v1.10.1",
+      "indirect": false,
+      "ref": "go.mod:11"
+    },
+    {
+      "ecosystem": "go",
+      "name": "github.com/gabriel-vasile/mimetype",
+      "version": "v1.4.15",
+      "indirect": false,
+      "ref": "go.mod:12"
+    },
+    {
+      "ecosystem": "go",
+      "name": "github.com/ganigeorgiev/fexpr",
+      "version": "v0.6.0",
+      "indirect": false,
+      "ref": "go.mod:13"
+    },
+    {
+      "ecosystem": "go",
+      "name": "github.com/go-sourcemap/sourcemap",
+      "version": "v2.1.4+incompatible",
+      "indirect": true,
+      "ref": "go.mod:33"
+    },
+    {
+      "ecosystem": "go",
+      "name": "github.com/golang-jwt/jwt/v5",
+      "version": "v5.3.1",
+      "indirect": false,
+      "ref": "go.mod:14"
+    },
+    {
+      "ecosystem": "go",
+      "name": "github.com/google/pprof",
+      "version": "v0.0.0-20261016150608-1facf8f91b50",
+      "indirect": true,
+      "ref": "go.mod:34"
+    },
+    {
+      "ecosystem": "go",
+      "name": "github.com/google/uuid",
+      "version": "v1.6.0",
+      "indirect": true,
+      "ref": "go.mod:35"
+    },
+    {
+      "ecosystem": "go",
+      "name": "github.com/inconshreveable/mousetrap",
+      "version": "v1.1.0",
+      "indirect": true,
+      "ref": "go.mod:36"
+    },
+    {
+      "ecosystem": "go",
+      "name": "github.com/mattn/go-colorable",
+      "version": "v0.1.16",
+      "indirect": true,
+      "ref": "go.mod:37"
+    },
+    {
+      "ecosystem": "go",
+      "name": "github.com/mattn/go-isatty",
+      "version": "v0.0.24",
+      "indirect": true,
+      "ref": "go.mod:38"
+    },
+    {
+      "ecosystem": "go",
+      "name": "github.com/ncruces/go-strftime",
+      "version": "v1.1.0",
+      "indirect": true,
+      "ref": "go.mod:39"
+    },
+    {
+      "ecosystem": "go",
+      "name": "github.com/pocketbase/dbx",
+      "version": "v1.12.0",
+      "indirect": false,
+      "ref": "go.mod:15"
+    },
+    {
+      "ecosystem": "go",
+      "name": "github.com/pocketbase/ozzo-validation/v4",
+      "version": "v4.3.0",
+      "indirect": false,
+      "ref": "go.mod:16"
+    },
+    {
+      "ecosystem": "go",
+      "name": "github.com/pocketbase/tygoja",
+      "version": "v0.1.0",
+      "indirect": false,
+      "ref": "go.mod:17"
+    },
+    {
+      "ecosystem": "go",
+      "name": "github.com/remyoudompheng/bigfft",
+      "version": "v0.0.0-20230129092748-24d4a6f8daec",
+      "indirect": true,
+      "ref": "go.mod:40"
+    },
+    {
+      "ecosystem": "go",
+      "name": "github.com/spf13/cast",
+      "version": "v1.10.0",
+      "indirect": false,
+      "ref": "go.mod:18"
+    },
+    {
+      "ecosystem": "go",
+      "name": "github.com/spf13/cobra",
+      "version": "v1.10.2",
+      "indirect": false,
+      "ref": "go.mod:19"
+    },
+    {
+      "ecosystem": "go",
+      "name": "github.com/spf13/pflag",
+      "version": "v1.0.10",
+      "indirect": true,
+      "ref": "go.mod:41"
+    },
+    {
+      "ecosystem": "go",
+      "name": "github.com/stretchr/testify",
+      "version": "v1.8.0",
+      "indirect": true,
+      "ref": "go.mod:42"
+    },
+    {
+      "ecosystem": "go",
+      "name": "golang.org/x/crypto",
+      "version": "v0.58.0",
+      "indirect": false,
+      "ref": "go.mod:20"
+    },
+    {
+      "ecosystem": "go",
+      "name": "golang.org/x/image",
+      "version": "v0.47.0",
+      "indirect": false,
+      "ref": "go.mod:21"
+    },
+    {
+      "ecosystem": "go",
+      "name": "golang.org/x/mod",
+      "version": "v0.42.0",
+      "indirect": true,
+      "ref": "go.mod:43"
+    },
+    {
+      "ecosystem": "go",
+      "name": "golang.org/x/net",
+      "version": "v0.61.0",
+      "indirect": false,
+      "ref": "go.mod:22"
+    },
+    {
+      "ecosystem": "go",
+      "name": "golang.org/x/oauth2",
+      "version": "v0.37.0",
+      "indirect": false,
+      "ref": "go.mod:23"
+    },
+    {
+      "ecosystem": "go",
+      "name": "golang.org/x/sync",
+      "version": "v0.24.0",
+      "indirect": false,
+      "ref": "go.mod:24"
+    },
+    {
+      "ecosystem": "go",
+      "name": "golang.org/x/sys",
+      "version": "v0.49.0",
+      "indirect": true,
+      "ref": "go.mod:44"
+    },
+    {
+      "ecosystem": "go",
+      "name": "golang.org/x/text",
+      "version": "v0.43.0",
+      "indirect": true,
+      "ref": "go.mod:45"
+    },
+    {
+      "ecosystem": "go",
+      "name": "golang.org/x/tools",
+      "version": "v0.52.0",
+      "indirect": true,
+      "ref": "go.mod:46"
+    },
+    {
+      "ecosystem": "go",
+      "name": "modernc.org/libc",
+      "version": "v1.77.1",
+      "indirect": true,
+      "ref": "go.mod:47"
+    },
+    {
+      "ecosystem": "go",
+      "name": "modernc.org/mathutil",
+      "version": "v1.7.1",
+      "indirect": true,
+      "ref": "go.mod:48"
+    },
+    {
+      "ecosystem": "go",
+      "name": "modernc.org/memory",
+      "version": "v1.12.1",
+      "indirect": true,
+      "ref": "go.mod:49"
+    },
+    {
+      "ecosystem": "go",
+      "name": "modernc.org/sqlite",
+      "version": "v1.60.1",
+      "indirect": false,
+      "ref": "go.mod:25"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "dprint",
+      "version": "^0.52.0",
+      "indirect": true,
+      "ref": "ui/package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "leaflet",
+      "version": "^1.9.4",
+      "indirect": false,
+      "ref": "ui/package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "pocketbase",
+      "version": "^0.28.1",
+      "indirect": false,
+      "ref": "ui/package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "vite",
+      "version": "^8.0.0",
+      "indirect": true,
+      "ref": "ui/package.json"
+    }
+  ]
+}

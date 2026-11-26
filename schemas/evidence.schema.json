@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec-anything.dev/schemas/evidence.schema.json",
+  "title": "06 Behavior Evidence JSONL Record Schema",
+  "type": "object",
+  "required": [
+    "evidence_id",
+    "feature_id",
+    "category",
+    "source_location",
+    "artifact_sha256",
+    "observation_tool",
+    "environment",
+    "precondition",
+    "input",
+    "observed_output",
+    "status",
+    "limitations"
+  ],
+  "properties": {
+    "evidence_id": { "type": "string", "pattern": "^EV-[0-9]{3}$" },
+    "feature_id": { "type": "string", "pattern": "^F-[0-9]{3}$" },
+    "category": {
+      "type": "string",
+      "enum": ["normal", "boundary", "error", "auth", "realtime", "persistence", "restart_recovery", "cancel_retry", "cli", "release_rea", "ui_state"]
+    },
+    "source_location": { "type": "string", "minLength": 1 },
+    "artifact_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "observation_tool": { "type": "string", "minLength": 1 },
+    "environment": { "type": "string", "minLength": 1 },
+    "precondition": { "type": "object" },
+    "input": { "type": "object" },
+    "observed_output": { "type": "object" },
+    "event_sequence": { "type": "array", "items": { "type": "object" } },
+    "storage_effect": { "type": ["object", "null"] },
+    "screen_ids": { "type": "array", "items": { "type": "string", "pattern": "^SCR-[0-9]{3}$" } },
+    "contract_ref": { "type": ["string", "null"] },
+    "state_transition_ref": { "type": ["string", "null"] },
+    "comparison_rules": {
+      "type": "object",
+      "properties": {
+        "exact_fields": { "type": "array", "items": { "type": "string" } },
+        "ignored_fields": { "type": "array", "items": { "type": "string" } },
+        "order_sensitive": { "type": "boolean" },
+        "visual_max_diff_ratio": { "type": ["number", "null"] }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["observed", "code-verified", "inferred", "assumed", "unverified"]
+    },
+    "limitations": { "type": "string" }
+  }
+}

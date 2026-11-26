@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec-anything.dev/schemas/feature_matrix.schema.json",
+  "title": "03 Feature Matrix Schema",
+  "type": "object",
+  "required": ["schema_version", "target", "generated_at", "features"],
+  "properties": {
+    "schema_version": { "type": "string", "const": "1.0.0" },
+    "target": {
+      "type": "object",
+      "required": ["repo", "tag", "commit_sha"],
+      "properties": {
+        "repo": { "type": "string" },
+        "tag": { "type": "string" },
+        "commit_sha": { "type": "string", "minLength": 7 },
+        "release_artifact": { "type": ["string", "null"] },
+        "release_sha256": { "type": ["string", "null"] }
+      }
+    },
+    "generated_at": { "type": "string" },
+    "features": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "feature_id",
+          "domain",
+          "name",
+          "kind",
+          "is_macro_group",
+          "entrypoint",
+          "source_refs",
+          "status",
+          "evidence_ids",
+          "screen_ids",
+          "contract_refs",
+          "test_ids"
+        ],
+        "properties": {
+          "feature_id": { "type": "string", "pattern": "^F-[0-9]{3}$" },
+          "domain": { "type": "string" },
+          "name": { "type": "string" },
+          "kind": {
+            "type": "string",
+            "enum": ["ui_screen", "menu", "api_endpoint", "realtime_stream", "cli_command", "setting", "shortcut", "background_job", "migration", "storage", "auth", "release_boundary"]
+          },
+          "is_macro_group": { "type": "boolean" },
+          "entrypoint": { "type": "string" },
+          "source_refs": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+          "platform_or_role_branch": { "type": ["string", "null"] },
+          "status": {
+            "type": "string",
+            "enum": ["observed", "code-verified", "inferred", "assumed", "unverified"]
+          },
+          "evidence_ids": { "type": "array", "items": { "type": "string", "pattern": "^EV-[0-9]{3}$" } },
+          "screen_ids": { "type": "array", "items": { "type": "string", "pattern": "^SCR-[0-9]{3}$" } },
+          "contract_refs": { "type": "array", "items": { "type": "string" } },
+          "test_ids": { "type": "array", "items": { "type": "string", "pattern": "^TC-[0-9]{3}$" } },
+          "unverified_reason": { "type": ["string", "null"] },
+          "reverify_how": { "type": ["string", "null"] }
+        }
+      }
+    }
+  }
+}

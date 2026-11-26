@@ -1,0 +1,11 @@
+PASS start
+PASS pair
+PASS once
+PASS two-pairs
+PASS blocked
+PASS persist
+PASS restart
+PASS win-hold
+PASS continue-reload
+PASS continue-move
+PASS loss
