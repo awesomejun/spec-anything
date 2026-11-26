@@ -6,7 +6,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-10b981.svg?style=flat-square)](LICENSE)
 [![Agents](https://img.shields.io/badge/Agents-Claude%20Code%20%7C%20Codex%20%7C%20OpenBot-0f172a.svg?style=flat-square)](SKILL.md)
-[![Verified](https://img.shields.io/badge/Verified-39%2F39%20Gates%20%C2%B7%2041%2F41%20Parity-3b82f6.svg?style=flat-square)](#examples)
+[![Verified](https://img.shields.io/badge/Verified-45%2F45%20Gates%20%C2%B7%2041%2F41%20Parity-3b82f6.svg?style=flat-square)](#examples)
 
 **English** · [한국어](README.ko.md)
 
@@ -88,12 +88,13 @@ Use the spec-anything skill on https://github.com/Splode/pomotroid (v1.7.1, mode
 to generate deliverables 01–12, build a clean-room reimplementation, and pass all parity tests.
 ```
 
-### 3. Verify all 3 included examples locally (39/39 gates + 0 secret leaks)
+### 3. Verify all 3 included examples locally (45/45 gates + governance & security self-tests)
 
 ```bash
 for ex in examples/*; do python3 scripts/validate_bundle.py "$ex" --tier T3 --verify-checksums; done
+python3 scripts/validate_bundle.py --self-test
 python3 scripts/frida_trace_bridge.py self-test
-python3 scripts/secret_guard.py . --fail-on-hit
+python3 scripts/secret_guard.py --self-test && python3 scripts/secret_guard.py . --fail-on-hit --scan-injections
 ```
 
 ---
@@ -129,9 +130,22 @@ flowchart LR
 
 See [`references/adapters/re-backends.md`](references/adapters/re-backends.md) for full backend setup commands, MCP contracts, and non-bypass safety boundaries.
 
-### 2. Fixed 12-Artifact System (`01`–`12`) & 7-Phase Closed-Loop Pipeline
+### 2. Governance, Safety & State-Integrity Layer (`v4.1`)
 
-Every target produces the same **12 fixed deliverables**, cross-linked by `Feature ID` (`F-001`), `Evidence ID` (`EV-001`), and `Screen ID` (`SCR-001`), tagged with an explicit 5-state honesty enum (`observed`, `code-verified`, `inferred`, `assumed`, `unverified`), sealed with `SHA256SUMS.txt`, and checked by **13 mechanical quality gates**:
+To prevent AI over-claiming, silent stale-evidence reuse, race corruption, and untrusted-input prompt injection, `spec-anything` enforces six deterministic governance mechanisms on top of the 4-layer engine:
+
+| Governance Mechanism | What It Enforces | Implementation |
+| :--- | :--- | :--- |
+| **Machine-Ceiling Downgrade-Only Gate & Anti-Slop** | Computes deterministic `grade_ceiling` (`A`–`F`) and `can_claim_full_coverage` from observed ratio, failures, and degraded tools — AI verdicts may only maintain or downgrade, never exceed the ceiling; rejects `N/A`/`TODO`/`TBD`/`none`/`-`/empty payloads | `scripts/validate_bundle.py` (`GOV1`, optional exit `42` via `--strict-ceiling`), `schemas/parity_report.schema.json` |
+| **Untrusted-Evidence Prompt-Injection Guard** | Enforces a fixed `SECURITY CONTRACT` preamble on evidence snapshots and scans 4 categories (`instruction_override`, `identity_hijack`, `tool_call_forgery`, `exfiltration_channel`) as non-blocking `[AI-Safety]` advisories | `scripts/secret_guard.py --scan-injections`, `SKILL.md`, `references/adapters/re-backends.md` |
+| **3-Axis Bijective Tool Coverage Accounting** | Tracks every analyzer across `applicability × installation × execution` + `evidence_quality`, requires non-primary tools to appear in exactly one of `missing_tools` or `must_rerun_tools`, and separates `terminal_state_completion_rate` from `primary_tool_success_rate` | `scripts/doctor.py --emit-coverage`, `schemas/tool_coverage.schema.json`, `scripts/validate_bundle.py` (`GOV2`) |
+| **Tamper- & Race-Safe State Machine + Epoch Isolation** | Uses atomic `temp + fsync + os.replace` writes, POSIX `fcntl.flock` session locks (`session_busy`), target-digest Epoch reset (`lineage_base_revision`), deterministic `cache_key`, retry budget (`max=3`), `reopen_events`, and append-only `RUN_MANIFEST.jsonl` | `scripts/state_manager.py`, `schemas/state.schema.json` |
+| **3-Tier Secret Confidence Classifier** | Classifies secret detections into `info` (name only), `low` (short/placeholder), and `high` (prefix tokens, Bearer ≥20 chars, or ≥16 chars with ≥2 character classes), blocking gates only on `high` leaks | `scripts/secret_guard.py` (`SEC1`, `--min-confidence`) |
+| **Non-Scope Contract, Defect Non-Inheritance & Requirement Levels** | Requires explicit "Specified Contract vs. Reimplementer Discretion" tables, upstream accidental-bug non-inheritance memos in `02`/`08`, and `must` / `should` / `optional` grading in `03` | `references/deliverables-01-12.md`, `schemas/feature_matrix.schema.json` |
+
+### 3. Fixed 12-Artifact System (`01`–`12`) & 7-Phase Closed-Loop Pipeline
+
+Every target produces the same **12 fixed deliverables**, cross-linked by `Feature ID` (`F-001`), `Evidence ID` (`EV-001`), and `Screen ID` (`SCR-001`), tagged with an explicit 5-state honesty enum (`observed`, `code-verified`, `inferred`, `assumed`, `unverified`), sealed with `SHA256SUMS.txt`, and checked by **15 mechanical quality gates**:
 
 <img src="assets/12-artifacts-map.png" alt="The Fixed 12-Artifact System (01–12) and Mechanical Quality Gates" width="100%" />
 
@@ -140,7 +154,7 @@ flowchart LR
     P0[Phase 0 Doctor Mode and Tier Lock] --> P1[Phase 1 Static Map Census and REA Audit]
     P1 --> P2[Phase 2 03 Feature Matrix and 04 Environment]
     P2 --> P3[Phase 3 Live Runtime 05 UI 06 JSONL 09-11]
-    P3 --> P4[Phase 4 07 Parity Tests Reading 06 and 13 Gates]
+    P3 --> P4[Phase 4 07 Parity Tests Reading 06 and 15 Gates]
     P4 -->|Gate Fail Loopback| P3
     P4 --> P5[Phase 5 Conflict Resolution and Question Closure]
     P5 --> P6[Phase 6 01 02 08 12 SHA256SUMS and Review Views]
@@ -149,7 +163,7 @@ flowchart LR
 - **Closed-Loop Oracle Rule (`06 → 07`)**: `07` parity tests MUST read inputs, preconditions, and expected outputs directly from `06_evidence/ledger.jsonl`. Tests pass against the **live upstream original first** (`upstream_baseline`), then verify any clean-room rebuild (`reimplementation_diff`) with identical assertions and Playwright pixel-diff tolerances.
 - **English Machine Layer + Multi-Language Narrative**: All schema keys, IDs (`F-001`, `EV-001`, `SCR-001`), `[REF: path:start-end]` citations, and literal `## Sources Read` headings stay English forever so automated validators remain deterministic, while prose renders in English, Korean, or Japanese.
 
-### 3. What Static Code Reading Misses: Verified Live REA Findings
+### 4. What Static Code Reading Misses: Verified Live REA Findings
 
 | Gap Missed by Static Reading Alone | Verified Live Across the 3 Included MIT Examples |
 | :--- | :--- |
@@ -157,32 +171,32 @@ flowchart LR
 | **Renamed desktop IPC & notarized binary surface** | In [`Handy v0.10.2`](examples/02-handy-v0.10.2/) *(Nov 2026)*, audited the notarized macOS `arm64` `.dmg` (`14.3 MB`) and Mach-O binary, verifying all **`133 / 133`** Tauri v2 IPC commands and confirming legacy command removal (`change_push_to_talk` → `change_shortcut_activation_setting`). |
 | **Embedded binary assets & hidden state sentinels** | In [`Pomotroid v1.7.1`](examples/03-pomotroid-v1.7.1/), proved the universal macOS Mach-O (`x86_64 + arm64`, `16.0 MB`) embeds exact commit SHA `4a02ac7` + all 38 themes inside the binary, and verified the `long_breaks_enabled=false` cycle sentinel (`work_round_number: 0 → 1`) plus `MIGRATION_1..6` SQLite WAL rules. |
 
-### 4. Ecosystem Comparison
+### 5. Ecosystem Comparison
 
 | Capability | Greenfield SDD (`spec-kit`) | Static Reverse Spec (`cc-rsg`) | Clean-Room Engine (`craft-anything`) | Core RE Tools (`Ghidra` / `IDA` / `Frida`) | `spec-anything` |
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | Fixed 12-artifact clean-room PRD/SDD/Blueprint taxonomy (`01`–`12`) | — | — | — | — | ✓ |
 | Deterministic multi-language static map & git file census | — | ✓ | ✓ | — | ✓ |
-| Clean-Room vs. Deep operating boundary & `doctor` preflight | — | — | ✓ | — | ✓ |
+| Clean-Room vs. Deep operating boundary & 3-axis `doctor` coverage | — | — | ✓ | — | ✓ |
 | Native binary decompilation & dynamic runtime tracing integration | — | — | ✓ | ✓ | ✓ |
 | Machine-readable `06` JSONL ledger directly consumed by `07` parity tests | — | — | — | — | ✓ |
-| Automated 13-gate mechanical bundle validator & `SHA256SUMS.txt` sealing | — | ✓ | — | — | ✓ |
+| 15-gate validator (Machine Ceiling, Anti-Slop, Prompt-Injection, `SHA256SUMS`) | — | ✓ | — | — | ✓ |
 
-### 5. Deterministic Automation Scripts (`scripts/`)
+### 6. Deterministic Automation Scripts (`scripts/`)
 
 | Script | Responsibility |
 | :--- | :--- |
-| [`scripts/doctor.py`](scripts/doctor.py) | Preflight readiness checker across core CLI tools, Playwright/PIL, OS native binary tools, Ghidra, IDA (`idalib`/`ida-hcli`), and Frida |
-| [`scripts/state_manager.py`](scripts/state_manager.py) | Resumable 7-phase state machine (`.spec-anything/state.json`), `--mode clean-room` / `--mode deep`, `goal.json`, and `questions.json` Question Bank |
+| [`scripts/doctor.py`](scripts/doctor.py) | Preflight readiness checker across core CLI tools, Playwright/PIL, OS native binary tools, Ghidra, IDA (`idalib`/`ida-hcli`), and Frida + 3-axis bijective `tool_coverage.json` emitter |
+| [`scripts/state_manager.py`](scripts/state_manager.py) | Atomic `temp+os.replace` + POSIX `flock` 7-phase state machine, `--mode clean-room` / `--mode deep`, target-digest Epoch reset, retry budget, and append-only `RUN_MANIFEST.jsonl` |
 | [`scripts/source_map.py`](scripts/source_map.py) | Multi-language static extractor (Go, TS/JS, Svelte, Vue, Python, Rust, SQL, HTML, CSS) with Loud Warnings on low coverage |
 | [`scripts/file_inventory.py`](scripts/file_inventory.py) | Git-commit tracked file census and `03` Feature ID / exclusion disposition verifier |
 | [`scripts/inspect_release.py`](scripts/inspect_release.py) | Official release archive/binary REA auditor (SHA-256, `checksums.txt`, `lipo`, `otool`, `nm`, `readelf`, `codesign`, `go version -m`, custom `--probe`, Ghidra/IDA backend detection) |
 | [`scripts/frida_trace_bridge.py`](scripts/frida_trace_bridge.py) | Authorized read-only Frida Gum hook generator (`sqlite`, `objc-storage`, `posix-io`, `ipc`), JSONL & `frida-itrace` (`ITR2`) parser into `06_evidence/ledger.jsonl`, offline `self-test` |
-| [`scripts/secret_guard.py`](scripts/secret_guard.py) | Automated API key, PEM private key, credential, and raw JWT scanner/redactor (`--fail-on-hit`) |
-| [`scripts/validate_bundle.py`](scripts/validate_bundle.py) | 13-gate mechanical validator (12 deliverables, `[REF:]`, `## Sources Read`, macro ratio, structure-only Mermaid, JSON Schema, FK integrity, `06→07` linkage, JSON Schema/OpenAPI/SQLite execution, secrets, `SHA256SUMS.txt`) |
+| [`scripts/secret_guard.py`](scripts/secret_guard.py) | 3-tier (`high`/`low`/`info`) secret confidence classifier + 4-category `[AI-Safety]` untrusted prompt-injection detector (`--fail-on-hit`, `--scan-injections`, `--self-test`) |
+| [`scripts/validate_bundle.py`](scripts/validate_bundle.py) | 15-gate mechanical & governance validator (12 deliverables, `[REF:]`, `## Sources Read`, macro ratio, structure-only Mermaid, JSON Schema, FK integrity, `06→07` linkage, OpenAPI/Schema/SQLite execution, 3-tier secrets, Machine Ceiling & Anti-Slop, 3-axis bijective coverage, `SHA256SUMS.txt`, `--strict-ceiling` exit `42`) |
 | [`scripts/render_review.py`](scripts/render_review.py) | Dual-audience PM/Design & Dev/QA single-file HTML, SVG, DOCX, and `file://` SSRF-safe PDF review renderer |
 
-### 6. Clean-Room Policy, References & License
+### 7. Clean-Room Policy, References & License
 
 - **Authorized Scope Only**: Strictly intended for authorized open-source functional reimplementation, language porting, and interoperability verification. Explicitly prohibits vulnerability exploitation, access-control/DRM/anti-cheat bypass, memory patching, and unauthorized redistribution of copyrighted UI assets, fonts, or brand trademarks.
 - **Additional Docs**: [`SKILL.md`](SKILL.md) · [`references/adapters/re-backends.md`](references/adapters/re-backends.md) · [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)

@@ -15,6 +15,9 @@
   ],
   "properties": {
     "schema_version": { "type": "string", "const": "1.0.0" },
+    "epoch": { "type": "integer", "minimum": 1 },
+    "lineage_base_revision": { "type": ["object", "null"] },
+    "cache_key": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
     "target_repo": { "type": "string", "minLength": 1 },
     "commit_sha": { "type": ["string", "null"] },
     "release_tag": { "type": ["string", "null"] },
@@ -23,6 +26,7 @@
     "mode": { "type": "string", "enum": ["clean-room", "deep"] },
     "depth": { "type": "string", "enum": ["outline", "comprehensive", "interactive"] },
     "output_language": { "type": "string", "enum": ["en", "ko", "ja"] },
+    "max_retries_per_phase": { "type": "integer", "minimum": 1 },
     "current_phase": { "type": "integer", "minimum": 0, "maximum": 6 },
     "phases": {
       "type": "object",
@@ -32,12 +36,14 @@
         "properties": {
           "name": { "type": "string" },
           "status": { "type": "string", "enum": ["pending", "in_progress", "completed", "rewound", "failed"] },
+          "attempts": { "type": "integer", "minimum": 0 },
           "artifacts": { "type": "array", "items": { "type": "string" } },
           "updated_at": { "type": ["string", "null"] },
           "notes": { "type": ["string", "null"] }
         }
       }
     },
+    "reopen_events": { "type": "array", "items": { "type": "object" } },
     "updated_at": { "type": "string" }
   }
 }

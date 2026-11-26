@@ -46,6 +46,7 @@
             "enum": ["ui_screen", "menu", "api_endpoint", "realtime_stream", "cli_command", "setting", "shortcut", "background_job", "migration", "storage", "auth", "release_boundary"]
           },
           "is_macro_group": { "type": "boolean" },
+          "requirement_level": { "type": "string", "enum": ["must", "should", "optional"] },
           "entrypoint": { "type": "string" },
           "source_refs": { "type": "array", "minItems": 1, "items": { "type": "string" } },
           "platform_or_role_branch": { "type": ["string", "null"] },

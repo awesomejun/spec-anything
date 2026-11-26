@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec-anything.dev/schemas/tool_coverage.schema.json",
+  "title": "04 Three-Axis Bijective Tool Coverage Manifest Schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "host_os",
+    "host_arch",
+    "target_stack",
+    "mode",
+    "tools",
+    "missing_tools",
+    "must_rerun_tools",
+    "metrics"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "const": "1.0.0" },
+    "generated_at": { "type": "string" },
+    "host_os": { "type": "string" },
+    "host_arch": { "type": "string" },
+    "target_stack": {
+      "type": "string",
+      "enum": ["web", "desktop-tauri", "desktop-electron", "native", "cli"]
+    },
+    "mode": { "type": "string", "enum": ["clean-room", "deep"] },
+    "manifest_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "tools": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["tool", "applicability", "installation", "execution", "evidence_quality"],
+        "properties": {
+          "tool": { "type": "string", "minLength": 1 },
+          "applicability": { "type": "string", "enum": ["applicable", "target_not_applicable"] },
+          "installation": { "type": "string", "enum": ["installed", "not_installed"] },
+          "execution": {
+            "type": "string",
+            "enum": ["executed_primary", "executed_degraded", "skipped_uninstalled", "skipped_not_applicable", "failed"]
+          },
+          "evidence_quality": { "type": "string", "enum": ["primary", "degraded", "none"] },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "missing_tools": { "type": "array", "items": { "type": "string" } },
+    "must_rerun_tools": { "type": "array", "items": { "type": "string" } },
+    "metrics": {
+      "type": "object",
+      "required": [
+        "applicable_tools",
+        "terminal_state_tools",
+        "primary_success_tools",
+        "degraded_tools",
+        "terminal_state_completion_rate",
+        "primary_tool_success_rate"
+      ],
+      "properties": {
+        "applicable_tools": { "type": "integer", "minimum": 0 },
+        "terminal_state_tools": { "type": "integer", "minimum": 0 },
+        "primary_success_tools": { "type": "integer", "minimum": 0 },
+        "degraded_tools": { "type": "integer", "minimum": 0 },
+        "terminal_state_completion_rate": { "type": "number", "minimum": 0, "maximum": 1 },
+        "primary_tool_success_rate": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    }
+  }
+}

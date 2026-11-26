@@ -1,11 +1,17 @@
 #!/usr/bin/env python3
 """
-Environment & Reverse-Engineering Backend Doctor for spec-anything.
-Modeled after craft-anything's doctor preflight check: detects core runtime tools,
-UI/review packages, OS binary inspection utilities, static decompilers (Ghidra, IDA),
-and dynamic instrumentation (Frida), then reports ready observation tiers and modes.
+Environment Doctor & 3-Axis Bijective Tool Coverage Emitter for spec-anything (v4.1.0).
+Detects core runtime tools, UI/review packages, OS binary inspection utilities,
+static decompilers (Ghidra, IDA), and dynamic instrumentation (Frida), and can emit
+a canonical 04_environment/tool_coverage.json manifest enforcing:
+  - 3-axis status per tool (applicability x installation x execution + evidence_quality)
+  - Bijective accounting: every applicable non-primary tool belongs to EXACTLY ONE of
+    missing_tools or must_rerun_tools (zero overlap, zero omission)
+  - Separate terminal_state_completion_rate vs. primary_tool_success_rate metrics.
 """
 import argparse
+import datetime
+import hashlib
 import importlib.util
 import json
 import os
@@ -14,6 +20,10 @@ import platform
 import shutil
 import subprocess
 import sys
+
+
+def utc_now() -> str:
+    return datetime.datetime.now(datetime.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 
 def which_info(cmd: str, version_args: list[str] | None = None) -> dict:
@@ -140,7 +150,7 @@ def collect_report() -> dict:
         ready_lanes.append("frida_dynamic_trace")
 
     return {
-        "schema_version": "1.0.0",
+        "schema_version": "1.1.0",
         "host_os": platform.system(),
         "host_arch": platform.machine(),
         "tiers_ready": {"T1": t1_ready, "T2": t2_ready, "T3": t3_ready},
@@ -154,6 +164,89 @@ def collect_report() -> dict:
         "os_native_tools": os_native,
         "optional_re_backends": backends,
     }
+
+
+def build_tool_coverage_manifest(rep: dict, target_stack: str, mode: str) -> dict:
+    """Build a 3-axis bijective tool_coverage.json manifest for 04_environment/."""
+    has_ui = target_stack in ("web", "desktop-tauri", "desktop-electron", "native")
+    has_native_bin = target_stack in ("desktop-tauri", "desktop-electron", "native") or mode == "deep"
+    deep_mode = mode == "deep"
+
+    raw_specs = [
+        ("source_map", deep_mode, True),
+        ("file_inventory", deep_mode, rep["core"]["git"]["installed"]),
+        ("playwright_ui_capture", has_ui, rep["ui_review_python"]["playwright"]["installed"] and rep["ui_review_python"]["PIL"]["installed"]),
+        ("os_binary_rea", has_native_bin, any(rep["os_native_tools"][k]["installed"] for k in ("otool", "readelf", "nm", "file"))),
+        ("ghidra_decompiler", deep_mode and target_stack in ("desktop-tauri", "native"), rep["optional_re_backends"]["ghidra"]["available"]),
+        ("ida_decompiler", deep_mode and target_stack in ("desktop-tauri", "native"), rep["optional_re_backends"]["ida"]["available"]),
+        ("frida_dynamic_trace", deep_mode and target_stack in ("desktop-tauri", "desktop-electron", "native"), rep["optional_re_backends"]["frida"]["available"]),
+    ]
+
+    tools = []
+    missing_tools = []
+    must_rerun_tools = []
+    applicable_total = 0
+    terminal_total = 0
+    primary_total = 0
+
+    for name, applicable, installed in raw_specs:
+        if not applicable:
+            tools.append({
+                "tool": name,
+                "applicability": "target_not_applicable",
+                "installation": "installed" if installed else "not_installed",
+                "execution": "skipped_not_applicable",
+                "evidence_quality": "none",
+                "notes": f"Not required for target_stack={target_stack}, mode={mode}",
+            })
+            continue
+
+        applicable_total += 1
+        if installed:
+            execution = "executed_primary"
+            quality = "primary"
+            terminal_total += 1
+            primary_total += 1
+            note = "Installed and ready for primary observation"
+        else:
+            execution = "skipped_uninstalled"
+            quality = "none"
+            terminal_total += 1
+            missing_tools.append(name)
+            note = "Not installed on host; accounted in missing_tools (OS REA / runtime fallback applies)"
+
+        tools.append({
+            "tool": name,
+            "applicability": "applicable",
+            "installation": "installed" if installed else "not_installed",
+            "execution": execution,
+            "evidence_quality": quality,
+            "notes": note,
+        })
+
+    manifest = {
+        "schema_version": "1.0.0",
+        "generated_at": utc_now(),
+        "host_os": rep["host_os"],
+        "host_arch": rep["host_arch"],
+        "target_stack": target_stack,
+        "mode": mode,
+        "tools": tools,
+        "missing_tools": sorted(missing_tools),
+        "must_rerun_tools": sorted(must_rerun_tools),
+        "metrics": {
+            "applicable_tools": applicable_total,
+            "terminal_state_tools": terminal_total,
+            "primary_success_tools": primary_total,
+            "degraded_tools": sum(1 for t in tools if t["evidence_quality"] == "degraded"),
+            "terminal_state_completion_rate": round((terminal_total / applicable_total), 4) if applicable_total else 1.0,
+            "primary_tool_success_rate": round((primary_total / applicable_total), 4) if applicable_total else 1.0,
+        },
+    }
+    manifest["manifest_sha256"] = hashlib.sha256(
+        json.dumps(manifest["tools"], sort_keys=True).encode("utf-8")
+    ).hexdigest()
+    return manifest
 
 
 def print_human(rep: dict) -> None:
@@ -181,12 +274,29 @@ def print_human(rep: dict) -> None:
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(description="spec-anything environment and RE backend doctor")
+    ap = argparse.ArgumentParser(description="spec-anything environment and 3-axis tool coverage doctor")
     ap.add_argument("--json", action="store_true", help="Output machine-readable JSON")
     ap.add_argument("--require-tier", choices=["T1", "T2", "T3"], help="Exit non-zero if requested tier is not ready")
+    ap.add_argument("--emit-coverage", help="Write 3-axis bijective 04_environment/tool_coverage.json to path")
+    ap.add_argument("--target-stack", choices=["web", "desktop-tauri", "desktop-electron", "native", "cli"], default="web")
+    ap.add_argument("--mode", choices=["clean-room", "deep"], default="deep")
     args = ap.parse_args()
 
     rep = collect_report()
+    if args.emit_coverage:
+        cov = build_tool_coverage_manifest(rep, args.target_stack, args.mode)
+        out_p = pathlib.Path(args.emit_coverage)
+        out_p.parent.mkdir(parents=True, exist_ok=True)
+        out_p.write_text(json.dumps(cov, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        print(json.dumps({
+            "action": "tool_coverage_written",
+            "path": str(out_p),
+            "metrics": cov["metrics"],
+            "missing_tools": cov["missing_tools"],
+            "must_rerun_tools": cov["must_rerun_tools"],
+        }, indent=2))
+        return
+
     if args.json:
         print(json.dumps(rep, indent=2, ensure_ascii=False))
     else:

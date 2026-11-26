@@ -37,6 +37,15 @@
         "unverified": { "type": "integer", "minimum": 0 }
       }
     },
+    "governance": {
+      "type": "object",
+      "properties": {
+        "machine_ceiling": { "type": "string", "enum": ["A", "B", "C", "D", "F"] },
+        "claimed_grade": { "type": "string", "enum": ["A", "B", "C", "D", "F"] },
+        "claimed_full_coverage": { "type": "boolean" },
+        "did_real_work": { "type": "boolean" }
+      }
+    },
     "cases": {
       "type": "array",
       "items": {
