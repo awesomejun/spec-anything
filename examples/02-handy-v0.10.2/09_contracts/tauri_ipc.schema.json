@@ -1,0 +1,406 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec-anything.dev/contracts/handy-v0.10.2/tauri_ipc.schema.json",
+  "title": "Handy v0.10.2 Tauri IPC Contract Schema",
+  "description": "Typed Tauri v2 invoke commands, event payloads, AppSettings, ModelInfo, and HistoryEntry contracts extracted from src/bindings.ts and verified against official macOS Mach-O Handy.app/Contents/MacOS/handy (133/133 commands present).",
+  "type": "object",
+  "required": ["app_settings", "models", "history_page", "recording_state_event", "commands"],
+  "properties": {
+    "app_settings": { "$ref": "#/$defs/AppSettings" },
+    "models": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/ModelInfo" }
+    },
+    "history_page": { "$ref": "#/$defs/PaginatedHistory" },
+    "recording_state_event": { "$ref": "#/$defs/RecordingStateEvent" },
+    "commands": { "$ref": "#/$defs/CoreCommands" }
+  },
+  "$defs": {
+    "ShortcutActivation": {
+      "type": "string",
+      "enum": ["toggle", "push_to_talk", "hold_or_toggle"]
+    },
+    "ShortcutBinding": {
+      "type": "object",
+      "required": ["id", "name", "description", "default_binding", "current_binding"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "default_binding": { "type": "string" },
+        "current_binding": { "type": "string" }
+      }
+    },
+    "BindingResponse": {
+      "type": "object",
+      "required": ["success", "binding", "error"],
+      "properties": {
+        "success": { "type": "boolean" },
+        "binding": { "oneOf": [{ "$ref": "#/$defs/ShortcutBinding" }, { "type": "null" }] },
+        "error": { "type": ["string", "null"] }
+      }
+    },
+    "AudioDevice": {
+      "type": "object",
+      "required": ["index", "name", "is_default"],
+      "properties": {
+        "index": { "type": "string" },
+        "name": { "type": "string" },
+        "is_default": { "type": "boolean" }
+      }
+    },
+    "SoundTheme": {
+      "type": "string",
+      "enum": ["marimba", "pop", "custom"]
+    },
+    "Theme": {
+      "type": "string",
+      "enum": ["system", "light", "dark"]
+    },
+    "OverlayPosition": {
+      "type": "string",
+      "enum": ["top", "bottom"]
+    },
+    "OverlayStyle": {
+      "type": "string",
+      "enum": ["none", "minimal", "live"]
+    },
+    "ModelUnloadTimeout": {
+      "type": "string",
+      "enum": ["never", "immediately", "min_2", "min_5", "min_10", "min_15", "hour_1", "sec_15"]
+    },
+    "RecordingRetentionPeriod": {
+      "type": "string",
+      "enum": ["never", "preserve_limit", "days_3", "weeks_2", "months_3"]
+    },
+    "PasteMethod": {
+      "type": "string",
+      "enum": ["ctrl_v", "direct", "none", "shift_insert", "ctrl_shift_v", "external_script"]
+    },
+    "ClipboardHandling": {
+      "type": "string",
+      "enum": ["dont_modify", "copy_to_clipboard"]
+    },
+    "LanguageSource": {
+      "type": "string",
+      "enum": ["selected", "model", "detected", "fallback"]
+    },
+    "LanguageStatus": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["kind", "language"],
+          "properties": { "kind": { "const": "selected" }, "language": { "type": "string" } }
+        },
+        {
+          "type": "object",
+          "required": ["kind"],
+          "properties": { "kind": { "const": "auto" } }
+        },
+        {
+          "type": "object",
+          "required": ["kind", "fallback"],
+          "properties": { "kind": { "const": "detector_missing" }, "fallback": { "type": "string" } }
+        },
+        {
+          "type": "object",
+          "required": ["kind", "language", "reason"],
+          "properties": {
+            "kind": { "const": "auto_unavailable" },
+            "language": { "type": "string" },
+            "reason": { "type": "object" }
+          }
+        }
+      ]
+    },
+    "AppSettings": {
+      "type": "object",
+      "required": [
+        "settings_schema_version",
+        "bindings",
+        "shortcut_activation",
+        "hold_threshold_ms",
+        "audio_feedback",
+        "audio_feedback_volume",
+        "sound_theme",
+        "selected_model",
+        "onboarding_completed",
+        "selected_language",
+        "spoken_languages",
+        "theme",
+        "history_limit",
+        "recording_retention_period",
+        "overlay_position",
+        "overlay_style",
+        "vad_enabled",
+        "paste_method",
+        "clipboard_handling"
+      ],
+      "properties": {
+        "settings_schema_version": { "type": "integer", "minimum": 1 },
+        "bindings": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/ShortcutBinding" }
+        },
+        "shortcut_activation": { "$ref": "#/$defs/ShortcutActivation" },
+        "hold_threshold_ms": { "type": "integer", "minimum": 50 },
+        "audio_feedback": { "type": "boolean" },
+        "audio_feedback_volume": { "type": "number", "minimum": 0, "maximum": 1 },
+        "sound_theme": { "$ref": "#/$defs/SoundTheme" },
+        "start_hidden": { "type": "boolean" },
+        "autostart_enabled": { "type": "boolean" },
+        "update_checks_enabled": { "type": "boolean" },
+        "show_whats_new_on_update": { "type": "boolean" },
+        "whats_new_last_seen_version": { "type": "string" },
+        "selected_model": { "type": "string" },
+        "onboarding_completed": { "type": "boolean" },
+        "always_on_microphone": { "type": "boolean" },
+        "selected_microphone": { "type": ["string", "null"] },
+        "selected_channel": { "type": ["integer", "null"] },
+        "clamshell_microphone": { "type": ["string", "null"] },
+        "selected_output_device": { "type": ["string", "null"] },
+        "translate_to_english": { "type": "boolean" },
+        "selected_language": { "type": "string" },
+        "spoken_languages": { "type": "array", "items": { "type": "string" } },
+        "overlay_position": { "$ref": "#/$defs/OverlayPosition" },
+        "overlay_style": { "$ref": "#/$defs/OverlayStyle" },
+        "debug_mode": { "type": "boolean" },
+        "custom_words": { "type": "array", "items": { "type": "string" } },
+        "model_unload_timeout": { "$ref": "#/$defs/ModelUnloadTimeout" },
+        "history_limit": { "type": "integer", "minimum": 0 },
+        "recording_retention_period": { "$ref": "#/$defs/RecordingRetentionPeriod" },
+        "paste_method": { "$ref": "#/$defs/PasteMethod" },
+        "clipboard_handling": { "$ref": "#/$defs/ClipboardHandling" },
+        "auto_submit": { "type": "boolean" },
+        "mute_while_recording": { "type": "boolean" },
+        "append_trailing_space": { "type": "boolean" },
+        "app_language": { "type": "string" },
+        "theme": { "$ref": "#/$defs/Theme" },
+        "experimental_enabled": { "type": "boolean" },
+        "vad_enabled": { "type": "boolean" },
+        "long_form_chunking": { "type": "boolean" },
+        "filler_word_removal_enabled": { "type": "boolean" },
+        "show_tray_icon": { "type": "boolean" }
+      }
+    },
+    "ModelSource": {
+      "oneOf": [
+        { "const": "Local" },
+        {
+          "type": "object",
+          "required": ["HuggingFace"],
+          "properties": {
+            "HuggingFace": {
+              "type": "object",
+              "required": ["repo_id", "revision"],
+              "properties": {
+                "repo_id": { "type": "string" },
+                "revision": { "type": "string" }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": ["Url"],
+          "properties": {
+            "Url": {
+              "type": "object",
+              "required": ["url", "sha256"],
+              "properties": {
+                "url": { "type": "string" },
+                "sha256": { "type": ["string", "null"] }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ModelInfo": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "description",
+        "filename",
+        "source",
+        "size_mb",
+        "is_downloaded",
+        "is_downloading",
+        "partial_size",
+        "accuracy_score",
+        "speed_score",
+        "supports_translation",
+        "is_recommended",
+        "supported_languages",
+        "supports_language_selection",
+        "is_custom",
+        "supports_streaming",
+        "supports_language_detection"
+      ],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "filename": { "type": "string" },
+        "source": { "$ref": "#/$defs/ModelSource" },
+        "size_mb": { "type": "integer", "minimum": 0 },
+        "is_downloaded": { "type": "boolean" },
+        "is_downloading": { "type": "boolean" },
+        "partial_size": { "type": "integer", "minimum": 0 },
+        "accuracy_score": { "type": "number" },
+        "speed_score": { "type": "number" },
+        "supports_translation": { "type": "boolean" },
+        "is_recommended": { "type": "boolean" },
+        "supported_languages": { "type": "array", "items": { "type": "string" } },
+        "supports_language_selection": { "type": "boolean" },
+        "is_custom": { "type": "boolean" },
+        "supports_streaming": { "type": "boolean" },
+        "supports_language_detection": { "type": "boolean" }
+      }
+    },
+    "HistoryEntry": {
+      "type": "object",
+      "required": [
+        "id",
+        "file_name",
+        "timestamp",
+        "saved",
+        "title",
+        "transcription_text",
+        "post_processed_text",
+        "post_process_prompt",
+        "post_process_requested",
+        "source_name",
+        "language",
+        "language_source"
+      ],
+      "properties": {
+        "id": { "type": "integer", "minimum": 1 },
+        "file_name": { "type": "string" },
+        "timestamp": { "type": "integer" },
+        "saved": { "type": "boolean" },
+        "title": { "type": "string" },
+        "transcription_text": { "type": "string" },
+        "post_processed_text": { "type": ["string", "null"] },
+        "post_process_prompt": { "type": ["string", "null"] },
+        "post_process_requested": { "type": "boolean" },
+        "source_name": { "type": ["string", "null"] },
+        "language": { "type": ["string", "null"] },
+        "language_source": { "oneOf": [{ "$ref": "#/$defs/LanguageSource" }, { "type": "null" }] }
+      }
+    },
+    "PaginatedHistory": {
+      "type": "object",
+      "required": ["entries", "has_more"],
+      "properties": {
+        "entries": { "type": "array", "items": { "$ref": "#/$defs/HistoryEntry" } },
+        "has_more": { "type": "boolean" }
+      }
+    },
+    "HistoryUpdatePayload": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["action", "entry"],
+          "properties": { "action": { "enum": ["added", "updated"] }, "entry": { "$ref": "#/$defs/HistoryEntry" } }
+        },
+        {
+          "type": "object",
+          "required": ["action", "id"],
+          "properties": { "action": { "enum": ["deleted", "toggled"] }, "id": { "type": "integer" } }
+        }
+      ]
+    },
+    "RecordingPhase": {
+      "type": "string",
+      "enum": ["started", "locked", "stopped", "cancelled"]
+    },
+    "RecordingStateEvent": {
+      "type": "object",
+      "required": ["phase"],
+      "properties": {
+        "phase": { "$ref": "#/$defs/RecordingPhase" }
+      }
+    },
+    "TranscriptionCompleteEvent": {
+      "type": "object",
+      "required": ["outcome", "audio_seconds", "wait_seconds"],
+      "properties": {
+        "outcome": { "type": "string", "enum": ["typed", "empty", "silent", "failed"] },
+        "audio_seconds": { "type": "number", "minimum": 0 },
+        "wait_seconds": { "type": "number", "minimum": 0 }
+      }
+    },
+    "CoreCommands": {
+      "type": "object",
+      "description": "Representative contract map of core Tauri invoke commands and their request/response shapes.",
+      "properties": {
+        "get_app_settings": {
+          "type": "object",
+          "properties": { "args": { "type": "object" }, "returns": { "$ref": "#/$defs/AppSettings" } }
+        },
+        "change_shortcut_activation_setting": {
+          "type": "object",
+          "properties": {
+            "args": { "type": "object", "required": ["activation"], "properties": { "activation": { "$ref": "#/$defs/ShortcutActivation" } } },
+            "returns": { "type": "null" }
+          }
+        },
+        "change_selected_language_setting": {
+          "type": "object",
+          "properties": {
+            "args": { "type": "object", "required": ["language"], "properties": { "language": { "type": "string" } } },
+            "returns": { "type": "null" }
+          }
+        },
+        "change_binding": {
+          "type": "object",
+          "properties": {
+            "args": { "type": "object", "required": ["id", "binding"], "properties": { "id": { "type": "string" }, "binding": { "type": "string" } } },
+            "returns": { "$ref": "#/$defs/BindingResponse" }
+          }
+        },
+        "get_available_models": {
+          "type": "object",
+          "properties": { "args": { "type": "object" }, "returns": { "type": "array", "items": { "$ref": "#/$defs/ModelInfo" } } }
+        },
+        "get_current_model": {
+          "type": "object",
+          "properties": { "args": { "type": "object" }, "returns": { "type": "string" } }
+        },
+        "set_active_model": {
+          "type": "object",
+          "properties": {
+            "args": { "type": "object", "required": ["modelId"], "properties": { "modelId": { "type": "string" } } },
+            "returns": { "type": "null" }
+          }
+        },
+        "get_history_entries": {
+          "type": "object",
+          "properties": {
+            "args": {
+              "type": "object",
+              "properties": { "cursor": { "type": ["integer", "null"] }, "limit": { "type": ["integer", "null"] } }
+            },
+            "returns": { "$ref": "#/$defs/PaginatedHistory" }
+          }
+        },
+        "toggle_history_entry_saved": {
+          "type": "object",
+          "properties": {
+            "args": { "type": "object", "required": ["id"], "properties": { "id": { "type": "integer" } } },
+            "returns": { "type": "null" }
+          }
+        },
+        "delete_history_entry": {
+          "type": "object",
+          "properties": {
+            "args": { "type": "object", "required": ["id"], "properties": { "id": { "type": "integer" } } },
+            "returns": { "type": "null" }
+          }
+        }
+      }
+    }
+  }
+}

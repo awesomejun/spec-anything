@@ -1,0 +1,36 @@
+{
+  "viewport": "1024x700@1x",
+  "theme": "light",
+  "screens": {
+    "SCR-001": {
+      "width": 1024,
+      "height": 700,
+      "mae_255": 4.2514,
+      "normalized_mae": 0.016672,
+      "pct_pixels_gt_15": 5.8,
+      "orig": "orig_SCR-001.png",
+      "reimpl": "reimpl_SCR-001.png",
+      "heatmap": "diff_SCR-001.png"
+    },
+    "SCR-002": {
+      "width": 1024,
+      "height": 700,
+      "mae_255": 8.0871,
+      "normalized_mae": 0.031714,
+      "pct_pixels_gt_15": 8.545,
+      "orig": "orig_SCR-002.png",
+      "reimpl": "reimpl_SCR-002.png",
+      "heatmap": "diff_SCR-002.png"
+    },
+    "SCR-003": {
+      "width": 1024,
+      "height": 700,
+      "mae_255": 6.2716,
+      "normalized_mae": 0.024595,
+      "pct_pixels_gt_15": 7.558,
+      "orig": "orig_SCR-003.png",
+      "reimpl": "reimpl_SCR-003.png",
+      "heatmap": "diff_SCR-003.png"
+    }
+  }
+}

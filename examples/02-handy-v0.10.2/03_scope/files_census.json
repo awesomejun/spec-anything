@@ -1,0 +1,2951 @@
+{
+  "commit": "a822741f9c697b6f6a00c557e4817bf59ae70867",
+  "files": [
+    {
+      "path": ".cargo/config.toml",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": ".gitattributes",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": ".github/FUNDING.yml",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": ".github/workflows/build-test.yml",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": ".github/workflows/build.yml",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": ".github/workflows/code-quality.yml",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": ".github/workflows/main-build.yml",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": ".github/workflows/nix-check.yml",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": ".github/workflows/playwright.yml",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": ".github/workflows/pr-test-build.yml",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": ".github/workflows/test.yml",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": ".gitignore",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": ".nix/bun-lock-hash",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": ".nix/bun.nix",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": ".nix/scripts/canonicalize-node-modules.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": ".nix/scripts/heal-peer-dep-bins.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": ".nix/scripts/normalize-bun-binaries.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": ".nix/scripts/normalize-install.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": ".prettierignore",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": ".prettierrc",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": ".vscode/extensions.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "AGENTS.md",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "BUILD.md",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "CLAUDE.md",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "CONTRIBUTING_TRANSLATIONS.md",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "LICENSE",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "README.md",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "bun.lock",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "docs/troubleshooting/ubuntu-26-04-gnome-wayland/README.md",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "eslint.config.js",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "flake.lock",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "flake.nix",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "index.html",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "nix/hm-module.nix",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "nix/module.nix",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "package.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "playwright.config.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "public/release-notes/0.10.0/model-picker.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "public/release-notes/0.10.0/transcribe-file.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "public/release-notes/0.9.0/overlay.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "public/release-notes/0.9.7/shortcut-behavior.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "scripts/build-cjk-font.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "scripts/check-model-language-coverage.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "scripts/check-nix-deps.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "scripts/check-translations.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "scripts/ci/stage-transcribe-libs.sh",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "scripts/mirror_models.py",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "scripts/sync-catalog.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "sponsor-images/boltai.jpg",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "sponsor-images/cantydigital.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "sponsor-images/epicenter.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "sponsor-images/wordcab.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/.gitignore",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/Cargo.lock",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/Cargo.toml",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/Entitlements.plist",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/Info.plist",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/build.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/capabilities/default.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/capabilities/desktop.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/gen/apple/PrivacyInfo.xcprivacy",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/128x128.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/128x128@2x.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/32x32.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/64x64.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/Square107x107Logo.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/Square142x142Logo.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/Square150x150Logo.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/Square284x284Logo.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/Square30x30Logo.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/Square310x310Logo.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/Square44x44Logo.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/Square71x71Logo.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/Square89x89Logo.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/StoreLogo.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/android/mipmap-hdpi/ic_launcher.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/android/mipmap-hdpi/ic_launcher_foreground.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/android/mipmap-hdpi/ic_launcher_round.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/android/mipmap-mdpi/ic_launcher.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/android/mipmap-mdpi/ic_launcher_foreground.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/android/mipmap-mdpi/ic_launcher_round.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/android/mipmap-xhdpi/ic_launcher.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/android/mipmap-xhdpi/ic_launcher_foreground.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/android/mipmap-xhdpi/ic_launcher_round.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/android/mipmap-xxhdpi/ic_launcher.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/android/mipmap-xxhdpi/ic_launcher_foreground.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/android/mipmap-xxhdpi/ic_launcher_round.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/android/mipmap-xxxhdpi/ic_launcher.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/android/mipmap-xxxhdpi/ic_launcher_foreground.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/android/mipmap-xxxhdpi/ic_launcher_round.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/icon.icns",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/icon.ico",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/icon.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/ios/AppIcon-20x20@1x.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/ios/AppIcon-20x20@2x-1.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/ios/AppIcon-20x20@2x.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/ios/AppIcon-20x20@3x.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/ios/AppIcon-29x29@1x.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/ios/AppIcon-29x29@2x-1.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/ios/AppIcon-29x29@2x.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/ios/AppIcon-29x29@3x.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/ios/AppIcon-40x40@1x.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/ios/AppIcon-40x40@2x-1.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/ios/AppIcon-40x40@2x.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/ios/AppIcon-40x40@3x.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/ios/AppIcon-512@2x.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/ios/AppIcon-60x60@2x.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/ios/AppIcon-60x60@3x.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/ios/AppIcon-76x76@1x.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/ios/AppIcon-76x76@2x.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/ios/AppIcon-83.5x83.5@2x.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/icons/logo.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/nsis/installer.nsi",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/resources/default_settings.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/resources/handy.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/resources/handy_warning.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/resources/marimba_start.wav",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/resources/marimba_stop.wav",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/resources/models/silero-vad-v6.2-F32.gguf",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/resources/pop_start.wav",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/resources/pop_stop.wav",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/resources/recording.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/resources/transcribing.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/resources/tray_idle.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/resources/tray_idle_dark.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/resources/tray_idle_warning.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/resources/tray_idle_warning_dark.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/resources/tray_recording.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/resources/tray_recording_dark.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/resources/tray_transcribing.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/resources/tray_transcribing_dark.png",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/rustfmt.toml",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/actions.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/apple_intelligence.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/audio_feedback.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/audio_toolkit/audio/decode.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/audio_toolkit/audio/device.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/audio_toolkit/audio/mod.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/audio_toolkit/audio/sink.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/audio_toolkit/audio/sink/tests.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/audio_toolkit/audio/utils.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/audio_toolkit/audio/visualizer.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/audio_toolkit/chunking.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/audio_toolkit/constants.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/audio_toolkit/cpu_engine.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/audio_toolkit/lang_id.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/audio_toolkit/mod.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/audio_toolkit/text.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/audio_toolkit/utils.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/audio_toolkit/vad/earshot.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/audio_toolkit/vad/mod.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/audio_toolkit/vad/silero.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/audio_toolkit/vad/smoothed.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/autostart.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/catalog/catalog.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/catalog/mod.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/chinese_script.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/cli.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/clipboard.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/commands/audio.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/commands/history.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/commands/mod.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/commands/models.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/commands/transcription.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/engine_supervisor/mod.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/engine_supervisor/protocol.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/engine_supervisor/supervisor.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/engine_supervisor/worker.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/helpers/clamshell.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/helpers/mod.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/input.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/language_detection/detector.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/language_detection/mod.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/language_detection/policy.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/language_detection/speech.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/languages.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/lib.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/llm_client.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/main.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/managers/audio.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/managers/gguf_meta.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/managers/history.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/managers/mod.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/managers/model.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/managers/model/download.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/managers/model/download/tests.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/managers/model_capabilities.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/managers/transcription.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/managers/transcription/chunked.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/managers/transcription/job.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/managers/transcription/live.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/managers/transcription/policy.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/managers/transcription_jobs.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/memory.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/notices.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/overlay.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/paste_tx/macos.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/paste_tx/mod.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/paste_tx/windows.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/portable.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/primary_selection.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/secure_input.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/settings.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/shortcut/handler.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/shortcut/handy_keys.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/shortcut/mod.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/shortcut/tauri_impl.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/signal_handle.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/system_languages.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/transcription_coordinator.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/transcription_hook.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/tray.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/tray_i18n.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/utils.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/src/webkit_renderer.rs",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/swift/apple_intelligence.swift",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/swift/apple_intelligence_bridge.h",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/swift/apple_intelligence_stub.swift",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/tauri.conf.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/tauri.windows.conf.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/tests/fixtures/tone_440hz_mono.opus",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src-tauri/tests/fixtures/tone_440hz_stereo_120ms.webm",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/App.css",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/App.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/assets/fonts/cjk-subset.woff2",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/bindings.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/ErrorBoundary.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/FileDropOverlay.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/SecureInputWarning.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/Sidebar.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/footer/Footer.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/footer/NoticeChip.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/footer/TranscriptionStatus.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/footer/index.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/icons/HandyHand.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/icons/HandyMascot.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/icons/HandyTextLogo.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/icons/NoticeBadgeIcon.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/icons/ResetIcon.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/icons/TrayIcon.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/model-selector/DownloadProgressDisplay.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/model-selector/ModelDropdown.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/model-selector/ModelSelector.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/model-selector/ModelStatusButton.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/model-selector/index.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/notices/NoticePanel.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/onboarding/AppLanguageMenu.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/onboarding/DesktopBar.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/onboarding/DownloadStatus.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/onboarding/LinuxGuide.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/onboarding/ModelMigration.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/onboarding/OnboardingFlow.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/onboarding/OnboardingShell.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/onboarding/StandaloneScreens.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/onboarding/TrayPanel.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/onboarding/WindowBar.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/onboarding/data/samples.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/onboarding/desktopBar.css",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/onboarding/downloadPick.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/onboarding/onboardingStore.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/onboarding/screenTransitions.css",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/onboarding/screenTransitions.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/onboarding/screens/Demo.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/onboarding/screens/Model.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/onboarding/screens/Permissions.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/onboarding/screens/TryIt.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/onboarding/screens/Welcome.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/onboarding/screens/demo.css",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/onboarding/screens/modelTransitions.css",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/onboarding/screens/modelTransitions.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/onboarding/screens/tryit.css",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/onboarding/useOnboardingModels.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/onboarding/usePermissions.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/onboarding/useTryEngine.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/onboarding/viewTransitions.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/AccelerationSelector.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/AirPodsMode.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/AlwaysOnMicrophone.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/AppDataDirectory.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/AppLanguageSelector.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/AppendTrailingSpace.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/AudioFeedback.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/AutoSubmit.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/AutostartToggle.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/ChannelSelector.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/ChineseScript.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/ClamshellMicrophoneSelector.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/ClipboardHandling.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/CustomWords.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/ExperimentalToggle.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/FillerWordRemoval.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/HistoryLimit.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/LanguageDetection.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/LanguageDetectorDownload.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/LanguageSelector.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/LazyStreamClose.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/LongFormChunking.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/MicrophoneSelector.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/ModelUnloadTimeout.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/MuteWhileRecording.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/OutputDeviceSelector.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/PasteMethod.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/PostProcessingSettingsApi/ApiKeyField.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/PostProcessingSettingsApi/BaseUrlField.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/PostProcessingSettingsApi/ModelSelect.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/PostProcessingSettingsApi/ProviderSelect.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/PostProcessingSettingsApi/index.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/PostProcessingSettingsApi/types.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/PostProcessingSettingsApi/usePostProcessProviderState.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/PostProcessingSettingsPrompts.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/PostProcessingToggle.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/PreferredLanguages.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/RecordingRetentionPeriod.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/ShortcutActivation.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/ShortcutInput.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/ShowOverlay.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/ShowTrayIcon.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/ShowWhatsNewOnUpdate.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/SoundPicker.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/StartHidden.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/ThemeSelector.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/TranslateToEnglish.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/TypingTool.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/UpdateChecksToggle.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/VadBackendSelector.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/VoiceActivityDetection.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/VolumeSlider.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/about/AboutSettings.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/advanced/AdvancedSettings.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/debug/DebugSettings.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/debug/HoldThreshold.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/debug/KeyboardDiagnostic.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/debug/KeyboardImplementationSelector.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/debug/LanguageDetectionWindow.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/debug/LiveLogViewer.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/debug/LogDirectory.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/debug/LogLevelSelector.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/debug/OnboardingPreview.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/debug/PasteDelay.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/debug/RecordingBuffer.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/debug/ReliablePaste.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/debug/WhatsNewPreview.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/debug/WordCorrectionThreshold.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/debug/index.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/general/GeneralSettings.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/general/ModelSettingsCard.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/history/HistorySettings.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/history/clipboard.test.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/history/clipboard.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/history/transcribeFiles.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/index.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/models/Legend.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/models/ModelRow.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/models/ModelsSettings.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/models/RetiredModelsNotice.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/models/index.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/models/modelEntries.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/settings/post-processing/PostProcessingSettings.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/shared/DoneMark.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/shared/DownloadMark.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/shared/GradeChip.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/shared/Keycaps.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/shared/LanguagePicker.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/shared/Mascot.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/shared/ProgressBar.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/shared/ProgressLine.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/shared/ProgressRing.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/shared/SpeedBars.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/shared/Tag.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/shared/index.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/shared/modelTable/ModelTable.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/shared/modelTable/ModelTableRow.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/shared/modelTable/ScrollThumb.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/shared/modelTable/capabilities.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/shared/modelTable/columns.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/shared/modelTable/context.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/shared/modelTable/rubric.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/shared/modelTable/tableModel.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/ui/Alert.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/ui/AudioPlayer.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/ui/Badge.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/ui/Button.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/ui/Dialog.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/ui/Dropdown.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/ui/InfoTooltip.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/ui/Input.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/ui/PathDisplay.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/ui/Radio.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/ui/ResetButton.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/ui/Select.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/ui/SettingContainer.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/ui/SettingsGroup.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/ui/Slider.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/ui/Spinner.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/ui/Switch.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/ui/TextDisplay.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/ui/TextLink.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/ui/Textarea.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/ui/ToggleSwitch.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/ui/Tooltip.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/ui/index.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/update-checker/UpdateChecker.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/update-checker/index.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/update-checker/portableInstaller.test.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/update-checker/portableInstaller.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/whats-new/MarkdownContent.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/whats-new/WhatsNewGate.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/whats-new/WhatsNewModal.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/whats-new/index.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/components/whats-new/releaseNotes.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/content/release-notes/0.10.0.md",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/content/release-notes/0.10.1.linux.md",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/content/release-notes/0.9.0.md",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/content/release-notes/0.9.7.md",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/content/release-notes/README.md",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/hooks/useLanguageDetector.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/hooks/useMachineTier.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/hooks/useModelCatalog.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/hooks/useOsType.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/hooks/usePressAway.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/hooks/useSettings.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/hooks/useShortcutCapture.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/index.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/languages.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/locales/ar/translation.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/locales/bg/translation.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/locales/ca/translation.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/locales/cs/translation.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/locales/da/translation.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/locales/de/translation.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/locales/en/translation.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/locales/es/translation.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/locales/fr/translation.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/locales/he/translation.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/locales/hi/translation.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/locales/hu/translation.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/locales/hy/translation.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/locales/id/translation.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/locales/it/translation.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/locales/ja/translation.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/locales/ko/translation.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/locales/ne/translation.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/locales/nl/translation.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/locales/pl/translation.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/locales/pt/translation.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/locales/ru/translation.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/locales/sv/translation.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/locales/th/translation.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/locales/tr/translation.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/locales/uk/translation.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/locales/vi/translation.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/locales/zh-TW/translation.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/i18n/locales/zh/translation.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/lib/compat.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/lib/constants/languages.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/lib/models/catalog.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/lib/models/downloadState.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/lib/models/grading.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/lib/models/retired.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/lib/notices.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/lib/types/events.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/lib/utils/cjkFont.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/lib/utils/format.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/lib/utils/keyboard.test.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/lib/utils/keyboard.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/lib/utils/languageSuggestions.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/lib/utils/modelTranslation.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/lib/utils/motion.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/lib/utils/rtl.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/lib/utils/theme.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/main.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/overlay/RecordingOverlay.css",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/overlay/RecordingOverlay.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/overlay/index.html",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/overlay/main.tsx",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/stores/modelStore.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/stores/noticeStore.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/stores/settingsStore.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/stores/transcriptionJobsStore.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/styles/theme.css",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/utils/dateFormat.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "src/vite-env.d.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "tests/app.spec.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "tsconfig.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "tsconfig.node.json",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    },
+    {
+      "path": "vite.config.ts",
+      "status": "pending",
+      "features": [],
+      "reason": ""
+    }
+  ]
+}

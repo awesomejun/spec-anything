@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0.0",
+  "viewport": "1024x700@1x",
+  "theme": "light",
+  "locale": "en-US",
+  "timezone": "UTC",
+  "screens": [
+    {
+      "screen_id": "SCR-001",
+      "feature_id": "F-002",
+      "state": "normal",
+      "title": "General Settings (Shortcuts, Preferred Languages, Active Model Card, Sound)",
+      "file": "screenshots/SCR-001_general_settings.png",
+      "viewport": "1024x700@1x",
+      "theme": "light",
+      "steps": [
+        "Launch upstream Vite dev server with deterministic Tauri v2 IPC test double (onboarding_completed=true, theme=light)",
+        "Load root view (General section active by default)",
+        "Wait for settingsStore, modelStore, and Footer status bar to settle"
+      ]
+    },
+    {
+      "screen_id": "SCR-002",
+      "feature_id": "F-007",
+      "state": "normal",
+      "title": "Models Catalog (Downloaded On This Computer & Curated For Your Languages)",
+      "file": "screenshots/SCR-002_models_catalog.png",
+      "viewport": "1024x700@1x",
+      "theme": "light",
+      "steps": [
+        "Click Models item in left Sidebar",
+        "Wait for ModelTable to join get_available_models() with @handy-computer/models catalog",
+        "Observe Whisper Medium active row and Parakeet TDT 0.6B v3 downloaded row"
+      ]
+    },
+    {
+      "screen_id": "SCR-003",
+      "feature_id": "F-012",
+      "state": "normal",
+      "title": "Transcription History List (3 Seeded SQLite Entries, Newest First)",
+      "file": "screenshots/SCR-003_history_list.png",
+      "viewport": "1024x700@1x",
+      "theme": "light",
+      "steps": [
+        "Click History item in left Sidebar",
+        "Wait for get_history_entries(cursor=null, limit=30) backed by SQLite history.db",
+        "Observe 3 entries with UTC timestamps, copy/star/retry/delete controls, and audio bars"
+      ]
+    },
+    {
+      "screen_id": "SCR-004",
+      "feature_id": "F-013",
+      "state": "mutated",
+      "title": "Transcription History After Star Toggle (#3) and Delete (#1)",
+      "file": "screenshots/SCR-004_history_mutated.png",
+      "viewport": "1024x700@1x",
+      "theme": "light",
+      "steps": [
+        "On History view, click Save (Star) button on newest entry (id=3)",
+        "Click Delete (Trash) button on oldest entry (id=1)",
+        "Confirm star turns active pink on id=3 and id=1 is removed from DOM and SQLite"
+      ]
+    },
+    {
+      "screen_id": "SCR-005",
+      "feature_id": "F-015",
+      "state": "normal",
+      "title": "Advanced Settings (App, Output, Transcription, History Retention)",
+      "file": "screenshots/SCR-005_advanced_settings.png",
+      "viewport": "1024x700@1x",
+      "theme": "light",
+      "steps": [
+        "Click Advanced item in left Sidebar",
+        "Observe App, Output, Transcription, and History settings groups"
+      ]
+    }
+  ]
+}

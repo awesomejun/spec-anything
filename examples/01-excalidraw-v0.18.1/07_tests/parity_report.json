@@ -1,0 +1,235 @@
+{
+  "schema_version": "1.0.0",
+  "mode": "upstream_baseline",
+  "target": {
+    "name": "@excalidraw/excalidraw@0.18.1 (official upstream)",
+    "url_or_binary": "http://127.0.0.1:4173/",
+    "artifact_sha256": "7f651063487849c79a8cdedc3aa6bd04c6b0c717ee63959116f1f12dbc0a51b8"
+  },
+  "evidence_file": "06_evidence/ledger.jsonl",
+  "executed_at": "2026-11-26T03:25:51Z",
+  "summary": {
+    "total": 12,
+    "passed": 12,
+    "failed": 0,
+    "skipped": 0,
+    "unverified": 0
+  },
+  "cases": [
+    {
+      "test_id": "TC-001",
+      "feature_id": "F-001",
+      "evidence_id": "EV-001",
+      "category": "ui_state",
+      "verdict": "PASS",
+      "duration_ms": 3.5,
+      "checked_fields": [
+        "element_count",
+        "theme",
+        "viewBackgroundColor",
+        "zoom",
+        "activeTool",
+        "canvas_width",
+        "canvas_height"
+      ],
+      "diff_summary": null
+    },
+    {
+      "test_id": "TC-002",
+      "feature_id": "F-002",
+      "evidence_id": "EV-002",
+      "category": "normal",
+      "verdict": "PASS",
+      "duration_ms": 546.19,
+      "checked_fields": [
+        "selected_tool_before_drag",
+        "element_count",
+        "element_type",
+        "x",
+        "y",
+        "width",
+        "height",
+        "strokeColor",
+        "backgroundColor",
+        "roughness",
+        "activeTool_after_up"
+      ],
+      "diff_summary": null
+    },
+    {
+      "test_id": "TC-003",
+      "feature_id": "F-003",
+      "evidence_id": "EV-003",
+      "category": "normal",
+      "verdict": "PASS",
+      "duration_ms": 502.47,
+      "checked_fields": [
+        "selected_tool_before_drag",
+        "element_count",
+        "element_type",
+        "x",
+        "y",
+        "width",
+        "height",
+        "strokeColor",
+        "roughness",
+        "activeTool_after_up"
+      ],
+      "diff_summary": null
+    },
+    {
+      "test_id": "TC-004",
+      "feature_id": "F-004",
+      "evidence_id": "EV-004",
+      "category": "normal",
+      "verdict": "PASS",
+      "duration_ms": 512.45,
+      "checked_fields": [
+        "selected_tool_before_drag",
+        "element_count",
+        "element_type",
+        "points_count",
+        "endArrowhead",
+        "has_start_binding",
+        "has_end_binding",
+        "activeTool_after_up"
+      ],
+      "diff_summary": null
+    },
+    {
+      "test_id": "TC-005",
+      "feature_id": "F-005",
+      "evidence_id": "EV-005",
+      "category": "normal",
+      "verdict": "PASS",
+      "duration_ms": 970.79,
+      "checked_fields": [
+        "selected_tool_before_click",
+        "element_count",
+        "element_type",
+        "text",
+        "fontSize",
+        "isDeleted",
+        "activeTool_after_commit"
+      ],
+      "diff_summary": null
+    },
+    {
+      "test_id": "TC-006",
+      "feature_id": "F-006",
+      "evidence_id": "EV-006",
+      "category": "ui_state",
+      "verdict": "PASS",
+      "duration_ms": 523.52,
+      "checked_fields": [
+        "selected_via_canvas_click",
+        "properties_panel_visible",
+        "strokeColor",
+        "backgroundColor",
+        "roughness",
+        "version_incremented"
+      ],
+      "diff_summary": null
+    },
+    {
+      "test_id": "TC-007",
+      "feature_id": "F-007",
+      "evidence_id": "EV-007",
+      "category": "cancel_retry",
+      "verdict": "PASS",
+      "duration_ms": 1272.63,
+      "checked_fields": [
+        "count_before_draw",
+        "count_after_draw",
+        "count_after_undo",
+        "redo_disabled_after_undo",
+        "count_after_redo",
+        "count_after_second_undo"
+      ],
+      "diff_summary": null
+    },
+    {
+      "test_id": "TC-008",
+      "feature_id": "F-008",
+      "evidence_id": "EV-008",
+      "category": "ui_state",
+      "verdict": "PASS",
+      "duration_ms": 971.67,
+      "checked_fields": [
+        "dark_theme_value",
+        "dom_has_theme_dark",
+        "dark_default_bg_token",
+        "dark_island_bg_token",
+        "raw_element_stroke_preserved",
+        "light_restored_theme"
+      ],
+      "diff_summary": null
+    },
+    {
+      "test_id": "TC-009",
+      "feature_id": "F-009",
+      "evidence_id": "EV-009",
+      "category": "boundary",
+      "verdict": "PASS",
+      "duration_ms": 349.05,
+      "checked_fields": [
+        "zoom_initial",
+        "zoom_after_in",
+        "zoom_after_out",
+        "step_delta"
+      ],
+      "diff_summary": null
+    },
+    {
+      "test_id": "TC-010",
+      "feature_id": "F-010",
+      "evidence_id": "EV-010",
+      "category": "persistence",
+      "verdict": "PASS",
+      "duration_ms": 473.42,
+      "checked_fields": [
+        "exported_type",
+        "exported_version",
+        "exported_element_count",
+        "exported_element_types",
+        "count_after_clear",
+        "count_after_restore",
+        "ids_match",
+        "schema_valid"
+      ],
+      "diff_summary": null
+    },
+    {
+      "test_id": "TC-011",
+      "feature_id": "F-011",
+      "evidence_id": "EV-011",
+      "category": "restart_recovery",
+      "verdict": "PASS",
+      "duration_ms": 1150.13,
+      "checked_fields": [
+        "has_elements_key",
+        "has_state_key",
+        "stored_element_count",
+        "scene_after_reload_count",
+        "scene_after_reload_types",
+        "persisted_ids_match"
+      ],
+      "diff_summary": null
+    },
+    {
+      "test_id": "TC-012",
+      "feature_id": "F-012",
+      "evidence_id": "EV-012",
+      "category": "release_rea",
+      "verdict": "PASS",
+      "duration_ms": 0.13,
+      "checked_fields": [
+        "archive_sha512_integrity_match",
+        "archive_sha1_shasum_match",
+        "bundle_sha256",
+        "pinned_commit"
+      ],
+      "diff_summary": null
+    }
+  ]
+}

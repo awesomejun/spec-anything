@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec-anything.dev/contracts/excalidraw-v0.18.1/canvas_actions.schema.json",
+  "title": "Excalidraw Canvas Actions & State Transition Contract",
+  "description": "Machine-readable contract describing toolbar tool selections, canvas pointer gestures, property mutations, history transitions, viewport zoom, theme toggles, and scene serialization commands.",
+  "type": "object",
+  "required": ["schema_version", "action_type", "payload"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "action_type": {
+      "type": "string",
+      "enum": [
+        "select_tool",
+        "create_element_drag",
+        "create_text_click",
+        "select_elements",
+        "update_element_properties",
+        "erase_element",
+        "history_undo",
+        "history_redo",
+        "set_theme",
+        "set_zoom",
+        "pan_viewport",
+        "export_scene_json",
+        "import_scene_json",
+        "persist_local_storage"
+      ]
+    },
+    "capture_update": {
+      "type": "string",
+      "enum": ["IMMEDIATELY", "EVENTUALLY", "NEVER"],
+      "default": "IMMEDIATELY"
+    },
+    "payload": {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "type": "string",
+          "enum": ["selection", "hand", "rectangle", "diamond", "ellipse", "arrow", "line", "freedraw", "text", "eraser"]
+        },
+        "locked": { "type": "boolean" },
+        "start_point": {
+          "type": "array",
+          "items": { "type": "number" },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "end_point": {
+          "type": "array",
+          "items": { "type": "number" },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "text": { "type": "string" },
+        "selected_element_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "properties": {
+          "type": "object",
+          "properties": {
+            "strokeColor": { "type": "string" },
+            "backgroundColor": { "type": "string" },
+            "fillStyle": { "type": "string", "enum": ["hachure", "cross-hatch", "solid", "zigzag"] },
+            "strokeWidth": { "type": "number", "enum": [1, 2, 4] },
+            "strokeStyle": { "type": "string", "enum": ["solid", "dashed", "dotted"] },
+            "roughness": { "type": "integer", "enum": [0, 1, 2] },
+            "opacity": { "type": "number", "minimum": 0, "maximum": 100 }
+          }
+        },
+        "theme": {
+          "type": "string",
+          "enum": ["light", "dark"]
+        },
+        "zoom_value": {
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 30
+        },
+        "zoom_delta": {
+          "type": "number"
+        },
+        "scroll_x": { "type": "number" },
+        "scroll_y": { "type": "number" },
+        "storage_keys": {
+          "type": "object",
+          "properties": {
+            "elements": { "type": "string", "const": "excalidraw" },
+            "appState": { "type": "string", "const": "excalidraw-state" }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,324 @@
+{
+  "schema_version": "1.0.0",
+  "target": {
+    "repo": "https://github.com/cjpais/Handy",
+    "tag": "v0.10.2",
+    "commit_sha": "a822741f9c697b6f6a00c557e4817bf59ae70867",
+    "release_artifact": "Handy_0.10.2_aarch64.dmg",
+    "release_sha256": "b8b893fbf9e8262abb0e363cb0ac6715cc69eac2fd6ffd8c0785278083a0e3ca"
+  },
+  "generated_at": "2026-11-26T03:20:00Z",
+  "features": [
+    {
+      "feature_id": "F-001",
+      "domain": "Release & Build",
+      "name": "Official macOS arm64 DMG & Mach-O REA Provenance Alignment",
+      "kind": "release_boundary",
+      "is_macro_group": false,
+      "entrypoint": "Handy_0.10.2_aarch64.dmg -> Handy.app/Contents/MacOS/handy",
+      "source_refs": [
+        "src-tauri/tauri.conf.json:1-92",
+        "src-tauri/Info.plist:1-20",
+        "src/bindings.ts:1-1611"
+      ],
+      "platform_or_role_branch": "macos-arm64",
+      "status": "observed",
+      "evidence_ids": ["EV-001"],
+      "screen_ids": [],
+      "contract_refs": ["04_environment/release_audit.json"],
+      "test_ids": ["TC-001"],
+      "unverified_reason": null,
+      "reverify_how": null
+    },
+    {
+      "feature_id": "F-002",
+      "domain": "Settings",
+      "name": "Application Settings Read & Schema v3 Defaults",
+      "kind": "setting",
+      "is_macro_group": false,
+      "entrypoint": "invoke('get_app_settings')",
+      "source_refs": [
+        "src-tauri/src/settings.rs:420-650",
+        "src/stores/settingsStore.ts:222-270",
+        "src/components/settings/general/GeneralSettings.tsx:19-56"
+      ],
+      "platform_or_role_branch": null,
+      "status": "observed",
+      "evidence_ids": ["EV-002"],
+      "screen_ids": ["SCR-001"],
+      "contract_refs": ["09_contracts/tauri_ipc.schema.json#/$defs/AppSettings"],
+      "test_ids": ["TC-002"],
+      "unverified_reason": null,
+      "reverify_how": null
+    },
+    {
+      "feature_id": "F-003",
+      "domain": "Shortcuts",
+      "name": "Shortcut Activation Mode Switch (hold_or_toggle / push_to_talk / toggle)",
+      "kind": "shortcut",
+      "is_macro_group": false,
+      "entrypoint": "invoke('change_shortcut_activation_setting', { activation })",
+      "source_refs": [
+        "src-tauri/src/settings.rs:173-186",
+        "src/bindings.ts:24-31",
+        "src/components/settings/ShortcutActivation.tsx:13-63"
+      ],
+      "platform_or_role_branch": null,
+      "status": "observed",
+      "evidence_ids": ["EV-003"],
+      "screen_ids": ["SCR-001"],
+      "contract_refs": ["09_contracts/tauri_ipc.schema.json#/$defs/ShortcutActivation"],
+      "test_ids": ["TC-003"],
+      "unverified_reason": null,
+      "reverify_how": null
+    },
+    {
+      "feature_id": "F-004",
+      "domain": "Shortcuts",
+      "name": "Transcribe Shortcut Keybinding Update",
+      "kind": "shortcut",
+      "is_macro_group": false,
+      "entrypoint": "invoke('change_binding', { id, binding })",
+      "source_refs": [
+        "src/bindings.ts:8-15",
+        "src/components/settings/ShortcutInput.tsx:1-120",
+        "src-tauri/src/settings.rs:81-88"
+      ],
+      "platform_or_role_branch": null,
+      "status": "observed",
+      "evidence_ids": ["EV-004"],
+      "screen_ids": ["SCR-001"],
+      "contract_refs": ["09_contracts/tauri_ipc.schema.json#/$defs/BindingResponse"],
+      "test_ids": ["TC-004"],
+      "unverified_reason": null,
+      "reverify_how": null
+    },
+    {
+      "feature_id": "F-005",
+      "domain": "Transcription",
+      "name": "Transcription Language Selection & Effective Language Status",
+      "kind": "setting",
+      "is_macro_group": false,
+      "entrypoint": "invoke('change_selected_language_setting', { language }) / invoke('get_language_status', { modelId })",
+      "source_refs": [
+        "src/bindings.ts:96-103",
+        "src/bindings.ts:939-941",
+        "src/components/settings/general/ModelSettingsCard.tsx:9-44"
+      ],
+      "platform_or_role_branch": null,
+      "status": "observed",
+      "evidence_ids": ["EV-005"],
+      "screen_ids": ["SCR-001"],
+      "contract_refs": ["09_contracts/tauri_ipc.schema.json#/$defs/LanguageStatus"],
+      "test_ids": ["TC-005"],
+      "unverified_reason": null,
+      "reverify_how": null
+    },
+    {
+      "feature_id": "F-006",
+      "domain": "Audio",
+      "name": "Audio Feedback Setting Toggle & Microphone Device Enumeration",
+      "kind": "setting",
+      "is_macro_group": false,
+      "entrypoint": "invoke('change_audio_feedback_setting', { enabled }) / invoke('get_available_microphones')",
+      "source_refs": [
+        "src/bindings.ts:40-47",
+        "src/bindings.ts:828-835",
+        "src/components/settings/general/GeneralSettings.tsx:42-53"
+      ],
+      "platform_or_role_branch": null,
+      "status": "observed",
+      "evidence_ids": ["EV-006"],
+      "screen_ids": ["SCR-001"],
+      "contract_refs": ["09_contracts/tauri_ipc.schema.json#/$defs/AudioDevice"],
+      "test_ids": ["TC-006"],
+      "unverified_reason": null,
+      "reverify_how": null
+    },
+    {
+      "feature_id": "F-007",
+      "domain": "Models",
+      "name": "Offline ASR Model Catalog Listing & Grading Join",
+      "kind": "ui_screen",
+      "is_macro_group": false,
+      "entrypoint": "invoke('get_available_models')",
+      "source_refs": [
+        "src-tauri/src/catalog/mod.rs:42-154",
+        "src/stores/modelStore.ts:71-109",
+        "src/components/settings/models/ModelsSettings.tsx:48-181"
+      ],
+      "platform_or_role_branch": null,
+      "status": "observed",
+      "evidence_ids": ["EV-007"],
+      "screen_ids": ["SCR-002"],
+      "contract_refs": ["09_contracts/tauri_ipc.schema.json#/$defs/ModelInfo"],
+      "test_ids": ["TC-007"],
+      "unverified_reason": null,
+      "reverify_how": null
+    },
+    {
+      "feature_id": "F-008",
+      "domain": "Models",
+      "name": "Active ASR Model Selection & Status Synchronization",
+      "kind": "setting",
+      "is_macro_group": false,
+      "entrypoint": "invoke('set_active_model', { modelId }) / invoke('get_current_model')",
+      "source_refs": [
+        "src/bindings.ts:757-772",
+        "src/stores/modelStore.ts:138-153",
+        "src/components/model-selector/ModelSelector.tsx:149-160"
+      ],
+      "platform_or_role_branch": null,
+      "status": "observed",
+      "evidence_ids": ["EV-008"],
+      "screen_ids": ["SCR-002"],
+      "contract_refs": ["09_contracts/tauri_ipc.schema.json#/$defs/CoreCommands"],
+      "test_ids": ["TC-008"],
+      "unverified_reason": null,
+      "reverify_how": null
+    },
+    {
+      "feature_id": "F-009",
+      "domain": "Models",
+      "name": "Reject Selecting Undownloaded or Unknown ASR Model",
+      "kind": "api_endpoint",
+      "is_macro_group": false,
+      "entrypoint": "invoke('set_active_model', { modelId }) [negative path]",
+      "source_refs": [
+        "src-tauri/src/commands/models.rs:1-120",
+        "src/stores/modelStore.ts:138-153"
+      ],
+      "platform_or_role_branch": null,
+      "status": "observed",
+      "evidence_ids": ["EV-009"],
+      "screen_ids": ["SCR-002"],
+      "contract_refs": ["09_contracts/tauri_ipc.schema.json#/$defs/CoreCommands"],
+      "test_ids": ["TC-009"],
+      "unverified_reason": null,
+      "reverify_how": null
+    },
+    {
+      "feature_id": "F-010",
+      "domain": "Dictation Pipeline",
+      "name": "Dictation Coordinator Lifecycle (idle -> recording -> transcribing -> completed)",
+      "kind": "realtime_stream",
+      "is_macro_group": false,
+      "entrypoint": "CoordinatorState::on_input -> recording-state-event / transcription-complete-event / history-update-payload",
+      "source_refs": [
+        "src-tauri/src/transcription_coordinator.rs:18-36",
+        "src-tauri/src/transcription_coordinator.rs:151-262",
+        "src/bindings.ts:1060-1076"
+      ],
+      "platform_or_role_branch": null,
+      "status": "observed",
+      "evidence_ids": ["EV-010"],
+      "screen_ids": ["SCR-001", "SCR-003"],
+      "contract_refs": ["09_contracts/tauri_ipc.schema.json#/$defs/RecordingStateEvent"],
+      "test_ids": ["TC-010"],
+      "unverified_reason": null,
+      "reverify_how": null
+    },
+    {
+      "feature_id": "F-011",
+      "domain": "Dictation Pipeline",
+      "name": "Active Recording Cancellation (recording -> cancelled -> idle)",
+      "kind": "realtime_stream",
+      "is_macro_group": false,
+      "entrypoint": "invoke('cancel_operation') -> RecordingPhase::Cancelled",
+      "source_refs": [
+        "src/bindings.ts:570-572",
+        "src-tauri/src/transcription_coordinator.rs:208-212",
+        "src-tauri/src/transcription_coordinator.rs:18-30"
+      ],
+      "platform_or_role_branch": null,
+      "status": "observed",
+      "evidence_ids": ["EV-011"],
+      "screen_ids": ["SCR-001"],
+      "contract_refs": ["09_contracts/tauri_ipc.schema.json#/$defs/RecordingStateEvent"],
+      "test_ids": ["TC-011"],
+      "unverified_reason": null,
+      "reverify_how": null
+    },
+    {
+      "feature_id": "F-012",
+      "domain": "History",
+      "name": "Cursor-Paginated Transcription History Listing",
+      "kind": "ui_screen",
+      "is_macro_group": false,
+      "entrypoint": "invoke('get_history_entries', { cursor, limit })",
+      "source_refs": [
+        "src-tauri/src/managers/history.rs:557-600",
+        "src/components/settings/history/HistorySettings.tsx:144-175"
+      ],
+      "platform_or_role_branch": null,
+      "status": "observed",
+      "evidence_ids": ["EV-012"],
+      "screen_ids": ["SCR-003"],
+      "contract_refs": ["09_contracts/tauri_ipc.schema.json#/$defs/PaginatedHistory"],
+      "test_ids": ["TC-012"],
+      "unverified_reason": null,
+      "reverify_how": null
+    },
+    {
+      "feature_id": "F-013",
+      "domain": "History",
+      "name": "History Entry Save / Star Toggle With SQLite Persistence",
+      "kind": "storage",
+      "is_macro_group": false,
+      "entrypoint": "invoke('toggle_history_entry_saved', { id })",
+      "source_refs": [
+        "src-tauri/src/commands/history.rs:1-120",
+        "src/components/settings/history/HistorySettings.tsx:228-248"
+      ],
+      "platform_or_role_branch": null,
+      "status": "observed",
+      "evidence_ids": ["EV-013"],
+      "screen_ids": ["SCR-003", "SCR-004"],
+      "contract_refs": ["09_contracts/history.sql"],
+      "test_ids": ["TC-013"],
+      "unverified_reason": null,
+      "reverify_how": null
+    },
+    {
+      "feature_id": "F-014",
+      "domain": "History",
+      "name": "History Entry Deletion & Non-Existent ID Error Handling",
+      "kind": "storage",
+      "is_macro_group": false,
+      "entrypoint": "invoke('delete_history_entry', { id })",
+      "source_refs": [
+        "src-tauri/src/managers/history.rs:455-483",
+        "src/components/settings/history/HistorySettings.tsx:271-284"
+      ],
+      "platform_or_role_branch": null,
+      "status": "observed",
+      "evidence_ids": ["EV-014"],
+      "screen_ids": ["SCR-003", "SCR-004"],
+      "contract_refs": ["09_contracts/history.sql"],
+      "test_ids": ["TC-014"],
+      "unverified_reason": null,
+      "reverify_how": null
+    },
+    {
+      "feature_id": "F-015",
+      "domain": "Persistence & UI",
+      "name": "SQLite History Schema v4 Migration, Added Columns & Advanced Settings UI",
+      "kind": "migration",
+      "is_macro_group": false,
+      "entrypoint": "HistoryManager::apply_migrations + AdvancedSettings",
+      "source_refs": [
+        "src-tauri/src/managers/history.rs:22-45",
+        "src-tauri/src/managers/history.rs:164-187",
+        "src/components/settings/advanced/AdvancedSettings.tsx:30-85"
+      ],
+      "platform_or_role_branch": null,
+      "status": "observed",
+      "evidence_ids": ["EV-015"],
+      "screen_ids": ["SCR-005"],
+      "contract_refs": ["09_contracts/history.sql", "11_ui/tokens.json"],
+      "test_ids": ["TC-015"],
+      "unverified_reason": null,
+      "reverify_how": null
+    }
+  ]
+}

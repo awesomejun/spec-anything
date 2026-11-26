@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SketchBoard CR — Clean-Room Hand-Drawn Whiteboard</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div id="app" class="sb-app" data-testid="sketchboard-root">
+      <canvas id="board-canvas" class="sb-canvas" width="1280" height="800"></canvas>
+
+      <!-- Top-left Menu Trigger -->
+      <div class="sb-top-left">
+        <button
+          id="btn-main-menu"
+          class="sb-chrome-btn"
+          type="button"
+          aria-label="Main menu"
+          data-testid="main-menu-trigger"
+          title="SketchBoard CR Menu"
+        >
+          <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <line x1="3" y1="5.5" x2="17" y2="5.5" />
+            <line x1="3" y1="10" x2="17" y2="10" />
+            <line x1="3" y1="14.5" x2="17" y2="14.5" />
+          </svg>
+        </button>
+
+        <div id="main-menu-dropdown" class="sb-dropdown hidden" role="menu">
+          <div class="sb-menu-brand">SketchBoard CR</div>
+          <button type="button" class="sb-menu-item" id="menu-toggle-dark" data-testid="toggle-dark-mode">
+            <span>Dark mode</span>
+            <span id="menu-theme-badge" class="sb-menu-badge">Off</span>
+          </button>
+          <button type="button" class="sb-menu-item" id="menu-export-json" data-testid="menu-export-json">
+            <span>Export .excalidraw JSON</span>
+          </button>
+          <label class="sb-menu-item" for="menu-import-file">
+            <span>Import .excalidraw JSON</span>
+            <input id="menu-import-file" type="file" accept=".excalidraw,.json" style="display:none" />
+          </label>
+          <div class="sb-menu-sep"></div>
+          <button type="button" class="sb-menu-item sb-menu-danger" id="menu-reset-canvas" data-testid="menu-reset-canvas">
+            <span>Reset canvas</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Top-center Floating Toolbar Island -->
+      <div class="sb-top-center">
+        <div class="sb-toolbar" role="toolbar" aria-label="Drawing tools">
+          <button type="button" class="sb-tool-btn" data-tool="lock" data-testid="toolbar-lock" aria-label="Keep selected tool active" title="Lock active tool">
+            <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4.5" y="9" width="11" height="8" rx="1.8" />
+              <path d="M7 9V6.5a3 3 0 0 1 6 0V9" />
+            </svg>
+          </button>
+
+          <span class="sb-tool-divider"></span>
+
+          <button type="button" class="sb-tool-btn" data-tool="hand" data-testid="toolbar-hand" aria-label="Hand" title="Hand (Pan)">
+            <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 10V4.5a1 1 0 0 1 2 0V9m0-5a1 1 0 0 1 2 0v5m0-4a1 1 0 0 1 2 0v4.5m0-2.5a1 1 0 0 1 2 0v4.5a5 5 0 0 1-5 5H9a4.5 4.5 0 0 1-4.2-3l-1.3-3.4a1 1 0 0 1 1.7-1L7 11" />
+            </svg>
+          </button>
+
+          <button type="button" class="sb-tool-btn active" data-tool="selection" data-testid="toolbar-selection" aria-label="Selection" title="Selection (1)">
+            <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+              <path d="M5 3.5l10 6.8-4.6 1.1-2.5 4.1L5 3.5z" />
+            </svg>
+            <span class="sb-keyhint">1</span>
+          </button>
+
+          <button type="button" class="sb-tool-btn" data-tool="rectangle" data-testid="toolbar-rectangle" aria-label="Rectangle" title="Rectangle (2)">
+            <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="4" y="4" width="12" height="12" rx="2" />
+            </svg>
+            <span class="sb-keyhint">2</span>
+          </button>
+
+          <button type="button" class="sb-tool-btn" data-tool="diamond" data-testid="toolbar-diamond" aria-label="Diamond" title="Diamond (3)">
+            <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
+              <polygon points="10,3 17,10 10,17 3,10" />
+            </svg>
+            <span class="sb-keyhint">3</span>
+          </button>
+
+          <button type="button" class="sb-tool-btn" data-tool="ellipse" data-testid="toolbar-ellipse" aria-label="Ellipse" title="Ellipse (4)">
+            <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="10" cy="10" r="6" />
+            </svg>
+            <span class="sb-keyhint">4</span>
+          </button>
+
+          <button type="button" class="sb-tool-btn" data-tool="arrow" data-testid="toolbar-arrow" aria-label="Arrow" title="Arrow (5)">
+            <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="4" y1="10" x2="16" y2="10" />
+              <polyline points="11.5,5.5 16,10 11.5,14.5" />
+            </svg>
+            <span class="sb-keyhint">5</span>
+          </button>
+
+          <button type="button" class="sb-tool-btn" data-tool="line" data-testid="toolbar-line" aria-label="Line" title="Line (6)">
+            <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <line x1="4" y1="10" x2="16" y2="10" />
+            </svg>
+            <span class="sb-keyhint">6</span>
+          </button>
+
+          <button type="button" class="sb-tool-btn" data-tool="freedraw" data-testid="toolbar-freedraw" aria-label="Draw" title="Draw (7)">
+            <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13.8 3.8l2.4 2.4-8.8 8.8-3.4.9.9-3.4 8.9-8.7z" />
+            </svg>
+            <span class="sb-keyhint">7</span>
+          </button>
+
+          <button type="button" class="sb-tool-btn" data-tool="text" data-testid="toolbar-text" aria-label="Text" title="Text (8)">
+            <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 16L10 4l5 12" />
+              <line x1="6.8" y1="12" x2="13.2" y2="12" />
+            </svg>
+            <span class="sb-keyhint">8</span>
+          </button>
+
+          <button type="button" class="sb-tool-btn" data-tool="eraser" data-testid="toolbar-eraser" aria-label="Eraser" title="Eraser (0)">
+            <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M11.5 4.5l5 5-6.5 6.5H6l-2.5-2.5 8-9z" />
+              <line x1="8" y1="8" x2="13" y2="13" />
+            </svg>
+            <span class="sb-keyhint">0</span>
+          </button>
+
+          <span class="sb-tool-divider"></span>
+
+          <button type="button" class="sb-tool-btn" id="toolbar-theme-btn" data-testid="toolbar-theme-toggle" aria-label="Toggle theme" title="Toggle Dark/Light Theme">
+            <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15.5 11.8A6 6 0 0 1 8.2 4.5a6 6 0 1 0 7.3 7.3z" />
+            </svg>
+          </button>
+        </div>
+
+        <div id="hint-viewer" class="sb-hint-viewer">
+          To move canvas, hold mouse wheel or spacebar while dragging, or use the hand tool
+        </div>
+      </div>
+
+      <!-- Top-right Action Pill (Clean-room separated brand/export trigger) -->
+      <div class="sb-top-right">
+        <button id="btn-export-pill" class="sb-pill-btn" type="button" data-testid="top-export-btn" title="SketchBoard CR — Export .excalidraw JSON">
+          <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3.5" y="4" width="13" height="12" rx="2" />
+            <line x1="10" y1="4" x2="10" y2="16" />
+          </svg>
+          <span>Export</span>
+        </button>
+      </div>
+
+      <!-- Left Properties Panel (Visible when >= 1 element selected) -->
+      <aside id="properties-panel" class="sb-inspector App-menu__left hidden" aria-label="Element properties">
+        <div class="sb-prop-group">
+          <div class="sb-prop-label">Stroke</div>
+          <div class="sb-swatch-row" id="stroke-swatches">
+            <button type="button" class="sb-swatch" data-prop="strokeColor" data-value="#1e1e1e" data-testid="stroke-1e1e1e" style="background:#1e1e1e" title="#1e1e1e"></button>
+            <button type="button" class="sb-swatch" data-prop="strokeColor" data-value="#e03131" data-testid="stroke-e03131" style="background:#e03131" title="#e03131"></button>
+            <button type="button" class="sb-swatch" data-prop="strokeColor" data-value="#2f9e44" data-testid="stroke-2f9e44" style="background:#2f9e44" title="#2f9e44"></button>
+            <button type="button" class="sb-swatch" data-prop="strokeColor" data-value="#1971c2" data-testid="stroke-1971c2" style="background:#1971c2" title="#1971c2"></button>
+            <button type="button" class="sb-swatch" data-prop="strokeColor" data-value="#f08c00" data-testid="stroke-f08c00" style="background:#f08c00" title="#f08c00"></button>
+          </div>
+        </div>
+
+        <div class="sb-prop-group">
+          <div class="sb-prop-label">Background</div>
+          <div class="sb-swatch-row" id="bg-swatches">
+            <button type="button" class="sb-swatch sb-swatch-transparent" data-prop="backgroundColor" data-value="transparent" data-testid="bg-transparent" title="transparent"></button>
+            <button type="button" class="sb-swatch" data-prop="backgroundColor" data-value="#ffc9c9" data-testid="bg-ffc9c9" style="background:#ffc9c9" title="#ffc9c9"></button>
+            <button type="button" class="sb-swatch" data-prop="backgroundColor" data-value="#b2f2bb" data-testid="bg-b2f2bb" style="background:#b2f2bb" title="#b2f2bb"></button>
+            <button type="button" class="sb-swatch" data-prop="backgroundColor" data-value="#a5d8ff" data-testid="bg-a5d8ff" style="background:#a5d8ff" title="#a5d8ff"></button>
+            <button type="button" class="sb-swatch" data-prop="backgroundColor" data-value="#ffec99" data-testid="bg-ffec99" style="background:#ffec99" title="#ffec99"></button>
+          </div>
+        </div>
+
+        <div class="sb-prop-group">
+          <div class="sb-prop-label">Fill</div>
+          <div class="sb-seg-row">
+            <button type="button" class="sb-seg-btn" data-prop="fillStyle" data-value="hachure" title="Hachure">///</button>
+            <button type="button" class="sb-seg-btn" data-prop="fillStyle" data-value="cross-hatch" title="Cross-hatch">###</button>
+            <button type="button" class="sb-seg-btn" data-prop="fillStyle" data-value="solid" title="Solid">■</button>
+          </div>
+        </div>
+
+        <div class="sb-prop-group">
+          <div class="sb-prop-label">Stroke width</div>
+          <div class="sb-seg-row">
+            <button type="button" class="sb-seg-btn" data-prop="strokeWidth" data-value="1" title="Thin">1</button>
+            <button type="button" class="sb-seg-btn" data-prop="strokeWidth" data-value="2" title="Bold">2</button>
+            <button type="button" class="sb-seg-btn" data-prop="strokeWidth" data-value="4" title="Extra bold">4</button>
+          </div>
+        </div>
+
+        <div class="sb-prop-group">
+          <div class="sb-prop-label">Sloppiness</div>
+          <div class="sb-seg-row">
+            <button type="button" class="sb-seg-btn" data-prop="roughness" data-value="0" data-testid="roughness-0" title="Architect (0)">0</button>
+            <button type="button" class="sb-seg-btn" data-prop="roughness" data-value="1" data-testid="roughness-1" title="Artist (1)">1</button>
+            <button type="button" class="sb-seg-btn" data-prop="roughness" data-value="2" data-testid="roughness-2" title="Cartoonist (2)">2</button>
+          </div>
+        </div>
+
+        <div class="sb-prop-group">
+          <div class="sb-prop-label">Opacity</div>
+          <input id="prop-opacity" type="range" min="10" max="100" step="10" value="100" class="sb-range" />
+        </div>
+      </aside>
+
+      <!-- Bottom-left Zoom + Undo/Redo Controls -->
+      <div class="sb-bottom-left">
+        <div class="sb-zoom-group zoom-actions">
+          <button type="button" id="btn-zoom-out" class="sb-group-btn" aria-label="Zoom out" title="Zoom out">−</button>
+          <button type="button" id="btn-zoom-reset" class="sb-zoom-val" aria-label="Reset zoom" title="Reset zoom">100%</button>
+          <button type="button" id="btn-zoom-in" class="sb-group-btn" aria-label="Zoom in" title="Zoom in">+</button>
+        </div>
+
+        <div class="sb-undo-group undo-redo-buttons">
+          <button type="button" id="btn-undo" class="sb-group-btn" data-testid="button-undo" aria-label="Undo" title="Undo" disabled>
+            <svg viewBox="0 0 20 20" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6.5 8H13a3.5 3.5 0 0 1 0 7H9" />
+              <polyline points="9,5 6,8 9,11" />
+            </svg>
+          </button>
+          <button type="button" id="btn-redo" class="sb-group-btn" data-testid="button-redo" aria-label="Redo" title="Redo" disabled>
+            <svg viewBox="0 0 20 20" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13.5 8H7a3.5 3.5 0 0 0 0 7h4" />
+              <polyline points="11,5 14,8 11,11" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Bottom-right Info Trigger -->
+      <div class="sb-bottom-right">
+        <button type="button" id="btn-help" class="sb-chrome-btn" aria-label="Help" title="SketchBoard CR Clean-Room Whiteboard">
+          <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="10" cy="10" r="7" />
+            <path d="M8.3 8.2a2 2 0 0 1 3.7 1c0 1.2-2 1.5-2 2.6" />
+            <circle cx="10" cy="14.3" r="0.6" fill="currentColor" stroke="none" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Inline Text Editor Overlay -->
+      <textarea id="inline-text-editor" class="sb-text-editor hidden" spellcheck="false"></textarea>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

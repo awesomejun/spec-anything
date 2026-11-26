@@ -1,0 +1,3352 @@
+{
+  "schema_version": "1.0.0",
+  "root": "<isolated-work-dir>/pomotroid-v1.7.1-src",
+  "coverage_stats": {
+    "total_files": 789,
+    "supported_code_files": 446,
+    "test_files": 0,
+    "languages": {
+      "css": 11,
+      "html": 1,
+      "javascript": 216,
+      "python": 1,
+      "rust": 19,
+      "svelte": 26,
+      "typescript": 172
+    },
+    "modules_count": 5,
+    "entities_count": 586,
+    "actions_count": 1,
+    "data_schemas_count": 0,
+    "frontend_routes_count": 3,
+    "css_tokens_count": 39,
+    "dependencies_count": 17,
+    "recommended_min_inventory": 22
+  },
+  "loud_warnings": [],
+  "modules": [
+    {
+      "module": ".",
+      "files": 2,
+      "lines": 66,
+      "languages": [
+        "javascript"
+      ]
+    },
+    {
+      "module": ".svelte-kit",
+      "files": 74,
+      "lines": 21166,
+      "languages": [
+        "css",
+        "javascript",
+        "svelte",
+        "typescript"
+      ]
+    },
+    {
+      "module": "scripts",
+      "files": 1,
+      "lines": 217,
+      "languages": [
+        "python"
+      ]
+    },
+    {
+      "module": "src",
+      "files": 350,
+      "lines": 21354,
+      "languages": [
+        "css",
+        "html",
+        "javascript",
+        "svelte",
+        "typescript"
+      ]
+    },
+    {
+      "module": "src-tauri",
+      "files": 19,
+      "lines": 6102,
+      "languages": [
+        "rust"
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "role": "js_export",
+      "name": "AGY_CLI_DISABLE_AUTO_UPDATE",
+      "ref": ".svelte-kit/ambient.d.ts:44"
+    },
+    {
+      "role": "js_export",
+      "name": "ANTIGRAVITY_AGENT",
+      "ref": ".svelte-kit/ambient.d.ts:74"
+    },
+    {
+      "role": "js_export",
+      "name": "ANTIGRAVITY_AGENTAPI_EXE",
+      "ref": ".svelte-kit/ambient.d.ts:61"
+    },
+    {
+      "role": "js_export",
+      "name": "ANTIGRAVITY_APP_DATA_DIR",
+      "ref": ".svelte-kit/ambient.d.ts:85"
+    },
+    {
+      "role": "js_export",
+      "name": "ANTIGRAVITY_CONVERSATION_ID",
+      "ref": ".svelte-kit/ambient.d.ts:64"
+    },
+    {
+      "role": "js_export",
+      "name": "ANTIGRAVITY_CSRF_TOKEN",
+      "ref": ".svelte-kit/ambient.d.ts:62"
+    },
+    {
+      "role": "js_export",
+      "name": "ANTIGRAVITY_LS_ADDRESS",
+      "ref": ".svelte-kit/ambient.d.ts:43"
+    },
+    {
+      "role": "js_export",
+      "name": "ANTIGRAVITY_LS_VERSION",
+      "ref": ".svelte-kit/ambient.d.ts:81"
+    },
+    {
+      "role": "js_export",
+      "name": "ANTIGRAVITY_PROJECT_ID",
+      "ref": ".svelte-kit/ambient.d.ts:83"
+    },
+    {
+      "role": "js_export",
+      "name": "ANTIGRAVITY_SOURCE_METADATA",
+      "ref": ".svelte-kit/ambient.d.ts:69"
+    },
+    {
+      "role": "js_export",
+      "name": "ANTIGRAVITY_TRAJECTORY_ID",
+      "ref": ".svelte-kit/ambient.d.ts:78"
+    },
+    {
+      "role": "js_export",
+      "name": "CLAUDE_AGENT_SDK_VERSION",
+      "ref": ".svelte-kit/ambient.d.ts:58"
+    },
+    {
+      "role": "js_export",
+      "name": "COMMAND_MODE",
+      "ref": ".svelte-kit/ambient.d.ts:56"
+    },
+    {
+      "role": "js_export",
+      "name": "GIT_EDITOR",
+      "ref": ".svelte-kit/ambient.d.ts:72"
+    },
+    {
+      "role": "js_export",
+      "name": "GIT_PAGER",
+      "ref": ".svelte-kit/ambient.d.ts:68"
+    },
+    {
+      "role": "js_export",
+      "name": "HOME",
+      "ref": ".svelte-kit/ambient.d.ts:57"
+    },
+    {
+      "role": "js_export",
+      "name": "LOGNAME",
+      "ref": ".svelte-kit/ambient.d.ts:53"
+    },
+    {
+      "role": "js_export",
+      "name": "MediaQuery",
+      "ref": ".svelte-kit/output/server/chunks/index-server.js:1615"
+    },
+    {
+      "role": "js_export",
+      "name": "NODE",
+      "ref": ".svelte-kit/ambient.d.ts:47"
+    },
+    {
+      "role": "js_export",
+      "name": "NODE_ENV",
+      "ref": ".svelte-kit/ambient.d.ts:89"
+    },
+    {
+      "role": "js_export",
+      "name": "NoDefaultCurrentDirectoryInExePath",
+      "ref": ".svelte-kit/ambient.d.ts:55"
+    },
+    {
+      "role": "js_export",
+      "name": "OLDPWD",
+      "ref": ".svelte-kit/ambient.d.ts:87"
+    },
+    {
+      "role": "js_export",
+      "name": "OPENBOT_AGENT_PROCESS",
+      "ref": ".svelte-kit/ambient.d.ts:82"
+    },
+    {
+      "role": "js_export",
+      "name": "OSLogRateLimit",
+      "ref": ".svelte-kit/ambient.d.ts:50"
+    },
+    {
+      "role": "js_export",
+      "name": "PAGER",
+      "ref": ".svelte-kit/ambient.d.ts:73"
+    },
+    {
+      "role": "js_export",
+      "name": "PATH",
+      "ref": ".svelte-kit/ambient.d.ts:84"
+    },
+    {
+      "role": "js_export",
+      "name": "PWD",
+      "ref": ".svelte-kit/ambient.d.ts:52"
+    },
+    {
+      "role": "js_export",
+      "name": "SHELL",
+      "ref": ".svelte-kit/ambient.d.ts:41"
+    },
+    {
+      "role": "js_export",
+      "name": "SHLVL",
+      "ref": ".svelte-kit/ambient.d.ts:71"
+    },
+    {
+      "role": "js_export",
+      "name": "SSH_AUTH_SOCK",
+      "ref": ".svelte-kit/ambient.d.ts:49"
+    },
+    {
+      "role": "js_export",
+      "name": "SSL_CERT_FILE",
+      "ref": ".svelte-kit/ambient.d.ts:79"
+    },
+    {
+      "role": "js_export",
+      "name": "TERM",
+      "ref": ".svelte-kit/ambient.d.ts:65"
+    },
+    {
+      "role": "js_export",
+      "name": "TMPDIR",
+      "ref": ".svelte-kit/ambient.d.ts:60"
+    },
+    {
+      "role": "js_export",
+      "name": "USER",
+      "ref": ".svelte-kit/ambient.d.ts:67"
+    },
+    {
+      "role": "js_export",
+      "name": "WSL_DISTRO_NAME",
+      "ref": ".svelte-kit/ambient.d.ts:46"
+    },
+    {
+      "role": "js_export",
+      "name": "XPC_FLAGS",
+      "ref": ".svelte-kit/ambient.d.ts:45"
+    },
+    {
+      "role": "js_export",
+      "name": "XPC_SERVICE_NAME",
+      "ref": ".svelte-kit/ambient.d.ts:75"
+    },
+    {
+      "role": "js_export",
+      "name": "_",
+      "ref": ".svelte-kit/ambient.d.ts:54"
+    },
+    {
+      "role": "js_export",
+      "name": "__CFBundleIdentifier",
+      "ref": ".svelte-kit/ambient.d.ts:48"
+    },
+    {
+      "role": "js_export",
+      "name": "__CF_USER_TEXT_ENCODING",
+      "ref": ".svelte-kit/ambient.d.ts:88"
+    },
+    {
+      "role": "js_export",
+      "name": "about_open_log_folder",
+      "ref": "src/paraglide/messages/about_open_log_folder.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "about_open_log_folder",
+      "ref": "src/paraglide/messages/about_open_log_folder.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "about_release_notes",
+      "ref": "src/paraglide/messages/about_release_notes.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "about_release_notes",
+      "ref": "src/paraglide/messages/about_release_notes.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "about_reset_all",
+      "ref": "src/paraglide/messages/about_reset_all.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "about_reset_all",
+      "ref": "src/paraglide/messages/about_reset_all.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "about_reset_confirm",
+      "ref": "src/paraglide/messages/about_reset_confirm.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "about_reset_confirm",
+      "ref": "src/paraglide/messages/about_reset_confirm.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "about_source_code",
+      "ref": "src/paraglide/messages/about_source_code.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "about_source_code",
+      "ref": "src/paraglide/messages/about_source_code.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "about_update_checking",
+      "ref": "src/paraglide/messages/about_update_checking.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "about_update_checking",
+      "ref": "src/paraglide/messages/about_update_checking.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "about_update_error",
+      "ref": "src/paraglide/messages/about_update_error.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "about_update_error",
+      "ref": "src/paraglide/messages/about_update_error.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "about_update_install",
+      "ref": "src/paraglide/messages/about_update_install.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "about_update_install",
+      "ref": "src/paraglide/messages/about_update_install.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "about_update_up_to_date",
+      "ref": "src/paraglide/messages/about_update_up_to_date.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "about_update_up_to_date",
+      "ref": "src/paraglide/messages/about_update_up_to_date.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "accessibilityTrusted",
+      "ref": "src/lib/ipc/index.ts:91"
+    },
+    {
+      "role": "js_export",
+      "name": "advanced_group_logging",
+      "ref": "src/paraglide/messages/advanced_group_logging.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "advanced_group_logging",
+      "ref": "src/paraglide/messages/advanced_group_logging.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "advanced_toggle_verbose_logging",
+      "ref": "src/paraglide/messages/advanced_toggle_verbose_logging.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "advanced_toggle_verbose_logging",
+      "ref": "src/paraglide/messages/advanced_toggle_verbose_logging.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "advanced_toggle_verbose_logging_desc",
+      "ref": "src/paraglide/messages/advanced_toggle_verbose_logging_desc.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "advanced_toggle_verbose_logging_desc",
+      "ref": "src/paraglide/messages/advanced_toggle_verbose_logging_desc.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "aggregateGroups",
+      "ref": "src/paraglide/runtime.d.ts:221"
+    },
+    {
+      "role": "js_export",
+      "name": "aggregateGroups",
+      "ref": "src/paraglide/runtime.js:1239"
+    },
+    {
+      "role": "js_export",
+      "name": "appVersion",
+      "ref": "src/lib/ipc/index.ts:75"
+    },
+    {
+      "role": "js_export",
+      "name": "appearance_badge_active",
+      "ref": "src/paraglide/messages/appearance_badge_active.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "appearance_badge_active",
+      "ref": "src/paraglide/messages/appearance_badge_active.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "appearance_badge_custom",
+      "ref": "src/paraglide/messages/appearance_badge_custom.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "appearance_badge_custom",
+      "ref": "src/paraglide/messages/appearance_badge_custom.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "appearance_group_dark_theme",
+      "ref": "src/paraglide/messages/appearance_group_dark_theme.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "appearance_group_dark_theme",
+      "ref": "src/paraglide/messages/appearance_group_dark_theme.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "appearance_group_light_theme",
+      "ref": "src/paraglide/messages/appearance_group_light_theme.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "appearance_group_light_theme",
+      "ref": "src/paraglide/messages/appearance_group_light_theme.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "appearance_group_mode",
+      "ref": "src/paraglide/messages/appearance_group_mode.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "appearance_group_mode",
+      "ref": "src/paraglide/messages/appearance_group_mode.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "appearance_mode_auto",
+      "ref": "src/paraglide/messages/appearance_mode_auto.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "appearance_mode_auto",
+      "ref": "src/paraglide/messages/appearance_mode_auto.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "appearance_mode_dark",
+      "ref": "src/paraglide/messages/appearance_mode_dark.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "appearance_mode_dark",
+      "ref": "src/paraglide/messages/appearance_mode_dark.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "appearance_mode_light",
+      "ref": "src/paraglide/messages/appearance_mode_light.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "appearance_mode_light",
+      "ref": "src/paraglide/messages/appearance_mode_light.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "applyTheme",
+      "ref": "src/lib/stores/theme.ts:8"
+    },
+    {
+      "role": "js_export",
+      "name": "assertIsLocale",
+      "ref": "src/paraglide/runtime.d.ts:81"
+    },
+    {
+      "role": "js_export",
+      "name": "assertIsLocale",
+      "ref": "src/paraglide/runtime.js:625"
+    },
+    {
+      "role": "js_export",
+      "name": "baseLocale",
+      "ref": "src/paraglide/runtime.d.ts:465"
+    },
+    {
+      "role": "js_export",
+      "name": "baseLocale",
+      "ref": "src/paraglide/runtime.js:14"
+    },
+    {
+      "role": "js_export",
+      "name": "checkUpdate",
+      "ref": "src/lib/ipc/index.ts:101"
+    },
+    {
+      "role": "js_export",
+      "name": "clearCustomAudio",
+      "ref": "src/lib/ipc/index.ts:57"
+    },
+    {
+      "role": "js_export",
+      "name": "clearSessionHistory",
+      "ref": "src/lib/ipc/index.ts:79"
+    },
+    {
+      "role": "js_export",
+      "name": "component",
+      "ref": ".svelte-kit/output/server/nodes/0.js:5"
+    },
+    {
+      "role": "js_export",
+      "name": "component",
+      "ref": ".svelte-kit/output/server/nodes/1.js:5"
+    },
+    {
+      "role": "js_export",
+      "name": "component",
+      "ref": ".svelte-kit/output/server/nodes/2.js:5"
+    },
+    {
+      "role": "js_export",
+      "name": "component",
+      "ref": ".svelte-kit/output/server/nodes/3.js:5"
+    },
+    {
+      "role": "js_export",
+      "name": "component",
+      "ref": ".svelte-kit/output/server/nodes/4.js:5"
+    },
+    {
+      "role": "js_export",
+      "name": "cookieDomain",
+      "ref": "src/paraglide/runtime.d.ts:480"
+    },
+    {
+      "role": "js_export",
+      "name": "cookieDomain",
+      "ref": "src/paraglide/runtime.js:29"
+    },
+    {
+      "role": "js_export",
+      "name": "cookieMaxAge",
+      "ref": "src/paraglide/runtime.d.ts:478"
+    },
+    {
+      "role": "js_export",
+      "name": "cookieMaxAge",
+      "ref": "src/paraglide/runtime.js:27"
+    },
+    {
+      "role": "js_export",
+      "name": "cookieName",
+      "ref": "src/paraglide/runtime.d.ts:476"
+    },
+    {
+      "role": "js_export",
+      "name": "cookieName",
+      "ref": "src/paraglide/runtime.js:25"
+    },
+    {
+      "role": "js_export",
+      "name": "createLocalShortcutHandler",
+      "ref": "src/lib/utils/localShortcuts.ts:47"
+    },
+    {
+      "role": "js_export",
+      "name": "customClientStrategies",
+      "ref": "src/paraglide/runtime.d.ts:602"
+    },
+    {
+      "role": "js_export",
+      "name": "customClientStrategies",
+      "ref": "src/paraglide/runtime.js:1657"
+    },
+    {
+      "role": "js_export",
+      "name": "customServerStrategies",
+      "ref": "src/paraglide/runtime.d.ts:600"
+    },
+    {
+      "role": "js_export",
+      "name": "customServerStrategies",
+      "ref": "src/paraglide/runtime.js:1655"
+    },
+    {
+      "role": "js_export",
+      "name": "datetime",
+      "ref": "src/paraglide/registry.d.ts:24"
+    },
+    {
+      "role": "js_export",
+      "name": "datetime",
+      "ref": "src/paraglide/registry.js:33"
+    },
+    {
+      "role": "js_export",
+      "name": "deLocalizeHref",
+      "ref": "src/paraglide/runtime.d.ts:377"
+    },
+    {
+      "role": "js_export",
+      "name": "deLocalizeHref",
+      "ref": "src/paraglide/runtime.js:1500"
+    },
+    {
+      "role": "js_export",
+      "name": "deLocalizeUrl",
+      "ref": "src/paraglide/runtime.d.ts:213"
+    },
+    {
+      "role": "js_export",
+      "name": "deLocalizeUrl",
+      "ref": "src/paraglide/runtime.js:1087"
+    },
+    {
+      "role": "js_export",
+      "name": "decode",
+      "ref": ".svelte-kit/generated/client-optimized/app.js:31"
+    },
+    {
+      "role": "js_export",
+      "name": "decode",
+      "ref": ".svelte-kit/generated/client/app.js:31"
+    },
+    {
+      "role": "js_export",
+      "name": "decoders",
+      "ref": ".svelte-kit/generated/client-optimized/app.js:26"
+    },
+    {
+      "role": "js_export",
+      "name": "decoders",
+      "ref": ".svelte-kit/generated/client/app.js:26"
+    },
+    {
+      "role": "js_export",
+      "name": "defineCustomClientStrategy",
+      "ref": "src/paraglide/runtime.d.ts:456"
+    },
+    {
+      "role": "js_export",
+      "name": "defineCustomClientStrategy",
+      "ref": "src/paraglide/runtime.js:1694"
+    },
+    {
+      "role": "js_export",
+      "name": "defineCustomServerStrategy",
+      "ref": "src/paraglide/runtime.d.ts:445"
+    },
+    {
+      "role": "js_export",
+      "name": "defineCustomServerStrategy",
+      "ref": "src/paraglide/runtime.js:1678"
+    },
+    {
+      "role": "js_export",
+      "name": "dictionary",
+      "ref": ".svelte-kit/generated/client-optimized/app.js:13"
+    },
+    {
+      "role": "js_export",
+      "name": "dictionary",
+      "ref": ".svelte-kit/generated/client/app.js:13"
+    },
+    {
+      "role": "js_export",
+      "name": "disableAsyncLocalStorage",
+      "ref": "src/paraglide/runtime.d.ts:532"
+    },
+    {
+      "role": "js_export",
+      "name": "disableAsyncLocalStorage",
+      "ref": "src/paraglide/runtime.js:171"
+    },
+    {
+      "role": "js_export",
+      "name": "encoders",
+      "ref": ".svelte-kit/generated/client-optimized/app.js:27"
+    },
+    {
+      "role": "js_export",
+      "name": "encoders",
+      "ref": ".svelte-kit/generated/client/app.js:27"
+    },
+    {
+      "role": "js_export",
+      "name": "entries",
+      "ref": "src/paraglide/runtime.d.ts:408"
+    },
+    {
+      "role": "js_export",
+      "name": "entries",
+      "ref": "src/paraglide/runtime.js:1549"
+    },
+    {
+      "role": "js_export",
+      "name": "env",
+      "ref": ".svelte-kit/ambient.d.ts:175"
+    },
+    {
+      "role": "js_export",
+      "name": "env",
+      "ref": ".svelte-kit/ambient.d.ts:279"
+    },
+    {
+      "role": "js_export",
+      "name": "env",
+      "ref": ".svelte-kit/output/prerendered/dependencies/_app/env.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "env",
+      "ref": ".svelte-kit/output/server/index.js:2906"
+    },
+    {
+      "role": "js_export",
+      "name": "experimentalMiddlewareLocaleSplitting",
+      "ref": "src/paraglide/runtime.d.ts:533"
+    },
+    {
+      "role": "js_export",
+      "name": "experimentalMiddlewareLocaleSplitting",
+      "ref": "src/paraglide/runtime.js:172"
+    },
+    {
+      "role": "js_export",
+      "name": "experimentalStaticLocale",
+      "ref": "src/paraglide/runtime.d.ts:536"
+    },
+    {
+      "role": "js_export",
+      "name": "experimentalStaticLocale",
+      "ref": "src/paraglide/runtime.js:175"
+    },
+    {
+      "role": "js_export",
+      "name": "extractLocaleFromCookie",
+      "ref": "src/paraglide/runtime.d.ts:90"
+    },
+    {
+      "role": "js_export",
+      "name": "extractLocaleFromCookie",
+      "ref": "src/paraglide/runtime.js:794"
+    },
+    {
+      "role": "js_export",
+      "name": "extractLocaleFromHeader",
+      "ref": "src/paraglide/runtime.d.ts:103"
+    },
+    {
+      "role": "js_export",
+      "name": "extractLocaleFromHeader",
+      "ref": "src/paraglide/runtime.js:815"
+    },
+    {
+      "role": "js_export",
+      "name": "extractLocaleFromNavigator",
+      "ref": "src/paraglide/runtime.d.ts:115"
+    },
+    {
+      "role": "js_export",
+      "name": "extractLocaleFromNavigator",
+      "ref": "src/paraglide/runtime.js:858"
+    },
+    {
+      "role": "js_export",
+      "name": "extractLocaleFromRequest",
+      "ref": "src/paraglide/runtime.d.ts:576"
+    },
+    {
+      "role": "js_export",
+      "name": "extractLocaleFromRequest",
+      "ref": "src/paraglide/runtime.js:656"
+    },
+    {
+      "role": "js_export",
+      "name": "extractLocaleFromRequestAsync",
+      "ref": "src/paraglide/runtime.d.ts:578"
+    },
+    {
+      "role": "js_export",
+      "name": "extractLocaleFromRequestAsync",
+      "ref": "src/paraglide/runtime.js:751"
+    },
+    {
+      "role": "js_export",
+      "name": "extractLocaleFromRequestWithStrategies",
+      "ref": "src/paraglide/runtime.d.ts:577"
+    },
+    {
+      "role": "js_export",
+      "name": "extractLocaleFromRequestWithStrategies",
+      "ref": "src/paraglide/runtime.js:668"
+    },
+    {
+      "role": "js_export",
+      "name": "extractLocaleFromUrl",
+      "ref": "src/paraglide/runtime.d.ts:126"
+    },
+    {
+      "role": "js_export",
+      "name": "extractLocaleFromUrl",
+      "ref": "src/paraglide/runtime.js:899"
+    },
+    {
+      "role": "js_export",
+      "name": "fonts",
+      "ref": ".svelte-kit/output/server/nodes/0.js:12"
+    },
+    {
+      "role": "js_export",
+      "name": "fonts",
+      "ref": ".svelte-kit/output/server/nodes/1.js:8"
+    },
+    {
+      "role": "js_export",
+      "name": "fonts",
+      "ref": ".svelte-kit/output/server/nodes/2.js:8"
+    },
+    {
+      "role": "js_export",
+      "name": "fonts",
+      "ref": ".svelte-kit/output/server/nodes/3.js:8"
+    },
+    {
+      "role": "js_export",
+      "name": "fonts",
+      "ref": ".svelte-kit/output/server/nodes/4.js:8"
+    },
+    {
+      "role": "js_export",
+      "name": "formatLocalKey",
+      "ref": "src/lib/utils/localShortcuts.ts:12"
+    },
+    {
+      "role": "js_export",
+      "name": "generateStaticLocalizedUrls",
+      "ref": "src/paraglide/runtime.d.ts:426"
+    },
+    {
+      "role": "js_export",
+      "name": "generateStaticLocalizedUrls",
+      "ref": "src/paraglide/runtime.js:1567"
+    },
+    {
+      "role": "js_export",
+      "name": "getCustomAudioInfo",
+      "ref": "src/lib/ipc/index.ts:50"
+    },
+    {
+      "role": "js_export",
+      "name": "getLocale",
+      "ref": "src/paraglide/runtime.d.ts:537"
+    },
+    {
+      "role": "js_export",
+      "name": "getLocaleForUrl",
+      "ref": "src/paraglide/runtime.d.ts:35"
+    },
+    {
+      "role": "js_export",
+      "name": "getLocaleForUrl",
+      "ref": "src/paraglide/runtime.js:264"
+    },
+    {
+      "role": "js_export",
+      "name": "getLogDir",
+      "ref": "src/lib/ipc/index.ts:72"
+    },
+    {
+      "role": "js_export",
+      "name": "getSettings",
+      "ref": "src/lib/ipc/index.ts:27"
+    },
+    {
+      "role": "js_export",
+      "name": "getStrategyForUrl",
+      "ref": "src/paraglide/runtime.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "getStrategyForUrl",
+      "ref": "src/paraglide/runtime.js:133"
+    },
+    {
+      "role": "js_export",
+      "name": "getTextDirection",
+      "ref": "src/paraglide/runtime.d.ts:50"
+    },
+    {
+      "role": "js_export",
+      "name": "getTextDirection",
+      "ref": "src/paraglide/runtime.js:378"
+    },
+    {
+      "role": "js_export",
+      "name": "getThemes",
+      "ref": "src/lib/ipc/index.ts:36"
+    },
+    {
+      "role": "js_export",
+      "name": "getTimerState",
+      "ref": "src/lib/ipc/index.ts:23"
+    },
+    {
+      "role": "js_export",
+      "name": "get_hooks",
+      "ref": ".svelte-kit/generated/server/internal.js:31"
+    },
+    {
+      "role": "js_export",
+      "name": "handle",
+      "ref": "src/paraglide/runtime.d.ts:263"
+    },
+    {
+      "role": "js_export",
+      "name": "handle",
+      "ref": "src/paraglide/runtime.d.ts:275"
+    },
+    {
+      "role": "js_export",
+      "name": "handle",
+      "ref": "src/paraglide/runtime.js:1293"
+    },
+    {
+      "role": "js_export",
+      "name": "handle",
+      "ref": "src/paraglide/runtime.js:1305"
+    },
+    {
+      "role": "js_export",
+      "name": "handle",
+      "ref": "src/paraglide/server.d.ts:41"
+    },
+    {
+      "role": "js_export",
+      "name": "handle",
+      "ref": "src/paraglide/server.js:45"
+    },
+    {
+      "role": "js_export",
+      "name": "hash",
+      "ref": ".svelte-kit/generated/client-optimized/app.js:29"
+    },
+    {
+      "role": "js_export",
+      "name": "hash",
+      "ref": ".svelte-kit/generated/client/app.js:29"
+    },
+    {
+      "role": "js_export",
+      "name": "hooks",
+      "ref": ".svelte-kit/generated/client-optimized/app.js:19"
+    },
+    {
+      "role": "js_export",
+      "name": "hooks",
+      "ref": ".svelte-kit/generated/client/app.js:19"
+    },
+    {
+      "role": "js_export",
+      "name": "imports",
+      "ref": ".svelte-kit/output/server/nodes/0.js:10"
+    },
+    {
+      "role": "js_export",
+      "name": "imports",
+      "ref": ".svelte-kit/output/server/nodes/1.js:6"
+    },
+    {
+      "role": "js_export",
+      "name": "imports",
+      "ref": ".svelte-kit/output/server/nodes/2.js:6"
+    },
+    {
+      "role": "js_export",
+      "name": "imports",
+      "ref": ".svelte-kit/output/server/nodes/3.js:6"
+    },
+    {
+      "role": "js_export",
+      "name": "imports",
+      "ref": ".svelte-kit/output/server/nodes/4.js:6"
+    },
+    {
+      "role": "js_export",
+      "name": "index",
+      "ref": ".svelte-kit/output/server/nodes/0.js:3"
+    },
+    {
+      "role": "js_export",
+      "name": "index",
+      "ref": ".svelte-kit/output/server/nodes/1.js:3"
+    },
+    {
+      "role": "js_export",
+      "name": "index",
+      "ref": ".svelte-kit/output/server/nodes/2.js:3"
+    },
+    {
+      "role": "js_export",
+      "name": "index",
+      "ref": ".svelte-kit/output/server/nodes/3.js:3"
+    },
+    {
+      "role": "js_export",
+      "name": "index",
+      "ref": ".svelte-kit/output/server/nodes/4.js:3"
+    },
+    {
+      "role": "js_export",
+      "name": "installUpdate",
+      "ref": "src/lib/ipc/index.ts:104"
+    },
+    {
+      "role": "js_export",
+      "name": "isCustomStrategy",
+      "ref": "src/paraglide/runtime.d.ts:434"
+    },
+    {
+      "role": "js_export",
+      "name": "isCustomStrategy",
+      "ref": "src/paraglide/runtime.js:1665"
+    },
+    {
+      "role": "js_export",
+      "name": "isExcludedByRouteStrategy",
+      "ref": "src/paraglide/runtime.d.ts:17"
+    },
+    {
+      "role": "js_export",
+      "name": "isExcludedByRouteStrategy",
+      "ref": "src/paraglide/runtime.js:148"
+    },
+    {
+      "role": "js_export",
+      "name": "isLinux",
+      "ref": "src/lib/utils/platform.ts:5"
+    },
+    {
+      "role": "js_export",
+      "name": "isLocale",
+      "ref": "src/paraglide/runtime.d.ts:73"
+    },
+    {
+      "role": "js_export",
+      "name": "isLocale",
+      "ref": "src/paraglide/runtime.js:615"
+    },
+    {
+      "role": "js_export",
+      "name": "isMac",
+      "ref": "src/lib/utils/platform.ts:2"
+    },
+    {
+      "role": "js_export",
+      "name": "isServer",
+      "ref": "src/paraglide/runtime.d.ts:534"
+    },
+    {
+      "role": "js_export",
+      "name": "isServer",
+      "ref": "src/paraglide/runtime.js:173"
+    },
+    {
+      "role": "js_export",
+      "name": "localStorageKey",
+      "ref": "src/paraglide/runtime.d.ts:482"
+    },
+    {
+      "role": "js_export",
+      "name": "localStorageKey",
+      "ref": "src/paraglide/runtime.js:31"
+    },
+    {
+      "role": "js_export",
+      "name": "locales",
+      "ref": "src/paraglide/runtime.d.ts:474"
+    },
+    {
+      "role": "js_export",
+      "name": "locales",
+      "ref": "src/paraglide/runtime.js:23"
+    },
+    {
+      "role": "js_export",
+      "name": "localizeHref",
+      "ref": "src/paraglide/runtime.d.ts:334"
+    },
+    {
+      "role": "js_export",
+      "name": "localizeHref",
+      "ref": "src/paraglide/runtime.js:1439"
+    },
+    {
+      "role": "js_export",
+      "name": "localizeUrl",
+      "ref": "src/paraglide/runtime.d.ts:171"
+    },
+    {
+      "role": "js_export",
+      "name": "localizeUrl",
+      "ref": "src/paraglide/runtime.js:984"
+    },
+    {
+      "role": "js_export",
+      "name": "manifest",
+      "ref": ".svelte-kit/output/server/manifest-full.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "manifest",
+      "ref": ".svelte-kit/output/server/manifest.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "matchers",
+      "ref": ".svelte-kit/generated/client-optimized/matchers.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "matchers",
+      "ref": ".svelte-kit/generated/client/matchers.js:1"
+    },
+    {
+      "role": "js_export",
+      "name": "nav_about",
+      "ref": "src/paraglide/messages/nav_about.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "nav_about",
+      "ref": "src/paraglide/messages/nav_about.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "nav_appearance",
+      "ref": "src/paraglide/messages/nav_appearance.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "nav_appearance",
+      "ref": "src/paraglide/messages/nav_appearance.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "nav_notifications",
+      "ref": "src/paraglide/messages/nav_notifications.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "nav_notifications",
+      "ref": "src/paraglide/messages/nav_notifications.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "nav_shortcuts",
+      "ref": "src/paraglide/messages/nav_shortcuts.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "nav_shortcuts",
+      "ref": "src/paraglide/messages/nav_shortcuts.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "nav_system",
+      "ref": "src/paraglide/messages/nav_system.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "nav_system",
+      "ref": "src/paraglide/messages/nav_system.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "nav_timer",
+      "ref": "src/paraglide/messages/nav_timer.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "nav_timer",
+      "ref": "src/paraglide/messages/nav_timer.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "nodes",
+      "ref": ".svelte-kit/generated/client-optimized/app.js:3"
+    },
+    {
+      "role": "js_export",
+      "name": "nodes",
+      "ref": ".svelte-kit/generated/client/app.js:3"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_alert_long_break",
+      "ref": "src/paraglide/messages/notif_alert_long_break.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_alert_long_break",
+      "ref": "src/paraglide/messages/notif_alert_long_break.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_alert_short_break",
+      "ref": "src/paraglide/messages/notif_alert_short_break.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_alert_short_break",
+      "ref": "src/paraglide/messages/notif_alert_short_break.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_alert_work",
+      "ref": "src/paraglide/messages/notif_alert_work.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_alert_work",
+      "ref": "src/paraglide/messages/notif_alert_work.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_audio_default",
+      "ref": "src/paraglide/messages/notif_audio_default.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_audio_default",
+      "ref": "src/paraglide/messages/notif_audio_default.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_btn_choose",
+      "ref": "src/paraglide/messages/notif_btn_choose.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_btn_choose",
+      "ref": "src/paraglide/messages/notif_btn_choose.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_btn_restore",
+      "ref": "src/paraglide/messages/notif_btn_restore.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_btn_restore",
+      "ref": "src/paraglide/messages/notif_btn_restore.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_group_alert",
+      "ref": "src/paraglide/messages/notif_group_alert.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_group_alert",
+      "ref": "src/paraglide/messages/notif_group_alert.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_group_desktop",
+      "ref": "src/paraglide/messages/notif_group_desktop.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_group_desktop",
+      "ref": "src/paraglide/messages/notif_group_desktop.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_group_tick",
+      "ref": "src/paraglide/messages/notif_group_tick.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_group_tick",
+      "ref": "src/paraglide/messages/notif_group_tick.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_group_volume",
+      "ref": "src/paraglide/messages/notif_group_volume.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_group_volume",
+      "ref": "src/paraglide/messages/notif_group_volume.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_label_volume",
+      "ref": "src/paraglide/messages/notif_label_volume.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_label_volume",
+      "ref": "src/paraglide/messages/notif_label_volume.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_toggle_desktop",
+      "ref": "src/paraglide/messages/notif_toggle_desktop.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_toggle_desktop",
+      "ref": "src/paraglide/messages/notif_toggle_desktop.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_toggle_desktop_desc",
+      "ref": "src/paraglide/messages/notif_toggle_desktop_desc.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_toggle_desktop_desc",
+      "ref": "src/paraglide/messages/notif_toggle_desktop_desc.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_toggle_tick_break",
+      "ref": "src/paraglide/messages/notif_toggle_tick_break.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_toggle_tick_break",
+      "ref": "src/paraglide/messages/notif_toggle_tick_break.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_toggle_tick_break_desc",
+      "ref": "src/paraglide/messages/notif_toggle_tick_break_desc.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_toggle_tick_break_desc",
+      "ref": "src/paraglide/messages/notif_toggle_tick_break_desc.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_toggle_tick_work",
+      "ref": "src/paraglide/messages/notif_toggle_tick_work.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_toggle_tick_work",
+      "ref": "src/paraglide/messages/notif_toggle_tick_work.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_toggle_tick_work_desc",
+      "ref": "src/paraglide/messages/notif_toggle_tick_work_desc.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "notif_toggle_tick_work_desc",
+      "ref": "src/paraglide/messages/notif_toggle_tick_work_desc.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "notificationShow",
+      "ref": "src/lib/ipc/index.ts:40"
+    },
+    {
+      "role": "js_export",
+      "name": "notification_long_break_body",
+      "ref": "src/paraglide/messages/notification_long_break_body.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "notification_long_break_body",
+      "ref": "src/paraglide/messages/notification_long_break_body.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "notification_long_break_title",
+      "ref": "src/paraglide/messages/notification_long_break_title.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "notification_long_break_title",
+      "ref": "src/paraglide/messages/notification_long_break_title.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "notification_short_break_body",
+      "ref": "src/paraglide/messages/notification_short_break_body.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "notification_short_break_body",
+      "ref": "src/paraglide/messages/notification_short_break_body.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "notification_short_break_title",
+      "ref": "src/paraglide/messages/notification_short_break_title.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "notification_short_break_title",
+      "ref": "src/paraglide/messages/notification_short_break_title.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "notification_work_body",
+      "ref": "src/paraglide/messages/notification_work_body.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "notification_work_body",
+      "ref": "src/paraglide/messages/notification_work_body.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "notification_work_start_body",
+      "ref": "src/paraglide/messages/notification_work_start_body.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "notification_work_start_body",
+      "ref": "src/paraglide/messages/notification_work_start_body.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "notification_work_start_title",
+      "ref": "src/paraglide/messages/notification_work_start_title.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "notification_work_start_title",
+      "ref": "src/paraglide/messages/notification_work_start_title.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "notification_work_title",
+      "ref": "src/paraglide/messages/notification_work_title.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "notification_work_title",
+      "ref": "src/paraglide/messages/notification_work_title.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "npm_command",
+      "ref": ".svelte-kit/ambient.d.ts:42"
+    },
+    {
+      "role": "js_export",
+      "name": "npm_config_local_prefix",
+      "ref": ".svelte-kit/ambient.d.ts:51"
+    },
+    {
+      "role": "js_export",
+      "name": "npm_config_user_agent",
+      "ref": ".svelte-kit/ambient.d.ts:76"
+    },
+    {
+      "role": "js_export",
+      "name": "npm_execpath",
+      "ref": ".svelte-kit/ambient.d.ts:77"
+    },
+    {
+      "role": "js_export",
+      "name": "npm_lifecycle_event",
+      "ref": ".svelte-kit/ambient.d.ts:70"
+    },
+    {
+      "role": "js_export",
+      "name": "npm_lifecycle_script",
+      "ref": ".svelte-kit/ambient.d.ts:63"
+    },
+    {
+      "role": "js_export",
+      "name": "npm_node_execpath",
+      "ref": ".svelte-kit/ambient.d.ts:86"
+    },
+    {
+      "role": "js_export",
+      "name": "npm_package_json",
+      "ref": ".svelte-kit/ambient.d.ts:80"
+    },
+    {
+      "role": "js_export",
+      "name": "npm_package_name",
+      "ref": ".svelte-kit/ambient.d.ts:66"
+    },
+    {
+      "role": "js_export",
+      "name": "npm_package_version",
+      "ref": ".svelte-kit/ambient.d.ts:59"
+    },
+    {
+      "role": "js_export",
+      "name": "number",
+      "ref": "src/paraglide/registry.d.ts:17"
+    },
+    {
+      "role": "js_export",
+      "name": "number",
+      "ref": "src/paraglide/registry.js:23"
+    },
+    {
+      "role": "js_export",
+      "name": "onRoundChange",
+      "ref": "src/lib/ipc/index.ts:121"
+    },
+    {
+      "role": "js_export",
+      "name": "onSessionsCleared",
+      "ref": "src/lib/ipc/index.ts:133"
+    },
+    {
+      "role": "js_export",
+      "name": "onSettingsChanged",
+      "ref": "src/lib/ipc/index.ts:127"
+    },
+    {
+      "role": "js_export",
+      "name": "onThemesChanged",
+      "ref": "src/lib/ipc/index.ts:130"
+    },
+    {
+      "role": "js_export",
+      "name": "onTimerPaused",
+      "ref": "src/lib/ipc/index.ts:113"
+    },
+    {
+      "role": "js_export",
+      "name": "onTimerReset",
+      "ref": "src/lib/ipc/index.ts:124"
+    },
+    {
+      "role": "js_export",
+      "name": "onTimerResumed",
+      "ref": "src/lib/ipc/index.ts:117"
+    },
+    {
+      "role": "js_export",
+      "name": "onTimerTick",
+      "ref": "src/lib/ipc/index.ts:108"
+    },
+    {
+      "role": "js_export",
+      "name": "openAudioFilePicker",
+      "ref": "src/lib/ipc/index.ts:60"
+    },
+    {
+      "role": "js_export",
+      "name": "openLogDir",
+      "ref": "src/lib/ipc/index.ts:69"
+    },
+    {
+      "role": "js_export",
+      "name": "options",
+      "ref": ".svelte-kit/generated/server/internal.js:8"
+    },
+    {
+      "role": "js_export",
+      "name": "overwriteGetLocale",
+      "ref": "src/paraglide/runtime.d.ts:538"
+    },
+    {
+      "role": "js_export",
+      "name": "overwriteGetLocale",
+      "ref": "src/paraglide/runtime.js:347"
+    },
+    {
+      "role": "js_export",
+      "name": "overwriteGetUrlOrigin",
+      "ref": "src/paraglide/runtime.d.ts:575"
+    },
+    {
+      "role": "js_export",
+      "name": "overwriteServerAsyncLocalStorage",
+      "ref": "src/paraglide/runtime.d.ts:28"
+    },
+    {
+      "role": "js_export",
+      "name": "overwriteServerAsyncLocalStorage",
+      "ref": "src/paraglide/runtime.js:186"
+    },
+    {
+      "role": "js_export",
+      "name": "overwriteSetLocale",
+      "ref": "src/paraglide/runtime.d.ts:564"
+    },
+    {
+      "role": "js_export",
+      "name": "overwriteSetLocale",
+      "ref": "src/paraglide/runtime.js:548"
+    },
+    {
+      "role": "js_export",
+      "name": "paraglideMiddleware",
+      "ref": "src/paraglide/server.d.ts:90"
+    },
+    {
+      "role": "js_export",
+      "name": "paraglideMiddleware",
+      "ref": "src/paraglide/server.js:94"
+    },
+    {
+      "role": "js_export",
+      "name": "params",
+      "ref": ".svelte-kit/output/server/index.js:1261"
+    },
+    {
+      "role": "js_export",
+      "name": "plural",
+      "ref": "src/paraglide/registry.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "plural",
+      "ref": "src/paraglide/registry.js:13"
+    },
+    {
+      "role": "js_export",
+      "name": "relativetime",
+      "ref": "src/paraglide/registry.d.ts:31"
+    },
+    {
+      "role": "js_export",
+      "name": "relativetime",
+      "ref": "src/paraglide/registry.js:43"
+    },
+    {
+      "role": "js_export",
+      "name": "reloadShortcuts",
+      "ref": "src/lib/ipc/index.ts:32"
+    },
+    {
+      "role": "js_export",
+      "name": "resetSettings",
+      "ref": "src/lib/ipc/index.ts:31"
+    },
+    {
+      "role": "js_export",
+      "name": "resolveLocale",
+      "ref": "src/lib/utils/locale.ts:16"
+    },
+    {
+      "role": "js_export",
+      "name": "resolveThemeName",
+      "ref": "src/lib/utils/theme.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "round_label_long_break",
+      "ref": "src/paraglide/messages/round_label_long_break.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "round_label_long_break",
+      "ref": "src/paraglide/messages/round_label_long_break.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "round_label_short_break",
+      "ref": "src/paraglide/messages/round_label_short_break.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "round_label_short_break",
+      "ref": "src/paraglide/messages/round_label_short_break.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "round_label_work",
+      "ref": "src/paraglide/messages/round_label_work.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "round_label_work",
+      "ref": "src/paraglide/messages/round_label_work.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "route",
+      "ref": ".svelte-kit/output/server/index.js:1261"
+    },
+    {
+      "role": "js_export",
+      "name": "routeStrategies",
+      "ref": "src/paraglide/runtime.d.ts:498"
+    },
+    {
+      "role": "js_export",
+      "name": "routeStrategies",
+      "ref": "src/paraglide/runtime.js:50"
+    },
+    {
+      "role": "js_export",
+      "name": "server_loads",
+      "ref": ".svelte-kit/generated/client-optimized/app.js:11"
+    },
+    {
+      "role": "js_export",
+      "name": "server_loads",
+      "ref": ".svelte-kit/generated/client/app.js:11"
+    },
+    {
+      "role": "js_export",
+      "name": "setCustomAudio",
+      "ref": "src/lib/ipc/index.ts:53"
+    },
+    {
+      "role": "js_export",
+      "name": "setLocale",
+      "ref": "src/lib/locale.svelte.ts:22"
+    },
+    {
+      "role": "js_export",
+      "name": "setSetting",
+      "ref": "src/lib/ipc/index.ts:29"
+    },
+    {
+      "role": "js_export",
+      "name": "setWindowVisibility",
+      "ref": "src/lib/ipc/index.ts:45"
+    },
+    {
+      "role": "js_export",
+      "name": "settings",
+      "ref": "src/lib/stores/settings.ts:48"
+    },
+    {
+      "role": "js_export",
+      "name": "settings_title",
+      "ref": "src/paraglide/messages/settings_title.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "settings_title",
+      "ref": "src/paraglide/messages/settings_title.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_accessibility_notice",
+      "ref": "src/paraglide/messages/shortcuts_accessibility_notice.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_accessibility_notice",
+      "ref": "src/paraglide/messages/shortcuts_accessibility_notice.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_accessibility_open",
+      "ref": "src/paraglide/messages/shortcuts_accessibility_open.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_accessibility_open",
+      "ref": "src/paraglide/messages/shortcuts_accessibility_open.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_global_heading",
+      "ref": "src/paraglide/messages/shortcuts_global_heading.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_global_heading",
+      "ref": "src/paraglide/messages/shortcuts_global_heading.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_local_fullscreen",
+      "ref": "src/paraglide/messages/shortcuts_local_fullscreen.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_local_fullscreen",
+      "ref": "src/paraglide/messages/shortcuts_local_fullscreen.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_local_heading",
+      "ref": "src/paraglide/messages/shortcuts_local_heading.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_local_heading",
+      "ref": "src/paraglide/messages/shortcuts_local_heading.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_local_mute",
+      "ref": "src/paraglide/messages/shortcuts_local_mute.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_local_mute",
+      "ref": "src/paraglide/messages/shortcuts_local_mute.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_local_note",
+      "ref": "src/paraglide/messages/shortcuts_local_note.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_local_note",
+      "ref": "src/paraglide/messages/shortcuts_local_note.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_local_reset_round",
+      "ref": "src/paraglide/messages/shortcuts_local_reset_round.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_local_reset_round",
+      "ref": "src/paraglide/messages/shortcuts_local_reset_round.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_local_skip_round",
+      "ref": "src/paraglide/messages/shortcuts_local_skip_round.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_local_skip_round",
+      "ref": "src/paraglide/messages/shortcuts_local_skip_round.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_local_toggle_timer",
+      "ref": "src/paraglide/messages/shortcuts_local_toggle_timer.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_local_toggle_timer",
+      "ref": "src/paraglide/messages/shortcuts_local_toggle_timer.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_local_volume_down",
+      "ref": "src/paraglide/messages/shortcuts_local_volume_down.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_local_volume_down",
+      "ref": "src/paraglide/messages/shortcuts_local_volume_down.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_local_volume_up",
+      "ref": "src/paraglide/messages/shortcuts_local_volume_up.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_local_volume_up",
+      "ref": "src/paraglide/messages/shortcuts_local_volume_up.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_note",
+      "ref": "src/paraglide/messages/shortcuts_note.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_note",
+      "ref": "src/paraglide/messages/shortcuts_note.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_reset_timer",
+      "ref": "src/paraglide/messages/shortcuts_reset_timer.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_reset_timer",
+      "ref": "src/paraglide/messages/shortcuts_reset_timer.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_restart_round",
+      "ref": "src/paraglide/messages/shortcuts_restart_round.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_restart_round",
+      "ref": "src/paraglide/messages/shortcuts_restart_round.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_skip_round",
+      "ref": "src/paraglide/messages/shortcuts_skip_round.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_skip_round",
+      "ref": "src/paraglide/messages/shortcuts_skip_round.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_toggle_enabled",
+      "ref": "src/paraglide/messages/shortcuts_toggle_enabled.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_toggle_enabled",
+      "ref": "src/paraglide/messages/shortcuts_toggle_enabled.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_toggle_enabled_desc",
+      "ref": "src/paraglide/messages/shortcuts_toggle_enabled_desc.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_toggle_enabled_desc",
+      "ref": "src/paraglide/messages/shortcuts_toggle_enabled_desc.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_toggle_timer",
+      "ref": "src/paraglide/messages/shortcuts_toggle_timer.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "shortcuts_toggle_timer",
+      "ref": "src/paraglide/messages/shortcuts_toggle_timer.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "shouldRedirect",
+      "ref": "src/paraglide/runtime.d.ts:293"
+    },
+    {
+      "role": "js_export",
+      "name": "shouldRedirect",
+      "ref": "src/paraglide/runtime.js:1323"
+    },
+    {
+      "role": "js_export",
+      "name": "ssr",
+      "ref": "src/routes/+layout.ts:5"
+    },
+    {
+      "role": "js_export",
+      "name": "statsGetDetailed",
+      "ref": "src/lib/ipc/index.ts:84"
+    },
+    {
+      "role": "js_export",
+      "name": "statsGetHeatmap",
+      "ref": "src/lib/ipc/index.ts:87"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_best_streak",
+      "ref": "src/paraglide/messages/stats_best_streak.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_best_streak",
+      "ref": "src/paraglide/messages/stats_best_streak.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_completion",
+      "ref": "src/paraglide/messages/stats_completion.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_completion",
+      "ref": "src/paraglide/messages/stats_completion.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_current_streak",
+      "ref": "src/paraglide/messages/stats_current_streak.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_current_streak",
+      "ref": "src/paraglide/messages/stats_current_streak.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_day",
+      "ref": "src/paraglide/messages/stats_day.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_day",
+      "ref": "src/paraglide/messages/stats_day.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_days",
+      "ref": "src/paraglide/messages/stats_days.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_days",
+      "ref": "src/paraglide/messages/stats_days.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_empty_history",
+      "ref": "src/paraglide/messages/stats_empty_history.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_empty_history",
+      "ref": "src/paraglide/messages/stats_empty_history.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_focus_hours",
+      "ref": "src/paraglide/messages/stats_focus_hours.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_focus_hours",
+      "ref": "src/paraglide/messages/stats_focus_hours.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_focus_time",
+      "ref": "src/paraglide/messages/stats_focus_time.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_focus_time",
+      "ref": "src/paraglide/messages/stats_focus_time.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_legend_less",
+      "ref": "src/paraglide/messages/stats_legend_less.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_legend_less",
+      "ref": "src/paraglide/messages/stats_legend_less.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_legend_more",
+      "ref": "src/paraglide/messages/stats_legend_more.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_legend_more",
+      "ref": "src/paraglide/messages/stats_legend_more.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_loading",
+      "ref": "src/paraglide/messages/stats_loading.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_loading",
+      "ref": "src/paraglide/messages/stats_loading.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_next_year",
+      "ref": "src/paraglide/messages/stats_next_year.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_next_year",
+      "ref": "src/paraglide/messages/stats_next_year.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_no_active_streak",
+      "ref": "src/paraglide/messages/stats_no_active_streak.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_no_active_streak",
+      "ref": "src/paraglide/messages/stats_no_active_streak.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_no_sessions_today",
+      "ref": "src/paraglide/messages/stats_no_sessions_today.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_no_sessions_today",
+      "ref": "src/paraglide/messages/stats_no_sessions_today.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_no_sessions_week",
+      "ref": "src/paraglide/messages/stats_no_sessions_week.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_no_sessions_week",
+      "ref": "src/paraglide/messages/stats_no_sessions_week.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_prev_year",
+      "ref": "src/paraglide/messages/stats_prev_year.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_prev_year",
+      "ref": "src/paraglide/messages/stats_prev_year.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_rounds",
+      "ref": "src/paraglide/messages/stats_rounds.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_rounds",
+      "ref": "src/paraglide/messages/stats_rounds.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_sessions_by_hour",
+      "ref": "src/paraglide/messages/stats_sessions_by_hour.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_sessions_by_hour",
+      "ref": "src/paraglide/messages/stats_sessions_by_hour.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_tab_alltime",
+      "ref": "src/paraglide/messages/stats_tab_alltime.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_tab_alltime",
+      "ref": "src/paraglide/messages/stats_tab_alltime.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_tab_today",
+      "ref": "src/paraglide/messages/stats_tab_today.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_tab_today",
+      "ref": "src/paraglide/messages/stats_tab_today.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_tab_week",
+      "ref": "src/paraglide/messages/stats_tab_week.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_tab_week",
+      "ref": "src/paraglide/messages/stats_tab_week.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_this_week",
+      "ref": "src/paraglide/messages/stats_this_week.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_this_week",
+      "ref": "src/paraglide/messages/stats_this_week.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_title",
+      "ref": "src/paraglide/messages/stats_title.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_title",
+      "ref": "src/paraglide/messages/stats_title.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_total_rounds",
+      "ref": "src/paraglide/messages/stats_total_rounds.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "stats_total_rounds",
+      "ref": "src/paraglide/messages/stats_total_rounds.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "strategy",
+      "ref": "src/paraglide/runtime.d.ts:486"
+    },
+    {
+      "role": "js_export",
+      "name": "strategy",
+      "ref": "src/paraglide/runtime.js:35"
+    },
+    {
+      "role": "js_export",
+      "name": "stylesheets",
+      "ref": ".svelte-kit/output/server/nodes/0.js:11"
+    },
+    {
+      "role": "js_export",
+      "name": "stylesheets",
+      "ref": ".svelte-kit/output/server/nodes/1.js:7"
+    },
+    {
+      "role": "js_export",
+      "name": "stylesheets",
+      "ref": ".svelte-kit/output/server/nodes/2.js:7"
+    },
+    {
+      "role": "js_export",
+      "name": "stylesheets",
+      "ref": ".svelte-kit/output/server/nodes/3.js:7"
+    },
+    {
+      "role": "js_export",
+      "name": "stylesheets",
+      "ref": ".svelte-kit/output/server/nodes/4.js:7"
+    },
+    {
+      "role": "js_export",
+      "name": "system_group_data",
+      "ref": "src/paraglide/messages/system_group_data.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "system_group_data",
+      "ref": "src/paraglide/messages/system_group_data.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "system_group_integrations",
+      "ref": "src/paraglide/messages/system_group_integrations.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "system_group_integrations",
+      "ref": "src/paraglide/messages/system_group_integrations.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "system_group_language",
+      "ref": "src/paraglide/messages/system_group_language.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "system_group_language",
+      "ref": "src/paraglide/messages/system_group_language.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "system_group_tray",
+      "ref": "src/paraglide/messages/system_group_tray.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "system_group_tray",
+      "ref": "src/paraglide/messages/system_group_tray.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "system_group_updates",
+      "ref": "src/paraglide/messages/system_group_updates.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "system_group_updates",
+      "ref": "src/paraglide/messages/system_group_updates.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "system_group_window",
+      "ref": "src/paraglide/messages/system_group_window.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "system_group_window",
+      "ref": "src/paraglide/messages/system_group_window.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "system_label_port",
+      "ref": "src/paraglide/messages/system_label_port.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "system_label_port",
+      "ref": "src/paraglide/messages/system_label_port.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "system_toggle_aot",
+      "ref": "src/paraglide/messages/system_toggle_aot.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "system_toggle_aot",
+      "ref": "src/paraglide/messages/system_toggle_aot.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "system_toggle_aot_desc",
+      "ref": "src/paraglide/messages/system_toggle_aot_desc.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "system_toggle_aot_desc",
+      "ref": "src/paraglide/messages/system_toggle_aot_desc.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "system_toggle_break_aot",
+      "ref": "src/paraglide/messages/system_toggle_break_aot.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "system_toggle_break_aot",
+      "ref": "src/paraglide/messages/system_toggle_break_aot.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "system_toggle_break_aot_desc",
+      "ref": "src/paraglide/messages/system_toggle_break_aot_desc.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "system_toggle_break_aot_desc",
+      "ref": "src/paraglide/messages/system_toggle_break_aot_desc.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "system_toggle_check_updates",
+      "ref": "src/paraglide/messages/system_toggle_check_updates.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "system_toggle_check_updates",
+      "ref": "src/paraglide/messages/system_toggle_check_updates.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "system_toggle_check_updates_desc",
+      "ref": "src/paraglide/messages/system_toggle_check_updates_desc.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "system_toggle_check_updates_desc",
+      "ref": "src/paraglide/messages/system_toggle_check_updates_desc.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "system_toggle_close_tray",
+      "ref": "src/paraglide/messages/system_toggle_close_tray.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "system_toggle_close_tray",
+      "ref": "src/paraglide/messages/system_toggle_close_tray.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "system_toggle_close_tray_desc",
+      "ref": "src/paraglide/messages/system_toggle_close_tray_desc.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "system_toggle_close_tray_desc",
+      "ref": "src/paraglide/messages/system_toggle_close_tray_desc.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "system_toggle_min_tray",
+      "ref": "src/paraglide/messages/system_toggle_min_tray.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "system_toggle_min_tray",
+      "ref": "src/paraglide/messages/system_toggle_min_tray.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "system_toggle_min_tray_desc",
+      "ref": "src/paraglide/messages/system_toggle_min_tray_desc.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "system_toggle_min_tray_desc",
+      "ref": "src/paraglide/messages/system_toggle_min_tray_desc.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "system_toggle_show_tray",
+      "ref": "src/paraglide/messages/system_toggle_show_tray.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "system_toggle_show_tray",
+      "ref": "src/paraglide/messages/system_toggle_show_tray.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "system_toggle_show_tray_desc",
+      "ref": "src/paraglide/messages/system_toggle_show_tray_desc.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "system_toggle_show_tray_desc",
+      "ref": "src/paraglide/messages/system_toggle_show_tray_desc.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "system_toggle_websocket",
+      "ref": "src/paraglide/messages/system_toggle_websocket.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "system_toggle_websocket",
+      "ref": "src/paraglide/messages/system_toggle_websocket.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "system_toggle_websocket_desc",
+      "ref": "src/paraglide/messages/system_toggle_websocket_desc.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "system_toggle_websocket_desc",
+      "ref": "src/paraglide/messages/system_toggle_websocket_desc.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "system_tray_gnome_hint",
+      "ref": "src/paraglide/messages/system_tray_gnome_hint.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "system_tray_gnome_hint",
+      "ref": "src/paraglide/messages/system_tray_gnome_hint.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "timerReset",
+      "ref": "src/lib/ipc/index.ts:20"
+    },
+    {
+      "role": "js_export",
+      "name": "timerRestartRound",
+      "ref": "src/lib/ipc/index.ts:21"
+    },
+    {
+      "role": "js_export",
+      "name": "timerSkip",
+      "ref": "src/lib/ipc/index.ts:22"
+    },
+    {
+      "role": "js_export",
+      "name": "timerState",
+      "ref": "src/lib/stores/timer.ts:19"
+    },
+    {
+      "role": "js_export",
+      "name": "timerToggle",
+      "ref": "src/lib/ipc/index.ts:19"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_reset",
+      "ref": "src/paraglide/messages/timer_reset.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_reset",
+      "ref": "src/paraglide/messages/timer_reset.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_reset_defaults",
+      "ref": "src/paraglide/messages/timer_reset_defaults.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_reset_defaults",
+      "ref": "src/paraglide/messages/timer_reset_defaults.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_session_round",
+      "ref": "src/paraglide/messages/timer_session_round.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_session_round",
+      "ref": "src/paraglide/messages/timer_session_round.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_slider_focus",
+      "ref": "src/paraglide/messages/timer_slider_focus.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_slider_focus",
+      "ref": "src/paraglide/messages/timer_slider_focus.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_slider_long_break",
+      "ref": "src/paraglide/messages/timer_slider_long_break.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_slider_long_break",
+      "ref": "src/paraglide/messages/timer_slider_long_break.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_slider_rounds",
+      "ref": "src/paraglide/messages/timer_slider_rounds.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_slider_rounds",
+      "ref": "src/paraglide/messages/timer_slider_rounds.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_slider_short_break",
+      "ref": "src/paraglide/messages/timer_slider_short_break.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_slider_short_break",
+      "ref": "src/paraglide/messages/timer_slider_short_break.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_toggle_auto_start_break",
+      "ref": "src/paraglide/messages/timer_toggle_auto_start_break.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_toggle_auto_start_break",
+      "ref": "src/paraglide/messages/timer_toggle_auto_start_break.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_toggle_auto_start_break_desc",
+      "ref": "src/paraglide/messages/timer_toggle_auto_start_break_desc.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_toggle_auto_start_break_desc",
+      "ref": "src/paraglide/messages/timer_toggle_auto_start_break_desc.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_toggle_auto_start_work",
+      "ref": "src/paraglide/messages/timer_toggle_auto_start_work.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_toggle_auto_start_work",
+      "ref": "src/paraglide/messages/timer_toggle_auto_start_work.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_toggle_auto_start_work_desc",
+      "ref": "src/paraglide/messages/timer_toggle_auto_start_work_desc.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_toggle_auto_start_work_desc",
+      "ref": "src/paraglide/messages/timer_toggle_auto_start_work_desc.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_toggle_countdown",
+      "ref": "src/paraglide/messages/timer_toggle_countdown.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_toggle_countdown",
+      "ref": "src/paraglide/messages/timer_toggle_countdown.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_toggle_countdown_desc",
+      "ref": "src/paraglide/messages/timer_toggle_countdown_desc.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_toggle_countdown_desc",
+      "ref": "src/paraglide/messages/timer_toggle_countdown_desc.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_toggle_long_breaks",
+      "ref": "src/paraglide/messages/timer_toggle_long_breaks.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_toggle_long_breaks",
+      "ref": "src/paraglide/messages/timer_toggle_long_breaks.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_toggle_long_breaks_desc",
+      "ref": "src/paraglide/messages/timer_toggle_long_breaks_desc.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_toggle_long_breaks_desc",
+      "ref": "src/paraglide/messages/timer_toggle_long_breaks_desc.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_toggle_short_breaks",
+      "ref": "src/paraglide/messages/timer_toggle_short_breaks.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_toggle_short_breaks",
+      "ref": "src/paraglide/messages/timer_toggle_short_breaks.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_toggle_short_breaks_desc",
+      "ref": "src/paraglide/messages/timer_toggle_short_breaks_desc.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "timer_toggle_short_breaks_desc",
+      "ref": "src/paraglide/messages/timer_toggle_short_breaks_desc.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "toLocale",
+      "ref": "src/paraglide/runtime.d.ts:57"
+    },
+    {
+      "role": "js_export",
+      "name": "toLocale",
+      "ref": "src/paraglide/runtime.js:588"
+    },
+    {
+      "role": "js_export",
+      "name": "tooltip_auto_start_break",
+      "ref": "src/paraglide/messages/tooltip_auto_start_break.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "tooltip_auto_start_break",
+      "ref": "src/paraglide/messages/tooltip_auto_start_break.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "tooltip_auto_start_work",
+      "ref": "src/paraglide/messages/tooltip_auto_start_work.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "tooltip_auto_start_work",
+      "ref": "src/paraglide/messages/tooltip_auto_start_work.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "tooltip_dial_countdown",
+      "ref": "src/paraglide/messages/tooltip_dial_countdown.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "tooltip_dial_countdown",
+      "ref": "src/paraglide/messages/tooltip_dial_countdown.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "tooltip_mute",
+      "ref": "src/paraglide/messages/tooltip_mute.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "tooltip_mute",
+      "ref": "src/paraglide/messages/tooltip_mute.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "tooltip_reset",
+      "ref": "src/paraglide/messages/tooltip_reset.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "tooltip_reset",
+      "ref": "src/paraglide/messages/tooltip_reset.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "tooltip_restart_round",
+      "ref": "src/paraglide/messages/tooltip_restart_round.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "tooltip_restart_round",
+      "ref": "src/paraglide/messages/tooltip_restart_round.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "tooltip_round_counter",
+      "ref": "src/paraglide/messages/tooltip_round_counter.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "tooltip_round_counter",
+      "ref": "src/paraglide/messages/tooltip_round_counter.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "tooltip_round_counter_session",
+      "ref": "src/paraglide/messages/tooltip_round_counter_session.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "tooltip_round_counter_session",
+      "ref": "src/paraglide/messages/tooltip_round_counter_session.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "tooltip_settings",
+      "ref": "src/paraglide/messages/tooltip_settings.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "tooltip_settings",
+      "ref": "src/paraglide/messages/tooltip_settings.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "tooltip_skip",
+      "ref": "src/paraglide/messages/tooltip_skip.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "tooltip_skip",
+      "ref": "src/paraglide/messages/tooltip_skip.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "tooltip_statistics",
+      "ref": "src/paraglide/messages/tooltip_statistics.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "tooltip_statistics",
+      "ref": "src/paraglide/messages/tooltip_statistics.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "tooltip_unmute",
+      "ref": "src/paraglide/messages/tooltip_unmute.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "tooltip_unmute",
+      "ref": "src/paraglide/messages/tooltip_unmute.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "tooltip_verbose_logging",
+      "ref": "src/paraglide/messages/tooltip_verbose_logging.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "tooltip_verbose_logging",
+      "ref": "src/paraglide/messages/tooltip_verbose_logging.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "tooltip_websocket",
+      "ref": "src/paraglide/messages/tooltip_websocket.d.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "tooltip_websocket",
+      "ref": "src/paraglide/messages/tooltip_websocket.js:49"
+    },
+    {
+      "role": "js_export",
+      "name": "trackMessageCall",
+      "ref": "src/paraglide/runtime.d.ts:382"
+    },
+    {
+      "role": "js_export",
+      "name": "trackMessageCall",
+      "ref": "src/paraglide/runtime.js:1515"
+    },
+    {
+      "role": "js_export",
+      "name": "traySupported",
+      "ref": "src/lib/ipc/index.ts:96"
+    },
+    {
+      "role": "js_export",
+      "name": "universal",
+      "ref": ".svelte-kit/output/server/nodes/0.js:6"
+    },
+    {
+      "role": "js_export",
+      "name": "universal_id",
+      "ref": ".svelte-kit/output/server/nodes/0.js:9"
+    },
+    {
+      "role": "js_export",
+      "name": "urlPatterns",
+      "ref": "src/paraglide/runtime.d.ts:508"
+    },
+    {
+      "role": "js_export",
+      "name": "urlPatterns",
+      "ref": "src/paraglide/runtime.js:56"
+    },
+    {
+      "role": "rust_type",
+      "name": "AudioCue",
+      "ref": "src-tauri/src/audio/mod.rs:39"
+    },
+    {
+      "role": "rust_type",
+      "name": "AudioManager",
+      "ref": "src-tauri/src/audio/mod.rs:89"
+    },
+    {
+      "role": "rust_type",
+      "name": "CustomAudioInfo",
+      "ref": "src-tauri/src/audio/mod.rs:57"
+    },
+    {
+      "role": "rust_type",
+      "name": "CustomAudioPaths",
+      "ref": "src-tauri/src/audio/mod.rs:49"
+    },
+    {
+      "role": "rust_type",
+      "name": "DailyStats",
+      "ref": "src-tauri/src/db/queries.rs:84"
+    },
+    {
+      "role": "rust_type",
+      "name": "DayStat",
+      "ref": "src-tauri/src/db/queries.rs:94"
+    },
+    {
+      "role": "rust_type",
+      "name": "DetailedStats",
+      "ref": "src-tauri/src/commands.rs:735"
+    },
+    {
+      "role": "rust_type",
+      "name": "ElapsedPayload",
+      "ref": "src-tauri/src/websocket/mod.rs:44"
+    },
+    {
+      "role": "rust_type",
+      "name": "EngineHandle",
+      "ref": "src-tauri/src/timer/engine.rs:49"
+    },
+    {
+      "role": "rust_type",
+      "name": "HeatmapEntry",
+      "ref": "src-tauri/src/db/queries.rs:101"
+    },
+    {
+      "role": "rust_type",
+      "name": "HeatmapStats",
+      "ref": "src-tauri/src/commands.rs:743"
+    },
+    {
+      "role": "rust_type",
+      "name": "RoundType",
+      "ref": "src-tauri/src/timer/sequence.rs:18"
+    },
+    {
+      "role": "rust_type",
+      "name": "SequenceState",
+      "ref": "src-tauri/src/timer/sequence.rs:39"
+    },
+    {
+      "role": "rust_type",
+      "name": "SessionStats",
+      "ref": "src-tauri/src/db/queries.rs:45"
+    },
+    {
+      "role": "rust_type",
+      "name": "Settings",
+      "ref": "src-tauri/src/settings/mod.rs:14"
+    },
+    {
+      "role": "rust_type",
+      "name": "StartedPayload",
+      "ref": "src-tauri/src/websocket/mod.rs:50"
+    },
+    {
+      "role": "rust_type",
+      "name": "StreakInfo",
+      "ref": "src-tauri/src/db/queries.rs:108"
+    },
+    {
+      "role": "rust_type",
+      "name": "Theme",
+      "ref": "src-tauri/src/themes/mod.rs:12"
+    },
+    {
+      "role": "rust_type",
+      "name": "TimerCommand",
+      "ref": "src-tauri/src/timer/engine.rs:17"
+    },
+    {
+      "role": "rust_type",
+      "name": "TimerController",
+      "ref": "src-tauri/src/timer/mod.rs:56"
+    },
+    {
+      "role": "rust_type",
+      "name": "TimerEvent",
+      "ref": "src-tauri/src/timer/engine.rs:37"
+    },
+    {
+      "role": "rust_type",
+      "name": "TimerSnapshot",
+      "ref": "src-tauri/src/timer/mod.rs:26"
+    },
+    {
+      "role": "rust_type",
+      "name": "TrayColors",
+      "ref": "src-tauri/src/tray/mod.rs:37"
+    },
+    {
+      "role": "rust_type",
+      "name": "TrayMenuItems",
+      "ref": "src-tauri/src/tray/mod.rs:106"
+    },
+    {
+      "role": "rust_type",
+      "name": "TrayState",
+      "ref": "src-tauri/src/tray/mod.rs:113"
+    },
+    {
+      "role": "rust_type",
+      "name": "UpdateInfo",
+      "ref": "src-tauri/src/commands.rs:639"
+    },
+    {
+      "role": "rust_type",
+      "name": "WsEvent",
+      "ref": "src-tauri/src/websocket/mod.rs:57"
+    },
+    {
+      "role": "rust_type",
+      "name": "WsState",
+      "ref": "src-tauri/src/websocket/mod.rs:79"
+    }
+  ],
+  "actions": [
+    {
+      "role": "frontend_api_call",
+      "method": "CLIENT",
+      "target": "${ce}/_app/version.json",
+      "ref": ".svelte-kit/output/client/_app/immutable/chunks/DQg6uf-z.js:1"
+    }
+  ],
+  "data_schemas": [],
+  "frontend_routes": [
+    {
+      "route": "/",
+      "component": "Record",
+      "ref": ".svelte-kit/non-ambient.d.ts:37"
+    },
+    {
+      "route": "/settings",
+      "component": "Record",
+      "ref": ".svelte-kit/non-ambient.d.ts:38"
+    },
+    {
+      "route": "/stats",
+      "component": "Record",
+      "ref": ".svelte-kit/non-ambient.d.ts:39"
+    }
+  ],
+  "css_tokens": [
+    {
+      "token": "--color-accent",
+      "value": "tomato",
+      "ref": ".svelte-kit/output/client/_app/immutable/assets/locale.BYcoc16w.css:1"
+    },
+    {
+      "token": "--color-accent",
+      "value": "tomato",
+      "ref": ".svelte-kit/output/server/_app/immutable/assets/locale.CQc4Mb6M.css:1"
+    },
+    {
+      "token": "--color-accent",
+      "value": "#ff6347",
+      "ref": "src/app.css:35"
+    },
+    {
+      "token": "--color-background",
+      "value": "#2f384b",
+      "ref": ".svelte-kit/output/client/_app/immutable/assets/locale.BYcoc16w.css:1"
+    },
+    {
+      "token": "--color-background",
+      "value": "#2f384b",
+      "ref": ".svelte-kit/output/server/_app/immutable/assets/locale.CQc4Mb6M.css:1"
+    },
+    {
+      "token": "--color-background",
+      "value": "#2f384b",
+      "ref": "src/app.css:31"
+    },
+    {
+      "token": "--color-background-light",
+      "value": "#3e4a5d",
+      "ref": ".svelte-kit/output/client/_app/immutable/assets/locale.BYcoc16w.css:1"
+    },
+    {
+      "token": "--color-background-light",
+      "value": "#3e4a5d",
+      "ref": ".svelte-kit/output/server/_app/immutable/assets/locale.CQc4Mb6M.css:1"
+    },
+    {
+      "token": "--color-background-light",
+      "value": "#3e4a5d",
+      "ref": "src/app.css:32"
+    },
+    {
+      "token": "--color-focus-round",
+      "value": "#b01c2e",
+      "ref": ".svelte-kit/output/client/_app/immutable/assets/locale.BYcoc16w.css:1"
+    },
+    {
+      "token": "--color-focus-round",
+      "value": "#b01c2e",
+      "ref": ".svelte-kit/output/server/_app/immutable/assets/locale.CQc4Mb6M.css:1"
+    },
+    {
+      "token": "--color-focus-round",
+      "value": "#b01c2e",
+      "ref": "src/app.css:30"
+    },
+    {
+      "token": "--color-foreground",
+      "value": "#d7e1f4",
+      "ref": ".svelte-kit/output/client/_app/immutable/assets/locale.BYcoc16w.css:1"
+    },
+    {
+      "token": "--color-foreground",
+      "value": "#d7e1f4",
+      "ref": ".svelte-kit/output/server/_app/immutable/assets/locale.CQc4Mb6M.css:1"
+    },
+    {
+      "token": "--color-foreground",
+      "value": "#d7e1f4",
+      "ref": "src/app.css:33"
+    },
+    {
+      "token": "--color-foreground-darker",
+      "value": "#a3aec4",
+      "ref": ".svelte-kit/output/client/_app/immutable/assets/locale.BYcoc16w.css:1"
+    },
+    {
+      "token": "--color-foreground-darker",
+      "value": "#a3aec4",
+      "ref": ".svelte-kit/output/server/_app/immutable/assets/locale.CQc4Mb6M.css:1"
+    },
+    {
+      "token": "--color-foreground-darker",
+      "value": "#a3aec4",
+      "ref": "src/app.css:34"
+    },
+    {
+      "token": "--color-hover",
+      "value": "color-mix(in oklch, var(--color-foreground) 10%, transparent)",
+      "ref": ".svelte-kit/output/client/_app/immutable/assets/locale.BYcoc16w.css:1"
+    },
+    {
+      "token": "--color-hover",
+      "value": "color-mix(in oklch, var(--color-foreground) 10%, transparent)",
+      "ref": ".svelte-kit/output/server/_app/immutable/assets/locale.CQc4Mb6M.css:1"
+    },
+    {
+      "token": "--color-hover",
+      "value": "color-mix(in oklch, var(--color-foreground) 10%, transparent)",
+      "ref": "src/app.css:42"
+    },
+    {
+      "token": "--color-long-round",
+      "value": "#c75000",
+      "ref": ".svelte-kit/output/client/_app/immutable/assets/locale.BYcoc16w.css:1"
+    },
+    {
+      "token": "--color-long-round",
+      "value": "#c75000",
+      "ref": ".svelte-kit/output/server/_app/immutable/assets/locale.CQc4Mb6M.css:1"
+    },
+    {
+      "token": "--color-long-round",
+      "value": "#c75000",
+      "ref": "src/app.css:28"
+    },
+    {
+      "token": "--color-separator",
+      "value": "color-mix(in oklch, var(--color-foreground) 8%, transparent)",
+      "ref": ".svelte-kit/output/client/_app/immutable/assets/locale.BYcoc16w.css:1"
+    },
+    {
+      "token": "--color-separator",
+      "value": "color-mix(in oklch, var(--color-foreground) 8%, transparent)",
+      "ref": ".svelte-kit/output/server/_app/immutable/assets/locale.CQc4Mb6M.css:1"
+    },
+    {
+      "token": "--color-separator",
+      "value": "color-mix(in oklch, var(--color-foreground) 8%, transparent)",
+      "ref": "src/app.css:41"
+    },
+    {
+      "token": "--color-short-round",
+      "value": "#417505",
+      "ref": ".svelte-kit/output/client/_app/immutable/assets/locale.BYcoc16w.css:1"
+    },
+    {
+      "token": "--color-short-round",
+      "value": "#417505",
+      "ref": ".svelte-kit/output/server/_app/immutable/assets/locale.CQc4Mb6M.css:1"
+    },
+    {
+      "token": "--color-short-round",
+      "value": "#417505",
+      "ref": "src/app.css:29"
+    },
+    {
+      "token": "--transition-default",
+      "value": ".2s ease",
+      "ref": ".svelte-kit/output/client/_app/immutable/assets/locale.BYcoc16w.css:1"
+    },
+    {
+      "token": "--transition-default",
+      "value": ".2s ease",
+      "ref": ".svelte-kit/output/server/_app/immutable/assets/locale.CQc4Mb6M.css:1"
+    },
+    {
+      "token": "--transition-default",
+      "value": "0.2s ease",
+      "ref": "src/app.css:45"
+    },
+    {
+      "token": "--transition-slow",
+      "value": ".35s ease",
+      "ref": ".svelte-kit/output/client/_app/immutable/assets/locale.BYcoc16w.css:1"
+    },
+    {
+      "token": "--transition-slow",
+      "value": ".35s ease",
+      "ref": ".svelte-kit/output/server/_app/immutable/assets/locale.CQc4Mb6M.css:1"
+    },
+    {
+      "token": "--transition-slow",
+      "value": "0.35s ease",
+      "ref": "src/app.css:47"
+    },
+    {
+      "token": "--transition-snappy",
+      "value": ".12s cubic-bezier(.4, 0, .2, 1)",
+      "ref": ".svelte-kit/output/client/_app/immutable/assets/locale.BYcoc16w.css:1"
+    },
+    {
+      "token": "--transition-snappy",
+      "value": ".12s cubic-bezier(.4, 0, .2, 1)",
+      "ref": ".svelte-kit/output/server/_app/immutable/assets/locale.CQc4Mb6M.css:1"
+    },
+    {
+      "token": "--transition-snappy",
+      "value": "0.12s cubic-bezier(0.4, 0, 0.2, 1)",
+      "ref": "src/app.css:46"
+    }
+  ],
+  "dependencies": [
+    {
+      "ecosystem": "npm",
+      "name": "@inlang/paraglide-js",
+      "version": "^2.18.0",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@sveltejs/adapter-static",
+      "version": "^3.0.6",
+      "indirect": true,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@sveltejs/kit",
+      "version": "^2.59.1",
+      "indirect": true,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@sveltejs/vite-plugin-svelte",
+      "version": "^7.1.2",
+      "indirect": true,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@tauri-apps/api",
+      "version": "^2.11.0",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@tauri-apps/cli",
+      "version": "^2",
+      "indirect": true,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@tauri-apps/plugin-dialog",
+      "version": "^2.7.1",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@tauri-apps/plugin-log",
+      "version": "^2.8.0",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@tauri-apps/plugin-notification",
+      "version": "^2.3.3",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@tauri-apps/plugin-opener",
+      "version": "^2",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@types/node",
+      "version": "^25.6.0",
+      "indirect": true,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "prettier",
+      "version": "^3.8.3",
+      "indirect": true,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "prettier-plugin-svelte",
+      "version": "^3.5.1",
+      "indirect": true,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "svelte",
+      "version": "^5.55.5",
+      "indirect": true,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "svelte-check",
+      "version": "^4.4.8",
+      "indirect": true,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "typescript",
+      "version": "~6.0.3",
+      "indirect": true,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "vite",
+      "version": "^8.0.11",
+      "indirect": true,
+      "ref": "package.json"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "target_repo": "https://github.com/excalidraw/excalidraw",
+  "package_name": "@excalidraw/excalidraw",
+  "release_tag": "v0.18.1",
+  "commit_sha": "a2ec2889babf7d2295469c6d90ebe77fae57df84",
+  "license": "MIT",
+  "tier": "T3",
+  "depth": "comprehensive",
+  "output_language": "en",
+  "objective": "Produce an evidence-backed, 12-artifact clean-room reimplementation specification, official npm distribution REA audit, multi-state UI capture, machine contracts, executable differential parity harness, and verified clean-room interactive whiteboard reimplementation (SketchBoard CR) with pixel-diff proof for @excalidraw/excalidraw v0.18.1.",
+  "scope_in": [
+    "Canvas initialization and 2D rendering surface mount (F-001)",
+    "Toolbar tool selection and hand-drawn geometric primitives: rectangle, ellipse, diamond (F-002, F-003)",
+    "Arrow linear element creation and endpoint binding semantics (F-004)",
+    "Canvas text element creation and commit flow (F-005)",
+    "Element selection and left properties inspector mutations (stroke, background, roughness) (F-006)",
+    "Incremental undo/redo history stack (F-007)",
+    "Light and dark theme token switching and canvas dark-mode filter semantics (F-008)",
+    "Viewport zoom stepping and scroll state (F-009)",
+    "Excalidraw v2 JSON serialization and restore roundtrip (F-010)",
+    "Host localStorage scene persistence across page reload (F-011)",
+    "Official npm distribution REA integrity and source-vs-bundle boundary audit (F-012)"
+  ],
+  "scope_out": [
+    "Real-time multiplayer WebSocket / Firebase collaboration (excalidraw-app cloud backend)",
+    "Excalidraw+ commercial cloud workspace and OAuth endpoints",
+    "AI diagram-to-code / text-to-diagram third-party LLM endpoints",
+    "Binary font redistribution from upstream dist/prod/fonts"
+  ]
+}

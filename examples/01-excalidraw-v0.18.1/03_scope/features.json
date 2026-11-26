@@ -1,0 +1,284 @@
+{
+  "schema_version": "1.0.0",
+  "target": {
+    "repo": "https://github.com/excalidraw/excalidraw",
+    "tag": "v0.18.1",
+    "commit_sha": "a2ec2889babf7d2295469c6d90ebe77fae57df84",
+    "release_artifact": "@excalidraw/excalidraw@0.18.1 (dist/prod/index.js)",
+    "release_sha256": "7f651063487849c79a8cdedc3aa6bd04c6b0c717ee63959116f1f12dbc0a51b8"
+  },
+  "generated_at": "2026-11-26T03:20:00Z",
+  "features": [
+    {
+      "feature_id": "F-001",
+      "domain": "canvas_lifecycle",
+      "name": "Initial Whiteboard Mount & Interactive Canvas Surface",
+      "kind": "ui_screen",
+      "is_macro_group": false,
+      "entrypoint": "<Excalidraw /> -> App mount -> canvas.excalidraw__canvas (1280x800)",
+      "source_refs": [
+        "packages/excalidraw/index.tsx:22-151",
+        "packages/excalidraw/appState.ts:20-124",
+        "packages/excalidraw/components/App.tsx:715-745"
+      ],
+      "platform_or_role_branch": null,
+      "status": "observed",
+      "evidence_ids": ["EV-001"],
+      "screen_ids": ["SCR-001"],
+      "contract_refs": ["09_contracts/canvas_actions.schema.json"],
+      "test_ids": ["TC-001"],
+      "unverified_reason": null,
+      "reverify_how": null
+    },
+    {
+      "feature_id": "F-002",
+      "domain": "drawing_primitives",
+      "name": "Toolbar Selection & Hand-Drawn Rectangle Creation",
+      "kind": "ui_screen",
+      "is_macro_group": false,
+      "entrypoint": "[data-testid='toolbar-rectangle'] click + canvas pointer drag",
+      "source_refs": [
+        "packages/excalidraw/components/App.tsx:4676-4710",
+        "packages/excalidraw/components/App.tsx:6329-6390",
+        "packages/excalidraw/element/newElement.ts:77-163"
+      ],
+      "platform_or_role_branch": null,
+      "status": "observed",
+      "evidence_ids": ["EV-002"],
+      "screen_ids": ["SCR-002"],
+      "contract_refs": [
+        "09_contracts/excalidraw_scene.schema.json",
+        "09_contracts/canvas_actions.schema.json"
+      ],
+      "test_ids": ["TC-002"],
+      "unverified_reason": null,
+      "reverify_how": null
+    },
+    {
+      "feature_id": "F-003",
+      "domain": "drawing_primitives",
+      "name": "Hand-Drawn Ellipse Creation via Pointer Drag",
+      "kind": "ui_screen",
+      "is_macro_group": false,
+      "entrypoint": "[data-testid='toolbar-ellipse'] click + canvas pointer drag",
+      "source_refs": [
+        "packages/excalidraw/components/App.tsx:7805-7860",
+        "packages/excalidraw/element/newElement.ts:157-163",
+        "packages/excalidraw/element/types.ts:94-96"
+      ],
+      "platform_or_role_branch": null,
+      "status": "observed",
+      "evidence_ids": ["EV-003"],
+      "screen_ids": ["SCR-002"],
+      "contract_refs": [
+        "09_contracts/excalidraw_scene.schema.json",
+        "09_contracts/canvas_actions.schema.json"
+      ],
+      "test_ids": ["TC-003"],
+      "unverified_reason": null,
+      "reverify_how": null
+    },
+    {
+      "feature_id": "F-004",
+      "domain": "connectors",
+      "name": "Arrow Creation & Bidirectional Shape Binding",
+      "kind": "ui_screen",
+      "is_macro_group": false,
+      "entrypoint": "[data-testid='toolbar-arrow'] click + drag from shape edge to target shape edge",
+      "source_refs": [
+        "packages/excalidraw/element/binding.ts:120-150",
+        "packages/excalidraw/element/types.ts:279-332",
+        "packages/excalidraw/constants.ts:451-455"
+      ],
+      "platform_or_role_branch": null,
+      "status": "observed",
+      "evidence_ids": ["EV-004"],
+      "screen_ids": ["SCR-002"],
+      "contract_refs": [
+        "09_contracts/excalidraw_scene.schema.json",
+        "09_contracts/canvas_actions.schema.json"
+      ],
+      "test_ids": ["TC-004"],
+      "unverified_reason": null,
+      "reverify_how": null
+    },
+    {
+      "feature_id": "F-005",
+      "domain": "typography",
+      "name": "Canvas Text Element Creation & Commit Flow",
+      "kind": "ui_screen",
+      "is_macro_group": false,
+      "entrypoint": "[data-testid='toolbar-text'] click + canvas click + keyboard input + Escape commit",
+      "source_refs": [
+        "packages/excalidraw/element/newElement.ts:238-250",
+        "packages/excalidraw/element/types.ts:232-254",
+        "packages/excalidraw/constants.ts:179-183"
+      ],
+      "platform_or_role_branch": null,
+      "status": "observed",
+      "evidence_ids": ["EV-005"],
+      "screen_ids": ["SCR-002"],
+      "contract_refs": [
+        "09_contracts/excalidraw_scene.schema.json",
+        "09_contracts/canvas_actions.schema.json"
+      ],
+      "test_ids": ["TC-005"],
+      "unverified_reason": null,
+      "reverify_how": null
+    },
+    {
+      "feature_id": "F-006",
+      "domain": "properties_inspector",
+      "name": "Element Selection & Left Properties Panel Mutations",
+      "kind": "ui_screen",
+      "is_macro_group": false,
+      "entrypoint": "Canvas hit-test click -> .App-menu__left strokeColor / backgroundColor / roughness controls",
+      "source_refs": [
+        "packages/excalidraw/actions/actionProperties.tsx:128-149",
+        "packages/excalidraw/colors.ts:51-105",
+        "packages/excalidraw/constants.ts:369-399"
+      ],
+      "platform_or_role_branch": null,
+      "status": "observed",
+      "evidence_ids": ["EV-006"],
+      "screen_ids": ["SCR-004"],
+      "contract_refs": [
+        "09_contracts/excalidraw_scene.schema.json",
+        "09_contracts/canvas_actions.schema.json"
+      ],
+      "test_ids": ["TC-006"],
+      "unverified_reason": null,
+      "reverify_how": null
+    },
+    {
+      "feature_id": "F-007",
+      "domain": "history",
+      "name": "Incremental Undo & Redo Stack Transitions",
+      "kind": "shortcut",
+      "is_macro_group": false,
+      "entrypoint": "[data-testid='button-undo'] / [data-testid='button-redo'] and Ctrl/Cmd+Z / Shift+Z",
+      "source_refs": [
+        "packages/excalidraw/history.ts:16-158",
+        "packages/excalidraw/store.ts:40-200",
+        "packages/excalidraw/actions/actionHistory.tsx:51-128"
+      ],
+      "platform_or_role_branch": null,
+      "status": "observed",
+      "evidence_ids": ["EV-007"],
+      "screen_ids": ["SCR-004"],
+      "contract_refs": ["09_contracts/canvas_actions.schema.json"],
+      "test_ids": ["TC-007"],
+      "unverified_reason": null,
+      "reverify_how": null
+    },
+    {
+      "feature_id": "F-008",
+      "domain": "theming",
+      "name": "Light & Dark Theme Token Switch with Canvas Filter Inversion",
+      "kind": "setting",
+      "is_macro_group": false,
+      "entrypoint": "[data-testid='main-menu-trigger'] -> [data-testid='toggle-dark-mode'] / appState.theme",
+      "source_refs": [
+        "packages/excalidraw/css/theme.scss:4-268",
+        "packages/excalidraw/constants.ts:158-161",
+        "packages/excalidraw/constants.ts:271-272"
+      ],
+      "platform_or_role_branch": null,
+      "status": "observed",
+      "evidence_ids": ["EV-008"],
+      "screen_ids": ["SCR-003"],
+      "contract_refs": ["09_contracts/canvas_actions.schema.json"],
+      "test_ids": ["TC-008"],
+      "unverified_reason": null,
+      "reverify_how": null
+    },
+    {
+      "feature_id": "F-009",
+      "domain": "viewport",
+      "name": "Viewport Zoom Stepping & Center-Preserving Scroll Offset",
+      "kind": "setting",
+      "is_macro_group": false,
+      "entrypoint": ".zoom-actions Zoom in / Zoom out buttons (ZOOM_STEP = 0.1)",
+      "source_refs": [
+        "packages/excalidraw/scene/zoom.ts:3-35",
+        "packages/excalidraw/actions/actionCanvas.tsx:123-200",
+        "packages/excalidraw/constants.ts:261-263"
+      ],
+      "platform_or_role_branch": null,
+      "status": "observed",
+      "evidence_ids": ["EV-009"],
+      "screen_ids": ["SCR-001"],
+      "contract_refs": ["09_contracts/canvas_actions.schema.json"],
+      "test_ids": ["TC-009"],
+      "unverified_reason": null,
+      "reverify_how": null
+    },
+    {
+      "feature_id": "F-010",
+      "domain": "serialization",
+      "name": "Excalidraw v2 JSON Export Schema & Restore Roundtrip",
+      "kind": "storage",
+      "is_macro_group": false,
+      "entrypoint": "serializeAsJSON(elements, appState, files, 'local') -> restore() -> updateScene()",
+      "source_refs": [
+        "packages/excalidraw/data/json.ts:43-123",
+        "packages/excalidraw/data/restore.ts:145-250",
+        "packages/excalidraw/constants.ts:244-249",
+        "packages/excalidraw/constants.ts:320-323"
+      ],
+      "platform_or_role_branch": null,
+      "status": "observed",
+      "evidence_ids": ["EV-010"],
+      "screen_ids": ["SCR-005"],
+      "contract_refs": ["09_contracts/excalidraw_scene.schema.json"],
+      "test_ids": ["TC-010"],
+      "unverified_reason": null,
+      "reverify_how": null
+    },
+    {
+      "feature_id": "F-011",
+      "domain": "persistence",
+      "name": "Host localStorage Scene & AppState Persistence Across Reload",
+      "kind": "storage",
+      "is_macro_group": false,
+      "entrypoint": "onChange -> localStorage['excalidraw', 'excalidraw-state'] -> page reload -> initialData",
+      "source_refs": [
+        "excalidraw-app/app_constants.ts:38-51",
+        "excalidraw-app/data/localStorage.ts:36-73",
+        "packages/excalidraw/appState.ts:130-247"
+      ],
+      "platform_or_role_branch": "excalidraw-app host shell (delegated outside bare npm component)",
+      "status": "observed",
+      "evidence_ids": ["EV-011"],
+      "screen_ids": ["SCR-005"],
+      "contract_refs": [
+        "09_contracts/excalidraw_scene.schema.json",
+        "09_contracts/canvas_actions.schema.json"
+      ],
+      "test_ids": ["TC-011"],
+      "unverified_reason": null,
+      "reverify_how": null
+    },
+    {
+      "feature_id": "F-012",
+      "domain": "release_rea",
+      "name": "Official npm Distribution REA Integrity & Source-vs-Bundle Audit",
+      "kind": "release_boundary",
+      "is_macro_group": false,
+      "entrypoint": "@excalidraw/excalidraw@0.18.1 tarball -> dist/prod/index.js & index.css",
+      "source_refs": [
+        "packages/excalidraw/package.json:1-123",
+        "scripts/buildPackage.js:1-80",
+        "packages/excalidraw/index.tsx:210-250"
+      ],
+      "platform_or_role_branch": "npm published ESM distribution vs GitHub monorepo",
+      "status": "observed",
+      "evidence_ids": ["EV-012"],
+      "screen_ids": [],
+      "contract_refs": ["04_environment/release_audit.json"],
+      "test_ids": ["TC-012"],
+      "unverified_reason": null,
+      "reverify_how": null
+    }
+  ]
+}

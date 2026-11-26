@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0.0",
+  "target": "Splode/pomotroid v1.7.1",
+  "screens": [
+    {
+      "screen_id": "SCR-001",
+      "file": "screenshots/SCR-001_focus_idle_dark.png",
+      "viewport": "360x478@2x",
+      "state": "Focus idle (25:00, Pomotroid dark theme, round 1|4)"
+    },
+    {
+      "screen_id": "SCR-002",
+      "file": "screenshots/SCR-002_focus_running_midtick.png",
+      "viewport": "360x478@2x",
+      "state": "Focus running mid-tick (18:45, 25% elapsed SVG arc, Pause icon)"
+    },
+    {
+      "screen_id": "SCR-003",
+      "file": "screenshots/SCR-003_short_break.png",
+      "viewport": "360x478@2x",
+      "state": "Short Break idle (05:00, #05ec8c green arc and label)"
+    },
+    {
+      "screen_id": "SCR-004",
+      "file": "screenshots/SCR-004_long_break_light.png",
+      "viewport": "360x478@2x",
+      "state": "Long Break idle (15:00, Pomotroid Light theme #f5f0e8, round 4|4)"
+    },
+    {
+      "screen_id": "SCR-005",
+      "file": "screenshots/SCR-005_settings_timer.png",
+      "viewport": "720x520@2x",
+      "state": "Settings window \u2014 Timer durations and break toggles"
+    },
+    {
+      "screen_id": "SCR-006",
+      "file": "screenshots/SCR-006_stats_today.png",
+      "viewport": "840x520@2x",
+      "state": "Statistics window \u2014 Today tab with hourly distribution and completion rate"
+    }
+  ]
+}

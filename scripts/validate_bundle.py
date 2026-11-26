@@ -209,6 +209,7 @@ def validate_bundle(bundle_dir: pathlib.Path, schema_dir: pathlib.Path, tier: st
     cdir = bundle_dir / "09_contracts"
     contract_errs = []
     openapi_ok = False
+    schema_ok = False
     sql_ok = False
     if cdir.exists():
         for jp in sorted(cdir.glob("*.json")):
@@ -216,6 +217,8 @@ def validate_bundle(bundle_dir: pathlib.Path, schema_dir: pathlib.Path, tier: st
                 obj = json.loads(jp.read_text(encoding="utf-8"))
                 if "openapi" in obj:
                     openapi_ok = True
+                if "$schema" in obj or ("type" in obj and "properties" in obj):
+                    schema_ok = True
             except Exception as e:
                 contract_errs.append(f"{jp.name}: {e}")
         for sp in sorted(cdir.glob("*.sql")):
@@ -226,8 +229,8 @@ def validate_bundle(bundle_dir: pathlib.Path, schema_dir: pathlib.Path, tier: st
                 sql_ok = True
             except Exception as e:
                 contract_errs.append(f"{sp.name}: {e}")
-    record("D5_machine_contracts_valid", "dynamic", (openapi_ok and not contract_errs),
-           f"openapi_ok={openapi_ok}, sql_exec_ok={sql_ok}, errors={contract_errs}")
+    record("D5_machine_contracts_valid", "dynamic", ((openapi_ok or schema_ok) and not contract_errs),
+           f"openapi_ok={openapi_ok}, schema_ok={schema_ok}, sql_exec_ok={sql_ok}, errors={contract_errs}")
 
     # --- DYNAMIC GATE 11: 04 Release REA Audit (T3) ---
     rea_path = bundle_dir / "04_environment" / "release_audit.json"

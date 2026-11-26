@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "questions": [
+    {
+      "id": "Q-001",
+      "feature_id": "F-011",
+      "question": "Does the published @excalidraw/excalidraw@0.18.1 npm package persist scenes to localStorage automatically, or is persistence delegated to the host shell?",
+      "status": "resolved",
+      "resolution": "Resolved by REA audit and runtime execution: dist/prod/index.js does NOT auto-persist to localStorage. Persistence keys ('excalidraw' and 'excalidraw-state') are owned by excalidraw-app/app_constants.ts and excalidraw-app/data/localStorage.ts via the component's onChange callback and initialData prop.",
+      "evidence_ids": ["EV-011", "EV-012"]
+    },
+    {
+      "id": "Q-002",
+      "feature_id": "F-008",
+      "question": "How does Excalidraw v0.18.1 render elements in dark theme without mutating stored hex colors in .excalidraw JSON?",
+      "status": "resolved",
+      "resolution": "Resolved by CSS inspection (packages/excalidraw/css/theme.scss:172-185) and live runtime observation (EV-008): .excalidraw.theme--dark sets --default-bg-color: #121212 and applies CSS filter invert(93%) hue-rotate(180deg) (THEME_FILTER) to the canvas layer while preserving original element strokeColor/backgroundColor values in scene JSON.",
+      "evidence_ids": ["EV-008"]
+    },
+    {
+      "id": "Q-003",
+      "feature_id": "F-004",
+      "question": "Does programmatic or pointer arrow creation populate startBinding/endBinding when endpoints land on shape boundaries?",
+      "status": "resolved",
+      "resolution": "Verified via live canvas drag from rectangle right edge to ellipse left edge in Chromium (EV-004); binding fields (elementId, focus, gap) and reciprocal boundElements references on target shapes are captured directly from live scene state.",
+      "evidence_ids": ["EV-004"]
+    },
+    {
+      "id": "Q-004",
+      "feature_id": "F-012",
+      "question": "Does the official npm tarball excalidraw-0.18.1.tgz match the registry SHA-512 integrity digest and correspond to git tag v0.18.1?",
+      "status": "resolved",
+      "resolution": "Verified cryptographically (EV-012): computed SHA-512 matches npm dist.integrity exactly, computed SHA-1 matches dist.shasum, and package.json version 0.18.1 matches git tag v0.18.1 (a2ec2889babf7d2295469c6d90ebe77fae57df84).",
+      "evidence_ids": ["EV-012"]
+    }
+  ]
+}

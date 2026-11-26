@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "target_repo": "https://github.com/cjpais/Handy",
+  "commit_sha": null,
+  "release_tag": null,
+  "release_sha256": "b8b893fbf9e8262abb0e363cb0ac6715cc69eac2fd6ffd8c0785278083a0e3ca",
+  "tier": "T3",
+  "depth": "comprehensive",
+  "output_language": "en",
+  "current_phase": 6,
+  "phases": {
+    "0": {
+      "name": "Goal, Scope & Profile Lock",
+      "status": "completed",
+      "artifacts": [],
+      "updated_at": "2026-11-26T03:14:10Z",
+      "notes": null
+    },
+    "1": {
+      "name": "Deterministic Static Recon & Release Artifact Analysis (REA)",
+      "status": "pending",
+      "artifacts": [],
+      "updated_at": null,
+      "notes": null
+    },
+    "2": {
+      "name": "Feature Matrix (03) & Reproduction Environment (04)",
+      "status": "pending",
+      "artifacts": [],
+      "updated_at": null,
+      "notes": null
+    },
+    "3": {
+      "name": "Parallel Slice Investigation & Isolated Runtime Observation (05, 06, 09, 10, 11)",
+      "status": "pending",
+      "artifacts": [],
+      "updated_at": null,
+      "notes": null
+    },
+    "4": {
+      "name": "Executable Parity Tests (07) & Dual Quality Gate",
+      "status": "pending",
+      "artifacts": [],
+      "updated_at": null,
+      "notes": null
+    },
+    "5": {
+      "name": "Conflict Resolution & Question Bank Closure",
+      "status": "pending",
+      "artifacts": [],
+      "updated_at": null,
+      "notes": null
+    },
+    "6": {
+      "name": "Final Synthesis (01, 02, 08, 12), Sealing & Review Rendering",
+      "status": "pending",
+      "artifacts": [],
+      "updated_at": null,
+      "notes": null
+    }
+  },
+  "updated_at": "2026-11-26T03:14:10Z",
+  "status": "completed",
+  "target_commit_sha": "a822741f9c697b6f6a00c557e4817bf59ae70867",
+  "target_tag": "v0.10.2",
+  "release_artifact": "Handy_0.10.2_aarch64.dmg",
+  "binary_sha256": "6e0a7eac87e26690fec595f9e98bce2ac9979b7a20752f0b7abbd615b5d9ef3e"
+}

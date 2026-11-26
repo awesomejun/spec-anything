@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0.0",
+  "target_repo": "https://github.com/Splode/pomotroid",
+  "tag": "v1.7.1",
+  "pinned_commit": "4a02ac7bff9083dc5b2cc42fa7c4683c1fc15805",
+  "license": "MIT",
+  "archive": {
+    "filename": "Pomotroid.app.tar.gz",
+    "release_url": "https://github.com/Splode/pomotroid/releases/download/v1.7.1/Pomotroid.app.tar.gz",
+    "size_bytes": 16826525,
+    "sha256": "b12dcca6a06705d773af8cffa99d2b32ea126ea441130301cde83a084e20fbdc",
+    "upstream_checksum_verified": null,
+    "checksum_note": "Upstream v1.7.1 release provides GPG .asc signatures for Linux packages and Tauri updater minisign pubkey; macOS Pomotroid.app.tar.gz has no standalone SHA256SUMS file, so digest was computed locally."
+  },
+  "binary": {
+    "bundle_path": "Pomotroid.app/Contents/MacOS/pomotroid",
+    "sha256": "bacf6c674781bc0ac1cb390f1bf2bbfe7dc9aeb999d52e0d4f66fb7f2a0b4f8f",
+    "architectures": ["x86_64", "arm64"],
+    "macho_format": "Mach-O universal (x86_64 arm64)",
+    "codesign": {
+      "identifier": "pomotroid-c63282cec047174e",
+      "signature": "adhoc",
+      "flags": "0x20002(adhoc,linker-signed)",
+      "team_identifier": null
+    },
+    "info_plist": {
+      "CFBundleIdentifier": "com.splode.pomotroid",
+      "CFBundleShortVersionString": "1.7.1",
+      "CFBundleVersion": "1.7.1",
+      "LSMinimumSystemVersion": "10.13",
+      "NSHighResolutionCapable": true
+    },
+    "linked_frameworks": [
+      "AppKit",
+      "WebKit",
+      "CoreAudio",
+      "AudioToolbox",
+      "ApplicationServices",
+      "Security",
+      "Carbon",
+      "CoreGraphics",
+      "Foundation"
+    ],
+    "embedded_provenance_strings": [
+      "[app] version=1.7.1+4a02ac7 sha=4a02ac7bff9083dc5b2cc42fa7c4683c1fc15805",
+      "com.splode.pomotroid",
+      "Pomotroid Light",
+      "[db/migrations] applying MIGRATION_6: seed local shortcut key bindings",
+      "timer_toggle",
+      "settings_reset_defaults",
+      "stats_get_detailed",
+      "websocket:error"
+    ]
+  },
+  "source_vs_distribution_findings": [
+    "Exact commit provenance match: binary embeds '[app] version=1.7.1+4a02ac7 sha=4a02ac7bff9083dc5b2cc42fa7c4683c1fc15805', matching git tag v1.7.1 HEAD.",
+    "All 38 built-in theme JSONs and compiled SvelteKit assets are compiled directly into the Mach-O binary; Pomotroid.app/Contents/Resources contains only icon.icns.",
+    "Tauri updater plugin v2.10.1 and localhost WebSocket endpoint (/ws) are linked into the official universal binary."
+  ]
+}

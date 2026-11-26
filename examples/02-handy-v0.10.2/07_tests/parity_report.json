@@ -1,0 +1,260 @@
+{
+  "schema_version": "1.0.0",
+  "mode": "upstream_baseline",
+  "target": {
+    "name": "cjpais/Handy v0.10.2 (Upstream Vite UI + Deterministic Tauri IPC Double)",
+    "url_or_binary": "http://127.0.0.1:1420",
+    "artifact_sha256": "6e0a7eac87e26690fec595f9e98bce2ac9979b7a20752f0b7abbd615b5d9ef3e"
+  },
+  "evidence_file": "06_evidence/ledger.jsonl",
+  "executed_at": "2026-11-26T03:25:30Z",
+  "summary": {
+    "total": 15,
+    "passed": 15,
+    "failed": 0,
+    "skipped": 0,
+    "unverified": 0
+  },
+  "cases": [
+    {
+      "test_id": "TC-001",
+      "feature_id": "F-001",
+      "evidence_id": "EV-001",
+      "category": "release_rea",
+      "verdict": "PASS",
+      "duration_ms": 0.1,
+      "checked_fields": [
+        "bundle_id",
+        "version",
+        "ipc_commands_matched",
+        "upstream_checksum_verified",
+        "binary_sha256",
+        "dmg_sha256"
+      ],
+      "diff_summary": null
+    },
+    {
+      "test_id": "TC-002",
+      "feature_id": "F-002",
+      "evidence_id": "EV-002",
+      "category": "normal",
+      "verdict": "PASS",
+      "duration_ms": 5.36,
+      "checked_fields": [
+        "settings_schema_version",
+        "shortcut_activation",
+        "selected_language",
+        "selected_model",
+        "theme",
+        "audio_feedback",
+        "vad_enabled",
+        "history_limit",
+        "transcribe_binding"
+      ],
+      "diff_summary": null
+    },
+    {
+      "test_id": "TC-003",
+      "feature_id": "F-003",
+      "evidence_id": "EV-003",
+      "category": "normal",
+      "verdict": "PASS",
+      "duration_ms": 8.28,
+      "checked_fields": [
+        "initial_activation",
+        "updated_activation"
+      ],
+      "diff_summary": null
+    },
+    {
+      "test_id": "TC-004",
+      "feature_id": "F-004",
+      "evidence_id": "EV-004",
+      "category": "normal",
+      "verdict": "PASS",
+      "duration_ms": 3.22,
+      "checked_fields": [
+        "success",
+        "binding_id",
+        "current_binding",
+        "default_binding",
+        "error"
+      ],
+      "diff_summary": null
+    },
+    {
+      "test_id": "TC-005",
+      "feature_id": "F-005",
+      "evidence_id": "EV-005",
+      "category": "normal",
+      "verdict": "PASS",
+      "duration_ms": 7.14,
+      "checked_fields": [
+        "initial_language",
+        "updated_language",
+        "language_status_kind",
+        "language_status_language"
+      ],
+      "diff_summary": null
+    },
+    {
+      "test_id": "TC-006",
+      "feature_id": "F-006",
+      "evidence_id": "EV-006",
+      "category": "normal",
+      "verdict": "PASS",
+      "duration_ms": 6.17,
+      "checked_fields": [
+        "initial_audio_feedback",
+        "updated_audio_feedback",
+        "microphone_count",
+        "default_microphone"
+      ],
+      "diff_summary": null
+    },
+    {
+      "test_id": "TC-007",
+      "feature_id": "F-007",
+      "evidence_id": "EV-007",
+      "category": "normal",
+      "verdict": "PASS",
+      "duration_ms": 4.53,
+      "checked_fields": [
+        "model_count",
+        "downloaded_ids",
+        "active_model",
+        "contains_streaming_model",
+        "contains_translation_model"
+      ],
+      "diff_summary": null
+    },
+    {
+      "test_id": "TC-008",
+      "feature_id": "F-008",
+      "evidence_id": "EV-008",
+      "category": "normal",
+      "verdict": "PASS",
+      "duration_ms": 4.22,
+      "checked_fields": [
+        "initial_model",
+        "switched_model",
+        "model_loaded"
+      ],
+      "diff_summary": null
+    },
+    {
+      "test_id": "TC-009",
+      "feature_id": "F-009",
+      "evidence_id": "EV-009",
+      "category": "error",
+      "verdict": "PASS",
+      "duration_ms": 4.17,
+      "checked_fields": [
+        "rejected",
+        "active_model_unchanged"
+      ],
+      "diff_summary": null
+    },
+    {
+      "test_id": "TC-010",
+      "feature_id": "F-010",
+      "evidence_id": "EV-010",
+      "category": "realtime",
+      "verdict": "PASS",
+      "duration_ms": 1.24,
+      "checked_fields": [
+        "phases",
+        "outcome",
+        "transcription_text",
+        "saved",
+        "language",
+        "language_source",
+        "persisted_to_sqlite"
+      ],
+      "diff_summary": null
+    },
+    {
+      "test_id": "TC-011",
+      "feature_id": "F-011",
+      "evidence_id": "EV-011",
+      "category": "cancel_retry",
+      "verdict": "PASS",
+      "duration_ms": 2.92,
+      "checked_fields": [
+        "phases",
+        "is_recording_after",
+        "history_rows_delta"
+      ],
+      "diff_summary": null
+    },
+    {
+      "test_id": "TC-012",
+      "feature_id": "F-012",
+      "evidence_id": "EV-012",
+      "category": "normal",
+      "verdict": "PASS",
+      "duration_ms": 3.66,
+      "checked_fields": [
+        "page1_count",
+        "page1_has_more",
+        "page1_order_desc",
+        "page2_count",
+        "page2_has_more",
+        "initial_total_count"
+      ],
+      "diff_summary": null
+    },
+    {
+      "test_id": "TC-013",
+      "feature_id": "F-013",
+      "evidence_id": "EV-013",
+      "category": "persistence",
+      "verdict": "PASS",
+      "duration_ms": 3.8,
+      "checked_fields": [
+        "entry_id",
+        "saved_before",
+        "saved_after_first_toggle",
+        "saved_after_second_toggle",
+        "sqlite_verified"
+      ],
+      "diff_summary": null
+    },
+    {
+      "test_id": "TC-014",
+      "feature_id": "F-014",
+      "evidence_id": "EV-014",
+      "category": "persistence",
+      "verdict": "PASS",
+      "duration_ms": 3.49,
+      "checked_fields": [
+        "deleted_id",
+        "count_before",
+        "count_after",
+        "missing_id_rejected",
+        "sqlite_verified"
+      ],
+      "diff_summary": null
+    },
+    {
+      "test_id": "TC-015",
+      "feature_id": "F-015",
+      "evidence_id": "EV-015",
+      "category": "ui_state",
+      "verdict": "PASS",
+      "duration_ms": 0.8,
+      "checked_fields": [
+        "sqlite_user_version",
+        "column_count",
+        "columns",
+        "light_bg",
+        "light_text",
+        "light_accent",
+        "ui_accent",
+        "sidebar_width_px",
+        "footer_height_px"
+      ],
+      "diff_summary": null
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0.0",
+  "target": {
+    "repo": "https://github.com/excalidraw/excalidraw",
+    "package_name": "@excalidraw/excalidraw",
+    "version": "0.18.1",
+    "release_tag": "v0.18.1",
+    "pinned_commit": "a2ec2889babf7d2295469c6d90ebe77fae57df84",
+    "license": "MIT"
+  },
+  "archive": {
+    "filename": "excalidraw-0.18.1.tgz",
+    "registry_url": "https://registry.npmjs.org/@excalidraw/excalidraw/-/excalidraw-0.18.1.tgz",
+    "size_bytes": 31234066,
+    "sha256": "b280d4b364b65cba264c5aa4e7435cc2ce6421eabbbef9765a56997a0fadf534",
+    "npm_integrity_sha512": "sha512-6i5Gt7IDTOH//qa0Z315Ly5iVRhjWpu2whrlQFqkuwrkKUWgRsMk0P5qdE7bpyDpai7jeLeWYkyj1eVAfni1lw==",
+    "npm_shasum_sha1": "fd6ad752807c814698c5f51dab778845b7e4bba7",
+    "upstream_checksum_verified": true,
+    "verification_method": "Downloaded official npm registry metadata and tarball; verified computed SHA-512 base64 against dist.integrity and computed SHA-1 against dist.shasum."
+  },
+  "binary": {
+    "path_in_archive": "package/dist/prod/index.js",
+    "format": "ESM JavaScript bundle (esbuild 0.19.10, target es2020, minified)",
+    "size_bytes": 502077,
+    "sha256": "7f651063487849c79a8cdedc3aa6bd04c6b0c717ee63959116f1f12dbc0a51b8",
+    "esm_named_export_count": 65,
+    "key_exports": [
+      "Excalidraw",
+      "CaptureUpdateAction",
+      "FONT_FAMILY",
+      "MIME_TYPES",
+      "ROUNDNESS",
+      "THEME",
+      "convertToExcalidrawElements",
+      "exportToBlob",
+      "exportToCanvas",
+      "exportToSvg",
+      "getNonDeletedElements",
+      "getSceneVersion",
+      "loadFromBlob",
+      "mutateElement",
+      "reconcileElements",
+      "restore",
+      "restoreAppState",
+      "restoreElements",
+      "serializeAsJSON",
+      "zoomToFitBounds"
+    ]
+  },
+  "companion_artifacts": [
+    {
+      "path_in_archive": "package/dist/prod/index.css",
+      "size_bytes": 144689,
+      "sha256": "e72092760bae272ebe075bdadaff7f82909d318c5d819313185b19e99be31e49"
+    },
+    {
+      "path_in_archive": "package/dist/prod/chunk-EIO257PC.js",
+      "size_bytes": 1824966,
+      "sha256": "6ca0a6b4a49be83ed6beb32f845648ca4927c592cc0f4ba43a909624f5659493"
+    },
+    {
+      "path_in_archive": "package/dist/prod/chunk-K2UTITRG.js",
+      "size_bytes": 439257,
+      "sha256": "72b54e8e9b3c17c69f1dd5e40203bfaed62313bc611b86ecb8a1625a12562e51"
+    },
+    {
+      "path_in_archive": "package/dist/prod/chunk-6U3AYISY.js",
+      "size_bytes": 22458,
+      "sha256": "1c4b2bfaa35552f6bf0bbe22af9ca7b3477f466d6ac29af7febbfbd2a0b387fb"
+    },
+    {
+      "path_in_archive": "package/dist/prod/chunk-ZUYEQ4TG.js",
+      "size_bytes": 1572,
+      "sha256": "810dbb85e738f382cdd82e080185029a5ba30c17d3ba0df587e0e6d92e04d952"
+    },
+    {
+      "path_in_archive": "package/dist/prod/chunk-Z3N5DIM6.js",
+      "size_bytes": 640,
+      "sha256": "10913d4e5aa891e7a6bda28baf612b07f6f34bf22cbc44584ce1c6b74eb440f6"
+    },
+    {
+      "path_in_archive": "package/dist/prod/chunk-SRAX5OIU.js",
+      "size_bytes": 603,
+      "sha256": "77149bc478eec4a8b9f439c75265fe9beb890ea9d66a37220a9bad7a6f296e83"
+    }
+  ],
+  "bundled_assets": {
+    "font_families": [
+      "Assistant",
+      "Cascadia",
+      "ComicShanns",
+      "Excalifont",
+      "Liberation",
+      "Lilita",
+      "Nunito",
+      "Virgil",
+      "Xiaolai"
+    ],
+    "locale_file_count": 55,
+    "includes_dev_bundle": true,
+    "includes_type_declarations": true
+  },
+  "source_vs_distribution_findings": [
+    {
+      "id": "REA-001",
+      "severity": "info",
+      "finding": "Monorepo package scoping: The GitHub repository at tag v0.18.1 contains excalidraw-app/, packages/excalidraw/, packages/math/, packages/utils/, firebase-project/, and dev-docs/. The official npm tarball @excalidraw/excalidraw@0.18.1 ships ONLY compiled dist/{dev,prod,types} artifacts produced by scripts/buildPackage.js (esbuild 0.19.10), bundling @excalidraw/math and @excalidraw/utils internally while declaring third-party dependencies (roughjs, jotai, open-color, fractional-indexing, perfect-freehand) as external npm dependencies."
+    },
+    {
+      "id": "REA-002",
+      "severity": "important",
+      "finding": "Host-owned localStorage persistence boundary: excalidraw-app/data/localStorage.ts (keys 'excalidraw' and 'excalidraw-state') is part of the web application shell and is NOT executed automatically by the bare <Excalidraw /> component in dist/prod/index.js. Host applications must subscribe to onChange and pass restored initialData to replicate excalidraw.com local persistence."
+    },
+    {
+      "id": "REA-003",
+      "severity": "info",
+      "finding": "Dual dev/prod export maps: package.json exports map '.' and './index.css' to dist/dev/* under the 'development' condition and dist/prod/* under 'production' and 'default'. Production chunks omit source maps and inline ENV_VARS.production."
+    }
+  ],
+  "audited_at": "2026-11-26T03:15:00Z"
+}

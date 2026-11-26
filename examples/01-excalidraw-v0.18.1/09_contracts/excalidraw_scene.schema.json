@@ -1,0 +1,261 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec-anything.dev/contracts/excalidraw-v0.18.1/excalidraw_scene.schema.json",
+  "title": "Excalidraw v2 Scene File Contract (.excalidraw)",
+  "description": "Machine-readable JSON Schema for serialized Excalidraw v2 scene documents produced by serializeAsJSON() and consumed by restore() in @excalidraw/excalidraw v0.18.1.",
+  "type": "object",
+  "required": ["type", "version", "elements", "appState"],
+  "properties": {
+    "type": {
+      "type": "string",
+      "const": "excalidraw"
+    },
+    "version": {
+      "type": "integer",
+      "const": 2
+    },
+    "source": {
+      "type": "string"
+    },
+    "elements": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ExcalidrawElement"
+      }
+    },
+    "appState": {
+      "$ref": "#/$defs/ExportedAppState"
+    },
+    "files": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["id", "mimeType", "dataURL"],
+        "properties": {
+          "id": { "type": "string" },
+          "mimeType": { "type": "string" },
+          "dataURL": { "type": "string" },
+          "created": { "type": "number" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "Roundness": {
+      "type": ["object", "null"],
+      "properties": {
+        "type": { "type": "integer", "enum": [1, 2, 3] },
+        "value": { "type": "number" }
+      },
+      "required": ["type"]
+    },
+    "BoundElementRef": {
+      "type": "object",
+      "required": ["id", "type"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "type": "string", "enum": ["arrow", "text"] }
+      }
+    },
+    "PointBinding": {
+      "type": ["object", "null"],
+      "properties": {
+        "elementId": { "type": "string", "minLength": 1 },
+        "focus": { "type": "number" },
+        "gap": { "type": "number" },
+        "fixedPoint": {
+          "type": ["array", "null"],
+          "items": { "type": "number" },
+          "minItems": 2,
+          "maxItems": 2
+        }
+      },
+      "required": ["elementId", "focus", "gap"]
+    },
+    "LocalPoint": {
+      "type": "array",
+      "items": { "type": "number" },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "Arrowhead": {
+      "type": ["string", "null"],
+      "enum": [
+        null,
+        "arrow",
+        "bar",
+        "dot",
+        "circle",
+        "circle_outline",
+        "triangle",
+        "triangle_outline",
+        "diamond",
+        "diamond_outline",
+        "crowfoot_one",
+        "crowfoot_many",
+        "crowfoot_one_or_many"
+      ]
+    },
+    "ElementBase": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "x",
+        "y",
+        "width",
+        "height",
+        "angle",
+        "strokeColor",
+        "backgroundColor",
+        "fillStyle",
+        "strokeWidth",
+        "strokeStyle",
+        "roughness",
+        "opacity",
+        "seed",
+        "version",
+        "versionNonce",
+        "isDeleted",
+        "groupIds",
+        "boundElements",
+        "link",
+        "locked"
+      ],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": {
+          "type": "string",
+          "enum": ["rectangle", "ellipse", "diamond", "arrow", "line", "text", "freedraw", "frame", "image"]
+        },
+        "x": { "type": "number" },
+        "y": { "type": "number" },
+        "width": { "type": "number" },
+        "height": { "type": "number" },
+        "angle": { "type": "number" },
+        "strokeColor": { "type": "string" },
+        "backgroundColor": { "type": "string" },
+        "fillStyle": {
+          "type": "string",
+          "enum": ["hachure", "cross-hatch", "solid", "zigzag"]
+        },
+        "strokeWidth": { "type": "number", "minimum": 0 },
+        "strokeStyle": {
+          "type": "string",
+          "enum": ["solid", "dashed", "dotted"]
+        },
+        "roughness": { "type": "number", "minimum": 0, "maximum": 2 },
+        "opacity": { "type": "number", "minimum": 0, "maximum": 100 },
+        "roundness": { "$ref": "#/$defs/Roundness" },
+        "seed": { "type": "integer" },
+        "version": { "type": "integer", "minimum": 1 },
+        "versionNonce": { "type": "integer" },
+        "index": { "type": ["string", "null"] },
+        "isDeleted": { "type": "boolean" },
+        "groupIds": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "frameId": { "type": ["string", "null"] },
+        "boundElements": {
+          "type": ["array", "null"],
+          "items": { "$ref": "#/$defs/BoundElementRef" }
+        },
+        "updated": { "type": "number" },
+        "link": { "type": ["string", "null"] },
+        "locked": { "type": "boolean" },
+        "customData": { "type": "object" }
+      }
+    },
+    "ExcalidrawElement": {
+      "allOf": [
+        { "$ref": "#/$defs/ElementBase" },
+        {
+          "oneOf": [
+            {
+              "properties": { "type": { "const": "rectangle" } },
+              "required": ["type"]
+            },
+            {
+              "properties": { "type": { "const": "ellipse" } },
+              "required": ["type"]
+            },
+            {
+              "properties": { "type": { "const": "diamond" } },
+              "required": ["type"]
+            },
+            {
+              "properties": {
+                "type": { "const": "arrow" },
+                "points": {
+                  "type": "array",
+                  "minItems": 2,
+                  "items": { "$ref": "#/$defs/LocalPoint" }
+                },
+                "lastCommittedPoint": {
+                  "oneOf": [{ "$ref": "#/$defs/LocalPoint" }, { "type": "null" }]
+                },
+                "startBinding": { "$ref": "#/$defs/PointBinding" },
+                "endBinding": { "$ref": "#/$defs/PointBinding" },
+                "startArrowhead": { "$ref": "#/$defs/Arrowhead" },
+                "endArrowhead": { "$ref": "#/$defs/Arrowhead" },
+                "elbowed": { "type": "boolean" }
+              },
+              "required": ["type", "points", "startBinding", "endBinding", "startArrowhead", "endArrowhead"]
+            },
+            {
+              "properties": {
+                "type": { "const": "line" },
+                "points": {
+                  "type": "array",
+                  "minItems": 2,
+                  "items": { "$ref": "#/$defs/LocalPoint" }
+                },
+                "startBinding": { "$ref": "#/$defs/PointBinding" },
+                "endBinding": { "$ref": "#/$defs/PointBinding" },
+                "startArrowhead": { "$ref": "#/$defs/Arrowhead" },
+                "endArrowhead": { "$ref": "#/$defs/Arrowhead" }
+              },
+              "required": ["type", "points"]
+            },
+            {
+              "properties": {
+                "type": { "const": "text" },
+                "text": { "type": "string" },
+                "originalText": { "type": "string" },
+                "fontSize": { "type": "number", "minimum": 1 },
+                "fontFamily": { "type": "integer", "enum": [1, 2, 3, 5, 6, 7, 8, 9] },
+                "textAlign": { "type": "string", "enum": ["left", "center", "right"] },
+                "verticalAlign": { "type": "string", "enum": ["top", "middle", "bottom"] },
+                "containerId": { "type": ["string", "null"] },
+                "autoResize": { "type": "boolean" },
+                "lineHeight": { "type": "number", "exclusiveMinimum": 0 }
+              },
+              "required": ["type", "text", "originalText", "fontSize", "fontFamily", "textAlign", "verticalAlign", "containerId", "autoResize", "lineHeight"]
+            },
+            {
+              "properties": {
+                "type": { "const": "freedraw" },
+                "points": { "type": "array", "items": { "$ref": "#/$defs/LocalPoint" } },
+                "pressures": { "type": "array", "items": { "type": "number" } },
+                "simulatePressure": { "type": "boolean" }
+              },
+              "required": ["type", "points"]
+            }
+          ]
+        }
+      ]
+    },
+    "ExportedAppState": {
+      "type": "object",
+      "required": ["viewBackgroundColor"],
+      "properties": {
+        "gridSize": { "type": ["integer", "null"] },
+        "gridStep": { "type": ["integer", "null"] },
+        "gridModeEnabled": { "type": "boolean" },
+        "viewBackgroundColor": { "type": "string" },
+        "lockedMultiSelections": { "type": "object" }
+      }
+    }
+  }
+}

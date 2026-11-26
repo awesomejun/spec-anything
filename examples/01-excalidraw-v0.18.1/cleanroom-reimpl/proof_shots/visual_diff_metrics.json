@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "threshold_mae_percent": 8.0,
+  "scenes": {
+    "empty_light": {
+      "width": 1280,
+      "height": 800,
+      "mae_ratio": 0.001784,
+      "mae_percent": 0.1784,
+      "changed_pixel_ratio": 0.0069,
+      "changed_pixel_percent": 0.69
+    },
+    "shapes_drawn_light": {
+      "width": 1280,
+      "height": 800,
+      "mae_ratio": 0.004563,
+      "mae_percent": 0.4563,
+      "changed_pixel_ratio": 0.012877,
+      "changed_pixel_percent": 1.2877
+    },
+    "dark_theme": {
+      "width": 1280,
+      "height": 800,
+      "mae_ratio": 0.004361,
+      "mae_percent": 0.4361,
+      "changed_pixel_ratio": 0.01286,
+      "changed_pixel_percent": 1.286
+    }
+  }
+}

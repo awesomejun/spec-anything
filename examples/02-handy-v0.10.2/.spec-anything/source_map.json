@@ -1,0 +1,3528 @@
+{
+  "schema_version": "1.0.0",
+  "root": "<isolated-source-dir>",
+  "coverage_stats": {
+    "total_files": 491,
+    "supported_code_files": 323,
+    "test_files": 4,
+    "languages": {
+      "css": 8,
+      "html": 2,
+      "javascript": 1,
+      "python": 1,
+      "rust": 83,
+      "typescript": 228
+    },
+    "modules_count": 6,
+    "entities_count": 419,
+    "actions_count": 0,
+    "data_schemas_count": 0,
+    "frontend_routes_count": 0,
+    "css_tokens_count": 210,
+    "dependencies_count": 41,
+    "recommended_min_inventory": 20
+  },
+  "loud_warnings": [
+    {
+      "code": "UNSUPPORTED_LANGUAGE_FILES",
+      "severity": "warning",
+      "message": "Unsupported source extensions detected (manual inspection required): {'.h': 1, '.swift': 2}"
+    }
+  ],
+  "modules": [
+    {
+      "module": ".",
+      "files": 4,
+      "lines": 132,
+      "languages": [
+        "html",
+        "javascript",
+        "typescript"
+      ]
+    },
+    {
+      "module": ".nix",
+      "files": 4,
+      "lines": 468,
+      "languages": [
+        "typescript"
+      ]
+    },
+    {
+      "module": "scripts",
+      "files": 6,
+      "lines": 808,
+      "languages": [
+        "python",
+        "typescript"
+      ]
+    },
+    {
+      "module": "src",
+      "files": 225,
+      "lines": 26033,
+      "languages": [
+        "css",
+        "html",
+        "typescript"
+      ]
+    },
+    {
+      "module": "src-tauri",
+      "files": 83,
+      "lines": 38439,
+      "languages": [
+        "rust"
+      ]
+    },
+    {
+      "module": "tests",
+      "files": 1,
+      "lines": 19,
+      "languages": [
+        "typescript"
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "role": "js_export",
+      "name": "AboutSettings",
+      "ref": "src/components/settings/about/AboutSettings.tsx:14"
+    },
+    {
+      "role": "js_export",
+      "name": "AccelerationSelector",
+      "ref": "src/components/settings/AccelerationSelector.tsx:40"
+    },
+    {
+      "role": "js_export",
+      "name": "AdvancedSettings",
+      "ref": "src/components/settings/advanced/AdvancedSettings.tsx:30"
+    },
+    {
+      "role": "js_export",
+      "name": "AirPodsMode",
+      "ref": "src/components/settings/AirPodsMode.tsx:12"
+    },
+    {
+      "role": "js_export",
+      "name": "Alert",
+      "ref": "src/components/ui/Alert.tsx:47"
+    },
+    {
+      "role": "js_export",
+      "name": "AlwaysOnMicrophone",
+      "ref": "src/components/settings/AlwaysOnMicrophone.tsx:11"
+    },
+    {
+      "role": "js_export",
+      "name": "ApiKeyField",
+      "ref": "src/components/settings/PostProcessingSettingsApi/ApiKeyField.tsx:12"
+    },
+    {
+      "role": "js_export",
+      "name": "AppDataDirectory",
+      "ref": "src/components/settings/AppDataDirectory.tsx:12"
+    },
+    {
+      "role": "js_export",
+      "name": "AppLanguageMenu",
+      "ref": "src/components/onboarding/AppLanguageMenu.tsx:14"
+    },
+    {
+      "role": "js_export",
+      "name": "AppLanguageSelector",
+      "ref": "src/components/settings/AppLanguageSelector.tsx:18"
+    },
+    {
+      "role": "js_export",
+      "name": "AppendTrailingSpace",
+      "ref": "src/components/settings/AppendTrailingSpace.tsx:11"
+    },
+    {
+      "role": "js_export",
+      "name": "AudioFeedback",
+      "ref": "src/components/settings/AudioFeedback.tsx:11"
+    },
+    {
+      "role": "js_export",
+      "name": "AudioPlayer",
+      "ref": "src/components/ui/AudioPlayer.tsx:58"
+    },
+    {
+      "role": "js_export",
+      "name": "AudioPlayerGroup",
+      "ref": "src/components/ui/AudioPlayer.tsx:34"
+    },
+    {
+      "role": "js_export",
+      "name": "AutoSubmit",
+      "ref": "src/components/settings/AutoSubmit.tsx:16"
+    },
+    {
+      "role": "js_export",
+      "name": "AutostartToggle",
+      "ref": "src/components/settings/AutostartToggle.tsx:11"
+    },
+    {
+      "role": "js_export",
+      "name": "BYTES_PER_MB",
+      "ref": "src/lib/utils/format.ts:2"
+    },
+    {
+      "role": "js_export",
+      "name": "BaseUrlField",
+      "ref": "src/components/settings/PostProcessingSettingsApi/BaseUrlField.tsx:12"
+    },
+    {
+      "role": "js_export",
+      "name": "Button",
+      "ref": "src/components/ui/Button.tsx:16"
+    },
+    {
+      "role": "js_export",
+      "name": "CAPABILITIES",
+      "ref": "src/components/shared/modelTable/capabilities.ts:7"
+    },
+    {
+      "role": "js_export",
+      "name": "CAPABILITY_KEYS",
+      "ref": "src/components/shared/modelTable/capabilities.ts:14"
+    },
+    {
+      "role": "js_export",
+      "name": "CHINESE_SCRIPTS",
+      "ref": "src/lib/utils/languageSuggestions.ts:33"
+    },
+    {
+      "role": "js_export",
+      "name": "CODE_CLASS",
+      "ref": "src/components/shared/modelTable/columns.tsx:38"
+    },
+    {
+      "role": "js_export",
+      "name": "CURATED_ASR",
+      "ref": "src/lib/models/catalog.ts:20"
+    },
+    {
+      "role": "js_export",
+      "name": "CapturedKeys",
+      "ref": "src/components/shared/Keycaps.tsx:96"
+    },
+    {
+      "role": "js_export",
+      "name": "ChannelSelector",
+      "ref": "src/components/settings/ChannelSelector.tsx:13"
+    },
+    {
+      "role": "js_export",
+      "name": "ChineseScriptSetting",
+      "ref": "src/components/settings/ChineseScript.tsx:13"
+    },
+    {
+      "role": "js_export",
+      "name": "ClamshellMicrophoneSelector",
+      "ref": "src/components/settings/ClamshellMicrophoneSelector.tsx:14"
+    },
+    {
+      "role": "js_export",
+      "name": "ClipboardHandlingSetting",
+      "ref": "src/components/settings/ClipboardHandling.tsx:13"
+    },
+    {
+      "role": "js_export",
+      "name": "Codes",
+      "ref": "src/components/shared/modelTable/columns.tsx:45"
+    },
+    {
+      "role": "js_export",
+      "name": "CustomWords",
+      "ref": "src/components/settings/CustomWords.tsx:21"
+    },
+    {
+      "role": "js_export",
+      "name": "DebugRun",
+      "ref": "src/components/settings/debug/OnboardingPreview.tsx:57"
+    },
+    {
+      "role": "js_export",
+      "name": "DebugSettings",
+      "ref": "src/components/settings/debug/DebugSettings.tsx:27"
+    },
+    {
+      "role": "js_export",
+      "name": "Demo",
+      "ref": "src/components/onboarding/screens/Demo.tsx:375"
+    },
+    {
+      "role": "js_export",
+      "name": "DesktopBar",
+      "ref": "src/components/onboarding/DesktopBar.tsx:25"
+    },
+    {
+      "role": "js_export",
+      "name": "Dialog",
+      "ref": "src/components/ui/Dialog.tsx:46"
+    },
+    {
+      "role": "js_export",
+      "name": "DoneMark",
+      "ref": "src/components/shared/DoneMark.tsx:4"
+    },
+    {
+      "role": "js_export",
+      "name": "DownloadMark",
+      "ref": "src/components/shared/DownloadMark.tsx:8"
+    },
+    {
+      "role": "js_export",
+      "name": "DownloadStatus",
+      "ref": "src/components/onboarding/DownloadStatus.tsx:47"
+    },
+    {
+      "role": "js_export",
+      "name": "Dropdown",
+      "ref": "src/components/ui/Dropdown.tsx:26"
+    },
+    {
+      "role": "js_export",
+      "name": "ErrorBoundary",
+      "ref": "src/components/ErrorBoundary.tsx:13"
+    },
+    {
+      "role": "js_export",
+      "name": "ExperimentalToggle",
+      "ref": "src/components/settings/ExperimentalToggle.tsx:11"
+    },
+    {
+      "role": "js_export",
+      "name": "FileDropOverlay",
+      "ref": "src/components/FileDropOverlay.tsx:13"
+    },
+    {
+      "role": "js_export",
+      "name": "FillerWordRemoval",
+      "ref": "src/components/settings/FillerWordRemoval.tsx:11"
+    },
+    {
+      "role": "js_export",
+      "name": "GRADE_CEILINGS",
+      "ref": "src/lib/models/catalog.ts:42"
+    },
+    {
+      "role": "js_export",
+      "name": "GeneralSettings",
+      "ref": "src/components/settings/general/GeneralSettings.tsx:19"
+    },
+    {
+      "role": "js_export",
+      "name": "GradeChip",
+      "ref": "src/components/shared/GradeChip.tsx:24"
+    },
+    {
+      "role": "js_export",
+      "name": "GradeTip",
+      "ref": "src/components/shared/modelTable/columns.tsx:78"
+    },
+    {
+      "role": "js_export",
+      "name": "HistoryLimit",
+      "ref": "src/components/settings/HistoryLimit.tsx:12"
+    },
+    {
+      "role": "js_export",
+      "name": "HistorySettings",
+      "ref": "src/components/settings/history/HistorySettings.tsx:127"
+    },
+    {
+      "role": "js_export",
+      "name": "HoldThreshold",
+      "ref": "src/components/settings/debug/HoldThreshold.tsx:15"
+    },
+    {
+      "role": "js_export",
+      "name": "InfoTooltip",
+      "ref": "src/components/ui/InfoTooltip.tsx:11"
+    },
+    {
+      "role": "js_export",
+      "name": "Input",
+      "ref": "src/components/ui/Input.tsx:7"
+    },
+    {
+      "role": "js_export",
+      "name": "KeySlot",
+      "ref": "src/components/shared/Keycaps.tsx:77"
+    },
+    {
+      "role": "js_export",
+      "name": "KeyboardDiagnostic",
+      "ref": "src/components/settings/debug/KeyboardDiagnostic.tsx:14"
+    },
+    {
+      "role": "js_export",
+      "name": "KeyboardImplementationSelector",
+      "ref": "src/components/settings/debug/KeyboardImplementationSelector.tsx:23"
+    },
+    {
+      "role": "js_export",
+      "name": "Keycaps",
+      "ref": "src/components/shared/Keycaps.tsx:32"
+    },
+    {
+      "role": "js_export",
+      "name": "LANGUAGES",
+      "ref": "src/lib/constants/languages.ts:57"
+    },
+    {
+      "role": "js_export",
+      "name": "LANGUAGE_DETECTOR_ID",
+      "ref": "src/hooks/useLanguageDetector.ts:9"
+    },
+    {
+      "role": "js_export",
+      "name": "LANGUAGE_DETECTOR_SIZE",
+      "ref": "src/hooks/useLanguageDetector.ts:12"
+    },
+    {
+      "role": "js_export",
+      "name": "LANGUAGE_METADATA",
+      "ref": "src/i18n/languages.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "LanguageChip",
+      "ref": "src/components/shared/LanguagePicker.tsx:42"
+    },
+    {
+      "role": "js_export",
+      "name": "LanguageDetection",
+      "ref": "src/components/settings/LanguageDetection.tsx:15"
+    },
+    {
+      "role": "js_export",
+      "name": "LanguageDetectionWindow",
+      "ref": "src/components/settings/debug/LanguageDetectionWindow.tsx:11"
+    },
+    {
+      "role": "js_export",
+      "name": "LanguageDetectorDownload",
+      "ref": "src/components/settings/LanguageDetectorDownload.tsx:19"
+    },
+    {
+      "role": "js_export",
+      "name": "LanguageOption",
+      "ref": "src/components/shared/LanguagePicker.tsx:109"
+    },
+    {
+      "role": "js_export",
+      "name": "LanguageOptions",
+      "ref": "src/components/shared/LanguagePicker.tsx:295"
+    },
+    {
+      "role": "js_export",
+      "name": "LanguageSearchField",
+      "ref": "src/components/shared/LanguagePicker.tsx:241"
+    },
+    {
+      "role": "js_export",
+      "name": "LanguageSelector",
+      "ref": "src/components/settings/LanguageSelector.tsx:34"
+    },
+    {
+      "role": "js_export",
+      "name": "LazyStreamClose",
+      "ref": "src/components/settings/LazyStreamClose.tsx:11"
+    },
+    {
+      "role": "js_export",
+      "name": "Legend",
+      "ref": "src/components/settings/models/Legend.tsx:12"
+    },
+    {
+      "role": "js_export",
+      "name": "LinuxGuide",
+      "ref": "src/components/onboarding/LinuxGuide.tsx:10"
+    },
+    {
+      "role": "js_export",
+      "name": "LiveLogViewer",
+      "ref": "src/components/settings/debug/LiveLogViewer.tsx:80"
+    },
+    {
+      "role": "js_export",
+      "name": "LogDirectory",
+      "ref": "src/components/settings/debug/LogDirectory.tsx:12"
+    },
+    {
+      "role": "js_export",
+      "name": "LogLevelSelector",
+      "ref": "src/components/settings/debug/LogLevelSelector.tsx:21"
+    },
+    {
+      "role": "js_export",
+      "name": "LongFormChunking",
+      "ref": "src/components/settings/LongFormChunking.tsx:11"
+    },
+    {
+      "role": "js_export",
+      "name": "MODIFIERS",
+      "ref": "src/lib/utils/keyboard.ts:246"
+    },
+    {
+      "role": "js_export",
+      "name": "MarkdownContent",
+      "ref": "src/components/whats-new/MarkdownContent.tsx:145"
+    },
+    {
+      "role": "js_export",
+      "name": "Mascot",
+      "ref": "src/components/shared/Mascot.tsx:15"
+    },
+    {
+      "role": "js_export",
+      "name": "MicrophoneDropdown",
+      "ref": "src/components/settings/MicrophoneSelector.tsx:14"
+    },
+    {
+      "role": "js_export",
+      "name": "MicrophoneSelector",
+      "ref": "src/components/settings/MicrophoneSelector.tsx:67"
+    },
+    {
+      "role": "js_export",
+      "name": "Model",
+      "ref": "src/components/onboarding/screens/Model.tsx:78"
+    },
+    {
+      "role": "js_export",
+      "name": "ModelRow",
+      "ref": "src/components/settings/models/ModelRow.tsx:20"
+    },
+    {
+      "role": "js_export",
+      "name": "ModelSelect",
+      "ref": "src/components/settings/PostProcessingSettingsApi/ModelSelect.tsx:17"
+    },
+    {
+      "role": "js_export",
+      "name": "ModelSettingsCard",
+      "ref": "src/components/settings/general/ModelSettingsCard.tsx:9"
+    },
+    {
+      "role": "js_export",
+      "name": "ModelTable",
+      "ref": "src/components/shared/modelTable/ModelTable.tsx:100"
+    },
+    {
+      "role": "js_export",
+      "name": "ModelTableContext",
+      "ref": "src/components/shared/modelTable/context.ts:31"
+    },
+    {
+      "role": "js_export",
+      "name": "ModelTableRow",
+      "ref": "src/components/shared/modelTable/ModelTableRow.tsx:52"
+    },
+    {
+      "role": "js_export",
+      "name": "ModelUnloadTimeoutSetting",
+      "ref": "src/components/settings/ModelUnloadTimeout.tsx:13"
+    },
+    {
+      "role": "js_export",
+      "name": "ModelsSettings",
+      "ref": "src/components/settings/models/ModelsSettings.tsx:48"
+    },
+    {
+      "role": "js_export",
+      "name": "MuteWhileRecording",
+      "ref": "src/components/settings/MuteWhileRecording.tsx:11"
+    },
+    {
+      "role": "js_export",
+      "name": "NO_FILTERS",
+      "ref": "src/components/shared/modelTable/ModelTable.tsx:22"
+    },
+    {
+      "role": "js_export",
+      "name": "Note",
+      "ref": "src/components/shared/modelTable/ModelTable.tsx:70"
+    },
+    {
+      "role": "js_export",
+      "name": "NoticeBadgeIcon",
+      "ref": "src/components/icons/NoticeBadgeIcon.tsx:4"
+    },
+    {
+      "role": "js_export",
+      "name": "NoticePanel",
+      "ref": "src/components/notices/NoticePanel.tsx:114"
+    },
+    {
+      "role": "js_export",
+      "name": "OnboardingFlow",
+      "ref": "src/components/onboarding/OnboardingFlow.tsx:44"
+    },
+    {
+      "role": "js_export",
+      "name": "OnboardingPreview",
+      "ref": "src/components/settings/debug/OnboardingPreview.tsx:18"
+    },
+    {
+      "role": "js_export",
+      "name": "OnboardingShell",
+      "ref": "src/components/onboarding/OnboardingShell.tsx:20"
+    },
+    {
+      "role": "js_export",
+      "name": "OutputDeviceSelector",
+      "ref": "src/components/settings/OutputDeviceSelector.tsx:15"
+    },
+    {
+      "role": "js_export",
+      "name": "PORTABLE_RELEASES_URL",
+      "ref": "src/components/update-checker/portableInstaller.ts:11"
+    },
+    {
+      "role": "js_export",
+      "name": "PasteDelay",
+      "ref": "src/components/settings/debug/PasteDelay.tsx:16"
+    },
+    {
+      "role": "js_export",
+      "name": "PasteMethodSetting",
+      "ref": "src/components/settings/PasteMethod.tsx:15"
+    },
+    {
+      "role": "js_export",
+      "name": "PathDisplay",
+      "ref": "src/components/ui/PathDisplay.tsx:11"
+    },
+    {
+      "role": "js_export",
+      "name": "Permissions",
+      "ref": "src/components/onboarding/screens/Permissions.tsx:91"
+    },
+    {
+      "role": "js_export",
+      "name": "PostProcessingSettings",
+      "ref": "src/components/settings/post-processing/PostProcessingSettings.tsx:465"
+    },
+    {
+      "role": "js_export",
+      "name": "PostProcessingSettingsApi",
+      "ref": "src/components/settings/post-processing/PostProcessingSettings.tsx:455"
+    },
+    {
+      "role": "js_export",
+      "name": "PostProcessingSettingsPrompts",
+      "ref": "src/components/settings/post-processing/PostProcessingSettings.tsx:460"
+    },
+    {
+      "role": "js_export",
+      "name": "PostProcessingToggle",
+      "ref": "src/components/settings/PostProcessingToggle.tsx:11"
+    },
+    {
+      "role": "js_export",
+      "name": "PreferredLanguages",
+      "ref": "src/components/settings/PreferredLanguages.tsx:209"
+    },
+    {
+      "role": "js_export",
+      "name": "ProgressLine",
+      "ref": "src/components/shared/ProgressLine.tsx:13"
+    },
+    {
+      "role": "js_export",
+      "name": "ProgressRing",
+      "ref": "src/components/shared/ProgressRing.tsx:10"
+    },
+    {
+      "role": "js_export",
+      "name": "ProviderSelect",
+      "ref": "src/components/settings/PostProcessingSettingsApi/ProviderSelect.tsx:11"
+    },
+    {
+      "role": "js_export",
+      "name": "ROLE_KEYS",
+      "ref": "src/components/shared/modelTable/ModelTableRow.tsx:13"
+    },
+    {
+      "role": "js_export",
+      "name": "Radio",
+      "ref": "src/components/ui/Radio.tsx:9"
+    },
+    {
+      "role": "js_export",
+      "name": "RecordingBuffer",
+      "ref": "src/components/settings/debug/RecordingBuffer.tsx:11"
+    },
+    {
+      "role": "js_export",
+      "name": "RecordingRetentionPeriodSelector",
+      "ref": "src/components/settings/RecordingRetentionPeriod.tsx:13"
+    },
+    {
+      "role": "js_export",
+      "name": "ReliablePasteToggle",
+      "ref": "src/components/settings/debug/ReliablePaste.tsx:12"
+    },
+    {
+      "role": "js_export",
+      "name": "ReplaceModel",
+      "ref": "src/components/onboarding/StandaloneScreens.tsx:21"
+    },
+    {
+      "role": "js_export",
+      "name": "ResetButton",
+      "ref": "src/components/ui/ResetButton.tsx:12"
+    },
+    {
+      "role": "js_export",
+      "name": "ReturningPermissions",
+      "ref": "src/components/onboarding/StandaloneScreens.tsx:13"
+    },
+    {
+      "role": "js_export",
+      "name": "SAMPLES",
+      "ref": "src/components/onboarding/data/samples.ts:7"
+    },
+    {
+      "role": "js_export",
+      "name": "SECTIONS_CONFIG",
+      "ref": "src/components/Sidebar.tsx:34"
+    },
+    {
+      "role": "js_export",
+      "name": "SECURE_INPUT_HELP_URL",
+      "ref": "src/components/SecureInputWarning.tsx:9"
+    },
+    {
+      "role": "js_export",
+      "name": "SPEED_CUTOFFS",
+      "ref": "src/components/shared/SpeedBars.tsx:4"
+    },
+    {
+      "role": "js_export",
+      "name": "STEP_ORDER",
+      "ref": "src/components/onboarding/onboardingStore.ts:17"
+    },
+    {
+      "role": "js_export",
+      "name": "SUPPORTED_LANGUAGES",
+      "ref": "src/i18n/index.ts:28"
+    },
+    {
+      "role": "js_export",
+      "name": "ScreenHeader",
+      "ref": "src/components/onboarding/OnboardingShell.tsx:145"
+    },
+    {
+      "role": "js_export",
+      "name": "ScreenMain",
+      "ref": "src/components/onboarding/OnboardingShell.tsx:106"
+    },
+    {
+      "role": "js_export",
+      "name": "ScreenSub",
+      "ref": "src/components/onboarding/OnboardingShell.tsx:172"
+    },
+    {
+      "role": "js_export",
+      "name": "ScreenTitle",
+      "ref": "src/components/onboarding/OnboardingShell.tsx:161"
+    },
+    {
+      "role": "js_export",
+      "name": "ScrollThumb",
+      "ref": "src/components/shared/modelTable/ScrollThumb.tsx:15"
+    },
+    {
+      "role": "js_export",
+      "name": "Select",
+      "ref": "src/components/ui/Select.tsx:117"
+    },
+    {
+      "role": "js_export",
+      "name": "SettingContainer",
+      "ref": "src/components/ui/SettingContainer.tsx:17"
+    },
+    {
+      "role": "js_export",
+      "name": "SettingsGroup",
+      "ref": "src/components/ui/SettingsGroup.tsx:9"
+    },
+    {
+      "role": "js_export",
+      "name": "ShortcutActivationSetting",
+      "ref": "src/components/settings/ShortcutActivation.tsx:13"
+    },
+    {
+      "role": "js_export",
+      "name": "ShortcutInput",
+      "ref": "src/components/settings/ShortcutInput.tsx:22"
+    },
+    {
+      "role": "js_export",
+      "name": "ShowOverlay",
+      "ref": "src/components/settings/ShowOverlay.tsx:13"
+    },
+    {
+      "role": "js_export",
+      "name": "ShowTrayIcon",
+      "ref": "src/components/settings/ShowTrayIcon.tsx:11"
+    },
+    {
+      "role": "js_export",
+      "name": "ShowWhatsNewOnUpdate",
+      "ref": "src/components/settings/ShowWhatsNewOnUpdate.tsx:11"
+    },
+    {
+      "role": "js_export",
+      "name": "Sidebar",
+      "ref": "src/components/Sidebar.tsx:84"
+    },
+    {
+      "role": "js_export",
+      "name": "Slider",
+      "ref": "src/components/ui/Slider.tsx:23"
+    },
+    {
+      "role": "js_export",
+      "name": "SoundPicker",
+      "ref": "src/components/settings/SoundPicker.tsx:14"
+    },
+    {
+      "role": "js_export",
+      "name": "SpeedBars",
+      "ref": "src/components/shared/SpeedBars.tsx:20"
+    },
+    {
+      "role": "js_export",
+      "name": "SpeedTip",
+      "ref": "src/components/shared/modelTable/columns.tsx:152"
+    },
+    {
+      "role": "js_export",
+      "name": "Spinner",
+      "ref": "src/components/ui/Spinner.tsx:4"
+    },
+    {
+      "role": "js_export",
+      "name": "StartHidden",
+      "ref": "src/components/settings/StartHidden.tsx:11"
+    },
+    {
+      "role": "js_export",
+      "name": "Switch",
+      "ref": "src/components/ui/Switch.tsx:14"
+    },
+    {
+      "role": "js_export",
+      "name": "THEME_OPTIONS",
+      "ref": "src/lib/utils/theme.ts:21"
+    },
+    {
+      "role": "js_export",
+      "name": "THEME_STORAGE_KEY",
+      "ref": "src/lib/utils/theme.ts:19"
+    },
+    {
+      "role": "js_export",
+      "name": "Tag",
+      "ref": "src/components/shared/Tag.tsx:4"
+    },
+    {
+      "role": "js_export",
+      "name": "TextDisplay",
+      "ref": "src/components/ui/TextDisplay.tsx:16"
+    },
+    {
+      "role": "js_export",
+      "name": "TextLink",
+      "ref": "src/components/ui/TextLink.tsx:4"
+    },
+    {
+      "role": "js_export",
+      "name": "Textarea",
+      "ref": "src/components/ui/Textarea.tsx:8"
+    },
+    {
+      "role": "js_export",
+      "name": "ThemeSelector",
+      "ref": "src/components/settings/ThemeSelector.tsx:14"
+    },
+    {
+      "role": "js_export",
+      "name": "ToggleSwitch",
+      "ref": "src/components/ui/ToggleSwitch.tsx:17"
+    },
+    {
+      "role": "js_export",
+      "name": "Tooltip",
+      "ref": "src/components/ui/Tooltip.tsx:33"
+    },
+    {
+      "role": "js_export",
+      "name": "TranslateToEnglish",
+      "ref": "src/components/settings/TranslateToEnglish.tsx:11"
+    },
+    {
+      "role": "js_export",
+      "name": "TrayPanel",
+      "ref": "src/components/onboarding/TrayPanel.tsx:62"
+    },
+    {
+      "role": "js_export",
+      "name": "TryIt",
+      "ref": "src/components/onboarding/screens/TryIt.tsx:172"
+    },
+    {
+      "role": "js_export",
+      "name": "TypingToolSetting",
+      "ref": "src/components/settings/TypingTool.tsx:23"
+    },
+    {
+      "role": "js_export",
+      "name": "UpdateChecksToggle",
+      "ref": "src/components/settings/UpdateChecksToggle.tsx:11"
+    },
+    {
+      "role": "js_export",
+      "name": "VadBackendSelector",
+      "ref": "src/components/settings/VadBackendSelector.tsx:13"
+    },
+    {
+      "role": "js_export",
+      "name": "Values",
+      "ref": "src/components/shared/modelTable/columns.tsx:188"
+    },
+    {
+      "role": "js_export",
+      "name": "VoiceActivityDetection",
+      "ref": "src/components/settings/VoiceActivityDetection.tsx:11"
+    },
+    {
+      "role": "js_export",
+      "name": "VolumeSlider",
+      "ref": "src/components/settings/VolumeSlider.tsx:6"
+    },
+    {
+      "role": "js_export",
+      "name": "Welcome",
+      "ref": "src/components/onboarding/screens/Welcome.tsx:31"
+    },
+    {
+      "role": "js_export",
+      "name": "WhatsNewGate",
+      "ref": "src/components/whats-new/WhatsNewGate.tsx:8"
+    },
+    {
+      "role": "js_export",
+      "name": "WhatsNewModal",
+      "ref": "src/components/whats-new/WhatsNewModal.tsx:13"
+    },
+    {
+      "role": "js_export",
+      "name": "WhatsNewPreview",
+      "ref": "src/components/settings/debug/WhatsNewPreview.tsx:14"
+    },
+    {
+      "role": "js_export",
+      "name": "WindowBar",
+      "ref": "src/components/onboarding/WindowBar.tsx:9"
+    },
+    {
+      "role": "js_export",
+      "name": "WordCorrectionThreshold",
+      "ref": "src/components/settings/debug/WordCorrectionThreshold.tsx:11"
+    },
+    {
+      "role": "js_export",
+      "name": "applyTheme",
+      "ref": "src/lib/utils/theme.ts:27"
+    },
+    {
+      "role": "js_export",
+      "name": "areModelsLocked",
+      "ref": "src/stores/transcriptionJobsStore.ts:53"
+    },
+    {
+      "role": "js_export",
+      "name": "averageError",
+      "ref": "src/lib/models/grading.ts:59"
+    },
+    {
+      "role": "js_export",
+      "name": "bindingKeys",
+      "ref": "src/lib/utils/keyboard.ts:262"
+    },
+    {
+      "role": "js_export",
+      "name": "cancelDownload",
+      "ref": "src/components/settings/models/modelEntries.ts:194"
+    },
+    {
+      "role": "js_export",
+      "name": "canonicalizeNodeModules",
+      "ref": ".nix/scripts/canonicalize-node-modules.ts:66"
+    },
+    {
+      "role": "js_export",
+      "name": "captureHintKey",
+      "ref": "src/components/shared/Keycaps.tsx:90"
+    },
+    {
+      "role": "js_export",
+      "name": "cjkSubsetFont",
+      "ref": "src/lib/utils/cjkFont.ts:8"
+    },
+    {
+      "role": "js_export",
+      "name": "clearOnboardingProgress",
+      "ref": "src/components/onboarding/onboardingStore.ts:143"
+    },
+    {
+      "role": "js_export",
+      "name": "columnsClass",
+      "ref": "src/components/shared/modelTable/columns.tsx:24"
+    },
+    {
+      "role": "js_export",
+      "name": "columnsStyle",
+      "ref": "src/components/shared/modelTable/columns.tsx:31"
+    },
+    {
+      "role": "js_export",
+      "name": "commands",
+      "ref": "src/bindings.ts:7"
+    },
+    {
+      "role": "js_export",
+      "name": "copyToClipboard",
+      "ref": "src/components/settings/history/clipboard.ts:3"
+    },
+    {
+      "role": "js_export",
+      "name": "deleteRetiredModel",
+      "ref": "src/lib/models/retired.ts:27"
+    },
+    {
+      "role": "js_export",
+      "name": "demoLine",
+      "ref": "src/components/onboarding/data/samples.ts:28"
+    },
+    {
+      "role": "js_export",
+      "name": "downloadPick",
+      "ref": "src/components/onboarding/downloadPick.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "downloadStateOf",
+      "ref": "src/lib/models/downloadState.ts:30"
+    },
+    {
+      "role": "js_export",
+      "name": "errorFor",
+      "ref": "src/lib/models/catalog.ts:25"
+    },
+    {
+      "role": "js_export",
+      "name": "events",
+      "ref": "src/bindings.ts:1060"
+    },
+    {
+      "role": "js_export",
+      "name": "findLatestReleaseNote",
+      "ref": "src/components/whats-new/releaseNotes.ts:129"
+    },
+    {
+      "role": "js_export",
+      "name": "findReleaseNoteToShow",
+      "ref": "src/components/whats-new/releaseNotes.ts:108"
+    },
+    {
+      "role": "js_export",
+      "name": "findReplacement",
+      "ref": "src/lib/models/retired.ts:19"
+    },
+    {
+      "role": "js_export",
+      "name": "formatDate",
+      "ref": "src/utils/dateFormat.ts:37"
+    },
+    {
+      "role": "js_export",
+      "name": "formatDateTime",
+      "ref": "src/utils/dateFormat.ts:7"
+    },
+    {
+      "role": "js_export",
+      "name": "formatKeyCombination",
+      "ref": "src/lib/utils/keyboard.ts:222"
+    },
+    {
+      "role": "js_export",
+      "name": "formatModelSize",
+      "ref": "src/lib/utils/format.ts:4"
+    },
+    {
+      "role": "js_export",
+      "name": "formatRelativeTime",
+      "ref": "src/utils/dateFormat.ts:65"
+    },
+    {
+      "role": "js_export",
+      "name": "geoMean",
+      "ref": "src/lib/models/catalog.ts:66"
+    },
+    {
+      "role": "js_export",
+      "name": "getKeyName",
+      "ref": "src/lib/utils/keyboard.ts:36"
+    },
+    {
+      "role": "js_export",
+      "name": "getLanguage",
+      "ref": "src/lib/constants/languages.ts:67"
+    },
+    {
+      "role": "js_export",
+      "name": "getLanguageDirection",
+      "ref": "src/lib/utils/rtl.ts:26"
+    },
+    {
+      "role": "js_export",
+      "name": "getStoredTheme",
+      "ref": "src/lib/utils/theme.ts:43"
+    },
+    {
+      "role": "js_export",
+      "name": "getSupportedLanguage",
+      "ref": "src/i18n/index.ts:55"
+    },
+    {
+      "role": "js_export",
+      "name": "getTranslatedModelDescription",
+      "ref": "src/lib/utils/modelTranslation.ts:22"
+    },
+    {
+      "role": "js_export",
+      "name": "getTranslatedModelName",
+      "ref": "src/lib/utils/modelTranslation.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "gradeFor",
+      "ref": "src/lib/models/catalog.ts:47"
+    },
+    {
+      "role": "js_export",
+      "name": "gradeForError",
+      "ref": "src/lib/models/catalog.ts:56"
+    },
+    {
+      "role": "js_export",
+      "name": "gradeMode",
+      "ref": "src/components/shared/modelTable/columns.tsx:18"
+    },
+    {
+      "role": "js_export",
+      "name": "groupModels",
+      "ref": "src/lib/models/catalog.ts:161"
+    },
+    {
+      "role": "js_export",
+      "name": "healPeerDepBins",
+      "ref": ".nix/scripts/heal-peer-dep-bins.ts:142"
+    },
+    {
+      "role": "js_export",
+      "name": "initializeRTL",
+      "ref": "src/lib/utils/rtl.ts:55"
+    },
+    {
+      "role": "js_export",
+      "name": "installCompatShims",
+      "ref": "src/lib/compat.ts:6"
+    },
+    {
+      "role": "js_export",
+      "name": "isChinese",
+      "ref": "src/lib/utils/languageSuggestions.ts:18"
+    },
+    {
+      "role": "js_export",
+      "name": "isComposingKeyEvent",
+      "ref": "src/lib/utils/keyboard.ts:10"
+    },
+    {
+      "role": "js_export",
+      "name": "isDense",
+      "ref": "src/components/shared/modelTable/columns.tsx:20"
+    },
+    {
+      "role": "js_export",
+      "name": "isLegacyModel",
+      "ref": "src/components/shared/modelTable/tableModel.ts:12"
+    },
+    {
+      "role": "js_export",
+      "name": "isOnlyModifiers",
+      "ref": "src/lib/utils/keyboard.ts:266"
+    },
+    {
+      "role": "js_export",
+      "name": "isRTLLanguage",
+      "ref": "src/lib/utils/rtl.ts:15"
+    },
+    {
+      "role": "js_export",
+      "name": "isTooSlow",
+      "ref": "src/lib/models/catalog.ts:202"
+    },
+    {
+      "role": "js_export",
+      "name": "isWeakLanguage",
+      "ref": "src/lib/models/catalog.ts:70"
+    },
+    {
+      "role": "js_export",
+      "name": "keycapLabel",
+      "ref": "src/lib/utils/keyboard.ts:305"
+    },
+    {
+      "role": "js_export",
+      "name": "keycapLabels",
+      "ref": "src/lib/utils/keyboard.ts:293"
+    },
+    {
+      "role": "js_export",
+      "name": "languageList",
+      "ref": "src/lib/constants/languages.ts:29"
+    },
+    {
+      "role": "js_export",
+      "name": "languageName",
+      "ref": "src/lib/constants/languages.ts:17"
+    },
+    {
+      "role": "js_export",
+      "name": "languageSearchKeys",
+      "ref": "src/components/shared/LanguagePicker.tsx:137"
+    },
+    {
+      "role": "js_export",
+      "name": "languagesOf",
+      "ref": "src/lib/constants/languages.ts:73"
+    },
+    {
+      "role": "js_export",
+      "name": "makeGrading",
+      "ref": "src/lib/models/grading.ts:34"
+    },
+    {
+      "role": "js_export",
+      "name": "moveModels",
+      "ref": "src/components/onboarding/screens/modelTransitions.ts:36"
+    },
+    {
+      "role": "js_export",
+      "name": "moveScreens",
+      "ref": "src/components/onboarding/screenTransitions.ts:33"
+    },
+    {
+      "role": "js_export",
+      "name": "normalizeBunBinaries",
+      "ref": ".nix/scripts/normalize-bun-binaries.ts:68"
+    },
+    {
+      "role": "js_export",
+      "name": "normalizeKey",
+      "ref": "src/lib/utils/keyboard.ts:233"
+    },
+    {
+      "role": "js_export",
+      "name": "noticeDisplay",
+      "ref": "src/lib/notices.ts:63"
+    },
+    {
+      "role": "js_export",
+      "name": "notify",
+      "ref": "src/stores/noticeStore.ts:142"
+    },
+    {
+      "role": "js_export",
+      "name": "pickAndTranscribeFiles",
+      "ref": "src/components/settings/history/transcribeFiles.ts:76"
+    },
+    {
+      "role": "js_export",
+      "name": "pickModel",
+      "ref": "src/components/settings/models/modelEntries.ts:177"
+    },
+    {
+      "role": "js_export",
+      "name": "picksFor",
+      "ref": "src/lib/models/catalog.ts:97"
+    },
+    {
+      "role": "js_export",
+      "name": "prefersReducedMotion",
+      "ref": "src/lib/utils/motion.ts:2"
+    },
+    {
+      "role": "js_export",
+      "name": "repoIdOf",
+      "ref": "src/lib/models/retired.ts:12"
+    },
+    {
+      "role": "js_export",
+      "name": "resolvePortableInstallerUrl",
+      "ref": "src/components/update-checker/portableInstaller.ts:23"
+    },
+    {
+      "role": "js_export",
+      "name": "rowGrid",
+      "ref": "src/components/shared/modelTable/columns.tsx:35"
+    },
+    {
+      "role": "js_export",
+      "name": "searchLanguages",
+      "ref": "src/lib/constants/languages.ts:117"
+    },
+    {
+      "role": "js_export",
+      "name": "spaceDoesNotClick",
+      "ref": "src/lib/utils/keyboard.ts:19"
+    },
+    {
+      "role": "js_export",
+      "name": "speedLevel",
+      "ref": "src/components/shared/SpeedBars.tsx:7"
+    },
+    {
+      "role": "js_export",
+      "name": "suggestedLanguages",
+      "ref": "src/lib/utils/languageSuggestions.ts:21"
+    },
+    {
+      "role": "js_export",
+      "name": "suggestedScript",
+      "ref": "src/lib/utils/languageSuggestions.ts:52"
+    },
+    {
+      "role": "js_export",
+      "name": "supportsLanguage",
+      "ref": "src/lib/constants/languages.ts:83"
+    },
+    {
+      "role": "js_export",
+      "name": "syncLanguageFromSettings",
+      "ref": "src/i18n/index.ts:103"
+    },
+    {
+      "role": "js_export",
+      "name": "syncThemeFromSettings",
+      "ref": "src/lib/utils/theme.ts:54"
+    },
+    {
+      "role": "js_export",
+      "name": "toTableModel",
+      "ref": "src/components/shared/modelTable/tableModel.ts:30"
+    },
+    {
+      "role": "js_export",
+      "name": "transcribeFiles",
+      "ref": "src/components/settings/history/transcribeFiles.ts:42"
+    },
+    {
+      "role": "js_export",
+      "name": "updateDocumentDirection",
+      "ref": "src/lib/utils/rtl.ts:34"
+    },
+    {
+      "role": "js_export",
+      "name": "updateDocumentLanguage",
+      "ref": "src/lib/utils/rtl.ts:44"
+    },
+    {
+      "role": "js_export",
+      "name": "useDownloadWords",
+      "ref": "src/components/onboarding/DownloadStatus.tsx:13"
+    },
+    {
+      "role": "js_export",
+      "name": "useFileReadsStore",
+      "ref": "src/components/settings/history/transcribeFiles.ts:34"
+    },
+    {
+      "role": "js_export",
+      "name": "useIsTarget",
+      "ref": "src/components/settings/models/modelEntries.ts:141"
+    },
+    {
+      "role": "js_export",
+      "name": "useLanguageDetector",
+      "ref": "src/hooks/useLanguageDetector.ts:17"
+    },
+    {
+      "role": "js_export",
+      "name": "useLanguagePicker",
+      "ref": "src/components/shared/LanguagePicker.tsx:178"
+    },
+    {
+      "role": "js_export",
+      "name": "useMachineTier",
+      "ref": "src/hooks/useMachineTier.ts:7"
+    },
+    {
+      "role": "js_export",
+      "name": "useModelCatalog",
+      "ref": "src/hooks/useModelCatalog.ts:19"
+    },
+    {
+      "role": "js_export",
+      "name": "useModelEntries",
+      "ref": "src/components/settings/models/modelEntries.ts:41"
+    },
+    {
+      "role": "js_export",
+      "name": "useModelFilters",
+      "ref": "src/components/shared/modelTable/ModelTable.tsx:29"
+    },
+    {
+      "role": "js_export",
+      "name": "useModelStore",
+      "ref": "src/stores/modelStore.ts:53"
+    },
+    {
+      "role": "js_export",
+      "name": "useModelTable",
+      "ref": "src/components/shared/modelTable/context.ts:33"
+    },
+    {
+      "role": "js_export",
+      "name": "useModelsLocked",
+      "ref": "src/stores/transcriptionJobsStore.ts:50"
+    },
+    {
+      "role": "js_export",
+      "name": "useNoticeStore",
+      "ref": "src/stores/noticeStore.ts:71"
+    },
+    {
+      "role": "js_export",
+      "name": "useOnboardingModels",
+      "ref": "src/components/onboarding/useOnboardingModels.ts:13"
+    },
+    {
+      "role": "js_export",
+      "name": "useOnboardingStore",
+      "ref": "src/components/onboarding/onboardingStore.ts:152"
+    },
+    {
+      "role": "js_export",
+      "name": "useOsType",
+      "ref": "src/hooks/useOsType.ts:8"
+    },
+    {
+      "role": "js_export",
+      "name": "usePermissions",
+      "ref": "src/components/onboarding/usePermissions.ts:51"
+    },
+    {
+      "role": "js_export",
+      "name": "usePlace",
+      "ref": "src/components/settings/models/modelEntries.ts:130"
+    },
+    {
+      "role": "js_export",
+      "name": "usePostProcessProviderState",
+      "ref": "src/components/settings/PostProcessingSettingsApi/usePostProcessProviderState.ts:40"
+    },
+    {
+      "role": "js_export",
+      "name": "usePressAway",
+      "ref": "src/hooks/usePressAway.ts:7"
+    },
+    {
+      "role": "js_export",
+      "name": "useRubric",
+      "ref": "src/components/shared/modelTable/rubric.ts:7"
+    },
+    {
+      "role": "js_export",
+      "name": "useSettings",
+      "ref": "src/hooks/useSettings.ts:55"
+    },
+    {
+      "role": "js_export",
+      "name": "useSettingsStore",
+      "ref": "src/stores/settingsStore.ts:222"
+    },
+    {
+      "role": "js_export",
+      "name": "useShortcutCapture",
+      "ref": "src/hooks/useShortcutCapture.ts:28"
+    },
+    {
+      "role": "js_export",
+      "name": "useSpeedWords",
+      "ref": "src/components/shared/modelTable/columns.tsx:141"
+    },
+    {
+      "role": "js_export",
+      "name": "useTranscriptionJobsStore",
+      "ref": "src/stores/transcriptionJobsStore.ts:17"
+    },
+    {
+      "role": "js_export",
+      "name": "useTryEngine",
+      "ref": "src/components/onboarding/useTryEngine.ts:42"
+    },
+    {
+      "role": "js_export",
+      "name": "viewTransitions",
+      "ref": "src/components/onboarding/viewTransitions.ts:13"
+    },
+    {
+      "role": "rust_type",
+      "name": "AppSettings",
+      "ref": "src-tauri/src/settings.rs:400"
+    },
+    {
+      "role": "rust_type",
+      "name": "AppTheme",
+      "ref": "src-tauri/src/tray.rs:155"
+    },
+    {
+      "role": "rust_type",
+      "name": "AppleLLMResponse",
+      "ref": "src-tauri/src/apple_intelligence.rs:6"
+    },
+    {
+      "role": "rust_type",
+      "name": "AudioDevice",
+      "ref": "src-tauri/src/commands/audio.rs:38"
+    },
+    {
+      "role": "rust_type",
+      "name": "AudioRecordingManager",
+      "ref": "src-tauri/src/managers/audio.rs:471"
+    },
+    {
+      "role": "rust_type",
+      "name": "AudioVisualiser",
+      "ref": "src-tauri/src/audio_toolkit/audio/visualizer.rs:15"
+    },
+    {
+      "role": "rust_type",
+      "name": "AutoLanguage",
+      "ref": "src-tauri/src/language_detection/policy.rs:51"
+    },
+    {
+      "role": "rust_type",
+      "name": "AutoSubmitKey",
+      "ref": "src-tauri/src/settings.rs:214"
+    },
+    {
+      "role": "rust_type",
+      "name": "AutoUnavailableReason",
+      "ref": "src-tauri/src/language_detection/policy.rs:254"
+    },
+    {
+      "role": "rust_type",
+      "name": "AvailableAccelerators",
+      "ref": "src-tauri/src/managers/transcription.rs:1986"
+    },
+    {
+      "role": "rust_type",
+      "name": "BatchDecode",
+      "ref": "src-tauri/src/managers/transcription/policy.rs:41"
+    },
+    {
+      "role": "rust_type",
+      "name": "BindingResponse",
+      "ref": "src-tauri/src/shortcut/mod.rs:161"
+    },
+    {
+      "role": "rust_type",
+      "name": "CancelMark",
+      "ref": "src-tauri/src/engine_supervisor/supervisor.rs:159"
+    },
+    {
+      "role": "rust_type",
+      "name": "CapabilityProbe",
+      "ref": "src-tauri/src/managers/model_capabilities.rs:94"
+    },
+    {
+      "role": "rust_type",
+      "name": "CapabilityProber",
+      "ref": "src-tauri/src/managers/model_capabilities.rs:149"
+    },
+    {
+      "role": "rust_type",
+      "name": "CaptureSink",
+      "ref": "src-tauri/src/audio_toolkit/audio/sink.rs:84"
+    },
+    {
+      "role": "rust_type",
+      "name": "CaptureVad",
+      "ref": "src-tauri/src/audio_toolkit/audio/sink.rs:26"
+    },
+    {
+      "role": "rust_type",
+      "name": "CapturedAudio",
+      "ref": "src-tauri/src/audio_toolkit/audio/sink.rs:71"
+    },
+    {
+      "role": "rust_type",
+      "name": "ChineseScript",
+      "ref": "src-tauri/src/settings.rs:200"
+    },
+    {
+      "role": "rust_type",
+      "name": "ChineseVariety",
+      "ref": "src-tauri/src/chinese_script.rs:21"
+    },
+    {
+      "role": "rust_type",
+      "name": "ChunkControl",
+      "ref": "src-tauri/src/managers/transcription/job.rs:26"
+    },
+    {
+      "role": "rust_type",
+      "name": "Chunker",
+      "ref": "src-tauri/src/audio_toolkit/chunking.rs:179"
+    },
+    {
+      "role": "rust_type",
+      "name": "CliArgs",
+      "ref": "src-tauri/src/cli.rs:6"
+    },
+    {
+      "role": "rust_type",
+      "name": "ClipboardHandling",
+      "ref": "src-tauri/src/settings.rs:190"
+    },
+    {
+      "role": "rust_type",
+      "name": "Compatibility",
+      "ref": "src-tauri/src/managers/model_capabilities.rs:76"
+    },
+    {
+      "role": "rust_type",
+      "name": "CustomSounds",
+      "ref": "src-tauri/src/commands/audio.rs:18"
+    },
+    {
+      "role": "rust_type",
+      "name": "DetectFallback",
+      "ref": "src-tauri/src/language_detection/policy.rs:42"
+    },
+    {
+      "role": "rust_type",
+      "name": "DeviceInfo",
+      "ref": "src-tauri/src/engine_supervisor/protocol.rs:96"
+    },
+    {
+      "role": "rust_type",
+      "name": "DeviceSelector",
+      "ref": "src-tauri/src/engine_supervisor/protocol.rs:59"
+    },
+    {
+      "role": "rust_type",
+      "name": "DiskStatus",
+      "ref": "src-tauri/src/managers/model.rs:135"
+    },
+    {
+      "role": "rust_type",
+      "name": "DownloadProgress",
+      "ref": "src-tauri/src/managers/model.rs:305"
+    },
+    {
+      "role": "rust_type",
+      "name": "EarshotVad",
+      "ref": "src-tauri/src/audio_toolkit/vad/earshot.rs:11"
+    },
+    {
+      "role": "rust_type",
+      "name": "EngineError",
+      "ref": "src-tauri/src/engine_supervisor/supervisor.rs:138"
+    },
+    {
+      "role": "rust_type",
+      "name": "EngineSupervisor",
+      "ref": "src-tauri/src/engine_supervisor/supervisor.rs:329"
+    },
+    {
+      "role": "rust_type",
+      "name": "EnigoState",
+      "ref": "src-tauri/src/input.rs:151"
+    },
+    {
+      "role": "rust_type",
+      "name": "Finalized",
+      "ref": "src-tauri/src/engine_supervisor/supervisor.rs:170"
+    },
+    {
+      "role": "rust_type",
+      "name": "FrontendKeyEvent",
+      "ref": "src-tauri/src/shortcut/handy_keys.rs:77"
+    },
+    {
+      "role": "rust_type",
+      "name": "GgufError",
+      "ref": "src-tauri/src/managers/gguf_meta.rs:120"
+    },
+    {
+      "role": "rust_type",
+      "name": "GgufHeaderProber",
+      "ref": "src-tauri/src/managers/model_capabilities.rs:156"
+    },
+    {
+      "role": "rust_type",
+      "name": "GgufMetadata",
+      "ref": "src-tauri/src/managers/gguf_meta.rs:101"
+    },
+    {
+      "role": "rust_type",
+      "name": "GgufValue",
+      "ref": "src-tauri/src/managers/gguf_meta.rs:46"
+    },
+    {
+      "role": "rust_type",
+      "name": "GpuDeviceOption",
+      "ref": "src-tauri/src/managers/transcription.rs:1930"
+    },
+    {
+      "role": "rust_type",
+      "name": "HandyKeysState",
+      "ref": "src-tauri/src/shortcut/handy_keys.rs:60"
+    },
+    {
+      "role": "rust_type",
+      "name": "HistoryEntry",
+      "ref": "src-tauri/src/managers/history.rs:67"
+    },
+    {
+      "role": "rust_type",
+      "name": "HistoryManager",
+      "ref": "src-tauri/src/managers/history.rs:86"
+    },
+    {
+      "role": "rust_type",
+      "name": "HistoryUpdatePayload",
+      "ref": "src-tauri/src/managers/history.rs:55"
+    },
+    {
+      "role": "rust_type",
+      "name": "Identified",
+      "ref": "src-tauri/src/language_detection/mod.rs:127"
+    },
+    {
+      "role": "rust_type",
+      "name": "IdentifyError",
+      "ref": "src-tauri/src/language_detection/mod.rs:133"
+    },
+    {
+      "role": "rust_type",
+      "name": "ImplementationChangeResult",
+      "ref": "src-tauri/src/shortcut/mod.rs:346"
+    },
+    {
+      "role": "rust_type",
+      "name": "KeyboardDiagnosticReport",
+      "ref": "src-tauri/src/secure_input.rs:49"
+    },
+    {
+      "role": "rust_type",
+      "name": "KeyboardImplementation",
+      "ref": "src-tauri/src/settings.rs:233"
+    },
+    {
+      "role": "rust_type",
+      "name": "LLMPrompt",
+      "ref": "src-tauri/src/settings.rs:91"
+    },
+    {
+      "role": "rust_type",
+      "name": "LanguageDecision",
+      "ref": "src-tauri/src/language_detection/mod.rs:113"
+    },
+    {
+      "role": "rust_type",
+      "name": "LanguageDetectionMode",
+      "ref": "src-tauri/src/settings.rs:355"
+    },
+    {
+      "role": "rust_type",
+      "name": "LanguageDetector",
+      "ref": "src-tauri/src/language_detection/detector.rs:17"
+    },
+    {
+      "role": "rust_type",
+      "name": "LanguageDetectorFile",
+      "ref": "src-tauri/src/catalog/mod.rs:347"
+    },
+    {
+      "role": "rust_type",
+      "name": "LanguageSource",
+      "ref": "src-tauri/src/language_detection/mod.rs:78"
+    },
+    {
+      "role": "rust_type",
+      "name": "LanguageStatus",
+      "ref": "src-tauri/src/language_detection/policy.rs:237"
+    },
+    {
+      "role": "rust_type",
+      "name": "LiveDecode",
+      "ref": "src-tauri/src/managers/transcription/policy.rs:28"
+    },
+    {
+      "role": "rust_type",
+      "name": "LoadSpec",
+      "ref": "src-tauri/src/engine_supervisor/supervisor.rs:111"
+    },
+    {
+      "role": "rust_type",
+      "name": "LoadedInfo",
+      "ref": "src-tauri/src/engine_supervisor/protocol.rs:149"
+    },
+    {
+      "role": "rust_type",
+      "name": "LoadingGuard",
+      "ref": "src-tauri/src/managers/transcription.rs:199"
+    },
+    {
+      "role": "rust_type",
+      "name": "LogLevel",
+      "ref": "src-tauri/src/settings.rs:16"
+    },
+    {
+      "role": "rust_type",
+      "name": "MicrophoneMode",
+      "ref": "src-tauri/src/managers/audio.rs:247"
+    },
+    {
+      "role": "rust_type",
+      "name": "MirrorFile",
+      "ref": "src-tauri/src/catalog/mod.rs:377"
+    },
+    {
+      "role": "rust_type",
+      "name": "ModelDescriptor",
+      "ref": "src-tauri/src/managers/model.rs:147"
+    },
+    {
+      "role": "rust_type",
+      "name": "ModelInfo",
+      "ref": "src-tauri/src/managers/model.rs:45"
+    },
+    {
+      "role": "rust_type",
+      "name": "ModelLanguages",
+      "ref": "src-tauri/src/language_detection/policy.rs:13"
+    },
+    {
+      "role": "rust_type",
+      "name": "ModelLoadStatus",
+      "ref": "src-tauri/src/commands/transcription.rs:11"
+    },
+    {
+      "role": "rust_type",
+      "name": "ModelManager",
+      "ref": "src-tauri/src/managers/model.rs:867"
+    },
+    {
+      "role": "rust_type",
+      "name": "ModelSource",
+      "ref": "src-tauri/src/managers/model.rs:28"
+    },
+    {
+      "role": "rust_type",
+      "name": "ModelStateEvent",
+      "ref": "src-tauri/src/managers/transcription.rs:58"
+    },
+    {
+      "role": "rust_type",
+      "name": "ModelTraits",
+      "ref": "src-tauri/src/managers/transcription/policy.rs:8"
+    },
+    {
+      "role": "rust_type",
+      "name": "ModelUnloadTimeout",
+      "ref": "src-tauri/src/settings.rs:150"
+    },
+    {
+      "role": "rust_type",
+      "name": "Notice",
+      "ref": "src-tauri/src/notices.rs:93"
+    },
+    {
+      "role": "rust_type",
+      "name": "NoticeCode",
+      "ref": "src-tauri/src/notices.rs:41"
+    },
+    {
+      "role": "rust_type",
+      "name": "NoticeLevel",
+      "ref": "src-tauri/src/notices.rs:21"
+    },
+    {
+      "role": "rust_type",
+      "name": "NoticeSource",
+      "ref": "src-tauri/src/notices.rs:33"
+    },
+    {
+      "role": "rust_type",
+      "name": "NoticeStore",
+      "ref": "src-tauri/src/notices.rs:127"
+    },
+    {
+      "role": "rust_type",
+      "name": "NoticesChanged",
+      "ref": "src-tauri/src/notices.rs:118"
+    },
+    {
+      "role": "rust_type",
+      "name": "OutputDeviceInfo",
+      "ref": "src-tauri/src/audio_toolkit/audio/device.rs:8"
+    },
+    {
+      "role": "rust_type",
+      "name": "OutputLanguageEvidence",
+      "ref": "src-tauri/src/audio_toolkit/text.rs:274"
+    },
+    {
+      "role": "rust_type",
+      "name": "OverlayPosition",
+      "ref": "src-tauri/src/settings.rs:126"
+    },
+    {
+      "role": "rust_type",
+      "name": "OverlayStyle",
+      "ref": "src-tauri/src/settings.rs:142"
+    },
+    {
+      "role": "rust_type",
+      "name": "PaginatedHistory",
+      "ref": "src-tauri/src/managers/history.rs:48"
+    },
+    {
+      "role": "rust_type",
+      "name": "PasteMethod",
+      "ref": "src-tauri/src/settings.rs:164"
+    },
+    {
+      "role": "rust_type",
+      "name": "PasteOutcome",
+      "ref": "src-tauri/src/clipboard.rs:883"
+    },
+    {
+      "role": "rust_type",
+      "name": "PermissionAccess",
+      "ref": "src-tauri/src/commands/audio.rs:46"
+    },
+    {
+      "role": "rust_type",
+      "name": "Plan",
+      "ref": "src-tauri/src/language_detection/policy.rs:23"
+    },
+    {
+      "role": "rust_type",
+      "name": "PostProcessApiFormat",
+      "ref": "src-tauri/src/settings.rs:101"
+    },
+    {
+      "role": "rust_type",
+      "name": "PostProcessProvider",
+      "ref": "src-tauri/src/settings.rs:110"
+    },
+    {
+      "role": "rust_type",
+      "name": "ProviderIvars",
+      "ref": "src-tauri/src/paste_tx/macos.rs:42"
+    },
+    {
+      "role": "rust_type",
+      "name": "QuantFile",
+      "ref": "src-tauri/src/managers/model.rs:111"
+    },
+    {
+      "role": "rust_type",
+      "name": "RecordingPhase",
+      "ref": "src-tauri/src/transcription_coordinator.rs:20"
+    },
+    {
+      "role": "rust_type",
+      "name": "RecordingReadiness",
+      "ref": "src-tauri/src/managers/audio.rs:455"
+    },
+    {
+      "role": "rust_type",
+      "name": "RecordingRetentionPeriod",
+      "ref": "src-tauri/src/settings.rs:223"
+    },
+    {
+      "role": "rust_type",
+      "name": "RecordingState",
+      "ref": "src-tauri/src/managers/audio.rs:240"
+    },
+    {
+      "role": "rust_type",
+      "name": "RecordingStateEvent",
+      "ref": "src-tauri/src/transcription_coordinator.rs:33"
+    },
+    {
+      "role": "rust_type",
+      "name": "Request",
+      "ref": "src-tauri/src/engine_supervisor/protocol.rs:23"
+    },
+    {
+      "role": "rust_type",
+      "name": "Response",
+      "ref": "src-tauri/src/engine_supervisor/protocol.rs:69"
+    },
+    {
+      "role": "rust_type",
+      "name": "RetiredModel",
+      "ref": "src-tauri/src/managers/model.rs:860"
+    },
+    {
+      "role": "rust_type",
+      "name": "SecureInputStatus",
+      "ref": "src-tauri/src/secure_input.rs:26"
+    },
+    {
+      "role": "rust_type",
+      "name": "ShortcutAction",
+      "ref": "src-tauri/src/actions.rs:129"
+    },
+    {
+      "role": "rust_type",
+      "name": "ShortcutActivation",
+      "ref": "src-tauri/src/settings.rs:176"
+    },
+    {
+      "role": "rust_type",
+      "name": "ShortcutBinding",
+      "ref": "src-tauri/src/settings.rs:82"
+    },
+    {
+      "role": "rust_type",
+      "name": "ShortcutsInitialized",
+      "ref": "src-tauri/src/commands/mod.rs:173"
+    },
+    {
+      "role": "rust_type",
+      "name": "SileroVad",
+      "ref": "src-tauri/src/audio_toolkit/vad/silero.rs:11"
+    },
+    {
+      "role": "rust_type",
+      "name": "SmoothedVad",
+      "ref": "src-tauri/src/audio_toolkit/vad/smoothed.rs:13"
+    },
+    {
+      "role": "rust_type",
+      "name": "SoundTheme",
+      "ref": "src-tauri/src/settings.rs:289"
+    },
+    {
+      "role": "rust_type",
+      "name": "SoundType",
+      "ref": "src-tauri/src/audio_feedback.rs:13"
+    },
+    {
+      "role": "rust_type",
+      "name": "SpeechScorer",
+      "ref": "src-tauri/src/audio_toolkit/vad/mod.rs:60"
+    },
+    {
+      "role": "rust_type",
+      "name": "StreamHandle",
+      "ref": "src-tauri/src/engine_supervisor/supervisor.rs:516"
+    },
+    {
+      "role": "rust_type",
+      "name": "StreamPhase",
+      "ref": "src-tauri/src/managers/transcription.rs:77"
+    },
+    {
+      "role": "rust_type",
+      "name": "StreamPhaseEvent",
+      "ref": "src-tauri/src/managers/transcription.rs:96"
+    },
+    {
+      "role": "rust_type",
+      "name": "StreamProgress",
+      "ref": "src-tauri/src/engine_supervisor/supervisor.rs:162"
+    },
+    {
+      "role": "rust_type",
+      "name": "StreamRouter",
+      "ref": "src-tauri/src/managers/transcription.rs:127"
+    },
+    {
+      "role": "rust_type",
+      "name": "StreamTextEvent",
+      "ref": "src-tauri/src/managers/transcription.rs:69"
+    },
+    {
+      "role": "rust_type",
+      "name": "StreamWorkKind",
+      "ref": "src-tauri/src/managers/transcription.rs:89"
+    },
+    {
+      "role": "rust_type",
+      "name": "Theme",
+      "ref": "src-tauri/src/settings.rs:317"
+    },
+    {
+      "role": "rust_type",
+      "name": "TranscribeAcceleratorSetting",
+      "ref": "src-tauri/src/settings.rs:337"
+    },
+    {
+      "role": "rust_type",
+      "name": "Transcription",
+      "ref": "src-tauri/src/managers/transcription.rs:1244"
+    },
+    {
+      "role": "rust_type",
+      "name": "TranscriptionCompleteEvent",
+      "ref": "src-tauri/src/actions.rs:47"
+    },
+    {
+      "role": "rust_type",
+      "name": "TranscriptionCoordinator",
+      "ref": "src-tauri/src/transcription_coordinator.rs:575"
+    },
+    {
+      "role": "rust_type",
+      "name": "TranscriptionJob",
+      "ref": "src-tauri/src/managers/transcription_jobs.rs:48"
+    },
+    {
+      "role": "rust_type",
+      "name": "TranscriptionJobManager",
+      "ref": "src-tauri/src/managers/transcription_jobs.rs:90"
+    },
+    {
+      "role": "rust_type",
+      "name": "TranscriptionJobStatus",
+      "ref": "src-tauri/src/managers/transcription_jobs.rs:32"
+    },
+    {
+      "role": "rust_type",
+      "name": "TranscriptionManager",
+      "ref": "src-tauri/src/managers/transcription.rs:245"
+    },
+    {
+      "role": "rust_type",
+      "name": "TranscriptionOutcome",
+      "ref": "src-tauri/src/actions.rs:34"
+    },
+    {
+      "role": "rust_type",
+      "name": "TrayIconState",
+      "ref": "src-tauri/src/tray.rs:41"
+    },
+    {
+      "role": "rust_type",
+      "name": "TrayState",
+      "ref": "src-tauri/src/tray.rs:124"
+    },
+    {
+      "role": "rust_type",
+      "name": "TypingTool",
+      "ref": "src-tauri/src/settings.rs:325"
+    },
+    {
+      "role": "rust_type",
+      "name": "Unloading",
+      "ref": "src-tauri/src/engine_supervisor/supervisor.rs:503"
+    },
+    {
+      "role": "rust_type",
+      "name": "VadBackend",
+      "ref": "src-tauri/src/settings.rs:346"
+    },
+    {
+      "role": "rust_type",
+      "name": "VadFrame",
+      "ref": "src-tauri/src/audio_toolkit/vad/mod.rs:19"
+    },
+    {
+      "role": "rust_type",
+      "name": "VadPolicy",
+      "ref": "src-tauri/src/audio_toolkit/audio/sink.rs:13"
+    },
+    {
+      "role": "rust_type",
+      "name": "VadTailReport",
+      "ref": "src-tauri/src/audio_toolkit/vad/mod.rs:82"
+    },
+    {
+      "role": "rust_type",
+      "name": "VoiceActivityDetector",
+      "ref": "src-tauri/src/audio_toolkit/vad/mod.rs:33"
+    },
+    {
+      "role": "rust_type",
+      "name": "WindowsMicrophonePermissionStatus",
+      "ref": "src-tauri/src/commands/audio.rs:53"
+    }
+  ],
+  "actions": [],
+  "data_schemas": [],
+  "frontend_routes": [],
+  "css_tokens": [
+    {
+      "token": "--animate-burst",
+      "value": "burst 420ms var(--ease-glide)",
+      "ref": "src/App.css:77"
+    },
+    {
+      "token": "--animate-drop",
+      "value": "drop 160ms var(--ease-glide)",
+      "ref": "src/App.css:81"
+    },
+    {
+      "token": "--animate-fade",
+      "value": "fade 180ms ease-out",
+      "ref": "src/App.css:83"
+    },
+    {
+      "token": "--animate-key-slot",
+      "value": "key-slot 1.2s ease-in-out infinite",
+      "ref": "src/App.css:85"
+    },
+    {
+      "token": "--animate-rise",
+      "value": "rise 260ms var(--ease-glide)",
+      "ref": "src/App.css:79"
+    },
+    {
+      "token": "--animate-slap",
+      "value": "slap 420ms var(--ease-glide)",
+      "ref": "src/App.css:76"
+    },
+    {
+      "token": "--animate-wave",
+      "value": "wave 1100ms var(--ease-glide) 250ms both",
+      "ref": "src/App.css:74"
+    },
+    {
+      "token": "--bar-app",
+      "value": "14px",
+      "ref": "src/components/onboarding/desktopBar.css:10"
+    },
+    {
+      "token": "--bar-app",
+      "value": "15px",
+      "ref": "src/components/onboarding/desktopBar.css:25"
+    },
+    {
+      "token": "--bar-app-radius",
+      "value": "4px",
+      "ref": "src/components/onboarding/desktopBar.css:11"
+    },
+    {
+      "token": "--bar-app-radius",
+      "value": "5px",
+      "ref": "src/components/onboarding/desktopBar.css:26"
+    },
+    {
+      "token": "--bar-apple-height",
+      "value": "10px",
+      "ref": "src/components/onboarding/desktopBar.css:13"
+    },
+    {
+      "token": "--bar-apple-height",
+      "value": "13px",
+      "ref": "src/components/onboarding/desktopBar.css:28"
+    },
+    {
+      "token": "--bar-apple-width",
+      "value": "9px",
+      "ref": "src/components/onboarding/desktopBar.css:12"
+    },
+    {
+      "token": "--bar-apple-width",
+      "value": "11px",
+      "ref": "src/components/onboarding/desktopBar.css:27"
+    },
+    {
+      "token": "--bar-font",
+      "value": "12px",
+      "ref": "src/components/onboarding/desktopBar.css:20"
+    },
+    {
+      "token": "--bar-font",
+      "value": "10.5px",
+      "ref": "src/components/onboarding/desktopBar.css:5"
+    },
+    {
+      "token": "--bar-gap",
+      "value": "14px",
+      "ref": "src/components/onboarding/desktopBar.css:18"
+    },
+    {
+      "token": "--bar-gap",
+      "value": "11px",
+      "ref": "src/components/onboarding/desktopBar.css:3"
+    },
+    {
+      "token": "--bar-menu",
+      "value": "6px",
+      "ref": "src/components/onboarding/desktopBar.css:24"
+    },
+    {
+      "token": "--bar-menu",
+      "value": "5px",
+      "ref": "src/components/onboarding/desktopBar.css:9"
+    },
+    {
+      "token": "--bar-menu-height",
+      "value": "26px",
+      "ref": "src/components/onboarding/desktopBar.css:21"
+    },
+    {
+      "token": "--bar-menu-height",
+      "value": "20px",
+      "ref": "src/components/onboarding/desktopBar.css:6"
+    },
+    {
+      "token": "--bar-pad",
+      "value": "14px",
+      "ref": "src/components/onboarding/desktopBar.css:19"
+    },
+    {
+      "token": "--bar-pad",
+      "value": "10px",
+      "ref": "src/components/onboarding/desktopBar.css:4"
+    },
+    {
+      "token": "--bar-start",
+      "value": "12.5px",
+      "ref": "src/components/onboarding/desktopBar.css:14"
+    },
+    {
+      "token": "--bar-start",
+      "value": "13px",
+      "ref": "src/components/onboarding/desktopBar.css:29"
+    },
+    {
+      "token": "--bar-task-gap",
+      "value": "9px",
+      "ref": "src/components/onboarding/desktopBar.css:23"
+    },
+    {
+      "token": "--bar-task-gap",
+      "value": "7.5px",
+      "ref": "src/components/onboarding/desktopBar.css:8"
+    },
+    {
+      "token": "--bar-task-height",
+      "value": "26px",
+      "ref": "src/components/onboarding/desktopBar.css:22"
+    },
+    {
+      "token": "--bar-task-height",
+      "value": "25px",
+      "ref": "src/components/onboarding/desktopBar.css:7"
+    },
+    {
+      "token": "--color-background",
+      "value": "var(--color-background)",
+      "ref": "src/App.css:10"
+    },
+    {
+      "token": "--color-background",
+      "value": "var(--light-color-background)",
+      "ref": "src/styles/theme.css:133"
+    },
+    {
+      "token": "--color-background",
+      "value": "var(--dark-color-background)",
+      "ref": "src/styles/theme.css:171"
+    },
+    {
+      "token": "--color-background",
+      "value": "var(--light-color-background)",
+      "ref": "src/styles/theme.css:204"
+    },
+    {
+      "token": "--color-background",
+      "value": "var(--dark-color-background)",
+      "ref": "src/styles/theme.css:226"
+    },
+    {
+      "token": "--color-background-ui",
+      "value": "var(--color-background-ui)",
+      "ref": "src/App.css:11"
+    },
+    {
+      "token": "--color-background-ui",
+      "value": "#da5893",
+      "ref": "src/styles/theme.css:127"
+    },
+    {
+      "token": "--color-demo-alu-hi",
+      "value": "var(--light-color-demo-alu-hi)",
+      "ref": "src/styles/theme.css:142"
+    },
+    {
+      "token": "--color-demo-alu-hi",
+      "value": "var(--dark-color-demo-alu-hi)",
+      "ref": "src/styles/theme.css:180"
+    },
+    {
+      "token": "--color-demo-alu-hi",
+      "value": "var(--light-color-demo-alu-hi)",
+      "ref": "src/styles/theme.css:213"
+    },
+    {
+      "token": "--color-demo-alu-hi",
+      "value": "var(--dark-color-demo-alu-hi)",
+      "ref": "src/styles/theme.css:235"
+    },
+    {
+      "token": "--color-demo-alu-lo",
+      "value": "var(--light-color-demo-alu-lo)",
+      "ref": "src/styles/theme.css:143"
+    },
+    {
+      "token": "--color-demo-alu-lo",
+      "value": "var(--dark-color-demo-alu-lo)",
+      "ref": "src/styles/theme.css:181"
+    },
+    {
+      "token": "--color-demo-alu-lo",
+      "value": "var(--light-color-demo-alu-lo)",
+      "ref": "src/styles/theme.css:214"
+    },
+    {
+      "token": "--color-demo-alu-lo",
+      "value": "var(--dark-color-demo-alu-lo)",
+      "ref": "src/styles/theme.css:236"
+    },
+    {
+      "token": "--color-demo-lid",
+      "value": "var(--light-color-demo-lid)",
+      "ref": "src/styles/theme.css:141"
+    },
+    {
+      "token": "--color-demo-lid",
+      "value": "var(--dark-color-demo-lid)",
+      "ref": "src/styles/theme.css:179"
+    },
+    {
+      "token": "--color-demo-lid",
+      "value": "var(--light-color-demo-lid)",
+      "ref": "src/styles/theme.css:212"
+    },
+    {
+      "token": "--color-demo-lid",
+      "value": "var(--dark-color-demo-lid)",
+      "ref": "src/styles/theme.css:234"
+    },
+    {
+      "token": "--color-demo-window",
+      "value": "var(--color-demo-window)",
+      "ref": "src/App.css:18"
+    },
+    {
+      "token": "--color-demo-window",
+      "value": "var(--light-color-demo-window)",
+      "ref": "src/styles/theme.css:140"
+    },
+    {
+      "token": "--color-demo-window",
+      "value": "var(--dark-color-demo-window)",
+      "ref": "src/styles/theme.css:178"
+    },
+    {
+      "token": "--color-demo-window",
+      "value": "var(--light-color-demo-window)",
+      "ref": "src/styles/theme.css:211"
+    },
+    {
+      "token": "--color-demo-window",
+      "value": "var(--dark-color-demo-window)",
+      "ref": "src/styles/theme.css:233"
+    },
+    {
+      "token": "--color-error",
+      "value": "var(--color-error)",
+      "ref": "src/App.css:14"
+    },
+    {
+      "token": "--color-error",
+      "value": "var(--light-color-error)",
+      "ref": "src/styles/theme.css:136"
+    },
+    {
+      "token": "--color-error",
+      "value": "var(--dark-color-error)",
+      "ref": "src/styles/theme.css:174"
+    },
+    {
+      "token": "--color-error",
+      "value": "var(--light-color-error)",
+      "ref": "src/styles/theme.css:207"
+    },
+    {
+      "token": "--color-error",
+      "value": "var(--dark-color-error)",
+      "ref": "src/styles/theme.css:229"
+    },
+    {
+      "token": "--color-error-wash",
+      "value": "var(--color-error-wash)",
+      "ref": "src/App.css:23"
+    },
+    {
+      "token": "--color-error-wash",
+      "value": "var(--light-color-error-wash)",
+      "ref": "src/styles/theme.css:150"
+    },
+    {
+      "token": "--color-error-wash",
+      "value": "var(--dark-color-error-wash)",
+      "ref": "src/styles/theme.css:188"
+    },
+    {
+      "token": "--color-error-wash",
+      "value": "var(--light-color-error-wash)",
+      "ref": "src/styles/theme.css:221"
+    },
+    {
+      "token": "--color-error-wash",
+      "value": "var(--dark-color-error-wash)",
+      "ref": "src/styles/theme.css:243"
+    },
+    {
+      "token": "--color-ink-2",
+      "value": "var(--color-ink-2)",
+      "ref": "src/App.css:24"
+    },
+    {
+      "token": "--color-ink-2",
+      "value": "color-mix(in srgb, var(--color-text) 60%, transparent)",
+      "ref": "src/styles/theme.css:153"
+    },
+    {
+      "token": "--color-ink-3",
+      "value": "var(--color-ink-3)",
+      "ref": "src/App.css:25"
+    },
+    {
+      "token": "--color-ink-3",
+      "value": "var(--color-mid-gray)",
+      "ref": "src/styles/theme.css:154"
+    },
+    {
+      "token": "--color-line",
+      "value": "var(--color-line)",
+      "ref": "src/App.css:26"
+    },
+    {
+      "token": "--color-line",
+      "value": "color-mix(in srgb, var(--color-mid-gray) 20%, transparent)",
+      "ref": "src/styles/theme.css:160"
+    },
+    {
+      "token": "--color-line-strong",
+      "value": "var(--color-line-strong)",
+      "ref": "src/App.css:27"
+    },
+    {
+      "token": "--color-line-strong",
+      "value": "color-mix(\n    in srgb,\n    var(--color-mid-gray) 80%,\n    transparent\n  )",
+      "ref": "src/styles/theme.css:155"
+    },
+    {
+      "token": "--color-log-surface",
+      "value": "color-mix(in srgb, var(--color-background), black 6%)",
+      "ref": "src/App.css:199"
+    },
+    {
+      "token": "--color-log-surface",
+      "value": "color-mix(in srgb, var(--color-background), black 15%)",
+      "ref": "src/App.css:229"
+    },
+    {
+      "token": "--color-logo-primary",
+      "value": "var(--color-logo-primary)",
+      "ref": "src/App.css:12"
+    },
+    {
+      "token": "--color-logo-primary",
+      "value": "var(--light-color-logo-primary)",
+      "ref": "src/styles/theme.css:134"
+    },
+    {
+      "token": "--color-logo-primary",
+      "value": "var(--dark-color-logo-primary)",
+      "ref": "src/styles/theme.css:172"
+    },
+    {
+      "token": "--color-logo-primary",
+      "value": "var(--light-color-logo-primary)",
+      "ref": "src/styles/theme.css:205"
+    },
+    {
+      "token": "--color-logo-primary",
+      "value": "var(--dark-color-logo-primary)",
+      "ref": "src/styles/theme.css:227"
+    },
+    {
+      "token": "--color-mascot-line",
+      "value": "var(--color-mascot-line)",
+      "ref": "src/App.css:19"
+    },
+    {
+      "token": "--color-mascot-line",
+      "value": "var(--light-color-mascot-line)",
+      "ref": "src/styles/theme.css:147"
+    },
+    {
+      "token": "--color-mascot-line",
+      "value": "var(--dark-color-mascot-line)",
+      "ref": "src/styles/theme.css:185"
+    },
+    {
+      "token": "--color-mascot-line",
+      "value": "var(--light-color-mascot-line)",
+      "ref": "src/styles/theme.css:218"
+    },
+    {
+      "token": "--color-mascot-line",
+      "value": "var(--dark-color-mascot-line)",
+      "ref": "src/styles/theme.css:240"
+    },
+    {
+      "token": "--color-mid-gray",
+      "value": "#808080",
+      "ref": "src/styles/theme.css:128"
+    },
+    {
+      "token": "--color-moss",
+      "value": "var(--color-moss)",
+      "ref": "src/App.css:15"
+    },
+    {
+      "token": "--color-moss",
+      "value": "var(--light-color-moss)",
+      "ref": "src/styles/theme.css:137"
+    },
+    {
+      "token": "--color-moss",
+      "value": "var(--dark-color-moss)",
+      "ref": "src/styles/theme.css:175"
+    },
+    {
+      "token": "--color-moss",
+      "value": "var(--light-color-moss)",
+      "ref": "src/styles/theme.css:208"
+    },
+    {
+      "token": "--color-moss",
+      "value": "var(--dark-color-moss)",
+      "ref": "src/styles/theme.css:230"
+    },
+    {
+      "token": "--color-moss-wash",
+      "value": "var(--color-moss-wash)",
+      "ref": "src/App.css:21"
+    },
+    {
+      "token": "--color-moss-wash",
+      "value": "var(--light-color-moss-wash)",
+      "ref": "src/styles/theme.css:148"
+    },
+    {
+      "token": "--color-moss-wash",
+      "value": "var(--dark-color-moss-wash)",
+      "ref": "src/styles/theme.css:186"
+    },
+    {
+      "token": "--color-moss-wash",
+      "value": "var(--light-color-moss-wash)",
+      "ref": "src/styles/theme.css:219"
+    },
+    {
+      "token": "--color-moss-wash",
+      "value": "var(--dark-color-moss-wash)",
+      "ref": "src/styles/theme.css:241"
+    },
+    {
+      "token": "--color-plum",
+      "value": "var(--color-plum)",
+      "ref": "src/App.css:16"
+    },
+    {
+      "token": "--color-plum",
+      "value": "var(--light-color-plum)",
+      "ref": "src/styles/theme.css:138"
+    },
+    {
+      "token": "--color-plum",
+      "value": "var(--dark-color-plum)",
+      "ref": "src/styles/theme.css:176"
+    },
+    {
+      "token": "--color-plum",
+      "value": "var(--light-color-plum)",
+      "ref": "src/styles/theme.css:209"
+    },
+    {
+      "token": "--color-plum",
+      "value": "var(--dark-color-plum)",
+      "ref": "src/styles/theme.css:231"
+    },
+    {
+      "token": "--color-plum-faint",
+      "value": "color-mix(in srgb, var(--color-plum) 22%, transparent)",
+      "ref": "src/styles/theme.css:165"
+    },
+    {
+      "token": "--color-plum-pick",
+      "value": "var(--color-plum-pick)",
+      "ref": "src/App.css:17"
+    },
+    {
+      "token": "--color-plum-pick",
+      "value": "color-mix(in srgb, var(--color-plum) 60%, transparent)",
+      "ref": "src/styles/theme.css:163"
+    },
+    {
+      "token": "--color-text",
+      "value": "var(--color-text)",
+      "ref": "src/App.css:9"
+    },
+    {
+      "token": "--color-text",
+      "value": "var(--light-color-text)",
+      "ref": "src/styles/theme.css:132"
+    },
+    {
+      "token": "--color-text",
+      "value": "var(--dark-color-text)",
+      "ref": "src/styles/theme.css:170"
+    },
+    {
+      "token": "--color-text",
+      "value": "var(--light-color-text)",
+      "ref": "src/styles/theme.css:203"
+    },
+    {
+      "token": "--color-text",
+      "value": "var(--dark-color-text)",
+      "ref": "src/styles/theme.css:225"
+    },
+    {
+      "token": "--color-warning",
+      "value": "var(--color-warning)",
+      "ref": "src/App.css:13"
+    },
+    {
+      "token": "--color-warning",
+      "value": "var(--light-color-warning)",
+      "ref": "src/styles/theme.css:135"
+    },
+    {
+      "token": "--color-warning",
+      "value": "var(--dark-color-warning)",
+      "ref": "src/styles/theme.css:173"
+    },
+    {
+      "token": "--color-warning",
+      "value": "var(--light-color-warning)",
+      "ref": "src/styles/theme.css:206"
+    },
+    {
+      "token": "--color-warning",
+      "value": "var(--dark-color-warning)",
+      "ref": "src/styles/theme.css:228"
+    },
+    {
+      "token": "--color-warning-wash",
+      "value": "var(--color-warning-wash)",
+      "ref": "src/App.css:22"
+    },
+    {
+      "token": "--color-warning-wash",
+      "value": "var(--light-color-warning-wash)",
+      "ref": "src/styles/theme.css:149"
+    },
+    {
+      "token": "--color-warning-wash",
+      "value": "var(--dark-color-warning-wash)",
+      "ref": "src/styles/theme.css:187"
+    },
+    {
+      "token": "--color-warning-wash",
+      "value": "var(--light-color-warning-wash)",
+      "ref": "src/styles/theme.css:220"
+    },
+    {
+      "token": "--color-warning-wash",
+      "value": "var(--dark-color-warning-wash)",
+      "ref": "src/styles/theme.css:242"
+    },
+    {
+      "token": "--color-wash",
+      "value": "var(--color-wash)",
+      "ref": "src/App.css:20"
+    },
+    {
+      "token": "--color-wash",
+      "value": "color-mix(in srgb, var(--color-mid-gray) 10%, transparent)",
+      "ref": "src/styles/theme.css:161"
+    },
+    {
+      "token": "--color-wordmark",
+      "value": "var(--light-color-wordmark)",
+      "ref": "src/styles/theme.css:145"
+    },
+    {
+      "token": "--color-wordmark",
+      "value": "var(--dark-color-wordmark)",
+      "ref": "src/styles/theme.css:183"
+    },
+    {
+      "token": "--color-wordmark",
+      "value": "var(--light-color-wordmark)",
+      "ref": "src/styles/theme.css:216"
+    },
+    {
+      "token": "--color-wordmark",
+      "value": "var(--dark-color-wordmark)",
+      "ref": "src/styles/theme.css:238"
+    },
+    {
+      "token": "--color-wordmark-stroke",
+      "value": "var(--light-color-wordmark-stroke)",
+      "ref": "src/styles/theme.css:146"
+    },
+    {
+      "token": "--color-wordmark-stroke",
+      "value": "var(--dark-color-wordmark-stroke)",
+      "ref": "src/styles/theme.css:184"
+    },
+    {
+      "token": "--color-wordmark-stroke",
+      "value": "var(--light-color-wordmark-stroke)",
+      "ref": "src/styles/theme.css:217"
+    },
+    {
+      "token": "--color-wordmark-stroke",
+      "value": "var(--dark-color-wordmark-stroke)",
+      "ref": "src/styles/theme.css:239"
+    },
+    {
+      "token": "--dark-color-background",
+      "value": "#2c2b29",
+      "ref": "src/styles/theme.css:18"
+    },
+    {
+      "token": "--dark-color-demo-alu-hi",
+      "value": "#5a585d",
+      "ref": "src/styles/theme.css:47"
+    },
+    {
+      "token": "--dark-color-demo-alu-lo",
+      "value": "#3b3a3e",
+      "ref": "src/styles/theme.css:49"
+    },
+    {
+      "token": "--dark-color-demo-lid",
+      "value": "#0f0e10",
+      "ref": "src/styles/theme.css:45"
+    },
+    {
+      "token": "--dark-color-demo-window",
+      "value": "color-mix(\n    in srgb,\n    #fff 4%,\n    var(--dark-color-background)\n  )",
+      "ref": "src/styles/theme.css:37"
+    },
+    {
+      "token": "--dark-color-error",
+      "value": "#f87171",
+      "ref": "src/styles/theme.css:25"
+    },
+    {
+      "token": "--dark-color-logo-primary",
+      "value": "#f28cbb",
+      "ref": "src/styles/theme.css:19"
+    },
+    {
+      "token": "--dark-color-mascot-line",
+      "value": "var(--dark-color-background)",
+      "ref": "src/styles/theme.css:83"
+    },
+    {
+      "token": "--dark-color-moss",
+      "value": "#86c9a4",
+      "ref": "src/styles/theme.css:29"
+    },
+    {
+      "token": "--dark-color-plum",
+      "value": "var(--dark-color-text)",
+      "ref": "src/styles/theme.css:33"
+    },
+    {
+      "token": "--dark-color-text",
+      "value": "#fbfbfb",
+      "ref": "src/styles/theme.css:17"
+    },
+    {
+      "token": "--dark-color-warning",
+      "value": "#fbbf24",
+      "ref": "src/styles/theme.css:24"
+    },
+    {
+      "token": "--dark-color-wordmark",
+      "value": "var(--dark-color-logo-primary)",
+      "ref": "src/styles/theme.css:78"
+    },
+    {
+      "token": "--dark-color-wordmark-stroke",
+      "value": "var(--dark-color-text)",
+      "ref": "src/styles/theme.css:79"
+    },
+    {
+      "token": "--demo-pill-shadow",
+      "value": "var(--light-demo-pill-shadow)",
+      "ref": "src/styles/theme.css:139"
+    },
+    {
+      "token": "--demo-pill-shadow",
+      "value": "var(--dark-demo-pill-shadow)",
+      "ref": "src/styles/theme.css:177"
+    },
+    {
+      "token": "--demo-pill-shadow",
+      "value": "var(--light-demo-pill-shadow)",
+      "ref": "src/styles/theme.css:210"
+    },
+    {
+      "token": "--demo-pill-shadow",
+      "value": "var(--dark-demo-pill-shadow)",
+      "ref": "src/styles/theme.css:232"
+    },
+    {
+      "token": "--demo-wallpaper",
+      "value": "var(--light-demo-wallpaper)",
+      "ref": "src/styles/theme.css:144"
+    },
+    {
+      "token": "--demo-wallpaper",
+      "value": "var(--dark-demo-wallpaper)",
+      "ref": "src/styles/theme.css:182"
+    },
+    {
+      "token": "--demo-wallpaper",
+      "value": "var(--light-demo-wallpaper)",
+      "ref": "src/styles/theme.css:215"
+    },
+    {
+      "token": "--demo-wallpaper",
+      "value": "var(--dark-demo-wallpaper)",
+      "ref": "src/styles/theme.css:237"
+    },
+    {
+      "token": "--ease-glide",
+      "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+      "ref": "src/App.css:71"
+    },
+    {
+      "token": "--font-cjk-subset",
+      "value": "var(--font-ui)",
+      "ref": "src/App.css:235"
+    },
+    {
+      "token": "--light-color-background",
+      "value": "#fbfbfb",
+      "ref": "src/styles/theme.css:13"
+    },
+    {
+      "token": "--light-color-demo-alu-hi",
+      "value": "#ececee",
+      "ref": "src/styles/theme.css:46"
+    },
+    {
+      "token": "--light-color-demo-alu-lo",
+      "value": "#cdccd1",
+      "ref": "src/styles/theme.css:48"
+    },
+    {
+      "token": "--light-color-demo-lid",
+      "value": "#1f1e21",
+      "ref": "src/styles/theme.css:44"
+    },
+    {
+      "token": "--light-color-demo-window",
+      "value": "var(--light-color-background)",
+      "ref": "src/styles/theme.css:36"
+    },
+    {
+      "token": "--light-color-error",
+      "value": "#dc2626",
+      "ref": "src/styles/theme.css:23"
+    },
+    {
+      "token": "--light-color-logo-primary",
+      "value": "#faa2ca",
+      "ref": "src/styles/theme.css:14"
+    },
+    {
+      "token": "--light-color-logo-stroke",
+      "value": "#382731",
+      "ref": "src/styles/theme.css:15"
+    },
+    {
+      "token": "--light-color-mascot-line",
+      "value": "var(--light-color-logo-stroke)",
+      "ref": "src/styles/theme.css:82"
+    },
+    {
+      "token": "--light-color-moss",
+      "value": "#2f7d5b",
+      "ref": "src/styles/theme.css:28"
+    },
+    {
+      "token": "--light-color-plum",
+      "value": "var(--light-color-logo-stroke)",
+      "ref": "src/styles/theme.css:32"
+    },
+    {
+      "token": "--light-color-text",
+      "value": "#0f0f0f",
+      "ref": "src/styles/theme.css:12"
+    },
+    {
+      "token": "--light-color-warning",
+      "value": "#d97706",
+      "ref": "src/styles/theme.css:22"
+    },
+    {
+      "token": "--light-color-wordmark",
+      "value": "var(--light-color-logo-primary)",
+      "ref": "src/styles/theme.css:76"
+    },
+    {
+      "token": "--light-color-wordmark-stroke",
+      "value": "var(--light-color-logo-stroke)",
+      "ref": "src/styles/theme.css:77"
+    },
+    {
+      "token": "--notice",
+      "value": "var(--color-error)",
+      "ref": "src/overlay/RecordingOverlay.css:171"
+    },
+    {
+      "token": "--notice",
+      "value": "var(--color-warning)",
+      "ref": "src/overlay/RecordingOverlay.css:174"
+    },
+    {
+      "token": "--ov-base-h",
+      "value": "40px",
+      "ref": "src/overlay/RecordingOverlay.css:32"
+    },
+    {
+      "token": "--ov-cap-max-h",
+      "value": "64px",
+      "ref": "src/overlay/RecordingOverlay.css:33"
+    },
+    {
+      "token": "--ov-open-w",
+      "value": "392px",
+      "ref": "src/overlay/RecordingOverlay.css:31"
+    },
+    {
+      "token": "--ov-pill-w",
+      "value": "184px",
+      "ref": "src/overlay/RecordingOverlay.css:28"
+    },
+    {
+      "token": "--ov-rest-w",
+      "value": "172px",
+      "ref": "src/overlay/RecordingOverlay.css:26"
+    },
+    {
+      "token": "--ov-work-w",
+      "value": "216px",
+      "ref": "src/overlay/RecordingOverlay.css:29"
+    },
+    {
+      "token": "--radius-card",
+      "value": "12px",
+      "ref": "src/App.css:61"
+    },
+    {
+      "token": "--radius-chip",
+      "value": "6px",
+      "ref": "src/App.css:63"
+    },
+    {
+      "token": "--radius-control",
+      "value": "10px",
+      "ref": "src/App.css:62"
+    },
+    {
+      "token": "--radius-panel",
+      "value": "16px",
+      "ref": "src/App.css:60"
+    },
+    {
+      "token": "--s-accent",
+      "value": "var(--color-logo-primary)",
+      "ref": "src/overlay/RecordingOverlay.css:9"
+    },
+    {
+      "token": "--s-accent-soft",
+      "value": "color-mix(\n    in srgb,\n    var(--color-logo-primary) 20%,\n    transparent\n  )",
+      "ref": "src/overlay/RecordingOverlay.css:11"
+    },
+    {
+      "token": "--s-border",
+      "value": "var(--color-line)",
+      "ref": "src/overlay/RecordingOverlay.css:18"
+    },
+    {
+      "token": "--s-faint",
+      "value": "var(--color-ink-3)",
+      "ref": "src/overlay/RecordingOverlay.css:17"
+    },
+    {
+      "token": "--s-font",
+      "value": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+      "ref": "src/overlay/RecordingOverlay.css:4"
+    },
+    {
+      "token": "--s-hair",
+      "value": "var(--color-wash)",
+      "ref": "src/overlay/RecordingOverlay.css:19"
+    },
+    {
+      "token": "--s-muted",
+      "value": "var(--color-ink-2)",
+      "ref": "src/overlay/RecordingOverlay.css:16"
+    },
+    {
+      "token": "--s-surface",
+      "value": "color-mix(in srgb, var(--color-background) 98%, transparent)",
+      "ref": "src/overlay/RecordingOverlay.css:7"
+    },
+    {
+      "token": "--scrollbar-thumb",
+      "value": "color-mix(in srgb, var(--color-text), transparent 85%)",
+      "ref": "src/App.css:189"
+    },
+    {
+      "token": "--scrollbar-thumb-hover",
+      "value": "color-mix(\n    in srgb,\n    var(--color-text),\n    transparent 70%\n  )",
+      "ref": "src/App.css:190"
+    },
+    {
+      "token": "--spacing-gutter",
+      "value": "64px",
+      "ref": "src/App.css:66"
+    },
+    {
+      "token": "--spacing-lead",
+      "value": "20px",
+      "ref": "src/App.css:68"
+    },
+    {
+      "token": "--spacing-lead-max",
+      "value": "32px",
+      "ref": "src/App.css:69"
+    },
+    {
+      "token": "--text-body",
+      "value": "15px",
+      "ref": "src/App.css:55"
+    },
+    {
+      "token": "--text-label",
+      "value": "12px",
+      "ref": "src/App.css:57"
+    },
+    {
+      "token": "--text-name",
+      "value": "15px",
+      "ref": "src/App.css:53"
+    },
+    {
+      "token": "--text-row",
+      "value": "17px",
+      "ref": "src/App.css:54"
+    },
+    {
+      "token": "--text-small",
+      "value": "13px",
+      "ref": "src/App.css:56"
+    },
+    {
+      "token": "--text-tag",
+      "value": "11px",
+      "ref": "src/App.css:58"
+    },
+    {
+      "token": "--text-title",
+      "value": "26px",
+      "ref": "src/App.css:52"
+    },
+    {
+      "token": "--try-bubble-edge",
+      "value": "color-mix(in srgb, var(--color-text) 15%, transparent)",
+      "ref": "src/components/onboarding/screens/tryit.css:192"
+    },
+    {
+      "token": "--try-bubble-edge",
+      "value": "color-mix(in srgb, var(--color-warning) 32%, transparent)",
+      "ref": "src/components/onboarding/screens/tryit.css:210"
+    },
+    {
+      "token": "--try-bubble-fill",
+      "value": "var(--color-demo-window)",
+      "ref": "src/components/onboarding/screens/tryit.css:193"
+    },
+    {
+      "token": "--try-bubble-fill",
+      "value": "var(--color-warning-wash)",
+      "ref": "src/components/onboarding/screens/tryit.css:211"
+    },
+    {
+      "token": "--try-bubble-shadow",
+      "value": "0 6px 18px -8px rgb(0 0 0 / 0.22)",
+      "ref": "src/components/onboarding/screens/tryit.css:194"
+    },
+    {
+      "token": "--try-panel-edge",
+      "value": "color-mix(in srgb, var(--color-text) 15%, transparent)",
+      "ref": "src/components/onboarding/screens/tryit.css:476"
+    },
+    {
+      "token": "--try-panel-end",
+      "value": "12px",
+      "ref": "src/components/onboarding/screens/tryit.css:17"
+    },
+    {
+      "token": "--try-panel-fill",
+      "value": "var(--color-demo-window)",
+      "ref": "src/components/onboarding/screens/tryit.css:477"
+    },
+    {
+      "token": "--try-panel-gap",
+      "value": "14px",
+      "ref": "src/components/onboarding/screens/tryit.css:19"
+    },
+    {
+      "token": "--try-panel-width",
+      "value": "310px",
+      "ref": "src/components/onboarding/screens/tryit.css:18"
+    }
+  ],
+  "dependencies": [
+    {
+      "ecosystem": "npm",
+      "name": "@handy-computer/models",
+      "version": "0.2.3",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@playwright/test",
+      "version": "^1.64.1",
+      "indirect": true,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@tailwindcss/vite",
+      "version": "^4.1.16",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@tauri-apps/api",
+      "version": "^2.11.0",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@tauri-apps/cli",
+      "version": "^2.11.0",
+      "indirect": true,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@tauri-apps/plugin-autostart",
+      "version": "~2.5.1",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@tauri-apps/plugin-clipboard-manager",
+      "version": "~2.3.2",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@tauri-apps/plugin-dialog",
+      "version": "~2.6",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@tauri-apps/plugin-fs",
+      "version": "~2.4.4",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@tauri-apps/plugin-global-shortcut",
+      "version": "~2.3.2",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@tauri-apps/plugin-opener",
+      "version": "^2.5.2",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@tauri-apps/plugin-os",
+      "version": "~2.3.2",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@tauri-apps/plugin-process",
+      "version": "~2.3.1",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@tauri-apps/plugin-sql",
+      "version": "~2.3.1",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@tauri-apps/plugin-store",
+      "version": "~2.4.1",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@tauri-apps/plugin-updater",
+      "version": "~2.10.1",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@types/node",
+      "version": "^24.9.1",
+      "indirect": true,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@types/react",
+      "version": "^18.3.26",
+      "indirect": true,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@types/react-dom",
+      "version": "^18.3.7",
+      "indirect": true,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@types/react-select",
+      "version": "^5.0.1",
+      "indirect": true,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@typescript-eslint/eslint-plugin",
+      "version": "^8.49.0",
+      "indirect": true,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@typescript-eslint/parser",
+      "version": "^8.49.0",
+      "indirect": true,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@vitejs/plugin-react",
+      "version": "^4.7.0",
+      "indirect": true,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "eslint",
+      "version": "^9.39.1",
+      "indirect": true,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "eslint-plugin-i18next",
+      "version": "^6.1.3",
+      "indirect": true,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "i18next",
+      "version": "^25.7.2",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "immer",
+      "version": "^11.1.3",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "lucide-react",
+      "version": "^0.542.0",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "prettier",
+      "version": "^3.6.2",
+      "indirect": true,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "react",
+      "version": "^18.3.1",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "react-dom",
+      "version": "^18.3.1",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "react-i18next",
+      "version": "^16.4.1",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "react-markdown",
+      "version": "^10.1.0",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "react-select",
+      "version": "^5.8.0",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "subset-font",
+      "version": "2.3.0",
+      "indirect": true,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "tailwindcss",
+      "version": "^4.1.16",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "tauri-plugin-macos-permissions-api",
+      "version": "2.3.0",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "typescript",
+      "version": "~5.6.3",
+      "indirect": true,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "vite",
+      "version": "^6.4.1",
+      "indirect": true,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "zod",
+      "version": "^3.25.76",
+      "indirect": false,
+      "ref": "package.json"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "zustand",
+      "version": "^5.0.8",
+      "indirect": false,
+      "ref": "package.json"
+    }
+  ]
+}

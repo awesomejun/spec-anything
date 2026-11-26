@@ -1,0 +1,34 @@
+# Deterministic Static Fact Sheet
+
+Generated mechanically by `scripts/source_map.py`. LLM synthesis must remain grounded in these facts and live runtime observations.
+
+## Coverage Statistics
+- Total files scanned: `789`
+- Supported code files: `446` (test files: `0`)
+- Languages: `{"css": 11, "html": 1, "javascript": 216, "python": 1, "rust": 19, "svelte": 26, "typescript": 172}`
+- Extracted inventory: `5` modules, `586` entities, `1` actions/routes, `0` SQL tables, `3` frontend routes, `39` CSS variables, `17` dependencies
+
+## 1. Modules
+| Module | Files | Lines | Languages |
+|---|---:|---:|---|
+| `.` | 2 | 66 | javascript |
+| `.svelte-kit` | 74 | 21166 | css, javascript, svelte, typescript |
+| `scripts` | 1 | 217 | python |
+| `src` | 350 | 21354 | css, html, javascript, svelte, typescript |
+| `src-tauri` | 19 | 6102 | rust |
+
+## 2. HTTP Routes & CLI Commands (Sample Top 80)
+| Role | Method | Target | Ref |
+|---|---|---|---|
+| `frontend_api_call` | `CLIENT` | `${ce}/_app/version.json` | `[REF: .svelte-kit/output/client/_app/immutable/chunks/DQg6uf-z.js:1]` |
+
+## 3. Frontend Routes
+| Route | Component | Ref |
+|---|---|---|
+| `/` | `Record` | `[REF: .svelte-kit/non-ambient.d.ts:37]` |
+| `/settings` | `Record` | `[REF: .svelte-kit/non-ambient.d.ts:38]` |
+| `/stats` | `Record` | `[REF: .svelte-kit/non-ambient.d.ts:39]` |
+
+## 4. SQL Tables Detected in Migrations/Code
+| Table | Ref |
+|---|---|

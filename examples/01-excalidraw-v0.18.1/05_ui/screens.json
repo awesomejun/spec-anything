@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "viewport": {
+    "width": 1280,
+    "height": 800,
+    "device_scale_factor": 1
+  },
+  "screens": [
+    {
+      "screen_id": "SCR-001",
+      "file": "screenshots/SCR-001_canvas_empty_light.png",
+      "title": "Empty Whiteboard Canvas (Light Theme)",
+      "theme": "light",
+      "feature_ids": ["F-001", "F-009"],
+      "evidence_ids": ["EV-001", "EV-009"],
+      "description": "Initial mount of @excalidraw/excalidraw v0.18.1 at 1280x800 showing #ffffff canvas, top-center floating toolbar island with selection tool active, top-left menu trigger, top-right library trigger, bottom-left zoom/undo controls, and bottom-right help button."
+    },
+    {
+      "screen_id": "SCR-002",
+      "file": "screenshots/SCR-002_shapes_drawn_light.png",
+      "title": "Hand-Drawn Primitives & Bound Arrow Scene (Light Theme)",
+      "theme": "light",
+      "feature_ids": ["F-002", "F-003", "F-004", "F-005"],
+      "evidence_ids": ["EV-002", "EV-003", "EV-004", "EV-005"],
+      "description": "Canvas populated via live toolbar selection and pointer drag with 4 elements: rounded rectangle (260,180,220x140), ellipse (700,180,200x140), bound arrow connecting rectangle right edge to ellipse left edge, and text element 'Excalidraw Parity Spec' at (440,420)."
+    },
+    {
+      "screen_id": "SCR-003",
+      "file": "screenshots/SCR-003_dark_theme.png",
+      "title": "Dark Theme Canvas & Chrome Token Switch",
+      "theme": "dark",
+      "feature_ids": ["F-008"],
+      "evidence_ids": ["EV-008"],
+      "description": "Same 4-element scene switched to dark theme (.excalidraw.theme--dark) showing #121212 canvas background, #232329 chrome island surfaces, #403e6a active tool highlight, and CSS canvas filter invert(93%) hue-rotate(180deg) while preserving raw element colors in JSON."
+    },
+    {
+      "screen_id": "SCR-004",
+      "file": "screenshots/SCR-004_selection_properties.png",
+      "title": "Selected Element & Left Properties Inspector",
+      "theme": "light",
+      "feature_ids": ["F-006", "F-007"],
+      "evidence_ids": ["EV-006", "EV-007"],
+      "description": "Rectangle element selected on canvas displaying bounding box with transform handles and left properties inspector (200x634 island at x=16,y=76) after mutating strokeColor to #e03131, backgroundColor to #a5d8ff, and roughness to 2 (Cartoonist)."
+    },
+    {
+      "screen_id": "SCR-005",
+      "file": "screenshots/SCR-005_export_roundtrip.png",
+      "title": "Excalidraw v2 JSON Export, Clear, and Restore Roundtrip",
+      "theme": "light",
+      "feature_ids": ["F-010", "F-011"],
+      "evidence_ids": ["EV-010", "EV-011"],
+      "description": "Scene serialized via serializeAsJSON (type='excalidraw', version=2), cleared to 0 elements, restored via restore() + updateScene(), and persisted to host localStorage ('excalidraw' and 'excalidraw-state') with identical element IDs and geometry."
+    }
+  ]
+}
